@@ -2,18 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterMover))]
 public abstract class MovementControllerBase : MonoBehaviour
 {
     protected CharacterMover characterMover;
-    void Awake()
+
+    protected virtual void OnEnable()
     {
         characterMover = GetComponent<CharacterMover>();
     }
 
     // Update is called once per frame
-    protected virtual void Update()
+    void Update()
     {
         if (!characterMover)
             return;
+        
+        HandleMovement();
     }
+
+    protected abstract void HandleMovement();
 }

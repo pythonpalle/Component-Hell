@@ -6,11 +6,15 @@ using UnityEngine;
 public class DirectionalMovementController : MovementControllerBase
 {
     [SerializeField] private Vector2 direction;
-    
-    protected override void Update()
+
+    protected override void HandleMovement()
     {
-        base.Update();
         characterMover.Move(direction);
+    }
+
+    private void OnValidate()
+    {
+        direction.Normalize();
     }
 
     private void OnDrawGizmos()
