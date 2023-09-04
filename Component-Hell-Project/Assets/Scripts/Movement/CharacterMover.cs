@@ -1,19 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterMover : MonoBehaviour
 {
+    private Transform rootTransform;
+    
     [SerializeField]
     private float speed = 0f;
 
-    public void Move(Vector3 direction)
+    private void Awake()
     {
-        transform.position += direction * Time.deltaTime * speed;
+        rootTransform = transform.root;
     }
 
-    public void SetSpeed(float newSpeed)
+    public void Move(Vector3 direction)
     {
-        speed = newSpeed;
+        rootTransform.position += direction * Time.deltaTime * speed;
     }
 }
