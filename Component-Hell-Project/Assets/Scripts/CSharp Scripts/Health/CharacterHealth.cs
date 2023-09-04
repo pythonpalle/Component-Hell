@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class CharacterHealth : MonoBehaviour
 {
     public UnityEvent<float> OnHealthEnable;
-    public UnityEvent<float> OnDamage;
+    public UnityEvent<float> OnHealthChange;
     public UnityEvent OnDeath;
     
     [SerializeField] private float maxHealth;
@@ -23,7 +23,7 @@ public class CharacterHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         CurrentHealth -= damage;
-        OnDamage?.Invoke(damage);
+        OnHealthChange?.Invoke(-damage);
 
         if (CurrentHealth <= 0)
         {
