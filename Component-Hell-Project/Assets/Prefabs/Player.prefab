@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df475954f020130479e8784eb4dc575e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 2.48
 --- !u!114 &1150494220303879649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +137,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a01e3d779f24a4cbd0d696f433278d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  OnHealthEnable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: HealthBarGUI, Assembly-CSharp
+        m_MethodName: SetMaxHealth
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: HealthBarGUI, Assembly-CSharp
+        m_MethodName: OnHealthChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  maxHealth: 100
 --- !u!1 &7076045010693209488
 GameObject:
   m_ObjectHideFlags: 0
