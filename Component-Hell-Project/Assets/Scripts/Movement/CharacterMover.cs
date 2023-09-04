@@ -8,7 +8,7 @@ public class CharacterMover : MonoBehaviour
     private Transform rootTransform;
     
     [SerializeField]
-    private float speed = 0f;
+    private float speed = 1f;
 
     private void Awake()
     {
