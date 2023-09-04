@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa210e43115c30645860000edad10ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0.70706195, y: 0.7071516}
+  direction: {x: 0.9199867, y: 0.39194942}
 --- !u!1001 &7825429799708889835
 PrefabInstance:
   m_ObjectHideFlags: 0
