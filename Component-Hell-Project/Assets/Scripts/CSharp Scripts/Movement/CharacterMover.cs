@@ -17,6 +17,6 @@ public class CharacterMover : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
-        rootTransform.position += direction * Time.deltaTime * speed;
+        rootTransform.position += direction * (Time.deltaTime * speed);
     }
 }

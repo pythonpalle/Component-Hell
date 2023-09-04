@@ -5,15 +5,17 @@ using UnityEngine;
 public class CharacterHealth : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
+    public float MaxHealth => maxHealth;
+    
 
-    private float currentHealth;
+    public float CurrentHealth { get; private set; }
     private bool isAlive = true;
 
     public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
+        CurrentHealth -= damage;
 
-        if (currentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             HandleDeath();
         }
