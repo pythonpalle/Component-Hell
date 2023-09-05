@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WeaponController : MonoBehaviour
 {
-    [SerializeField] private ProjectileController projectileController;
+    public UnityEvent<ProjectileController> OnProjectileFired;
+    public UnityEvent<ProjectileController> OnProjectileSpawned;
+    
+    public ProjectileController projectileController;
     [SerializeField] private float cooldown = 5f;
-    [SerializeField] private int damage = 1;
-    [SerializeField] private Vector2 direction;
+    // [SerializeField] private int damage = 1;
+    // [SerializeField] private Vector2 direction;
 
     
-    private float timeSinceLastFire;
+    private float timeSinceLastFire = int.MinValue;
     
     
     // Start is called before the first frame update
@@ -29,7 +33,8 @@ public class WeaponController : MonoBehaviour
     {
         if (Time.time > timeSinceLastFire + cooldown)
         {
-            var projectileInstance = Instantiate(projectileController, transform.position, Quaternion.identity);
+            OnProjectileFired?.Invoke(projectileController);
+            //var projectileInstance = Instantiate(projectileController, transform.position, Quaternion.identity);
             timeSinceLastFire = Time.time;
         }
     }

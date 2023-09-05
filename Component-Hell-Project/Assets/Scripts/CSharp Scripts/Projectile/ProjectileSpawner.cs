@@ -3,18 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(ProjectileDefinition))]
+[RequireComponent(typeof(WeaponController))]
 public class ProjectileSpawner : MonoBehaviour
 {
-    private ProjectileDefinition _projectileDefinition;
+    private WeaponController weaponController;
+    private ProjectileController projectileControllerInstance;
 
     private void OnEnable()
     {
-        _projectileDefinition = GetComponent<ProjectileDefinition>();
+        weaponController = GetComponent<WeaponController>();
+        
+        
+        weaponController.OnProjectileFired.AddListener(SpawnProjectile);
+        
     }
 
-    public void SpawnProjectile()
+    private void OnDisable()
     {
-        Instantiate(_projectileDefinition);
+        weaponController.OnProjectileFired.RemoveListener(SpawnProjectile);
+    }
+
+    public void SpawnProjectile(ProjectileController controller)
+    {
+        projectileControllerInstance = Instantiate(projectileControllerInstance, transform.position, Quaternion.identity);
+        weaponController.OnProjectileFired?.Invoke(projectileControllerInstance);
     }
 }
