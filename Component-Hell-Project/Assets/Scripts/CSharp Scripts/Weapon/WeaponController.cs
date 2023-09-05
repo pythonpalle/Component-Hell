@@ -29,7 +29,7 @@ public class WeaponController : MonoBehaviour
     {
         if (Time.time > timeSinceLastFire + cooldown)
         {
-            var projectileInstance = Instantiate(projectileController);
+            var projectileInstance = Instantiate(projectileController, transform.position, Quaternion.identity);
             timeSinceLastFire = Time.time;
         }
     }

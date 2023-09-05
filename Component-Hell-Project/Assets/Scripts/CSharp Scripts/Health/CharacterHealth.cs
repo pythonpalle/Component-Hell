@@ -12,7 +12,7 @@ public class CharacterHealth : MonoBehaviour
 
     [SerializeField] private int maxHealth = 10;
     public int MaxHealth => maxHealth;
-    
+
     public int CurrentHealth { get; private set; }
 
     private void OnEnable()

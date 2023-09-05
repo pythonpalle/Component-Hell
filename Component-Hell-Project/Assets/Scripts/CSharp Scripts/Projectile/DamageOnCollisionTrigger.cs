@@ -17,8 +17,18 @@ public class DamageOnCollisionTrigger : MonoBehaviour
     
         if (other.TryGetComponent(out CharacterHealth health))
         {
-            health.TakeDamage(damageAmount);
-            Debug.Log("Take damage!");
+            if (health.gameObject.CompareTag("Player") && damagePlayer)
+            {
+                health.TakeDamage(damageAmount);
+                Debug.Log("Player Take damage!");
+            }
+            
+            if (health.gameObject.CompareTag("Enemy") && damageEnemy)
+            {
+                health.TakeDamage(damageAmount);
+                Debug.Log("Enemy Take damage!");
+            }
+            
         }
         else
         {
