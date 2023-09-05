@@ -13,8 +13,8 @@ public class HealthBarGUI : MonoBehaviour
 
     [SerializeField] private bool connectToCharacterHealthComponent = true;
 
-    [SerializeField] private float maxHealth;
-    [SerializeField] private float currentHealth;
+    [SerializeField] private int maxHealth;
+    [SerializeField] private int currentHealth;
     private float ratio => currentHealth / maxHealth;
 
     private void OnEnable()
@@ -36,9 +36,14 @@ public class HealthBarGUI : MonoBehaviour
         health.OnHealthChange.AddListener(OnHealthChange);
     }
 
+    /*
+     * Looks for a component T on the existing gameobject by searching upwards to the parent node
+     */
     private bool TryFindCharacterHealthComponent(Transform transformToCheck, out CharacterHealth characterHealth)
     {
-        if (transformToCheck.TryGetComponent(out characterHealth))
+
+        characterHealth = transformToCheck.GetComponentInChildren<CharacterHealth>();
+        if (characterHealth)
         {
             return true;
         }
@@ -53,13 +58,13 @@ public class HealthBarGUI : MonoBehaviour
         return TryFindCharacterHealthComponent(parentTransform, out characterHealth);
     }
 
-    public void SetMaxHealth(float maxHealth)
+    public void SetMaxHealth(int maxHealth)
     {
         this.maxHealth = maxHealth;
         currentHealth = maxHealth;
     }
 
-    public void OnHealthChange(float deltaHealth)
+    public void OnHealthChange(int deltaHealth)
     {
         currentHealth += deltaHealth;
         slider.value = ratio;
