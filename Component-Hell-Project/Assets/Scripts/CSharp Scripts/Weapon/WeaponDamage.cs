@@ -7,7 +7,7 @@ using UnityEngine;
 public class WeaponDamage : MonoBehaviour, IHasDamage
 {
     private WeaponController weapon;
-    [SerializeField] private float damage = 1;
+    [SerializeField] private float damageValue = 1;
     
     private void OnEnable()
     {
@@ -25,7 +25,7 @@ public class WeaponDamage : MonoBehaviour, IHasDamage
     {
         if (projectile.TryGetComponent(out IHasDamage damage))
         {
-            //damage.Damage = damage;
+            damage.Damage = damageValue;
         }
     }
 
@@ -36,9 +36,15 @@ public class WeaponDamage : MonoBehaviour, IHasDamage
     }
 
     public float Damage { get; set; }
+    public void SetDamage(float value)
+    {
+        Damage = value;
+    }
 }
 
 public interface IHasDamage
 {
     public float Damage { get; set; }
+
+    public void SetDamage(float value);
 }
