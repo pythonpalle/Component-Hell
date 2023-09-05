@@ -9,13 +9,13 @@ public class DamageOnCollisionTrigger : MonoBehaviour
     [SerializeField] private bool damageEnemy;
 
     [SerializeField] private int damageAmount;
-    
 
-    private void OnCollisionEnter2D(Collision2D other)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"Collision detected with {other.gameObject.name}!");
-        
-        if (other.collider.TryGetComponent(out CharacterHealth health))
+      Debug.Log($"Collision detected with {other.gameObject.name}!");
+    
+        if (other.TryGetComponent(out CharacterHealth health))
         {
             health.TakeDamage(damageAmount);
             Debug.Log("Take damage!");
@@ -24,5 +24,6 @@ public class DamageOnCollisionTrigger : MonoBehaviour
         {
             Debug.Log("No health component found");
         }
+        
     }
 }

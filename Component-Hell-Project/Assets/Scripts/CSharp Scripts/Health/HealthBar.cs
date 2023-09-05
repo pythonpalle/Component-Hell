@@ -5,17 +5,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
-public class HealthBarGUI : MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
-    // [SerializeField] private FloatVariable playerCurrentHealth;
-    // [SerializeField] private FloatVariable playerMaxHealth;
     private Slider slider;
 
     [SerializeField] private bool connectToCharacterHealthComponent = true;
 
     [SerializeField] private int maxHealth;
     [SerializeField] private int currentHealth;
-    private float ratio => currentHealth / maxHealth;
+    private float ratio => (float)currentHealth / maxHealth;
 
     private void OnEnable()
     {
