@@ -14,7 +14,6 @@ public class ReflectOnBoundries : MonoBehaviour
         _controller = GetComponent<DirectionalMovementController>();
         screenBounds = Camera.main.ScreenToWorldPoint
             (new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        Debug.Log(screenBounds);
     }
 
     // Update is called once per frame
