@@ -19,6 +19,6 @@ public class TowardTransformMovementController : MovementControllerBase
             return;
         
         var directionTowardPlayer = (targetTransform.position - transform.position).normalized;
-        characterMover.Move(directionTowardPlayer);
+        ObjectMover.Move(directionTowardPlayer);
     }
 }

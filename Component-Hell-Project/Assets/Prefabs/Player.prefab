@@ -181,8 +181,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5382931750072223441}
+  - component: {fileID: 5995087742809291638}
+  - component: {fileID: 6315340429627584516}
+  - component: {fileID: 1030865263271845889}
+  - component: {fileID: 7498946015344794202}
+  - component: {fileID: 8587736269999584395}
   m_Layer: 0
-  m_Name: Simple Gun
+  m_Name: DVD Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,6 +208,71 @@ Transform:
   m_Father: {fileID: 5833751149130548666}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5995087742809291638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5592527423721864045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2681688216da4488989ccb1c32dd01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileController: {fileID: 989252837391974315, guid: 9757bf578516de843bf860a3f6e63d74, type: 3}
+  cooldown: 5
+  damage: 1
+  direction: {x: 0, y: 0}
+--- !u!114 &6315340429627584516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5592527423721864045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb42effbe04e2964badf7921f39a04eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownTime: 5
+--- !u!114 &1030865263271845889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5592527423721864045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26c187a4a275b7b428b49f61688e377d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7498946015344794202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5592527423721864045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13ed22880124264d88d29bafadb03da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8587736269999584395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5592527423721864045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4160bcc484e4a9640b64ba0bb662ff55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6965748266435848433
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +284,7 @@ GameObject:
   - component: {fileID: 5833751149130548666}
   m_Layer: 0
   m_Name: Player Weapons
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

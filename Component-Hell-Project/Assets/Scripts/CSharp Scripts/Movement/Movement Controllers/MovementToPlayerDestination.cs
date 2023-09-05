@@ -22,7 +22,7 @@ public class MovementToPlayerDestination : MovementControllerBase
         var playerTargetPos = player.transform.position + (Vector3)playerDir * unitsAheadOfPlayer;
          var moveDir = (playerTargetPos - transform.position).normalized;
         
-         characterMover.Move(moveDir);
+         ObjectMover.Move(moveDir);
     }
 
 }

@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class DirectionalMovementController : MovementControllerBase
 {
-    [SerializeField] private Vector2 direction;
+    public Vector2 direction;
 
     protected override void HandleMovement()
     {
-        characterMover.Move(direction);
+        ObjectMover.Move(direction);
     }
 
     private void OnValidate()

@@ -9,7 +9,7 @@ public class PlayerInputMovementController : MovementControllerBase
     protected override void HandleMovement()
     {
         Vector2 direction = new Vector3(Input.GetAxis("Horizontal"),  Input.GetAxis("Vertical"));
-        characterMover.Move(direction);
+        ObjectMover.Move(direction);
 
         playerDirection.value = direction;
     }
