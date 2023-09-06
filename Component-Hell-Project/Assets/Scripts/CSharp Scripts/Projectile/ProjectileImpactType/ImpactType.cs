@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileDefinition : MonoBehaviour
+public abstract class ImpactType : MonoBehaviour
 {
-    public Projectile Prefab;
 }
