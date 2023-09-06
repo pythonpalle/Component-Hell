@@ -20,11 +20,12 @@ public class BurstWeaponFire : WeaponFireType
     IEnumerator Burst(Projectile projectile,  Weapon weapon)
     {
         routineIsRunning = true;
-
+        
         for (int i = 0; i < burstCount; i++)
         {
             SpawnProjectile(projectile);
             SetupProjectile(projectile, weapon);
+            Debug.Log("Phew!");
 
             yield return new WaitForSeconds(timeBetweenBursts);
         }

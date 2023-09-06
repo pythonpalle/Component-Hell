@@ -3,15 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(DirectionalMovementController))]
+[RequireComponent(typeof(DirectionComponent))]
 public class ReflectOnBoundries : MonoBehaviour
 {
-    private DirectionalMovementController _controller;
+    private DirectionComponent direction;
     private Vector2 screenBounds;
 
     private void OnEnable()
     {
-        _controller = GetComponent<DirectionalMovementController>();
+        direction = GetComponent<DirectionComponent>();
         screenBounds = Camera.main.ScreenToWorldPoint
             (new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
@@ -19,7 +19,7 @@ public class ReflectOnBoundries : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var currentDirection = _controller.direction;
+        var currentDirection = direction.Value;
         if (transform.position.x > screenBounds.x || transform.position.x < -screenBounds.x)
         {
             FlipX(currentDirection);
@@ -31,11 +31,11 @@ public class ReflectOnBoundries : MonoBehaviour
 
     private void FlipX(Vector2 currentDirection)
     {
-        _controller.direction = new Vector2(-currentDirection.x, currentDirection.y);
+        direction.Value = new Vector2(-currentDirection.x, currentDirection.y);
     }
     
     private void FlipY(Vector2 currentDirection)
     {
-        _controller.direction = new Vector2(currentDirection.x, -currentDirection.y);
+        direction.Value = new Vector2(currentDirection.x, -currentDirection.y);
     }
 }

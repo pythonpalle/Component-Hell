@@ -3,23 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(DirectionComponent))]
 public class DirectionalMovementController : MovementControllerBase
 {
-    public Vector2 direction;
+    private DirectionComponent _directionComponent;
+
+    private void Awake()
+    {
+        _directionComponent = GetComponent<DirectionComponent>();
+    }
 
     protected override void HandleMovement()
     {
-        ObjectMover.Move(direction);
-    }
-
-    private void OnValidate()
-    {
-        direction.Normalize();
+        ObjectMover.Move(_directionComponent.Value);
     }
 
     private void OnDrawGizmos()
     {
         var pos = transform.position;
-        Gizmos.DrawLine(pos, pos + (Vector3)direction);
+        Gizmos.DrawLine(pos, pos + (Vector3)_directionComponent.Value);
     }
 }

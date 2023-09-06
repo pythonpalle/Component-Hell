@@ -24,18 +24,6 @@ public class MovementToPlayerDestination : MovementControllerBase
     {
         Vector2 playerDir = playerDirection.value;
 
-        if (!playerTransform && playerExists)
-        {
-            var playerObject = GameObject.FindWithTag("Player");
-            if (playerObject)
-                playerTransform = playerObject.transform;
-            else
-            {
-                playerExists = false;
-                return; 
-            }
-        }
-        
         var playerTargetPos = playerTransform.transform.position + (Vector3)playerDir * unitsAheadOfPlayer;
          var moveDir = (playerTargetPos - transform.position).normalized;
         

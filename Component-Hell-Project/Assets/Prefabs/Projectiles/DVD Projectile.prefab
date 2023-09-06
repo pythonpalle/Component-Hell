@@ -19,6 +19,8 @@ GameObject:
   - component: {fileID: 7665563248875578862}
   - component: {fileID: 1644296405636890762}
   - component: {fileID: 927896528195163069}
+  - component: {fileID: 2022285456936976935}
+  - component: {fileID: 6293088671556834460}
   m_Layer: 0
   m_Name: DVD Projectile
   m_TagString: Untagged
@@ -53,6 +55,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc34e933767e5647a5cb4a600bfacd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: {fileID: 927896528195163069}
+  damage: {fileID: 2022285456936976935}
+  direction: {fileID: 6293088671556834460}
 --- !u!114 &1743521144449689365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,7 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa210e43115c30645860000edad10ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0.9448892, y: 0.32739043}
 --- !u!212 &8964118390119370075
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -154,7 +158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34134ae03ca7271428cff6d2a7b1799f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
   damagePlayer: 0
   damageEnemy: 1
 --- !u!114 &221285344493522062
@@ -220,4 +223,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc12feeade36e244b524297228ac806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Value: 2
+  baseValue: 1
+  currentValue: 1
+--- !u!114 &2022285456936976935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3410898942414323645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1a24b87b659ea4cbf3e60e4c36ea04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseValue: 1
+  currentValue: 1
+--- !u!114 &6293088671556834460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3410898942414323645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff330ce2c1b0bd74fadde10ce297e786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Value: {x: 0.78205955, y: 0.6232037}

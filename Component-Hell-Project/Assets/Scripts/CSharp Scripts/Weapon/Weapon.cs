@@ -12,7 +12,6 @@ public class Weapon : MonoBehaviour
     
     [Header("Weapon Components")]
     [SerializeField] private WeaponFireType fireType;
-    [SerializeField] private WeaponController controller;
     [SerializeField] private DirectionComponent direction;
     [SerializeField] private Cooldown cooldown;
     
@@ -22,16 +21,16 @@ public class Weapon : MonoBehaviour
 
     public SpeedComponent SpeedComponent => speed;
     public DamageComponent DamageComponent => damage;
+    public DirectionComponent DirectionComponent => direction;
 
+    [Header("Events")] 
+    public UnityEvent OnProjectileFired;
 
     private void Awake()
     {
         if (!fireType) 
             fireType = GetComponent<WeaponFireType>();
-        
-        if (!controller) 
-            controller = GetComponent<WeaponController>();
-        
+
         if (!speed) 
             speed = GetComponent<SpeedComponent>();
         
@@ -41,16 +40,12 @@ public class Weapon : MonoBehaviour
         if (!cooldown) 
             cooldown = GetComponent<Cooldown>();
     }
-
-    // private void Update()
-    // {
-    //     HandleShooting();
-    // }
+    
 
     public void Setup(SpeedComponent speedComponent, DamageComponent damageComponent)
     {
         speed.currentValue = speed.baseValue * speedComponent.currentValue;
-        damage.currentValue = damage.baseValue * damageComponent.currentValue;
+        damage.currentValue = damage.baseValue * damageComponent.currentValue; 
     }
 
     public void TryAttack()
@@ -59,28 +54,10 @@ public class Weapon : MonoBehaviour
         
         if (hasCooledDown)
         {
+            OnProjectileFired?.Invoke(); 
+
             fireType.Fire(projectilePrefab, this);
             cooldown.Reset();
-        }
-    }
-
-    // private void HandleShooting()
-    // {
-    //     bool wantsToShoot = !controller || controller.WantsToShoot();
-    //     bool hasCooledDown = !cooldown || cooldown.hasCooledDown;
-    //     
-    //     if (wantsToShoot && hasCooledDown)
-    //     {
-    //         fireType.Fire(projectilePrefab);
-    //         cooldown.Reset();
-    //     }
-    // }
-
-    void SetupProjectiles(List<Projectile> projectiles)
-    {
-        foreach (var projectile in projectiles)
-        {
-            
         }
     }
 }

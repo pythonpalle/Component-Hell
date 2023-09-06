@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 5404104272743974705}
   - component: {fileID: 6015097530929085078}
   - component: {fileID: 6336467322503705060}
-  - component: {fileID: 7519503360288644026}
-  - component: {fileID: 3217933998411765250}
+  - component: {fileID: 892037710}
+  - component: {fileID: 7825429799708889837}
+  - component: {fileID: 7825429799708889838}
   m_Layer: 0
   m_Name: DVD Gun
   m_TagString: Untagged
@@ -47,12 +48,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2681688216da4488989ccb1c32dd01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 989252837391974315, guid: 9757bf578516de843bf860a3f6e63d74, type: 3}
-  fireType: {fileID: 7519503360288644026}
-  controller: {fileID: 3217933998411765250}
-  speed: {fileID: 0}
+  projectilePrefab: {fileID: 989252837391974315, guid: 9757bf578516de843bf860a3f6e63d74, type: 3}
+  fireType: {fileID: 892037710}
+  controller: {fileID: 0}
   direction: {fileID: 0}
   cooldown: {fileID: 6336467322503705060}
+  speed: {fileID: 7825429799708889838}
+  damage: {fileID: 7825429799708889837}
 --- !u!114 &6336467322503705060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 5
---- !u!114 &7519503360288644026
+--- !u!114 &892037710
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,10 +77,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5609120994992798349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b13ed22880124264d88d29bafadb03da, type: 3}
+  m_Script: {fileID: 11500000, guid: 03eb2e8d2be4f1242a407cc8a7ddace5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3217933998411765250
+  burstCount: 3
+  timeBetweenBursts: 0.3
+--- !u!114 &7825429799708889837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,6 +91,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 5609120994992798349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7504f7d0abc26484b8e41b79d5471f8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f1a24b87b659ea4cbf3e60e4c36ea04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseValue: 1.01
+  currentValue: 1.01
+--- !u!114 &7825429799708889838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5609120994992798349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc12feeade36e244b524297228ac806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseValue: 1.07
+  currentValue: 1.07

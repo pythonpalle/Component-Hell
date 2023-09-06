@@ -253,7 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc12feeade36e244b524297228ac806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 1
+  baseValue: 3.97
+  currentValue: 3.97
 --- !u!1 &6965748266435848433
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +267,7 @@ GameObject:
   - component: {fileID: 1595814872}
   - component: {fileID: 1595814871}
   - component: {fileID: 6505411103310883527}
+  - component: {fileID: 1595814873}
   m_Layer: 0
   m_Name: Player Attack
   m_TagString: Player
@@ -302,6 +304,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons: []
+  controller: {fileID: 1595814873}
+  speedComponent: {fileID: 1595814871}
+  damageComponent: {fileID: 6505411103310883527}
 --- !u!114 &1595814871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,7 +319,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc12feeade36e244b524297228ac806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 1
+  baseValue: 1.27
+  currentValue: 1.27
 --- !u!114 &6505411103310883527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,7 +333,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1a24b87b659ea4cbf3e60e4c36ea04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 1
+  baseValue: 1.12
+  currentValue: 1.12
+--- !u!114 &1595814873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6965748266435848433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7504f7d0abc26484b8e41b79d5471f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &21180838169887200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -384,13 +403,9 @@ PrefabInstance:
       value: DVD Gun
       objectReference: {fileID: 0}
     - target: {fileID: 6015097530929085078, guid: 444be529d94c574479f58f5dfa297ec4, type: 3}
-      propertyPath: fireType
+      propertyPath: controller
       value: 
-      objectReference: {fileID: 892037710}
-    - target: {fileID: 6015097530929085078, guid: 444be529d94c574479f58f5dfa297ec4, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 989252837391974315, guid: 9757bf578516de843bf860a3f6e63d74, type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 444be529d94c574479f58f5dfa297ec4, type: 3}
 --- !u!4 &5382931750072223441 stripped
@@ -398,34 +413,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5404104272743974705, guid: 444be529d94c574479f58f5dfa297ec4, type: 3}
   m_PrefabInstance: {fileID: 21180838169887200}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5592527423721864045 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5609120994992798349, guid: 444be529d94c574479f58f5dfa297ec4, type: 3}
-  m_PrefabInstance: {fileID: 21180838169887200}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &892037705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5592527423721864045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20e5ecd9812d2164ca4b7e3e164eece2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &892037710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5592527423721864045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03eb2e8d2be4f1242a407cc8a7ddace5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  burstCount: 3
-  timeBetweenBursts: 0.3
