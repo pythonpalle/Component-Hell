@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(ColliderDamageHandler))]
-public class DamageOnCollisionTrigger : MonoBehaviour
+public class DamageOnCollisionEnter : MonoBehaviour
 {
     private ColliderDamageHandler colliderDamageHandler;
 
@@ -13,9 +13,8 @@ public class DamageOnCollisionTrigger : MonoBehaviour
         colliderDamageHandler = GetComponent<ColliderDamageHandler>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        colliderDamageHandler.HandleDamage(other);
+        colliderDamageHandler.HandleDamage(other.collider);
     }
-
 }
