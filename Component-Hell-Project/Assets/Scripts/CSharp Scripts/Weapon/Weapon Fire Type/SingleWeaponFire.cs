@@ -9,4 +9,4 @@ public class SingleWeaponFire : WeaponFireType
     {
         Instantiate(projectile, transform.position, quaternion.identity);
     }
-}
+} 
