@@ -7,6 +7,6 @@ public class SingleWeaponFire : WeaponFireType
 {
     public override void Fire(Projectile projectile)
     {
-        Instantiate(projectile, transform.position, quaternion.identity);
+        SpawnProjectile(projectile);
     }
 } 

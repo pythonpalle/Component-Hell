@@ -11,8 +11,8 @@ public class HealthBar : MonoBehaviour
 
     [SerializeField] private bool connectToCharacterHealthComponent = true;
 
-    [SerializeField] private int maxHealth;
-    [SerializeField] private int currentHealth;
+    [SerializeField] private float maxHealth;
+    [SerializeField] private float currentHealth;
     private float ratio => (float)currentHealth / maxHealth;
 
     private void OnEnable()
@@ -56,13 +56,13 @@ public class HealthBar : MonoBehaviour
         return TryFindCharacterHealthComponent(parentTransform, out characterHealth);
     }
 
-    public void SetMaxHealth(int maxHealth)
+    public void SetMaxHealth(float maxHealth)
     {
         this.maxHealth = maxHealth;
         currentHealth = maxHealth;
     }
 
-    public void OnHealthChange(int deltaHealth)
+    public void OnHealthChange(float deltaHealth)
     {
         currentHealth += deltaHealth;
         slider.value = ratio;

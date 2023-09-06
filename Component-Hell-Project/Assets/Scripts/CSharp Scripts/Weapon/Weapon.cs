@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class Weapon : MonoBehaviour
 {
@@ -14,9 +15,10 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Projectile projectile;
     [SerializeField] private WeaponFireType fireType;
     [SerializeField] private WeaponController controller;
-    [SerializeField] private WeaponSpeed speed;
-    [SerializeField] private WeaponDirection direction;
+    [SerializeField] private SpeedComponent speed;
+    [SerializeField] private DirectionComponent direction;
     [SerializeField] private Cooldown cooldown;
+    
 
     private void Update()
     {
@@ -30,10 +32,17 @@ public class Weapon : MonoBehaviour
         
         if (wantsToShoot && hasCooledDown)
         {
+            SetupProjectile();
+            
             fireType.Fire(projectile);
             cooldown.Reset();
             
         }
+    }
+
+    void SetupProjectile()
+    {
+        
     }
 
     //public ProjectileController projectileController;

@@ -6,6 +6,6 @@ public class PlayerInputWeaponController : WeaponController
 {
     public override bool WantsToShoot()
     {
-        return Input.GetButton("Fire1");
+        return Input.GetButtonDown("Fire1");
     }
 }
