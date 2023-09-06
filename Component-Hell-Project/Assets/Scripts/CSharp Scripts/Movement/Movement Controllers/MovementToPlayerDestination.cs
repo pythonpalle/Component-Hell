@@ -10,7 +10,7 @@ public class MovementToPlayerDestination : MovementControllerBase
     private Transform playerTransform;
 
     private bool playerExists = true;
-
+    
     protected override void OnEnable()
     {
         base.OnEnable();

@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class SingleWeaponFire : WeaponFireType
 {
-    public override void Fire(Projectile projectile)
+    public override void Fire(Projectile projectile, Weapon weapon)
     {
         SpawnProjectile(projectile);
+        SetupProjectile(projectile, weapon);
     }
 } 

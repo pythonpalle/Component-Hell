@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DirectionComponent : MonoBehaviour
+public abstract class DirectionComponent : MonoBehaviour
 {
-    public Vector3 Value;
+    public abstract Vector3 GetDirection();
 }

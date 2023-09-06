@@ -7,67 +7,80 @@ using UnityEngine.Serialization;
 
 public class Weapon : MonoBehaviour
 {
-    // public UnityEvent OnCooldownComplete;
-    //
-    // public UnityEvent<ProjectileController> OnProjectileFired;
-    // //public UnityEvent<ProjectileController> OnProjectileSpawned;
-
-    [SerializeField] private Projectile projectile;
+    [Header("Prefabs")]
+    [SerializeField] private Projectile projectilePrefab;
+    
+    [Header("Weapon Components")]
     [SerializeField] private WeaponFireType fireType;
     [SerializeField] private WeaponController controller;
-    [SerializeField] private SpeedComponent speed;
     [SerializeField] private DirectionComponent direction;
     [SerializeField] private Cooldown cooldown;
     
+    [Space]    
+    [SerializeField] private SpeedComponent speed;
+    [SerializeField] private DamageComponent damage;
 
-    private void Update()
+    public SpeedComponent SpeedComponent => speed;
+    public DamageComponent DamageComponent => damage;
+
+
+    private void Awake()
     {
-        HandleShooting();
+        if (!fireType) 
+            fireType = GetComponent<WeaponFireType>();
+        
+        if (!controller) 
+            controller = GetComponent<WeaponController>();
+        
+        if (!speed) 
+            speed = GetComponent<SpeedComponent>();
+        
+        if (!direction) 
+            direction = GetComponent<DirectionComponent>();
+        
+        if (!cooldown) 
+            cooldown = GetComponent<Cooldown>();
     }
 
-    private void HandleShooting()
+    // private void Update()
+    // {
+    //     HandleShooting();
+    // }
+
+    public void Setup(SpeedComponent speedComponent, DamageComponent damageComponent)
     {
-        bool wantsToShoot = !controller || controller.WantsToShoot();
+        speed.currentValue = speed.baseValue * speedComponent.currentValue;
+        damage.currentValue = damage.baseValue * damageComponent.currentValue;
+    }
+
+    public void TryAttack()
+    {
         bool hasCooledDown = !cooldown || cooldown.hasCooledDown;
         
-        if (wantsToShoot && hasCooledDown)
+        if (hasCooledDown)
         {
-            SetupProjectile();
-            
-            fireType.Fire(projectile);
+            fireType.Fire(projectilePrefab, this);
             cooldown.Reset();
-            
         }
     }
 
-    void SetupProjectile()
-    {
-        
-    }
-
-    //public ProjectileController projectileController;
-   
-    // [SerializeField] private float cooldown = 5f;
-    // // [SerializeField] private int damage = 1;
-    // // [SerializeField] private Vector2 direction;
-    //
-    //
-    // private float timeSinceLastFire = int.MinValue;
-    //
-
-    // // Update is called once per frame
-    // void Update()
+    // private void HandleShooting()
     // {
-    //     HandleProjectileFire();
-    // }
-    //
-    // private void HandleProjectileFire()
-    // {
-    //     if (Time.time > timeSinceLastFire + cooldown)
+    //     bool wantsToShoot = !controller || controller.WantsToShoot();
+    //     bool hasCooledDown = !cooldown || cooldown.hasCooledDown;
+    //     
+    //     if (wantsToShoot && hasCooledDown)
     //     {
-    //         OnProjectileFired?.Invoke(projectileController);
-    //         //var projectileInstance = Instantiate(projectileController, transform.position, Quaternion.identity);
-    //         timeSinceLastFire = Time.time;
+    //         fireType.Fire(projectilePrefab);
+    //         cooldown.Reset();
     //     }
     // }
+
+    void SetupProjectiles(List<Projectile> projectiles)
+    {
+        foreach (var projectile in projectiles)
+        {
+            
+        }
+    }
 }

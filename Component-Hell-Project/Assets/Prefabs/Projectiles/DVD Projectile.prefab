@@ -14,10 +14,11 @@ GameObject:
   - component: {fileID: 1183511232634318451}
   - component: {fileID: 450622542867166286}
   - component: {fileID: 8964118390119370075}
+  - component: {fileID: 1866823476064067522}
   - component: {fileID: 221285344493522062}
   - component: {fileID: 7665563248875578862}
   - component: {fileID: 1644296405636890762}
-  - component: {fileID: 1866823476064067522}
+  - component: {fileID: 927896528195163069}
   m_Layer: 0
   m_Name: DVD Projectile
   m_TagString: Untagged
@@ -64,7 +65,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df475954f020130479e8784eb4dc575e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
 --- !u!114 &1183511232634318451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +142,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1866823476064067522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3410898942414323645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34134ae03ca7271428cff6d2a7b1799f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  damagePlayer: 0
+  damageEnemy: 1
 --- !u!114 &221285344493522062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +208,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12}
   m_EdgeRadius: 0
---- !u!114 &1866823476064067522
+--- !u!114 &927896528195163069
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,9 +217,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3410898942414323645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34134ae03ca7271428cff6d2a7b1799f, type: 3}
+  m_Script: {fileID: 11500000, guid: bdc12feeade36e244b524297228ac806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
-  damagePlayer: 0
-  damageEnemy: 1
+  Value: 2

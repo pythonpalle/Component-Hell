@@ -9,21 +9,23 @@ public class BurstWeaponFire : WeaponFireType
 
     private bool routineIsRunning = false;
 
-    public override void Fire(Projectile projectile)
+    public override void Fire(Projectile projectile, Weapon weapon)
     {
         if (!routineIsRunning)
         {
-            StartCoroutine(Burst(projectile));
+            StartCoroutine(Burst( projectile, weapon));
         }
     }
 
-    IEnumerator Burst(Projectile projectile)
+    IEnumerator Burst(Projectile projectile,  Weapon weapon)
     {
         routineIsRunning = true;
 
         for (int i = 0; i < burstCount; i++)
         {
             SpawnProjectile(projectile);
+            SetupProjectile(projectile, weapon);
+
             yield return new WaitForSeconds(timeBetweenBursts);
         }
 

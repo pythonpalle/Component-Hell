@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private SpeedComponent speed;
+    [SerializeField] private DamageComponent damage;
+    
+    public void SetUp(Weapon weapon)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        speed.currentValue = speed.baseValue * weapon.SpeedComponent.currentValue;
+        damage.currentValue = damage.baseValue * weapon.DamageComponent.currentValue;
     }
 }

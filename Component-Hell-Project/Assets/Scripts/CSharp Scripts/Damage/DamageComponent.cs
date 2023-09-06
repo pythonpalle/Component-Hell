@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class SpeedComponent : MonoBehaviour
+public class DamageComponent : MonoBehaviour
 {
     public float baseValue = 1;
     public float currentValue = 1;
