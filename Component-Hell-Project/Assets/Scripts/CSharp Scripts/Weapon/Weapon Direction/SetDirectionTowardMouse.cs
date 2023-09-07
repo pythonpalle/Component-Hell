@@ -1,21 +1,22 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(DirectionComponent))]
-public class ProjectileDirectionTransfer : MonoBehaviour
+public class SetDirectionTowardMouse : MonoBehaviour
 {
-    //TODO: Gör mer generell genom att skapa direction interface?
     private DirectionComponent _directionComponent;
-    
+
     private void Awake()
     {
         _directionComponent = GetComponent<DirectionComponent>();
     }
 
-    public void TransferDirection(Projectile projectile)
+    public void SetDirection()
     {
-        projectile.DirectionComponent.Value = _directionComponent.Value;
-    } 
+        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        var direction = (mousePos - transform.position).normalized;
+      
+        _directionComponent.Value = direction;
+    }
 }

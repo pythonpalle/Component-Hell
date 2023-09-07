@@ -39,7 +39,7 @@ public class Weapon : MonoBehaviour
         bool wantsToShoot = !controller || controller.WantsToShoot();
         if (!wantsToShoot) return;
         
-        bool hasCooledDown = _stats.Cooldown.hasCooledDown;
+        bool hasCooledDown =!_stats || _stats.Cooldown.hasCooledDown;
         
         if (hasCooledDown)
         {
