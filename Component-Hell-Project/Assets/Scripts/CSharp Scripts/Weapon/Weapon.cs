@@ -13,26 +13,15 @@ public class Weapon : MonoBehaviour
     [Header("Weapon Components")]
     [SerializeField] private WeaponFireType fireType;
 
-    [SerializeField] private WeaponStats _stats;
-    public WeaponStats Stats => _stats;
+    [SerializeField] private BaseAttackStats _stats;
+    public BaseAttackStats Stats => _stats;
     
-    [SerializeField] private DirectionComponent direction;
-    // [SerializeField] private Cooldown cooldown;
-    //
-    // [Space]    
-    // [SerializeField] private SpeedComponent speed;
-    // [SerializeField] private DamageComponent damage;
-    // [SerializeField] private SizeComponent size;
-
-    // public SpeedComponent SpeedComponent => speed;
-    // public DamageComponent DamageComponent => damage;
-    // public DirectionComponent DirectionComponent => direction;
-    //
-    // public SizeComponent SizeComponent => size;
+    [SerializeField] private WeaponController controller;
 
 
     [Header("Events")] 
-    public UnityEvent OnProjectileFired;
+    public UnityEvent OnPrepareFire;
+    public UnityEvent<Projectile> OnProjectileSpawned;
 
     private void Awake()
     {
@@ -41,42 +30,30 @@ public class Weapon : MonoBehaviour
 
         if (!_stats)
         {
-            _stats = GetComponentInChildren<WeaponStats>();
+            _stats = GetComponentInChildren<BaseAttackStats>();
         }
-
-        // if (!speed) 
-        //     speed = GetComponent<SpeedComponent>();
-        //
-        // if (!direction) 
-        //     direction = GetComponent<DirectionComponent>();
-        //
-        // if (!size) 
-        //     size = GetComponent<SizeComponent>();
-        //
-        // if (!cooldown) 
-        //     cooldown = GetComponent<Cooldown>();
     }
-    
 
-    public void Setup(WeaponHandler handler)
+    public void TryAttack(WeaponHandler handler)
     {
-        _stats.OverrideStats(handler.Stats); 
+        bool wantsToShoot = !controller || controller.WantsToShoot();
+        if (!wantsToShoot) return;
         
-        // speed.currentValue = speed.baseValue * handler.Stats.SpeedComponent.currentValue;
-        // damage.currentValue = damage.baseValue * handler.Stats.DamageComponent.currentValue; 
-        // size.currentValue = size.baseValue * handler.Stats.SizeComponent.currentValue; 
-    }
-
-    public void TryAttack()
-    {
         bool hasCooledDown = _stats.Cooldown.hasCooledDown;
         
         if (hasCooledDown)
         {
-            OnProjectileFired?.Invoke(); 
-
+            Setup(handler);
+            
+            OnPrepareFire?.Invoke();
             fireType.Fire(projectilePrefab, this);
+            
             _stats.Cooldown.Reset();
         }
+    }
+    
+    private void Setup(WeaponHandler handler)
+    {
+        _stats.OverrideStats(handler.Stats);
     }
 }

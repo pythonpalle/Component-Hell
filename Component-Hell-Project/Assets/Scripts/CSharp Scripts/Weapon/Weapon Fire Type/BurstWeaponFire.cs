@@ -23,7 +23,7 @@ public class BurstWeaponFire : WeaponFireType
         
         for (int i = 0; i < burstCount; i++)
         {
-            SpawnProjectile(projectile);
+            SpawnProjectile(projectile, weapon);
             SetupProjectile(projectile, weapon);
             Debug.Log("Phew!");
 

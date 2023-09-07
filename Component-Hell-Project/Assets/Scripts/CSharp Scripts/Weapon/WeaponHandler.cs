@@ -10,33 +10,26 @@ public class WeaponHandler : MonoBehaviour
     [Header("Weapons Owned")]
     [SerializeField] private List<Weapon> weapons;
     
-    [Header("Controller")]
-    [SerializeField] private WeaponController controller;
-
-    [SerializeField] private WeaponStats _stats;
-    public WeaponStats Stats => _stats;
+    [Header("Stats")]
+    [SerializeField] private BaseAttackStats _stats;
+    public BaseAttackStats Stats => _stats;
 
     private void Awake()
     {
-        _stats = GetComponentInChildren<WeaponStats>();
+        _stats = GetComponentInChildren<BaseAttackStats>();
         weapons = GetComponentsInChildren<Weapon>().ToList();
     }
 
     private void Update()
     {
-        bool wantsToShoot = !controller || controller.WantsToShoot();
-        if (wantsToShoot)
-        {
-            TryAttackWithWeapons();
-        }
+        TryAttackWithWeapons();
     }
 
     void TryAttackWithWeapons()
     {
         foreach (var weapon in weapons)
         {
-            weapon.Setup(this);
-            weapon.TryAttack();
+            weapon.TryAttack(this);
         }
     }
 }
