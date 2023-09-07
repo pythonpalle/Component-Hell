@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(DirectionComponent))]
-public class ProjectileBehaviours : MonoBehaviour
+public class ProjectileDirectionTransfer : MonoBehaviour
 {
+    //TODO: Gör mer generell genom att skapa direction interface
     private DirectionComponent _directionComponent;
     
     private void Awake()
@@ -16,5 +17,5 @@ public class ProjectileBehaviours : MonoBehaviour
     public void OnProjectileSpawned(Projectile projectile)
     {
         projectile.DirectionComponent.Value = _directionComponent.Value;
-    }
+    } 
 }
