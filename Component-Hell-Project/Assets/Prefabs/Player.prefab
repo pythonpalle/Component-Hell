@@ -340,11 +340,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1132969694198765283}
+  - component: {fileID: 1717950439066344385}
   - component: {fileID: 3946666889129899504}
   - component: {fileID: 99836082798430292}
   - component: {fileID: 8622745990151226234}
   - component: {fileID: 7464176372671681875}
-  - component: {fileID: 1717950439066344385}
   m_Layer: 0
   m_Name: Player Weapon Stats
   m_TagString: Untagged
@@ -367,6 +367,22 @@ Transform:
   m_Father: {fileID: 5833751149130548666}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1717950439066344385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8362736275411649479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1e628164c62ac45833932a0cf6925c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedComponent: {fileID: 3946666889129899504}
+  damageComponent: {fileID: 99836082798430292}
+  sizeComponent: {fileID: 8622745990151226234}
+  cooldown: {fileID: 7464176372671681875}
 --- !u!114 &3946666889129899504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,24 +437,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb42effbe04e2964badf7921f39a04eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseValue: 5
-  currentValue: 5
---- !u!114 &1717950439066344385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8362736275411649479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a1e628164c62ac45833932a0cf6925c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedComponent: {fileID: 0}
-  damageComponent: {fileID: 0}
-  sizeComponent: {fileID: 0}
-  cooldown: {fileID: 0}
+  baseValue: 1
+  currentValue: 1
 --- !u!1001 &21180838169887200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -493,6 +493,14 @@ PrefabInstance:
     - target: {fileID: 5609120994992798349, guid: 444be529d94c574479f58f5dfa297ec4, type: 3}
       propertyPath: m_Name
       value: DVD Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6336467322503705060, guid: 444be529d94c574479f58f5dfa297ec4, type: 3}
+      propertyPath: baseValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6336467322503705060, guid: 444be529d94c574479f58f5dfa297ec4, type: 3}
+      propertyPath: currentValue
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 444be529d94c574479f58f5dfa297ec4, type: 3}

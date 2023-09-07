@@ -60,7 +60,7 @@ public class Weapon : MonoBehaviour
 
     public void Setup(WeaponHandler handler)
     {
-        _stats.OverrideStats(handler.Stats);
+        _stats.OverrideStats(handler.Stats); 
         
         // speed.currentValue = speed.baseValue * handler.Stats.SpeedComponent.currentValue;
         // damage.currentValue = damage.baseValue * handler.Stats.DamageComponent.currentValue; 

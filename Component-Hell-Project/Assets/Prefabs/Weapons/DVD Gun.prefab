@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1e628164c62ac45833932a0cf6925c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedComponent: {fileID: 0}
-  damageComponent: {fileID: 0}
-  sizeComponent: {fileID: 0}
-  cooldown: {fileID: 0}
+  speedComponent: {fileID: 7825429799708889838}
+  damageComponent: {fileID: 7825429799708889837}
+  sizeComponent: {fileID: 7825429799708889851}
+  cooldown: {fileID: 6336467322503705060}

@@ -30,7 +30,18 @@ public class WeaponStats : MonoBehaviour
 
     public void OverrideStats(WeaponStats other)
     {
-        Debug.Log("overriding stats..."); 
+        // TODO: Fix this. Temporary code to handle a bug where the component references are missing
+        if (speedComponent == null)
+        {
+            Debug.Log("Missing this speed");  
+            Debug.Log($"Gameobject: {gameObject.name}"); 
+            speedComponent = GetComponent<SpeedComponent>();
+            damageComponent = GetComponent<DamageComponent>();
+            sizeComponent = GetComponent<SizeComponent>();
+            cooldown = GetComponent<Cooldown>();
+
+        }
+        
         speedComponent.currentValue = speedComponent.baseValue * other.SpeedComponent.currentValue;
         damageComponent.currentValue = damageComponent.baseValue * other.DamageComponent.currentValue; 
         sizeComponent.currentValue = sizeComponent.baseValue * other.SizeComponent.currentValue;
