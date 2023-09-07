@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 8468546661029878718}
   - component: {fileID: 761178737235197279}
   - component: {fileID: 81232032144044206}
+  - component: {fileID: 4261662346383092444}
   m_Layer: 0
   m_Name: DVD Projectile
   m_TagString: Untagged
@@ -62,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stats: {fileID: 8468546661029878718}
-  directionComponent: {fileID: 0}
+  directionComponent: {fileID: 6293088671556834460}
 --- !u!114 &1743521144449689365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,3 +340,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tag: Enemy
+--- !u!114 &4261662346383092444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3410898942414323645}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10351e5d828790b43ac883e58cc344a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenTurns: 2

@@ -43,17 +43,13 @@ public class Weapon : MonoBehaviour
         
         if (hasCooledDown)
         {
-            Setup(handler);
+            // override stats from the weapon handler
+            _stats.OverrideStats(handler.Stats);
             
             OnPrepareFire?.Invoke();
             fireType.Fire(projectilePrefab, this);
             
             _stats.Cooldown.Reset();
         }
-    }
-    
-    private void Setup(WeaponHandler handler)
-    {
-        _stats.OverrideStats(handler.Stats);
     }
 }
