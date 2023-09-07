@@ -18,6 +18,7 @@ public class CharacterHealth : MonoBehaviour
     private void OnEnable()
     {
         OnHealthEnable?.Invoke(maxHealth);
+        CurrentHealth = MaxHealth;
     }
 
     public void TakeDamage(float damage)
