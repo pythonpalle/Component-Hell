@@ -3,13 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Weapon))]
-public class Cooldown : MonoBehaviour
+public class Cooldown : FloatValueComponent
 {
-    [SerializeField] private float cooldownTime = 0.5f;
     private float timeSinceLastCooldown = int.MinValue;
-
-
     public bool hasCooledDown { get; private set; } = true;
     
 
@@ -26,7 +22,7 @@ public class Cooldown : MonoBehaviour
 
     private void UpdateCooldown()
     {
-        if (Time.time > timeSinceLastCooldown + cooldownTime)
+        if (Time.time > timeSinceLastCooldown + currentValue)
         {
             hasCooledDown = true;
         }

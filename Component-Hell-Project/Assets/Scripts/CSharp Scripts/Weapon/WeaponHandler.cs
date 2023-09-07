@@ -4,19 +4,22 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SpeedComponent))]
-[RequireComponent(typeof(DamageComponent))]
+
 public class WeaponHandler : MonoBehaviour
 {
+    [Header("Weapons Owned")]
     [SerializeField] private List<Weapon> weapons;
+    
+    [Header("Controller")]
     [SerializeField] private WeaponController controller;
-    [SerializeField] private SpeedComponent speedComponent;
-    [SerializeField] private DamageComponent damageComponent;
+
+    [SerializeField] private WeaponStats _stats;
+    public WeaponStats Stats => _stats;
 
     private void Awake()
     {
+        _stats = GetComponentInChildren<WeaponStats>();
         weapons = GetComponentsInChildren<Weapon>().ToList();
-        controller = GetComponent<WeaponController>();
     }
 
     private void Update()
@@ -32,7 +35,7 @@ public class WeaponHandler : MonoBehaviour
     {
         foreach (var weapon in weapons)
         {
-            weapon.Setup(speedComponent, damageComponent);
+            weapon.Setup(this);
             weapon.TryAttack();
         }
     }

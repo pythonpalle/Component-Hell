@@ -14,6 +14,10 @@ GameObject:
   - component: {fileID: 892037710}
   - component: {fileID: 7825429799708889837}
   - component: {fileID: 7825429799708889838}
+  - component: {fileID: 7825429799708889849}
+  - component: {fileID: 7825429799708889850}
+  - component: {fileID: 7825429799708889851}
+  - component: {fileID: 1907607815236908717}
   m_Layer: 0
   m_Name: DVD Gun
   m_TagString: Untagged
@@ -50,11 +54,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 989252837391974315, guid: 9757bf578516de843bf860a3f6e63d74, type: 3}
   fireType: {fileID: 892037710}
-  controller: {fileID: 0}
-  direction: {fileID: 0}
-  cooldown: {fileID: 6336467322503705060}
-  speed: {fileID: 7825429799708889838}
-  damage: {fileID: 7825429799708889837}
+  _stats: {fileID: 1907607815236908717}
+  direction: {fileID: 7825429799708889850}
+  OnProjectileFired:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7825429799708889849}
+        m_TargetAssemblyTypeName: RandomiseDirection, Assembly-CSharp
+        m_MethodName: Randomise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6336467322503705060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +83,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb42effbe04e2964badf7921f39a04eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTime: 5
+  baseValue: 1
+  currentValue: 1
 --- !u!114 &892037710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,3 +127,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseValue: 1.07
   currentValue: 1.07
+--- !u!114 &7825429799708889849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5609120994992798349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aecf109e9703e6d4aadb48b8d17c5c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7825429799708889850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5609120994992798349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff330ce2c1b0bd74fadde10ce297e786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Value: {x: 0, y: 0}
+--- !u!114 &7825429799708889851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5609120994992798349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb0a307edd2f46045be3c06d28894dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseValue: 1.1
+  currentValue: 1.1
+--- !u!114 &1907607815236908717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5609120994992798349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1e628164c62ac45833932a0cf6925c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedComponent: {fileID: 0}
+  damageComponent: {fileID: 0}
+  sizeComponent: {fileID: 0}
+  cooldown: {fileID: 0}

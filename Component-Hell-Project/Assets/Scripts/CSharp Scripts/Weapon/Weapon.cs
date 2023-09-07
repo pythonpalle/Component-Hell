@@ -12,16 +12,24 @@ public class Weapon : MonoBehaviour
     
     [Header("Weapon Components")]
     [SerializeField] private WeaponFireType fireType;
-    [SerializeField] private DirectionComponent direction;
-    [SerializeField] private Cooldown cooldown;
-    
-    [Space]    
-    [SerializeField] private SpeedComponent speed;
-    [SerializeField] private DamageComponent damage;
 
-    public SpeedComponent SpeedComponent => speed;
-    public DamageComponent DamageComponent => damage;
-    public DirectionComponent DirectionComponent => direction;
+    [SerializeField] private WeaponStats _stats;
+    public WeaponStats Stats => _stats;
+    
+    [SerializeField] private DirectionComponent direction;
+    // [SerializeField] private Cooldown cooldown;
+    //
+    // [Space]    
+    // [SerializeField] private SpeedComponent speed;
+    // [SerializeField] private DamageComponent damage;
+    // [SerializeField] private SizeComponent size;
+
+    // public SpeedComponent SpeedComponent => speed;
+    // public DamageComponent DamageComponent => damage;
+    // public DirectionComponent DirectionComponent => direction;
+    //
+    // public SizeComponent SizeComponent => size;
+
 
     [Header("Events")] 
     public UnityEvent OnProjectileFired;
@@ -31,33 +39,44 @@ public class Weapon : MonoBehaviour
         if (!fireType) 
             fireType = GetComponent<WeaponFireType>();
 
-        if (!speed) 
-            speed = GetComponent<SpeedComponent>();
-        
-        if (!direction) 
-            direction = GetComponent<DirectionComponent>();
-        
-        if (!cooldown) 
-            cooldown = GetComponent<Cooldown>();
+        if (!_stats)
+        {
+            _stats = GetComponentInChildren<WeaponStats>();
+        }
+
+        // if (!speed) 
+        //     speed = GetComponent<SpeedComponent>();
+        //
+        // if (!direction) 
+        //     direction = GetComponent<DirectionComponent>();
+        //
+        // if (!size) 
+        //     size = GetComponent<SizeComponent>();
+        //
+        // if (!cooldown) 
+        //     cooldown = GetComponent<Cooldown>();
     }
     
 
-    public void Setup(SpeedComponent speedComponent, DamageComponent damageComponent)
+    public void Setup(WeaponHandler handler)
     {
-        speed.currentValue = speed.baseValue * speedComponent.currentValue;
-        damage.currentValue = damage.baseValue * damageComponent.currentValue; 
+        _stats.OverrideStats(handler.Stats);
+        
+        // speed.currentValue = speed.baseValue * handler.Stats.SpeedComponent.currentValue;
+        // damage.currentValue = damage.baseValue * handler.Stats.DamageComponent.currentValue; 
+        // size.currentValue = size.baseValue * handler.Stats.SizeComponent.currentValue; 
     }
 
     public void TryAttack()
     {
-        bool hasCooledDown = !cooldown || cooldown.hasCooledDown;
+        bool hasCooledDown = _stats.Cooldown.hasCooledDown;
         
         if (hasCooledDown)
         {
             OnProjectileFired?.Invoke(); 
 
             fireType.Fire(projectilePrefab, this);
-            cooldown.Reset();
+            _stats.Cooldown.Reset();
         }
     }
 }
