@@ -1193,6 +1193,14 @@ PrefabInstance:
       propertyPath: scriptTypeName
       value: BoomerangMovementController
       objectReference: {fileID: 0}
+    - target: {fileID: 260848468, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: components.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 260848468, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: components.Array.data[0]
+      value: 
+      objectReference: {fileID: 11500000, guid: 10351e5d828790b43ac883e58cc344a8, type: 3}
     - target: {fileID: 382337021262599682, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
       propertyPath: m_Name
       value: Player

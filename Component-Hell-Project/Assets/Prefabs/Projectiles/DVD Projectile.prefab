@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7450179803786484431}
   - component: {fileID: 989252837391974315}
   - component: {fileID: 1743521144449689365}
-  - component: {fileID: 1183511232634318451}
   - component: {fileID: 450622542867166286}
   - component: {fileID: 8964118390119370075}
   - component: {fileID: 1866823476064067522}
@@ -25,9 +24,6 @@ GameObject:
   - component: {fileID: 3713849009318034482}
   - component: {fileID: 2187455622650138310}
   - component: {fileID: 8468546661029878718}
-  - component: {fileID: 761178737235197279}
-  - component: {fileID: 81232032144044206}
-  - component: {fileID: 4261662346383092444}
   m_Layer: 0
   m_Name: DVD Projectile
   m_TagString: Untagged
@@ -74,18 +70,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df475954f020130479e8784eb4dc575e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1183511232634318451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3410898942414323645}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d4209fa82368dc42b3988eca33905cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &450622542867166286
@@ -314,42 +298,3 @@ MonoBehaviour:
   damageComponent: {fileID: 2022285456936976935}
   sizeComponent: {fileID: 1553149701998322176}
   cooldownComponent: {fileID: 2187455622650138310}
---- !u!114 &761178737235197279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3410898942414323645}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be5b75026f91be04e81a0872fa07ac3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetTransform: {fileID: 0}
---- !u!114 &81232032144044206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3410898942414323645}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f97d4a1430ed3545bab293240a92297, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tag: Enemy
---- !u!114 &4261662346383092444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3410898942414323645}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10351e5d828790b43ac883e58cc344a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBetweenTurns: 2

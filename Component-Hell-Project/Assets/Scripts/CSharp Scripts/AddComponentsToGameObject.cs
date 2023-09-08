@@ -5,18 +5,26 @@ using UnityEngine.Serialization;
 using System.Runtime.Serialization;
 
 
-public class AddComponentToGameObject : MonoBehaviour
+public class AddComponentsToGameObject : MonoBehaviour
 {
-    [SerializeField] private Object componentType;
+    [SerializeField] private List<Object> components;
 
-    public void AddComponentToGO(Projectile p)
+    public void AddComponentToGO(MonoBehaviour mb)
     {
-        string scriptTypeName = componentType.name;
+        foreach (var component in components)
+        {
+            AddComponentToMonoBehaviour(mb, component);
+        }
+    }
+
+    private void AddComponentToMonoBehaviour(MonoBehaviour mb, Object component)
+    {
+        string scriptTypeName = component.name;
         Debug.Log("Name: " + scriptTypeName);
         
         if (!string.IsNullOrEmpty(scriptTypeName))
         {
-            GameObject toAddObject = p.gameObject;
+            GameObject toAddObject = mb.gameObject;
     
             // Use reflection to get the script type by name
             System.Type scriptType = System.Type.GetType(scriptTypeName);
