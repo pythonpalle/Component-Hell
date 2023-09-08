@@ -10,12 +10,12 @@ public class ColliderBroadcaster : MonoBehaviour
     private Collider _collider;
 
     public UnityEvent<Collision2D> OnColEnter;
-    public UnityEvent<Collision2D> OnColExit;
+    [HideInInspector] public UnityEvent<Collision2D> OnColExit;
     public UnityEvent<Collision2D> OnColStay;
     
     public UnityEvent<Collider2D> OnTrigEnter;
-    public UnityEvent<Collider2D> OnTrigExit;
-    public UnityEvent<Collider2D> OnTrigStay;
+    [HideInInspector] public UnityEvent<Collider2D> OnTrigExit;
+    [HideInInspector] public UnityEvent<Collider2D> OnTrigStay;
         
     void Awake()
     {

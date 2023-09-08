@@ -13,7 +13,8 @@ public class CharacterHealth : MonoBehaviour
     [SerializeField] private float maxHealth = 10;
     public float MaxHealth => maxHealth;
 
-    public float CurrentHealth { get; private set; }
+    public float CurrentHealth;
+    
 
     private void OnEnable()
     {
@@ -28,6 +29,7 @@ public class CharacterHealth : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
+            Debug.Log("DEAD");
             OnDeath?.Invoke();
         }
     }

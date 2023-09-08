@@ -15,18 +15,33 @@ public class ColliderDamageHandler : MonoBehaviour
         damageComponent = GetComponent<DamageComponent>();
     }
     
+    public void CallTryInflictDamage(Collision2D other)
+    {
+        TryInflictDamage(other);
+    }
+    
+    public void CallTryInflictDamage(Collider2D other)
+    {
+        TryInflictDamage(other);
+    }
+    
+    public bool TryInflictDamage(Collision2D other)
+    {
+         return TryInflictDamage(other.collider);
+    }
+
     public bool TryInflictDamage(Collider2D other)
     {
         if ((layerMask.value & (1 << other.gameObject.layer)) > 0 == false)
             return false;
-        
-        
-        if (other.TryGetComponent(out CharacterHealth health))
+
+        var health = other.GetComponentInChildren<CharacterHealth>();
+        if (health)
         {
             health.TakeDamage(damageComponent.currentValue);
             return true;
-        }
+        } 
 
         return false;
-    } 
+    }
 }

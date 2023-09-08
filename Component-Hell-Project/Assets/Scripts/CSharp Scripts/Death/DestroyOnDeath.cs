@@ -7,6 +7,7 @@ using UnityEngine;
 public class DestroyOnDeath : MonoBehaviour
 {
     CharacterHealth health;
+    [SerializeField] private bool destroyRoot = true;
     
     void Awake(){
         health = GetComponent<CharacterHealth>();
@@ -24,6 +25,7 @@ public class DestroyOnDeath : MonoBehaviour
 
     void Destroy()
     {
-        Destroy(gameObject);
+        var objToDestroy = destroyRoot ? transform.root.gameObject : gameObject;
+        Destroy(objToDestroy);
     }
 }
