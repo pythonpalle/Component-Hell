@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 using System.Runtime.Serialization;
 
 
-public class AddComponentsToGameObject : MonoBehaviour
+public class AddComponentsToMonoBehaviour : MonoBehaviour
 {
     [SerializeField] private List<Object> components;
 

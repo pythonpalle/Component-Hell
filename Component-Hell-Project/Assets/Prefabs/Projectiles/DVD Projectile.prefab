@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 2022285456936976935}
   - component: {fileID: 1866823476064067522}
   - component: {fileID: 221285344493522062}
+  - component: {fileID: 6639164635164270141}
   m_Layer: 0
   m_Name: DVD Projectile
   m_TagString: Untagged
@@ -252,6 +253,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78424f2b95652a44b534411db909cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6639164635164270141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3410898942414323645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12a43520ee439854b87badc8d24fe173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnColEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnColExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnColStay:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTrigEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTrigExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTrigStay:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5640433685491335126
 GameObject:
   m_ObjectHideFlags: 0
