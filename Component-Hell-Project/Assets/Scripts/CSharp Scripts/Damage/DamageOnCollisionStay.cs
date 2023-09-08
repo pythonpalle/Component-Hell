@@ -17,10 +17,9 @@ public class DamageOnCollisionStay : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        if (Time.time > timeBetweenDamageTicks + lastDamageTick)
+        if (Time.time > timeBetweenDamageTicks + lastDamageTick && colliderDamageHandler.TryInflictDamage(other.collider))
         {
-            colliderDamageHandler.HandleDamage(other.collider);
-            lastDamageTick = Time.time;
+            lastDamageTick = Time.time; 
         }
         
     }

@@ -8,19 +8,6 @@ public class SlowDownOnImpact : MonoBehaviour
     public float effectTime = 2f;
     public float speedModifier = 0.5f;
 
-    private void OnEnable()
-    {
-        SlowDownOnImpact slowDownOnImpact = GetComponent<SlowDownOnImpact>();
-        
-        // Can't be added if there is already an existing slowdown component
-        if (!slowDownOnImpact || slowDownOnImpact != this)
-        {
-            Debug.Log("Game object already has a slow down component!");
-            Destroy(this);
-            return;
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         SpeedComponent speedComponent = other.GetComponentInChildren<SpeedComponent>();
@@ -28,7 +15,7 @@ public class SlowDownOnImpact : MonoBehaviour
         if (speedComponent)
         {
             speedComponent.currentValue *= speedModifier;
-            Destroy(this, effectTime);
+            Destroy(this, effectTime); 
         }
     }
 }

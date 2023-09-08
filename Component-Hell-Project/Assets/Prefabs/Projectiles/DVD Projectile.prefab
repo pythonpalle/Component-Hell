@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 3713849009318034482}
   - component: {fileID: 2187455622650138310}
   - component: {fileID: 8468546661029878718}
+  - component: {fileID: 8863464421184119394}
   m_Layer: 0
   m_Name: DVD Projectile
   m_TagString: Untagged
@@ -298,3 +299,18 @@ MonoBehaviour:
   damageComponent: {fileID: 2022285456936976935}
   sizeComponent: {fileID: 1553149701998322176}
   cooldownComponent: {fileID: 2187455622650138310}
+  effectTimeComponent: {fileID: 8863464421184119394}
+--- !u!114 &8863464421184119394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3410898942414323645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d139d048d0275554e8566111dd7e75dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseValue: 1
+  currentValue: 1

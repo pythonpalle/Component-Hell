@@ -15,6 +15,6 @@ public class DamageOnCollisionEnter : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        colliderDamageHandler.HandleDamage(other.collider);
+        colliderDamageHandler.TryInflictDamage(other.collider);
     }
 }
