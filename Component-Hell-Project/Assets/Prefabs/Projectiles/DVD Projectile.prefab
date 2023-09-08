@@ -149,8 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34134ae03ca7271428cff6d2a7b1799f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePlayer: 0
-  damageEnemy: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &221285344493522062
 MonoBehaviour:
   m_ObjectHideFlags: 0
