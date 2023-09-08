@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BaseAttackStats))]
-[RequireComponent(typeof(DirectionComponent))]
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private BaseAttackStats _stats; 
@@ -13,7 +12,7 @@ public class Projectile : MonoBehaviour
     private void Awake()
     {
         _stats = GetComponentInChildren<BaseAttackStats>();
-        directionComponent = GetComponent<DirectionComponent>();
+        directionComponent = GetComponentInChildren<DirectionComponent>();
     }
     
     public void SetUp(Weapon weapon)

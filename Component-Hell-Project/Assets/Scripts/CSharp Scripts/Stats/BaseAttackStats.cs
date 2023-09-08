@@ -4,11 +4,11 @@ using UnityEngine;
 
 
 
-[RequireComponent(typeof(SpeedComponent))]
-[RequireComponent(typeof(DamageComponent))]
-[RequireComponent(typeof(SizeComponent))]
-[RequireComponent(typeof(Cooldown))] 
-[RequireComponent(typeof(EffectTimeComponent))] 
+// [RequireComponent(typeof(SpeedComponent))]
+// [RequireComponent(typeof(DamageComponent))]
+// [RequireComponent(typeof(SizeComponent))]
+// [RequireComponent(typeof(Cooldown))] 
+// [RequireComponent(typeof(EffectTimeComponent))] 
 public class BaseAttackStats : MonoBehaviour
 {
     [Header("Components")]
@@ -28,7 +28,7 @@ public class BaseAttackStats : MonoBehaviour
 
     private void Awake()
     {
-        GetComponentReferences();
+        //GetComponentReferences();
     }
 
     void GetComponentReferences()
@@ -42,14 +42,6 @@ public class BaseAttackStats : MonoBehaviour
 
     public void OverrideStats(BaseAttackStats other)
     {
-        // TODO: Fix this. Temporary code to handle a bug where the component references are missing
-        if (speedComponent == null)
-        {
-            Debug.Log("Missing this speed");  
-            Debug.Log($"Gameobject: {gameObject.name}"); 
-            GetComponentReferences();
-        }
-        
         speedComponent.currentValue = speedComponent.baseValue * other.SpeedComponent.currentValue;
         damageComponent.currentValue = damageComponent.baseValue * other.DamageComponent.currentValue; 
         sizeComponent.currentValue = sizeComponent.baseValue * other.SizeComponent.currentValue;

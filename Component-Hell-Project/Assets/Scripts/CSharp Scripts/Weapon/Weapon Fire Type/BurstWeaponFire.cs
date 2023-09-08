@@ -23,9 +23,8 @@ public class BurstWeaponFire : WeaponFireType
         
         for (int i = 0; i < burstCount; i++)
         {
-            SpawnProjectile(projectile, weapon);
-            SetupProjectile(projectile, weapon);
-            Debug.Log("Phew!");
+            var instance = SpawnProjectile(projectile, weapon);
+            SetupProjectile(instance, weapon);
 
             yield return new WaitForSeconds(timeBetweenBursts);
         }

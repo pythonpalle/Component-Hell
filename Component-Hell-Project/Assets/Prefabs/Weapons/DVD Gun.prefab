@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2996819138444741616}
+  - component: {fileID: 8799643464296784225}
   - component: {fileID: 7231237310766189644}
   - component: {fileID: 7311026525509018742}
   - component: {fileID: 299107100965175286}
   - component: {fileID: 2032016425633948680}
-  - component: {fileID: 8799643464296784225}
+  - component: {fileID: 2292175276505423940}
   m_Layer: 0
   m_Name: Stats
   m_TagString: Untagged
@@ -36,6 +37,23 @@ Transform:
   m_Father: {fileID: 5404104272743974705}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8799643464296784225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874245146303475031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1e628164c62ac45833932a0cf6925c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedComponent: {fileID: 7231237310766189644}
+  damageComponent: {fileID: 7311026525509018742}
+  sizeComponent: {fileID: 299107100965175286}
+  cooldownComponent: {fileID: 2032016425633948680}
+  effectTimeComponent: {fileID: 2292175276505423940}
 --- !u!114 &7231237310766189644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseValue: 1
   currentValue: 1
---- !u!114 &8799643464296784225
+--- !u!114 &2292175276505423940
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,13 +119,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1874245146303475031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a1e628164c62ac45833932a0cf6925c, type: 3}
+  m_Script: {fileID: 11500000, guid: d139d048d0275554e8566111dd7e75dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedComponent: {fileID: 0}
-  damageComponent: {fileID: 0}
-  sizeComponent: {fileID: 0}
-  cooldownComponent: {fileID: 0}
+  baseValue: 1
+  currentValue: 1
 --- !u!1 &5609120994992798349
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a47566e1a008c945b4827395fea087a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  component: {fileID: 0}
+  components: []
 --- !u!1 &7400873132517945963
 GameObject:
   m_ObjectHideFlags: 0

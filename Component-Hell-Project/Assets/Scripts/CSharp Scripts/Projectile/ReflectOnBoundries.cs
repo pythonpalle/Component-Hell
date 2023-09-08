@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(DirectionComponent))]
 public class ReflectOnBoundries : MonoBehaviour
 {
     private DirectionComponent direction;
@@ -11,7 +10,7 @@ public class ReflectOnBoundries : MonoBehaviour
 
     private void OnEnable()
     {
-        direction = GetComponent<DirectionComponent>();
+        direction = GetComponentInChildren<DirectionComponent>();
         screenBounds = Camera.main.ScreenToWorldPoint
             (new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }

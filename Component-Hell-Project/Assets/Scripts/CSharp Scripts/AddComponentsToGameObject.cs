@@ -20,7 +20,6 @@ public class AddComponentsToGameObject : MonoBehaviour
     private void AddComponentToMonoBehaviour(MonoBehaviour mb, Object component)
     {
         string scriptTypeName = component.name;
-        Debug.Log("Name: " + scriptTypeName);
         
         if (!string.IsNullOrEmpty(scriptTypeName))
         {
