@@ -5,8 +5,23 @@ using UnityEngine;
 
 public class SlowDownEffect : EffectComponent
 {
+    [SerializeField] private float slowDownMultiplier;
+    [SerializeField] private float duration;
+
+    private SpeedComponent _speedComponent;
+    
+    
     private void OnEnable()
     {
-        Debug.Log("Yey im attached");
-    } 
+        // hatar detta
+        _speedComponent = transform.parent.GetComponentInChildren<SpeedComponent>();
+        _speedComponent.currentValue *= slowDownMultiplier;
+        
+        Destroy(gameObject, duration);
+    }
+
+    private void OnDestroy()
+    {
+        _speedComponent.currentValue /= slowDownMultiplier;
+    }
 } 

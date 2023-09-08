@@ -24,19 +24,22 @@ public class EffectAdder : MonoBehaviour
 
     private void AddEffect(Collider2D other)
     {
+        // Wrong layer
         if ((effectedLayers.value & (1 << other.gameObject.layer)) > 0 == false)
         {
-            Debug.Log("Wrong layer");
             return;
         }
+        
+        Debug.Log("Right layer!");
+        Debug.Log($"Name: {effectPrefab.name}!");
 
-        // if (other.GetComponentInChildren(Type.GetType(effectPrefab.name)))
-        // {
-        //     Debug.Log($"{other.name} already has a {effectPrefab.name} attached.");
-        //     return;    
-        // }
-        //
-        // Instantiate(effectPrefab, other.transform);
-        // broadcaster.OnTrigEnter.RemoveListener(AddEffect);
+        var effect = other.GetComponentInChildren<EffectComponent>();
+        if (effect != null)
+        {
+            Debug.Log($"{other.name} already has a {effectPrefab.name} attached.");
+            return;    
+        }
+        
+        Instantiate(effectPrefab, other.transform);
     }
 }
