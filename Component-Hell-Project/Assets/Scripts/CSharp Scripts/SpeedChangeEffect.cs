@@ -3,11 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlowDownEffect : EffectComponent
+public class SpeedChangeEffect : EffectComponent
 {
-    [SerializeField] private float slowDownMultiplier;
-    [SerializeField] private float duration;
-
+    [SerializeField] private float speedChangeMultiplier;
     private SpeedComponent _speedComponent;
     
     
@@ -15,13 +13,14 @@ public class SlowDownEffect : EffectComponent
     {
         // hatar detta
         _speedComponent = transform.parent.GetComponentInChildren<SpeedComponent>();
-        _speedComponent.currentValue *= slowDownMultiplier;
         
-        Destroy(gameObject, duration);
+        _speedComponent.currentValue *= speedChangeMultiplier;
+        
+        Destroy(gameObject, duration); 
     }
 
     private void OnDestroy()
     {
-        _speedComponent.currentValue /= slowDownMultiplier;
+        _speedComponent.currentValue /= speedChangeMultiplier;
     }
 } 

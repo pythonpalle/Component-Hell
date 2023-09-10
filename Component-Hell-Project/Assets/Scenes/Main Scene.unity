@@ -525,6 +525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabsToAdd:
   - {fileID: 6662545945381236894, guid: 0f471042a613bbb409695eec2a695ed9, type: 3}
+  - {fileID: 6662545945381236894, guid: 0dd3bf91642b57f48a73ce47b06519c3, type: 3}
 --- !u!1 &988329572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,6 +1187,14 @@ PrefabInstance:
       propertyPath: OnHealthEnable.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 580474912}
+    - target: {fileID: 2271026530335367588, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: baseValue
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271026530335367588, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: currentValue
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3931818526344562772, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1309,6 +1318,14 @@ PrefabInstance:
     - target: {fileID: 7327909044871487723, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
       propertyPath: currentValue
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863465388562623971, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: baseValue
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863465388562623971, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: currentValue
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}

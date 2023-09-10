@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8684820732449586912}
   - component: {fileID: 5436271162279470113}
   m_Layer: 0
-  m_Name: Effect Adder
+  m_Name: Slow Down Adder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

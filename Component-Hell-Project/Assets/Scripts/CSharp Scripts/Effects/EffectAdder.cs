@@ -6,13 +6,16 @@ using UnityEngine;
 public class EffectAdder : MonoBehaviour
 {
 
-    public LayerMask effectedLayers;
-    public EffectComponent effectPrefab;
-
+    [SerializeField] private LayerMask effectedLayers;
+    [SerializeField] private EffectComponent effectPrefab;
+    
+    private EffectTimeComponent EffectTime;
     private ColliderBroadcaster broadcaster;
 
     private void OnEnable()
     {
+        EffectTime = transform.parent.GetComponentInChildren<EffectTimeComponent>();
+        
         broadcaster = GetComponentInParent<ColliderBroadcaster>();
         broadcaster.OnTrigEnter.AddListener(AddEffect);
     }
@@ -30,16 +33,36 @@ public class EffectAdder : MonoBehaviour
             return;
         }
         
-        Debug.Log("Right layer!");
-        Debug.Log($"Name: {effectPrefab.name}!");
-
-        var effect = other.GetComponentInChildren<EffectComponent>();
-        if (effect != null)
+        // kan behöva fixas senare: behöver inte vara samma effekt komponent som hittas
+        var effectComponents = other.GetComponentsInChildren<EffectComponent>();
+        if (effectComponents != null)
         {
-            Debug.Log($"{other.name} already has a {effectPrefab.name} attached.");
-            return;    
+            foreach (var component in effectComponents)
+            {
+                string componentName = component.name;
+                string prefabName = effectPrefab.name;
+
+                bool containsComponent = componentName.Contains(prefabName);
+                
+                Debug.Log("Added prefab name: " + effectPrefab.name);
+                Debug.Log("Found component name: " + component.name);
+                
+                if (containsComponent)
+                {
+                    Debug.Log($"{other.name} already has a {effectPrefab.name} attached.");
+                    return;   
+                }
+            }
+            
+            
+           
+            
+            
+            
+              
         }
         
-        Instantiate(effectPrefab, other.transform);
+        var effect = Instantiate(effectPrefab, other.transform);
+        effect.duration = EffectTime.currentValue;
     }
 }
