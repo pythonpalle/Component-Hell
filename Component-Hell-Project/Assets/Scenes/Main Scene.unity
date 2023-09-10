@@ -369,6 +369,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa210e43115c30645860000edad10ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &297310516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 297310517}
+  - component: {fileID: 297310518}
+  - component: {fileID: 297310519}
+  m_Layer: 0
+  m_Name: XP Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &297310517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297310516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1708537472}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &297310518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297310516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1794068e6b7627b4bb2a04e7ea673a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerXP: {fileID: 11400000, guid: e98d6408092b9e441b1e3a360130d188, type: 2}
+  OnAddXP:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &297310519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297310516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 260f796dc7d9e9841998cf656a444429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _floatVariable: {fileID: 11400000, guid: e98d6408092b9e441b1e3a360130d188, type: 2}
 --- !u!1 &357605593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,6 +1220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 780019124}
   - component: {fileID: 780019126}
+  - component: {fileID: 780019127}
   m_Layer: 5
   m_Name: XP Slider
   m_TagString: Untagged
@@ -1239,6 +1302,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &780019127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780019123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c790f6be4be7cb141aaea9b859e02f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerXP: {fileID: 11400000, guid: e98d6408092b9e441b1e3a360130d188, type: 2}
+  _slider: {fileID: 780019126}
 --- !u!1 &797698589 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5842228505949120094, guid: 6bda46874105151468c81bba758cbcd4, type: 3}
@@ -2128,7 +2205,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 297310517}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2724,6 +2802,14 @@ PrefabInstance:
     - target: {fileID: 5995087742809291638, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
       propertyPath: OnProjectileSpawned.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295484223853766038, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: baseValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295484223853766038, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: currentValue
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7327909044871487723, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
       propertyPath: baseValue
