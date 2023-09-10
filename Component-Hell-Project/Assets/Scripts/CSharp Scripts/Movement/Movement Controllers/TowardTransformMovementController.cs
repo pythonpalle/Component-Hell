@@ -18,7 +18,7 @@ public class TowardTransformMovementController : MovementControllerBase
         if (!targetTransform)
             return;
         
-        var directionTowardPlayer = (targetTransform.position - transform.position).normalized;
+        var directionTowardPlayer = (targetTransform.position - transform.position);
         ObjectMover.Move(directionTowardPlayer);
     }
 }

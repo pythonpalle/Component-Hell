@@ -22,7 +22,7 @@ public class ObjectMover : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
-        directionComponent.Value = direction;
+        directionComponent.Value = direction.normalized;
         rootTransform.position += direction * (Time.deltaTime * speedComponent.currentValue);
     }
 }
