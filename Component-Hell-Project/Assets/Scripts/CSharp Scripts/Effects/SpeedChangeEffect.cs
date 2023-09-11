@@ -14,7 +14,7 @@ public class SpeedChangeEffect : EffectComponent
         base.OnInstantiated(effectValue);
         
         // hatar detta
-        _speedComponent = transform.parent.GetComponentInChildren<SpeedComponent>();
+        _speedComponent = _metaContainer.MovementContainer.SpeedComponent;
         
         // för att undvika zero division
         if (speedChangeMultiplier <= 0)

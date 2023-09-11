@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BaseAttackStats))]
-public class Projectile : MonoBehaviour
+public class Projectile : GameComponent
 {
     [SerializeField] private BaseAttackStats _stats; 
     [SerializeField] private DirectionComponent directionComponent;

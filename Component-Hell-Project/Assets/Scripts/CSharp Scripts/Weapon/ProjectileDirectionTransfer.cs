@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(DirectionComponent))]
 public class ProjectileDirectionTransfer : MonoBehaviour
 {
     //TODO: Gör mer generell genom att skapa direction interface?

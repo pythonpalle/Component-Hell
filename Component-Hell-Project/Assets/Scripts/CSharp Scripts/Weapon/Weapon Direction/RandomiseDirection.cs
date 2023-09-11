@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
-[RequireComponent(typeof(DirectionComponent))]
 public class RandomiseDirection : MonoBehaviour
 {
     private DirectionComponent _directionComponent;

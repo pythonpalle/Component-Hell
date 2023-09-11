@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(DirectionComponent))]
 public class SetDirectionTowardMouse : MonoBehaviour
 {
     private DirectionComponent _directionComponent;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EffectComponent : MonoBehaviour
+public class EffectComponent : GameComponent
 {
     public float duration = 1;
 

@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 9061496292188465232}
   - component: {fileID: 4899356758407600590}
   - component: {fileID: 4358763170066272907}
+  - component: {fileID: 725660073599668225}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -270,6 +271,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyRoot: 0
+--- !u!114 &725660073599668225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5842228505393806546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa126dda7d013c4b835815b463bdb88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementContainer: {fileID: 0}
+  healthContainer: {fileID: 0}
 --- !u!1 &5842228505949120094
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5842228505949120081}
   - component: {fileID: 5842228505949120083}
+  - component: {fileID: 1071655746247319616}
   - component: {fileID: 7112811951402636878}
   - component: {fileID: 593542287449535509}
   - component: {fileID: 1734481582}
@@ -319,6 +335,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformToMove: {fileID: 5842228505393806549}
+--- !u!114 &1071655746247319616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5842228505949120094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49dfe25438c7b1478a69f40958e8640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionComponent: {fileID: 593542287449535509}
+  speedComponent: {fileID: 7112811951402636878}
 --- !u!114 &7112811951402636878
 MonoBehaviour:
   m_ObjectHideFlags: 0

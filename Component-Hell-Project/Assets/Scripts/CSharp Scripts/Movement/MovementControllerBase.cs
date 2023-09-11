@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(ObjectMover))]
 public abstract class MovementControllerBase : MonoBehaviour
 {
     protected ObjectMover ObjectMover;

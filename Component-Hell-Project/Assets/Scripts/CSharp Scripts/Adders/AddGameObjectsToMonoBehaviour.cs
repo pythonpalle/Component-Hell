@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class AddGameObjectsToMonoBehaviour : MonoBehaviour
 {
-    public List<GameObject> prefabsToAdd;
+    public List<GameComponent> prefabsToAdd;
 
-    public void Add(MonoBehaviour monoBehaviour)
+    public void Add(GameComponent monoBehaviour)
     {
         foreach (var prefab in prefabsToAdd)
         {
-            Instantiate(prefab, monoBehaviour.transform);
+            var comp = Instantiate(prefab, monoBehaviour.transform);
+            comp.SetMetaContainer(monoBehaviour.MetaContainer);
         }
     }
 }
