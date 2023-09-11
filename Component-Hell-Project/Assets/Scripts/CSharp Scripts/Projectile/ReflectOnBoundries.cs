@@ -15,17 +15,55 @@ public class ReflectOnBoundries : MonoBehaviour
             (new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        var currentDirection = direction.Value;
-        if (transform.position.x > screenBounds.x || transform.position.x < -screenBounds.x)
+        var transformPos = transform.position;
+        Vector3 newPos = transformPos;
+
+        bool flipX = false;
+        bool flipY = false;
+
+        // right of screen
+        if (transformPos.x > screenBounds.x)
         {
-            FlipX(currentDirection);
-        } else if (transform.position.y > screenBounds.y || transform.position.y < -screenBounds.y)
-        {
-            FlipY(currentDirection);
+            newPos.x = screenBounds.x;
+            flipX = true;
         }
+        // left of screen
+        else if (transformPos.x < -screenBounds.x)
+        {
+            newPos.x = -screenBounds.x;
+            flipX = true;
+        }
+        
+        // top of screen of screen
+        if (transformPos.y > screenBounds.y)
+        {
+            newPos.y = screenBounds.y;
+            flipY = true;
+        }
+        // bottom of screen of screen
+        else if (transformPos.y < -screenBounds.y)
+        {
+            newPos.y = -screenBounds.y;
+            flipY = true;
+        }
+        
+        if (flipX)
+        {
+            FlipX(direction.Value);
+        } 
+        if (flipY)
+        {
+            FlipY(direction.Value);
+        }
+
+        if (flipX && flipY)
+        {
+            Debug.Log("WOW WE HIT THE CORNER");
+        }
+
+        transform.position = newPos;
     }
 
     private void FlipX(Vector2 currentDirection)

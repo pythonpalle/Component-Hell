@@ -9,11 +9,12 @@ public class SpeedChangeEffect : EffectComponent
     private SpeedComponent _speedComponent;
     
     
-    private void OnEnable()
+    public override void OnInstantiated(float effectValue)
     {
+        base.OnInstantiated(effectValue);
+        
         // hatar detta
         _speedComponent = transform.parent.GetComponentInChildren<SpeedComponent>();
-        
         _speedComponent.currentValue *= speedChangeMultiplier;
         
         Destroy(gameObject, duration); 

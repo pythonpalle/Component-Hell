@@ -53,16 +53,9 @@ public class EffectAdder : MonoBehaviour
                     return;   
                 }
             }
-            
-            
-           
-            
-            
-            
-              
         }
         
         var effect = Instantiate(effectPrefab, other.transform);
-        effect.duration = EffectTime.currentValue;
+        effect.OnInstantiated(EffectTime.currentValue);
     }
 }

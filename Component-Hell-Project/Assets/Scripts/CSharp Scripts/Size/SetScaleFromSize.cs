@@ -19,6 +19,6 @@ public class SetScaleFromSize : MonoBehaviour
 
     public void SetScaleFromSizeComponent()
     {
-        transform.localScale = Vector3.one * _sizeComponent.currentValue;
+        transform.parent.localScale = Vector3.one * _sizeComponent.currentValue;
     }
 }

@@ -518,5 +518,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0a307edd2f46045be3c06d28894dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseValue: 1
-  currentValue: 1
+  baseValue: 0.1
+  currentValue: 0.1
