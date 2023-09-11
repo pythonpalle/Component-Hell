@@ -148,8 +148,10 @@ GameObject:
   - component: {fileID: 8964118390119370075}
   - component: {fileID: 1644296405636890762}
   - component: {fileID: 989252837391974315}
+  - component: {fileID: 5515728828683904900}
   - component: {fileID: 8468546661029878718}
   - component: {fileID: 6639164635164270141}
+  - component: {fileID: 336790604464287302}
   m_Layer: 0
   m_Name: DVD Projectile
   m_TagString: Untagged
@@ -267,8 +269,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc34e933767e5647a5cb4a600bfacd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _metaContainer: {fileID: 5515728828683904900}
   _stats: {fileID: 8468546661029878718}
   directionComponent: {fileID: 5571660422977898644}
+--- !u!114 &5515728828683904900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3410898942414323645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa126dda7d013c4b835815b463bdb88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementContainer: {fileID: 5302252868121854416}
+  healthContainer: {fileID: 0}
+  collisionContainer: {fileID: 336790604464287302}
+  effectContainer: {fileID: 7918402572606755117}
 --- !u!114 &8468546661029878718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +347,19 @@ MonoBehaviour:
   OnTrigStay:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &336790604464287302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3410898942414323645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ce158c67979c640b0e774b6f7da861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colliderBroadcaster: {fileID: 6639164635164270141}
 --- !u!1 &5640433685491335126
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +369,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7868455094156742311}
+  - component: {fileID: 5302252868121854416}
   - component: {fileID: 5571660422977898644}
   - component: {fileID: 7981274919558977608}
   - component: {fileID: 7645654321978658855}
@@ -363,6 +396,20 @@ Transform:
   m_Father: {fileID: 7450179803786484431}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5302252868121854416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5640433685491335126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49dfe25438c7b1478a69f40958e8640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionComponent: {fileID: 5571660422977898644}
+  speedComponent: {fileID: 7981274919558977608}
 --- !u!114 &5571660422977898644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df475954f020130479e8784eb4dc575e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _metaContainer: {fileID: 5515728828683904900}
   transformToMove: {fileID: 7450179803786484431}
 --- !u!114 &520544359740137121
 MonoBehaviour:
@@ -424,6 +472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3405467550484520802}
+  - component: {fileID: 7918402572606755117}
   - component: {fileID: 4122465983825886971}
   m_Layer: 0
   m_Name: Effect
@@ -447,6 +496,19 @@ Transform:
   m_Father: {fileID: 7450179803786484431}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7918402572606755117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6096754690409023941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615b2b88282f30a46ace3956f2e2cb53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectTimeComponent: {fileID: 4122465983825886971}
 --- !u!114 &4122465983825886971
 MonoBehaviour:
   m_ObjectHideFlags: 0

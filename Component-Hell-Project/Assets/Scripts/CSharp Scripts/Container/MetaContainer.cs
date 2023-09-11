@@ -9,4 +9,11 @@ public class MetaContainer : Container
     
     [SerializeField] private HealthContainer healthContainer;
     public HealthContainer HealthContainer => healthContainer;
+    
+    
+    [SerializeField] private CollisionContainer collisionContainer;
+    public CollisionContainer CollisionContainer => collisionContainer;
+    
+    [SerializeField] private EffectContainer effectContainer;
+    public EffectContainer EffectContainer => effectContainer;
 }

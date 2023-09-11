@@ -11,7 +11,7 @@ public class AddGameObjectsToMonoBehaviour : MonoBehaviour
         foreach (var prefab in prefabsToAdd)
         {
             var comp = Instantiate(prefab, monoBehaviour.transform);
-            comp.SetMetaContainer(monoBehaviour.MetaContainer);
+            comp.Setup(monoBehaviour.MetaContainer);
         }
     }
 }

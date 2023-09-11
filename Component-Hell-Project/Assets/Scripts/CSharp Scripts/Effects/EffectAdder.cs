@@ -12,11 +12,14 @@ public class EffectAdder : GameComponent
     private EffectTimeComponent EffectTime;
     private ColliderBroadcaster broadcaster;
 
-    private void OnEnable()
+
+    public override void Setup(MetaContainer container)
     {
-        EffectTime = transform.parent.GetComponentInChildren<EffectTimeComponent>();
+        base.Setup(container);
         
-        broadcaster = GetComponentInParent<ColliderBroadcaster>();
+        EffectTime = _metaContainer.EffectContainer.EffectTimeComponent;
+
+        broadcaster = _metaContainer.CollisionContainer.ColliderBroadcaster;
         broadcaster.OnTrigEnter.AddListener(AddEffect);
     }
 
@@ -32,30 +35,33 @@ public class EffectAdder : GameComponent
         {
             return;
         }
-        
-        // kan behöva fixas senare: behöver inte vara samma effekt komponent som hittas
-        var effectComponents = other.GetComponentsInChildren<EffectComponent>();
-        if (effectComponents != null)
-        {
-            foreach (var component in effectComponents)
-            {
-                string componentName = component.name;
-                string prefabName = effectPrefab.name;
 
-                bool containsComponent = componentName.Contains(prefabName);
-                
-                // Debug.Log("Added prefab name: " + effectPrefab.name);
-                // Debug.Log("Found component name: " + component.name);
-                
-                if (containsComponent)
-                {
-                    //Debug.Log($"{other.name} already has a {effectPrefab.name} attached.");
-                    return;   
-                }
+        // kan optimeras genom att ett event skickas om en metacontainer träffas, så att alla
+        // effectAdders inte behöver göra denna check
+        var otherMetaContainer = other.GetComponent<MetaContainer>();
+        if (!otherMetaContainer)
+        {
+            Debug.Log("No meta container found");
+            return;
+        }
+
+        var effectContainer = otherMetaContainer.EffectContainer;
+        var effectList = effectContainer.activeEffects;
+
+        foreach (var effectComp in effectList)
+        {
+            if (effectComp.GetType() == effectPrefab.GetType())
+            {
+                Debug.Log($"{other.name} already has {effectPrefab}");
+                return;
             }
         }
-        
+
         var effect = Instantiate(effectPrefab, other.transform);
+
+        effect.Setup(otherMetaContainer);
         effect.OnInstantiated(EffectTime.currentValue);
+
+        effectList.Add(effect);
     }
 }

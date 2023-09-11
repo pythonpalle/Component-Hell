@@ -7,7 +7,7 @@ public class GameComponent : MonoBehaviour
     [SerializeField] protected MetaContainer _metaContainer;
     public MetaContainer MetaContainer => _metaContainer;
 
-    public void SetMetaContainer(MetaContainer container)
+    public virtual void Setup(MetaContainer container)
     {
         _metaContainer = container;
     }
