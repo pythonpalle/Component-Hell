@@ -18,6 +18,12 @@ public class ObjectMover : MonoBehaviour
         directionComponent = GetComponent<DirectionComponent>();
     }
 
+    private void OnEnable()
+    {
+        if (!transformToMove)
+            transformToMove = transform;
+    }
+
     public void Move(Vector3 direction)
     {
         direction = direction.normalized;

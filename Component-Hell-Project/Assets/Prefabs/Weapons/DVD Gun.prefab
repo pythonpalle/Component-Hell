@@ -1,5 +1,68 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &260848462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 260848463}
+  - component: {fileID: 260848468}
+  - component: {fileID: 957123715}
+  m_Layer: 6
+  m_Name: ComponentAdder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &260848463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260848462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5404104272743974705}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &260848468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260848462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a47566e1a008c945b4827395fea087a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: 11500000, guid: 2d4209fa82368dc42b3988eca33905cd, type: 3}
+  - {fileID: 11500000, guid: 10351e5d828790b43ac883e58cc344a8, type: 3}
+  componentChildName: SpeedComponent
+--- !u!114 &957123715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260848462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5129ccd83500f4ba535c7250a24721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabsToAdd:
+  - {fileID: 6662545945381236894, guid: 0f471042a613bbb409695eec2a695ed9, type: 3}
 --- !u!1 &1874245146303475031
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,7 +78,7 @@ GameObject:
   - component: {fileID: 299107100965175286}
   - component: {fileID: 2032016425633948680}
   - component: {fileID: 2292175276505423940}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,8 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc12feeade36e244b524297228ac806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseValue: 1
-  currentValue: 1
+  baseValue: 10
+  currentValue: 10
 --- !u!114 &7311026525509018742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,8 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1a24b87b659ea4cbf3e60e4c36ea04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseValue: 1
-  currentValue: 1
+  baseValue: 3
+  currentValue: 3
 --- !u!114 &299107100965175286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,8 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb42effbe04e2964badf7921f39a04eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseValue: 1
-  currentValue: 1
+  baseValue: 5
+  currentValue: 5
 --- !u!114 &2292175276505423940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,8 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d139d048d0275554e8566111dd7e75dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseValue: 1
-  currentValue: 1
+  baseValue: 1.5
+  currentValue: 1.5
 --- !u!1 &5609120994992798349
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,8 +198,8 @@ GameObject:
   - component: {fileID: 5404104272743974705}
   - component: {fileID: 6015097530929085078}
   - component: {fileID: 892037710}
-  - component: {fileID: 4920959200610977470}
-  m_Layer: 0
+  - component: {fileID: 7825429799708889858}
+  m_Layer: 6
   m_Name: DVD Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,6 +220,7 @@ Transform:
   m_Children:
   - {fileID: 2996819138444741616}
   - {fileID: 4838733287306203892}
+  - {fileID: 260848463}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -175,13 +239,13 @@ MonoBehaviour:
   projectilePrefab: {fileID: 989252837391974315, guid: 9757bf578516de843bf860a3f6e63d74, type: 3}
   fireType: {fileID: 892037710}
   _stats: {fileID: 8799643464296784225}
-  controller: {fileID: 0}
+  controller: {fileID: 7825429799708889858}
   OnPrepareFire:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7269874546871306083}
-        m_TargetAssemblyTypeName: RandomiseDirection, Assembly-CSharp
-        m_MethodName: Randomise
+      - m_Target: {fileID: 1789859546}
+        m_TargetAssemblyTypeName: SetDirectionTowardMouse, Assembly-CSharp
+        m_MethodName: SetDirection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -195,8 +259,32 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4983471562133195672}
-        m_TargetAssemblyTypeName: ProjectileBehaviours, Assembly-CSharp
+        m_TargetAssemblyTypeName: ProjectileDirectionTransfer, Assembly-CSharp
         m_MethodName: TransferDirection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 260848468}
+        m_TargetAssemblyTypeName: AddComponentsToGameObject, Assembly-CSharp
+        m_MethodName: AddComponentToGO
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 957123715}
+        m_TargetAssemblyTypeName: AddGameObjectsToMonoBehaviour, Assembly-CSharp
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -219,8 +307,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burstCount: 3
-  timeBetweenBursts: 0.3
---- !u!114 &4920959200610977470
+  timeBetweenBursts: 0.1
+--- !u!114 &7825429799708889858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,10 +317,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5609120994992798349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a47566e1a008c945b4827395fea087a, type: 3}
+  m_Script: {fileID: 11500000, guid: 20e5ecd9812d2164ca4b7e3e164eece2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  components: []
 --- !u!1 &7400873132517945963
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,8 +332,10 @@ GameObject:
   - component: {fileID: 1095322566646169653}
   - component: {fileID: 4983471562133195672}
   - component: {fileID: 7269874546871306083}
-  m_Layer: 0
-  m_Name: ProjectileBehaviours
+  - component: {fileID: 1789859543}
+  - component: {fileID: 1789859546}
+  m_Layer: 6
+  m_Name: Direction Behaviours
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -302,5 +391,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aecf109e9703e6d4aadb48b8d17c5c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1789859543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7400873132517945963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9997da4505a524e88375888bc9a006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromDirection: {fileID: 0}
+  toDirection: {fileID: 1095322566646169653}
+--- !u!114 &1789859546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7400873132517945963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374e8687df3bb004eacac9d760794c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

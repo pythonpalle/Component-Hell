@@ -9,7 +9,7 @@ public abstract class MovementControllerBase : MonoBehaviour
 
     protected virtual void OnEnable()
     {
-        ObjectMover = GetComponent<ObjectMover>();
+        ObjectMover = GetComponentInChildren<ObjectMover>();
     }
 
     // Update is called once per frame

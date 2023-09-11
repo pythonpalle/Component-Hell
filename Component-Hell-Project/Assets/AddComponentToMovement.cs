@@ -1,16 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine; 
-using UnityEngine.Serialization;
-using System.Runtime.Serialization;
-using Unity.VisualScripting;
+using UnityEngine;
 
-
-public class AddComponentsToMonoBehaviour : MonoBehaviour
+public class AddComponentToMovement : MonoBehaviour
 {
     [SerializeField] private List<Object> components;
-    [SerializeField] private string componentChildName;
-
+    
     public void AddComponentToGO(MonoBehaviour mb)
     {
         foreach (var component in components)
@@ -35,23 +30,6 @@ public class AddComponentsToMonoBehaviour : MonoBehaviour
                 // Check if the scriptType is a MonoBehaviour
                 if (typeof(MonoBehaviour).IsAssignableFrom(scriptType))
                 {
-                    // Try To Add component to child that has a component with name _componentChildName_
-                    if (!string.IsNullOrEmpty(componentChildName))
-                    {
-                        System.Type childCompType = System.Type.GetType(componentChildName);
-
-                        if (childCompType != null) 
-                        {
-                            if (typeof(MonoBehaviour).IsAssignableFrom(childCompType))
-                            {
-                                var childObject = toAddObject.GetComponentInChildren(childCompType);
-                                childObject.gameObject.AddComponent(scriptType);
-                                return;
-                            }
-                        }
-                    }
-                    
-                    
                     // Add the component
                     toAddObject.AddComponent(scriptType);
                 }
