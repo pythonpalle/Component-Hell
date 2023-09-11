@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1586842587356501710}
   - component: {fileID: 2977281299873044507}
   m_Layer: 0
-  m_Name: Slow Down Effect
+  m_Name: Freeze Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 3
-  speedChangeMultiplier: 0.1
+  speedChangeMultiplier: 0

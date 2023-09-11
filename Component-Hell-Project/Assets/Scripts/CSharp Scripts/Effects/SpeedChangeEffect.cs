@@ -15,6 +15,11 @@ public class SpeedChangeEffect : EffectComponent
         
         // hatar detta
         _speedComponent = transform.parent.GetComponentInChildren<SpeedComponent>();
+        
+        // för att undvika zero division
+        if (speedChangeMultiplier <= 0)
+            speedChangeMultiplier = 0.001f;
+        
         _speedComponent.currentValue *= speedChangeMultiplier;
         
         Destroy(gameObject, duration); 
