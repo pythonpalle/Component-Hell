@@ -283,8 +283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa126dda7d013c4b835815b463bdb88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementContainer: {fileID: 0}
-  healthContainer: {fileID: 0}
+  _movementContainer: {fileID: 1071655746247319616}
+  healthContainer: {fileID: 2651436482151402610}
 --- !u!1 &5842228505949120094
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,6 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df475954f020130479e8784eb4dc575e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _metaContainer: {fileID: 725660073599668225}
   transformToMove: {fileID: 5842228505393806549}
 --- !u!114 &1071655746247319616
 MonoBehaviour:
@@ -412,6 +413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8889166343478289786}
   - component: {fileID: 7305624595905115075}
+  - component: {fileID: 2651436482151402610}
   m_Layer: 7
   m_Name: Health
   m_TagString: Untagged
@@ -482,6 +484,18 @@ MonoBehaviour:
         m_CallState: 2
   maxHealth: 10
   CurrentHealth: 0
+--- !u!114 &2651436482151402610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7118357464377202739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5d4c24f5ac95e43bf68afd535cdec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7377756399152388798
 GameObject:
   m_ObjectHideFlags: 0
