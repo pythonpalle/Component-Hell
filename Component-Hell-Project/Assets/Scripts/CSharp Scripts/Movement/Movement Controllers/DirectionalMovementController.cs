@@ -21,6 +21,8 @@ public class DirectionalMovementController : MovementControllerBase
     private void OnDrawGizmos()
     {
         var pos = transform.position;
+        if (!_directionComponent) return;
+        
         Gizmos.DrawLine(pos, pos + (Vector3)_directionComponent.Value);
     }
 }

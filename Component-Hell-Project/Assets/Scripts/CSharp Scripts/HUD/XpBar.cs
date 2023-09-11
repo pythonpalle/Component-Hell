@@ -6,13 +6,33 @@ using UnityEngine.UI;
 
 public class XpBar : MonoBehaviour
 {
-    private float max = 10;
-
-    [SerializeField] private FloatVariable playerXP;
+    
     [SerializeField] private Slider _slider;
 
-    private void Update()
+    [Header("Scriptable Variables")]
+    [SerializeField] private FloatVariable playerXP;
+    [SerializeField] private FloatVariable neededXpForNextLevel;
+
+    private float prevLevelNeeded = 0;
+    private float nextLevelNeeded = 0;
+
+    private void OnEnable()
     {
-        _slider.value = playerXP.value / max;
+        UpdateNeededValues();
+        UpdateSliderValue();
+    }
+
+    private void UpdateNeededValues()
+    {
+        prevLevelNeeded = nextLevelNeeded;
+        nextLevelNeeded = neededXpForNextLevel.value;
+    }
+
+    public void UpdateSliderValue()
+    {
+        float current = playerXP.value - prevLevelNeeded;
+        float max = nextLevelNeeded - prevLevelNeeded;
+
+        _slider.value = current/max;
     }
 }

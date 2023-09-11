@@ -316,8 +316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc12feeade36e244b524297228ac806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseValue: 1
-  currentValue: 1
+  baseValue: 0.5
+  currentValue: 0.5
 --- !u!114 &593542287449535509
 MonoBehaviour:
   m_ObjectHideFlags: 0

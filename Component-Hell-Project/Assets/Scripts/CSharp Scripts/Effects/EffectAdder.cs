@@ -44,12 +44,12 @@ public class EffectAdder : MonoBehaviour
 
                 bool containsComponent = componentName.Contains(prefabName);
                 
-                Debug.Log("Added prefab name: " + effectPrefab.name);
-                Debug.Log("Found component name: " + component.name);
+                // Debug.Log("Added prefab name: " + effectPrefab.name);
+                // Debug.Log("Found component name: " + component.name);
                 
                 if (containsComponent)
                 {
-                    Debug.Log($"{other.name} already has a {effectPrefab.name} attached.");
+                    //Debug.Log($"{other.name} already has a {effectPrefab.name} attached.");
                     return;   
                 }
             }

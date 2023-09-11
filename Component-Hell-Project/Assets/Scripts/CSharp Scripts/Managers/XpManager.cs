@@ -7,7 +7,9 @@ using UnityEngine.Events;
 public class XpManager : MonoBehaviour
 {
     public static XpManager Instance { get; private set; }
+    
     [SerializeField] private FloatVariable playerXP;
+    [SerializeField] private FloatVariable neededXpForNextLevel;
 
     public UnityEvent<float> OnAddXP;
 
@@ -26,7 +28,7 @@ public class XpManager : MonoBehaviour
 
     public void AddXP(float xp)
     {
-        OnAddXP?.Invoke(xp);
         playerXP.value += xp;
+        OnAddXP?.Invoke(xp);
     }
 }
