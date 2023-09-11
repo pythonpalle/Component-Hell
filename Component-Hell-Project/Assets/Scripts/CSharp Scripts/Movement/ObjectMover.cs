@@ -7,22 +7,21 @@ using UnityEngine;
 [RequireComponent(typeof(DirectionComponent))]
 public class ObjectMover : MonoBehaviour
 {
-    private Transform rootTransform;
+    [SerializeField] private Transform transformToMove;
 
     private SpeedComponent speedComponent;
     private DirectionComponent directionComponent;
 
     private void Awake()
     {
-        rootTransform = transform.root;
-
         speedComponent = GetComponent<SpeedComponent>();
         directionComponent = GetComponent<DirectionComponent>();
     }
 
     public void Move(Vector3 direction)
     {
-        directionComponent.Value = direction.normalized;
-        rootTransform.position += direction * (Time.deltaTime * speedComponent.currentValue);
+        direction = direction.normalized;
+        directionComponent.Value = direction;
+        transformToMove.position += direction * (Time.deltaTime * speedComponent.currentValue);
     }
 }

@@ -22,7 +22,7 @@ public class XpBar : MonoBehaviour
         UpdateSliderValue();
     }
 
-    private void UpdateNeededValues()
+    public void UpdateNeededValues()
     {
         prevLevelNeeded = nextLevelNeeded;
         nextLevelNeeded = neededXpForNextLevel.value;

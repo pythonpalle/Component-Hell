@@ -8,8 +8,6 @@ public class MovementToPlayerDestination : MovementControllerBase
     [SerializeField] private float unitsAheadOfPlayer = 5f;
     
     private Transform playerTransform;
-
-    private bool playerExists = true;
     
     protected override void OnEnable()
     {

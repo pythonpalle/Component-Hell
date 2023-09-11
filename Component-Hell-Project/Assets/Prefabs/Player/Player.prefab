@@ -229,6 +229,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   maxHealth: 100
+  CurrentHealth: 0
 --- !u!1 &1038614014563640135
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df475954f020130479e8784eb4dc575e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transformToMove: {fileID: 3931818526344562772}
 --- !u!114 &1150494220303879649
 MonoBehaviour:
   m_ObjectHideFlags: 0

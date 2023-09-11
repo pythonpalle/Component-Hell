@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 5237160329902824928}
   - component: {fileID: 9061496292188465232}
   - component: {fileID: 4899356758407600590}
+  - component: {fileID: 4358763170066272907}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -256,6 +257,19 @@ MonoBehaviour:
   OnTrigStay:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4358763170066272907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5842228505393806546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead2bbf549f8d5a4d9c57690597af920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyRoot: 0
 --- !u!1 &5842228505949120094
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df475954f020130479e8784eb4dc575e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transformToMove: {fileID: 5842228505393806549}
 --- !u!114 &7112811951402636878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,8 +331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc12feeade36e244b524297228ac806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseValue: 0.5
-  currentValue: 0.5
+  baseValue: 1
+  currentValue: 1
 --- !u!114 &593542287449535509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,7 +382,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8889166343478289786}
   - component: {fileID: 7305624595905115075}
-  - component: {fileID: 7730672833344569245}
   m_Layer: 7
   m_Name: Health
   m_TagString: Untagged
@@ -424,21 +438,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4358763170066272907}
+        m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
+        m_MethodName: SelfDestroy
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   maxHealth: 10
   CurrentHealth: 0
---- !u!114 &7730672833344569245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7118357464377202739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a68cb3a79e47ad40860949b106f0e5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyRoot: 1
 --- !u!1 &7377756399152388798
 GameObject:
   m_ObjectHideFlags: 0

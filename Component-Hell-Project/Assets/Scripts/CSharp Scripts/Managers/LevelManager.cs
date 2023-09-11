@@ -35,6 +35,8 @@ public class LevelManager : MonoBehaviour
 
     private void UpdateNeededXPForNextLevel()
     {
-        neededXpForNextLevel.value = startValue + Mathf.Pow(baseValue, currentLevel.value);
+        neededXpForNextLevel.value = 
+            startValue * (currentLevel.value + 1) 
+            + Mathf.Pow(baseValue, currentLevel.value); 
     }
 }
