@@ -8299,6 +8299,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1801415123978459018, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1801415123978459018, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 580474912}
