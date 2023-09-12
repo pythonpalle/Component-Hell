@@ -3,21 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReflectOnBoundries : MonoBehaviour
+public class ReflectOnBoundries : GameComponent
 {
     private DirectionComponent direction;
     private Vector2 screenBounds;
+    private Transform objectTransform;
 
-    private void OnEnable()
+    public override void Setup (MetaContainer container)
     {
-        direction = GetComponentInChildren<DirectionComponent>();
+        base.Setup(container);
+        
+        direction = _metaContainer.MovementContainer.DirectionComponent;
+        
+        //TOdo: optimera
         screenBounds = Camera.main.ScreenToWorldPoint
             (new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+
+        objectTransform = _metaContainer.transform;
     }
 
     void LateUpdate()
     {
-        var transformPos = transform.position;
+        var transformPos = objectTransform.position;
         Vector3 newPos = transformPos;
 
         bool flipX = false;
@@ -63,7 +70,7 @@ public class ReflectOnBoundries : MonoBehaviour
             Debug.Log("WOW WE HIT THE CORNER");
         }
 
-        transform.position = newPos;
+        objectTransform.position = newPos;
     }
 
     private void FlipX(Vector2 currentDirection)

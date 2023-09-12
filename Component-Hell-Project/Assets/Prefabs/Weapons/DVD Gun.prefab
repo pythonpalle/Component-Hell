@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 260848463}
-  - component: {fileID: 260848468}
   - component: {fileID: 957123715}
   m_Layer: 6
   m_Name: ComponentAdder
@@ -33,21 +32,6 @@ Transform:
   m_Father: {fileID: 5404104272743974705}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &260848468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260848462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a47566e1a008c945b4827395fea087a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  components:
-  - {fileID: 11500000, guid: 2d4209fa82368dc42b3988eca33905cd, type: 3}
-  componentChildName: SpeedComponent
 --- !u!114 &957123715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabsToAdd:
   - {fileID: 5436271162279470113, guid: b0d1a19b84c6f3246bf98cda581b196f, type: 3}
+  - {fileID: 7904116130204644324, guid: 87ab602932ad04a449fd6039a7dd21c5, type: 3}
 --- !u!1 &1874245146303475031
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,18 +293,6 @@ MonoBehaviour:
       - m_Target: {fileID: 4983471562133195672}
         m_TargetAssemblyTypeName: ProjectileDirectionTransfer, Assembly-CSharp
         m_MethodName: TransferDirection
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 260848468}
-        m_TargetAssemblyTypeName: AddComponentsToGameObject, Assembly-CSharp
-        m_MethodName: AddComponentToGO
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
