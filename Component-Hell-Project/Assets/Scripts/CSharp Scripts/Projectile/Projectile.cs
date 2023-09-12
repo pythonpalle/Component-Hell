@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BaseAttackStats))]
 public class Projectile : GameComponent
 {
     [SerializeField] private BaseAttackStats _stats; 

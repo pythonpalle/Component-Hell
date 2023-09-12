@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
-public class RandomiseDirection : MonoBehaviour
+public class RandomiseDirection : GameComponent
 {
-    private DirectionComponent _directionComponent;
+    private Vector2Variable _directionComponent;
     private Random _random;
 
-    private void Awake()
+    private void OnEnable()
     {
-        _directionComponent = GetComponent<DirectionComponent>();
+        _directionComponent = _metaContainer.MovementContainer.DirectionVariable;
         _random = new Random();
     }
 
@@ -23,6 +23,6 @@ public class RandomiseDirection : MonoBehaviour
             y = (float) _random.NextDouble()*2-1, 
         }.normalized;
 
-        _directionComponent.Value = newDirection;
+        _directionComponent.value = newDirection;
     }
 }

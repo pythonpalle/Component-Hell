@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedTransfer : MonoBehaviour
+public class SpeedTransfer : DataTransfer
 {
-    [SerializeField] private MovementContainer from;
-    [SerializeField] private MovementContainer to;
-
     [SerializeField] private bool mulitply;
+    
 
-    public void Transer()
+    public override void Transfer(GameComponent toComponent)
     {
-        float mulitplier = mulitply ? @to.MovementSpeed.value : 1;
+        float mulitplier = mulitply ? toComponent.MetaContainer.MovementContainer.MovementSpeed.value : 1;
 
-        to.MovementSpeed.value = mulitplier * @from.MovementSpeed.value;
+        toComponent.MetaContainer.MovementContainer.MovementSpeed.value = 
+            mulitplier * _metaContainer.MovementContainer.MovementSpeed.value;
     }
 }

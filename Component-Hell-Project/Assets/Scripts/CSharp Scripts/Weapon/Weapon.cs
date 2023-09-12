@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class Weapon : MonoBehaviour
+public class Weapon : GameComponent
 {
     [Header("Prefabs")]
     [SerializeField] private Projectile projectilePrefab;
@@ -34,22 +34,24 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public void TryAttack(WeaponHandler handler)
+    public bool CanAttack()
     {
         bool wantsToShoot = !controller || controller.WantsToShoot();
-        if (!wantsToShoot) return;
+        if (!wantsToShoot) return false;
         
         bool hasCooledDown =!_stats || _stats.Cooldown.hasCooledDown;
+
+        return hasCooledDown;
+    }
+
+    public void Attack(WeaponHandler handler)
+    {
+        // override stats from the weapon handler
+        _stats.OverrideStats(handler.Stats);
         
-        if (hasCooledDown)
-        {
-            // override stats from the weapon handler
-            _stats.OverrideStats(handler.Stats);
-            
-            OnPrepareFire?.Invoke();
-            fireType.Fire(projectilePrefab, this);
-            
-            _stats.Cooldown.Reset();
-        }
+        OnPrepareFire?.Invoke();
+        fireType.Fire(projectilePrefab, this);
+        
+        _stats.Cooldown.Reset();
     }
 }

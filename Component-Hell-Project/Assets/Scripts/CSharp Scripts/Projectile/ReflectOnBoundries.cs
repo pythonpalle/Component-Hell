@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class ReflectOnBoundries : GameComponent
 {
-    private DirectionComponent direction;
+    //private DirectionComponent direction;
+    private Vector2Variable direction;
     private Vector2 screenBounds;
     private Transform objectTransform;
 
@@ -13,7 +14,8 @@ public class ReflectOnBoundries : GameComponent
     {
         base.Setup(container);
         
-        direction = _metaContainer.MovementContainer.DirectionComponent;
+        //direction = _metaContainer.MovementContainer.DirectionComponent;
+        direction = _metaContainer.MovementContainer.DirectionVariable;
         
         //TOdo: optimera
         screenBounds = Camera.main.ScreenToWorldPoint
@@ -58,11 +60,11 @@ public class ReflectOnBoundries : GameComponent
         
         if (flipX)
         {
-            FlipX(direction.Value);
+            FlipX(direction.value);
         } 
         if (flipY)
         {
-            FlipY(direction.Value);
+            FlipY(direction.value);
         }
 
         if (flipX && flipY)
@@ -75,11 +77,11 @@ public class ReflectOnBoundries : GameComponent
 
     private void FlipX(Vector2 currentDirection)
     {
-        direction.Value = new Vector2(-currentDirection.x, currentDirection.y);
+        direction.value = new Vector2(-currentDirection.x, currentDirection.y);
     }
     
     private void FlipY(Vector2 currentDirection)
     {
-        direction.Value = new Vector2(currentDirection.x, -currentDirection.y);
+        direction.value = new Vector2(currentDirection.x, -currentDirection.y);
     }
 }

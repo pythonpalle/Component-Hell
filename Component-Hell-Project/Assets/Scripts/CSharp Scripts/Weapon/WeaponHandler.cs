@@ -14,6 +14,8 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField] private BaseAttackStats _stats;
     public BaseAttackStats Stats => _stats;
 
+    public DataTransfer dataTransfer;
+
     private void Awake()
     {
         _stats = GetComponentInChildren<BaseAttackStats>();
@@ -29,7 +31,11 @@ public class WeaponHandler : MonoBehaviour
     {
         foreach (var weapon in weapons)
         {
-            weapon.TryAttack(this);
+            if (weapon.CanAttack())
+            {
+                dataTransfer.Transfer(weapon);
+                weapon.Attack(this);
+            }
         }
     }
 }
