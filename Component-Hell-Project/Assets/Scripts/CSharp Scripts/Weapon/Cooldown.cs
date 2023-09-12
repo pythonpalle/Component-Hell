@@ -9,7 +9,7 @@ public class Cooldown : GameComponent
     
     private FloatVariable cooldownTime;
 
-    private void Awake()
+    private void Start()
     {
         cooldownTime = _metaContainer.CooldownContainer.CooldownVariable;
     }

@@ -50,12 +50,9 @@ public class Weapon : GameComponent
 
     public void Attack(WeaponHandler handler)
     {
-        // // override stats from the weapon handler
-        // _stats.OverrideStats(handler.Stats);
-        
         OnPrepareFire?.Invoke();
         fireType.Fire(projectilePrefab, this);
         
-        _stats.Cooldown.Reset();
+        _cooldown.Reset();
     }
 }
