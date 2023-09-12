@@ -16,4 +16,7 @@ public class MetaContainer : Container
     
     [SerializeField] private EffectContainer effectContainer;
     public EffectContainer EffectContainer => effectContainer;
+
+    [SerializeField] private CooldownContainer _cooldownContainer;
+    public CooldownContainer CooldownContainer => _cooldownContainer;
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 public class WeaponHandler : MonoBehaviour
@@ -14,7 +15,7 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField] private BaseAttackStats _stats;
     public BaseAttackStats Stats => _stats;
 
-    public DataTransfer dataTransfer;
+    public DataTransferManager dataTransferManager;
 
     private void Awake()
     {
@@ -33,7 +34,7 @@ public class WeaponHandler : MonoBehaviour
         {
             if (weapon.CanAttack())
             {
-                dataTransfer.Transfer(weapon);
+                dataTransferManager.TransferAll(weapon);
                 weapon.Attack(this);
             }
         }

@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class SpeedTransfer : DataTransfer
 {
-    [SerializeField] private bool mulitply;
     
-
     public override void Transfer(GameComponent toComponent)
     {
-        float mulitplier = mulitply ? toComponent.MetaContainer.MovementContainer.MovementSpeed.value : 1;
+        var toSpeed = toComponent.MetaContainer.MovementContainer.MovementSpeed.value;
 
         toComponent.MetaContainer.MovementContainer.MovementSpeed.value = 
-            mulitplier * _metaContainer.MovementContainer.MovementSpeed.value;
+            Multiplier(toSpeed) * _metaContainer.MovementContainer.MovementSpeed.value;
     }
 }

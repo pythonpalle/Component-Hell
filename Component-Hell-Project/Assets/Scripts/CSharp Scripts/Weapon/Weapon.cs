@@ -18,6 +18,8 @@ public class Weapon : GameComponent
     
     [SerializeField] private WeaponController controller;
 
+    private Cooldown _cooldown;
+
 
     [Header("Events")] 
     public UnityEvent OnPrepareFire;
@@ -32,22 +34,24 @@ public class Weapon : GameComponent
         {
             _stats = GetComponentInChildren<BaseAttackStats>();
         }
+
+        _cooldown = _metaContainer.CooldownContainer.Cooldown;
     }
 
     public bool CanAttack()
     {
         bool wantsToShoot = !controller || controller.WantsToShoot();
         if (!wantsToShoot) return false;
-        
-        bool hasCooledDown =!_stats || _stats.Cooldown.hasCooledDown;
+
+        bool hasCooledDown = _cooldown.HasCooledDown();
 
         return hasCooledDown;
     }
 
     public void Attack(WeaponHandler handler)
     {
-        // override stats from the weapon handler
-        _stats.OverrideStats(handler.Stats);
+        // // override stats from the weapon handler
+        // _stats.OverrideStats(handler.Stats);
         
         OnPrepareFire?.Invoke();
         fireType.Fire(projectilePrefab, this);

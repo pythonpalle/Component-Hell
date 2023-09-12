@@ -16,6 +16,6 @@ public class Projectile : GameComponent
     
     public void SetUp(Weapon weapon)
     {
-        _stats.OverrideStats(weapon.Stats);
+        //_stats.OverrideStats(weapon.Stats);
     }
 }

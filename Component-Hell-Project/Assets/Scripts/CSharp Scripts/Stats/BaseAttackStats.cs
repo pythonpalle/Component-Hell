@@ -57,10 +57,10 @@ public class BaseAttackStats : MonoBehaviour
 
     public void OverrideStats(BaseAttackStats other)
     {
-        speedComponent.currentValue = speedComponent.baseValue * other.SpeedComponent.currentValue;
-        damageComponent.currentValue = damageComponent.baseValue * other.DamageComponent.currentValue; 
-        sizeComponent.currentValue = sizeComponent.baseValue * other.SizeComponent.currentValue;
-        cooldownComponent.currentValue = cooldownComponent.baseValue * other.Cooldown.currentValue;
-        effectTimeComponent.currentValue = effectTimeComponent.baseValue * other.EffectTimeComponent.currentValue;
+        // speedComponent.currentValue = speedComponent.baseValue * other.SpeedComponent.currentValue;
+        // damageComponent.currentValue = damageComponent.baseValue * other.DamageComponent.currentValue; 
+        // sizeComponent.currentValue = sizeComponent.baseValue * other.SizeComponent.currentValue;
+        // cooldownComponent.currentValue = cooldownComponent.baseValue * other.Cooldown.currentValue;
+        // effectTimeComponent.currentValue = effectTimeComponent.baseValue * other.EffectTimeComponent.currentValue;
     }
 }
