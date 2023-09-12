@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 1789859546}
   - component: {fileID: 3348864002632595712}
   m_Layer: 6
-  m_Name: Direction Behaviours
+  m_Name: Movement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -408,6 +408,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directionComponent: {fileID: 1095322566646169653}
   speedComponent: {fileID: 7231237310766189644}
+  makeInstance: 1
+  directionVariable: {fileID: 11400000, guid: eda5dad1b34598f458974da9765a2802, type: 2}
+  movementSpeed: {fileID: 11400000, guid: 9ae9408782d44404fa4dc710c56d33d2, type: 2}
 --- !u!114 &1095322566646169653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,3 +488,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _metaContainer: {fileID: 2339703891435548808}
   transformToMove: {fileID: 5404104272743974705}
+  useContainer: 0

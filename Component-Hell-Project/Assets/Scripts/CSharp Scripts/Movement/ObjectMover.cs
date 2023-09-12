@@ -10,19 +10,48 @@ public class ObjectMover : GameComponent
     private DirectionComponent _directionComponent;
     private SpeedComponent _speedComponent;
 
+    private Vector2Variable directionVar;
+    private FloatVariable speedVar;
+
+    public bool useContainer;
+
     private void OnEnable()
     {
         if (!transformToMove)
             transformToMove = transform;
 
-        _directionComponent = _metaContainer.MovementContainer.DirectionComponent;
-        _speedComponent = _metaContainer.MovementContainer.SpeedComponent;
+        if (useContainer)
+        {
+            _directionComponent = _metaContainer.MovementContainer.DirectionComponent;
+            _speedComponent = _metaContainer.MovementContainer.SpeedComponent;
+        }
+        
+        else
+        {
+            directionVar = _metaContainer.MovementContainer.DirectionVariable;
+            speedVar = _metaContainer.MovementContainer.MovementSpeed;
+        }
     }
 
     public void Move(Vector3 direction)
     {
-        direction = direction.normalized;
-        _directionComponent.Value = direction; // kan bli referensfel
-        transformToMove.position += direction * (Time.deltaTime * _speedComponent.currentValue); // detta är dock fine
+        if (useContainer)
+        {
+            direction = direction.normalized;
+            _directionComponent.Value = direction; // kan bli referensfel
+            transformToMove.position += direction * (Time.deltaTime * _speedComponent.currentValue); // detta är dock fine
+        }
+        
+        else 
+        {
+            direction = direction.normalized;
+            directionVar.value = direction;
+            transformToMove.position += direction * (Time.deltaTime * speedVar.value); // detta är dock fine
+            
+            return;
+        }
+        
+        
+        
     }
 }

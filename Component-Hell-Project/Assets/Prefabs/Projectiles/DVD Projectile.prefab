@@ -410,6 +410,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directionComponent: {fileID: 5571660422977898644}
   speedComponent: {fileID: 7981274919558977608}
+  makeInstance: 1
+  directionVariable: {fileID: 11400000, guid: ca87fd7556893354796edf808cb06a3c, type: 2}
+  movementSpeed: {fileID: 11400000, guid: 1786d6c30fe442d47a3cfb7ea403a716, type: 2}
 --- !u!114 &5571660422977898644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _metaContainer: {fileID: 5515728828683904900}
   transformToMove: {fileID: 7450179803786484431}
+  useContainer: 0
 --- !u!114 &520544359740137121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,6 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectTimeComponent: {fileID: 4122465983825886971}
+  activeEffects: []
 --- !u!114 &4122465983825886971
 MonoBehaviour:
   m_ObjectHideFlags: 0

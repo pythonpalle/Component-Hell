@@ -385,6 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _metaContainer: {fileID: 725660073599668225}
   transformToMove: {fileID: 5842228505393806549}
+  useContainer: 0
 --- !u!114 &1071655746247319616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,6 +400,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directionComponent: {fileID: 593542287449535509}
   speedComponent: {fileID: 7112811951402636878}
+  makeInstance: 1
+  directionVariable: {fileID: 11400000, guid: 7fe9bcc57fafa5042911e621e6ac5eda, type: 2}
+  movementSpeed: {fileID: 11400000, guid: 6c900d3785bb7ff4ca90955a736788af, type: 2}
 --- !u!114 &7112811951402636878
 MonoBehaviour:
   m_ObjectHideFlags: 0
