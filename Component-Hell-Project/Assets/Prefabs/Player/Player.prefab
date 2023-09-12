@@ -151,6 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementContainer: {fileID: 3043709278377385508}
   healthContainer: {fileID: 926563022872248054}
+  collisionContainer: {fileID: 0}
+  effectContainer: {fileID: 0}
 --- !u!1 &980571268552217625
 GameObject:
   m_ObjectHideFlags: 0

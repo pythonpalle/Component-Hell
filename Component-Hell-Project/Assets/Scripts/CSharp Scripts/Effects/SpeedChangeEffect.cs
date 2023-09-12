@@ -25,8 +25,9 @@ public class SpeedChangeEffect : EffectComponent
         Destroy(gameObject, duration); 
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
+        base.OnDestroy();
         _speedComponent.currentValue /= speedChangeMultiplier;
-    }
+    } 
 } 

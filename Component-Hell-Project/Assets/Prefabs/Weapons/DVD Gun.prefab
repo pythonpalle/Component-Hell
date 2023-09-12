@@ -231,6 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectTimeComponent: {fileID: 2292175276505423940}
+  activeEffects: []
 --- !u!1 &5609120994992798349
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,9 +290,9 @@ MonoBehaviour:
   OnPrepareFire:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7269874546871306083}
-        m_TargetAssemblyTypeName: RandomiseDirection, Assembly-CSharp
-        m_MethodName: Randomise
+      - m_Target: {fileID: 1789859546}
+        m_TargetAssemblyTypeName: SetDirectionTowardMouse, Assembly-CSharp
+        m_MethodName: SetDirection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -368,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03eb2e8d2be4f1242a407cc8a7ddace5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burstCount: 3
+  burstCount: 2
   timeBetweenBursts: 0.1
 --- !u!114 &7825429799708889858
 MonoBehaviour:

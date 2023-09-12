@@ -61,7 +61,5 @@ public class EffectAdder : GameComponent
 
         effect.Setup(otherMetaContainer);
         effect.OnInstantiated(EffectTime.currentValue);
-
-        effectList.Add(effect);
     }
 }

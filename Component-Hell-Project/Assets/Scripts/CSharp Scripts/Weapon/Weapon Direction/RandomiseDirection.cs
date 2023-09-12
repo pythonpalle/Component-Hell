@@ -24,8 +24,5 @@ public class RandomiseDirection : MonoBehaviour
         }.normalized;
 
         _directionComponent.Value = newDirection;
-        
-        Debug.Log("New direction: " + newDirection);
-        Debug.Log("New value: " + _directionComponent.Value);
     }
 }
