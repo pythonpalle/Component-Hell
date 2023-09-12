@@ -8,6 +8,5 @@ public class SingleWeaponFire : WeaponFireType
     public override void Fire(Projectile projectile, Weapon weapon)
     {
         SpawnProjectile(projectile, weapon);
-        SetupProjectile(projectile, weapon);
     }
 } 

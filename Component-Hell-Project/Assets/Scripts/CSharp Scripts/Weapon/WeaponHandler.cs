@@ -11,15 +11,10 @@ public class WeaponHandler : MonoBehaviour
     [Header("Weapons Owned")]
     [SerializeField] private List<Weapon> weapons;
     
-    [Header("Stats")]
-    [SerializeField] private BaseAttackStats _stats;
-    public BaseAttackStats Stats => _stats;
-
-    public DataTransferManager dataTransferManager;
+    [SerializeField] private DataTransferManager dataTransferManager;
 
     private void Awake()
     {
-        _stats = GetComponentInChildren<BaseAttackStats>();
         weapons = GetComponentsInChildren<Weapon>().ToList();
     }
 

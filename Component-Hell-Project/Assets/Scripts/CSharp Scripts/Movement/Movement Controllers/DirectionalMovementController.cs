@@ -8,7 +8,7 @@ public class DirectionalMovementController : MovementControllerBase
     
     private Vector2Variable directionValue;
 
-    private void Awake()
+    private void Start()
     {
         directionValue = _metaContainer.MovementContainer.DirectionVariable;
     }

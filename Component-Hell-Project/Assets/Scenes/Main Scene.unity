@@ -7656,6 +7656,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 642df229ec21eab4b96cf213d0f18430, type: 3}
+--- !u!114 &1999081441 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3701750171388410454, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+  m_PrefabInstance: {fileID: 7825429799708889835}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa126dda7d013c4b835815b463bdb88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2010222115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2561437857087559956, guid: 642df229ec21eab4b96cf213d0f18430, type: 3}
@@ -7980,6 +7991,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 642df229ec21eab4b96cf213d0f18430, type: 3}
+--- !u!114 &2074044120 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6628728128386169480, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+  m_PrefabInstance: {fileID: 7825429799708889835}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa126dda7d013c4b835815b463bdb88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2081966386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8371,9 +8393,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 21180838545086266, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: _metaContainer
+      value: 
+      objectReference: {fileID: 1999081441}
     - target: {fileID: 382337021262599682, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150494220303879649, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: _metaContainer
+      value: 
+      objectReference: {fileID: 2074044120}
+    - target: {fileID: 3380254541274838487, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: instantiateScriptableVariables
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3864364946197037888, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8426,6 +8460,18 @@ PrefabInstance:
     - target: {fileID: 3931818526344562772, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170756150938066745, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: instantiateScriptableVariables
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659200247228727632, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: instantiateScriptableVariables
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6252123406429224445, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: instantiateScriptableVariables
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}

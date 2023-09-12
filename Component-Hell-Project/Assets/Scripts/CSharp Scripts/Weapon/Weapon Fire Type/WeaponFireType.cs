@@ -14,9 +14,4 @@ public abstract class WeaponFireType : MonoBehaviour
         weapon.OnProjectileSpawned?.Invoke(instance);
         return instance;
     }
-
-    protected void SetupProjectile(Projectile projectile, Weapon weapon)
-    {
-        projectile.SetUp(weapon);
-    }
 }

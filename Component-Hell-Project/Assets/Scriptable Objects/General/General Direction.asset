@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c07bc4fb5f41f148adafd6321516c49, type: 3}
-  m_Name: DVD Gun Speed
+  m_Script: {fileID: 11500000, guid: eea3cd03327d6fb488488ed2205739b5, type: 3}
+  m_Name: General Direction
   m_EditorClassIdentifier: 
-  value: 1
+  value: {x: 0, y: 0}

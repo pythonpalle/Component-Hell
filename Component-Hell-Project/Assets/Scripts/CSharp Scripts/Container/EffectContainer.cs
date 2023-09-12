@@ -13,6 +13,6 @@ public class EffectContainer : Container
 
     private void Awake() 
     {
-        if (instantiateScriptableVariables) effectTimeVariable = Instantiate(effectTimeVariable);
+        if (instantiateScriptableVariables && effectTimeVariable) effectTimeVariable = Instantiate(effectTimeVariable);
     }
 }

@@ -3,15 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColliderDamageHandler : MonoBehaviour
+public class ColliderDamageHandler : GameComponent
 {
-    private DamageComponent damageComponent;
+    private FloatVariable damageValue;
     
     [SerializeField] private LayerMask layerMask;
     
-    private void Awake()
+    private void Start()
     {
-        damageComponent = GetComponent<DamageComponent>();
+        damageValue = _metaContainer.DamageContainer.DamageVariable;
     }
     
     public void CallTryInflictDamage(Collision2D other)
@@ -37,7 +37,7 @@ public class ColliderDamageHandler : MonoBehaviour
         var health = other.GetComponentInChildren<CharacterHealth>();
         if (health)
         {
-            health.TakeDamage(damageComponent.currentValue);
+            health.TakeDamage(damageValue.value);
             return true;
         } 
 
