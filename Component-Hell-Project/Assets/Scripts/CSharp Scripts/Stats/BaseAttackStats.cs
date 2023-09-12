@@ -26,9 +26,24 @@ public class BaseAttackStats : MonoBehaviour
     public EffectTimeComponent EffectTimeComponent => effectTimeComponent;
 
 
+    [Header("Scriptable Components")] 
+    
+    [SerializeField]
+    private bool makeInstances;
+    
+    [SerializeField] private FloatVariable speedVariable;
+    public FloatVariable SpeedVariable => speedVariable;
+
+
     private void Awake()
     {
-        //GetComponentReferences();
+        if (makeInstances)
+            MakeInstances();
+    }
+
+    private void MakeInstances()
+    {
+        speedVariable = Instantiate(speedVariable);
     }
 
     void GetComponentReferences()
