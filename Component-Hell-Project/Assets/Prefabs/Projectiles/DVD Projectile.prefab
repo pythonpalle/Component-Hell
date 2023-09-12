@@ -240,6 +240,10 @@ PrefabInstance:
       propertyPath: transformToMove
       value: 
       objectReference: {fileID: 7450179803786484431}
+    - target: {fileID: 1225253058780253793, guid: 872610565dbe1ee449651d801def89ee, type: 3}
+      propertyPath: damageVariable
+      value: 
+      objectReference: {fileID: 11400000, guid: ff34731c2e1b6ee47b3725ec2416bcd0, type: 2}
     - target: {fileID: 3953502102439121822, guid: 872610565dbe1ee449651d801def89ee, type: 3}
       propertyPath: _colliderBroadcaster
       value: 

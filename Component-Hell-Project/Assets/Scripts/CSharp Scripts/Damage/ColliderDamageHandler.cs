@@ -31,6 +31,8 @@ public class ColliderDamageHandler : GameComponent
 
     public bool TryInflictDamage(Collider2D other)
     {
+        
+        Debug.Log("Try inflict damage");
         if ((layerMask.value & (1 << other.gameObject.layer)) > 0 == false)
             return false;
 
@@ -38,6 +40,7 @@ public class ColliderDamageHandler : GameComponent
         if (health)
         {
             health.TakeDamage(damageValue.value);
+            Debug.Log("Take damage!");
             return true;
         } 
 
