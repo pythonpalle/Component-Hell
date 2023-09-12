@@ -19,4 +19,8 @@ public class MetaContainer : Container
 
     [SerializeField] private CooldownContainer _cooldownContainer;
     public CooldownContainer CooldownContainer => _cooldownContainer;
+
+    [SerializeField] private DamageContainer _damageContainer;
+
+    public DamageContainer DamageContainer => _damageContainer;
 }

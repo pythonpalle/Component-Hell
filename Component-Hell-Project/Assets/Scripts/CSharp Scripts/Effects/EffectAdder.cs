@@ -9,7 +9,7 @@ public class EffectAdder : GameComponent
     [SerializeField] private LayerMask effectedLayers;
     [SerializeField] private EffectComponent effectPrefab;
     
-    private EffectTimeComponent EffectTime;
+    private FloatVariable EffectTime;
     private ColliderBroadcaster broadcaster;
 
 
@@ -17,7 +17,7 @@ public class EffectAdder : GameComponent
     {
         base.Setup(container);
         
-        EffectTime = _metaContainer.EffectContainer.EffectTimeComponent;
+        EffectTime = _metaContainer.EffectContainer.EffectTimeVariable;
 
         broadcaster = _metaContainer.CollisionContainer.ColliderBroadcaster;
         broadcaster.OnTrigEnter.AddListener(AddEffect);
@@ -60,6 +60,6 @@ public class EffectAdder : GameComponent
         var effect = Instantiate(effectPrefab, other.transform);
 
         effect.Setup(otherMetaContainer);
-        effect.OnInstantiated(EffectTime.currentValue);
+        effect.OnInstantiated(EffectTime.value);
     }
 }

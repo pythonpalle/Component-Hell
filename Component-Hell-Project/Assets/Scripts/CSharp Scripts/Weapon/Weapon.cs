@@ -12,9 +12,6 @@ public class Weapon : GameComponent
     
     [Header("Weapon Components")]
     [SerializeField] private WeaponFireType fireType;
-
-    [SerializeField] private BaseAttackStats _stats;
-    public BaseAttackStats Stats => _stats;
     
     [SerializeField] private WeaponController controller;
 
@@ -29,11 +26,6 @@ public class Weapon : GameComponent
     {
         if (!fireType) 
             fireType = GetComponent<WeaponFireType>();
-
-        if (!_stats)
-        {
-            _stats = GetComponentInChildren<BaseAttackStats>();
-        }
 
         _cooldown = _metaContainer.CooldownContainer.Cooldown;
     }

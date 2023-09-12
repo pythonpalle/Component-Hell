@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CooldownContainer : MonoBehaviour
+public class CooldownContainer : Container
 {
     [SerializeField] private FloatVariable cooldownVariable;
     public FloatVariable CooldownVariable => cooldownVariable;
@@ -12,9 +12,8 @@ public class CooldownContainer : MonoBehaviour
 
     public Cooldown Cooldown => _cooldown;
 
-    [SerializeField] private bool createInstance;
     private void Awake()
     {
-        if (createInstance) cooldownVariable = Instantiate(cooldownVariable);
+        if (instantiateScriptableVariables) cooldownVariable = Instantiate(cooldownVariable);
     }
 }

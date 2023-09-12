@@ -12,10 +12,7 @@ public class MovementContainer : Container
     // [SerializeField] private SpeedComponent speedComponent;
     // public SpeedComponent SpeedComponent => speedComponent;
 
-
-    [Header("Scriptable Objects")]
-    // scriptable object komponenter
-    [SerializeField] private bool makeInstance;
+    
     
     [SerializeField] private Vector2Variable directionVariable;
     public Vector2Variable DirectionVariable => directionVariable;
@@ -25,7 +22,7 @@ public class MovementContainer : Container
 
     private void Awake()
     {
-        if (makeInstance)
+        if (instantiateScriptableVariables)
         {
             directionVariable = Instantiate(directionVariable);
             movementSpeed = Instantiate(movementSpeed);
