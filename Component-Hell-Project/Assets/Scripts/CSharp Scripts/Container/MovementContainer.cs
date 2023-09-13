@@ -5,18 +5,11 @@ using UnityEngine;
 
 public class MovementContainer : Container
 {
-    // // script komponenter
-    // [SerializeField] private DirectionComponent directionComponent;
-    // public DirectionComponent DirectionComponent => directionComponent;
-    //
-    // [SerializeField] private SpeedComponent speedComponent;
-    // public SpeedComponent SpeedComponent => speedComponent;
-
-    
-    
+   [Header("Direction")]
     [SerializeField] private Vector2Variable directionVariable;
     public Vector2Variable DirectionVariable => directionVariable;
 
+    [Header("Speed")]
     [SerializeField] private FloatVariable movementSpeed;
     public FloatVariable MovementSpeed => movementSpeed;
 

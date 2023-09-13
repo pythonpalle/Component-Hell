@@ -11,6 +11,7 @@ public class WeaponHandler : MonoBehaviour
     [Header("Weapons Owned")]
     [SerializeField] private List<Weapon> weapons;
     
+    [Header("Data transfer")]
     [SerializeField] private DataTransferManager dataTransferManager;
 
     private void Awake()
@@ -29,6 +30,7 @@ public class WeaponHandler : MonoBehaviour
         {
             if (weapon.CanAttack())
             {
+                // transfers attack data from player to weapon
                 dataTransferManager.TransferAll(weapon);
                 weapon.Attack(this);
             }
