@@ -30,9 +30,12 @@ public class EffectAdder : GameComponent
 
     private void AddEffect(Collider2D other)
     {
+        Debug.Log("Trying to add effect to " + other.name);
+        
         // Wrong layer
         if ((effectedLayers.value & (1 << other.gameObject.layer)) > 0 == false)
         {
+            Debug.Log("Wrong Layer");
             return;
         }
 

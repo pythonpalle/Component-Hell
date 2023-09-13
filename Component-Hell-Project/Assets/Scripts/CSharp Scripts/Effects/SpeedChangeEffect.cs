@@ -11,6 +11,8 @@ public class SpeedChangeEffect : EffectComponent
     public override void OnInstantiated(float effectValue)
     {
         base.OnInstantiated(effectValue);
+        
+        Debug.Log($"Im instantiated for {duration}!");
 
         speedWrapper = _metaContainer.MovementContainer.ValueWrapper;
         speedWrapper.AddMultiplier(speedChangeMultiplier);

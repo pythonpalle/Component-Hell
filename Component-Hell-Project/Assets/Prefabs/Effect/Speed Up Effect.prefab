@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _metaContainer: {fileID: 0}
-  duration: 3
+  duration: 1
   speedChangeMultiplier: {fileID: 11400000, guid: 2bbe2ba975e497443b830557b469a5e1, type: 2}
