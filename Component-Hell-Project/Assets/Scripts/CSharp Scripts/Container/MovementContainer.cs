@@ -9,6 +9,10 @@ public class MovementContainer : Container
     [SerializeField] private Vector2Variable directionVariable;
     public Vector2Variable DirectionVariable => directionVariable;
 
+    [SerializeField] private ObjectMover _objectMover;
+
+    public ObjectMover ObjectMover => _objectMover;
+
     [SerializeField] private bool instantiateScriptableVariables;
 
     private void Awake()
@@ -17,5 +21,7 @@ public class MovementContainer : Container
         {
             directionVariable = Instantiate(directionVariable);
         }
+
+        _objectMover = GetComponent<ObjectMover>();
     }
 }

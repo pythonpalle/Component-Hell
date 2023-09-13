@@ -36,4 +36,10 @@ public class WeaponHandler : MonoBehaviour
             }
         }
     }
+
+    public void AddWeapon(Weapon weaponPrefab)
+    {
+        var weaponInstance = Instantiate(weaponPrefab, transform);
+        weapons.Add(weaponInstance);
+    }
 }

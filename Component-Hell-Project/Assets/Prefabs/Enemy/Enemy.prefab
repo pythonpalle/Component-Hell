@@ -417,6 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueWrapper: {fileID: 0}
   directionVariable: {fileID: 11400000, guid: 7fe9bcc57fafa5042911e621e6ac5eda, type: 2}
+  _objectMover: {fileID: 5842228505949120083}
   instantiateScriptableVariables: 1
 --- !u!114 &4933466772655904785
 MonoBehaviour:
@@ -523,7 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueWrapper: {fileID: 5977050156810847496}
   maxHealthWrapper: {fileID: 2525564404243643626}
-  _health: {fileID: 7305624595905115075}
+  _characterHealth: {fileID: 0}
 --- !u!114 &7305624595905115075
 MonoBehaviour:
   m_ObjectHideFlags: 0

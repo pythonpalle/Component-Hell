@@ -5,10 +5,12 @@ using UnityEngine;
 public abstract class MovementControllerBase : GameComponent
 {
     protected ObjectMover ObjectMover;
+    protected Vector2Variable directionValue;
 
     protected virtual void Start()
     {
-        ObjectMover = GetComponentInChildren<ObjectMover>();
+        ObjectMover = _metaContainer.MovementContainer.ObjectMover;
+        directionValue = _metaContainer.MovementContainer.DirectionVariable;
     }
 
     // Update is called once per frame

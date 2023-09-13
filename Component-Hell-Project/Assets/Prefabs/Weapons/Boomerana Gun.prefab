@@ -45,8 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabsToAdd:
-  - {fileID: 7904116130204644324, guid: 87ab602932ad04a449fd6039a7dd21c5, type: 3}
-  - {fileID: 5436271162279470113, guid: b0d1a19b84c6f3246bf98cda581b196f, type: 3}
+  - {fileID: 4474146153065712839, guid: 603e23825a0efd947927518ae243f79b, type: 3}
 --- !u!1 &1190930212643562292
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantiateFloatValue: 1
-  baseValue: {fileID: 11400000, guid: f5de580b076777a469d2823e6fdda35e, type: 2}
+  baseValue: {fileID: 11400000, guid: 90bfbe0eeb9bcdb42aa9d0513bab5295, type: 2}
 --- !u!1 &1854563230168821275
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantiateFloatValue: 1
-  baseValue: {fileID: 11400000, guid: 0134519b428e7a14a85b52a98d35b182, type: 2}
+  baseValue: {fileID: 11400000, guid: ba0acb74b92830a4cacf852d3bab9480, type: 2}
 --- !u!1 &4900243349907162018
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantiateFloatValue: 1
-  baseValue: {fileID: 11400000, guid: 61ddeba8bc1cd4644bb94231ab3a3844, type: 2}
+  baseValue: {fileID: 11400000, guid: 9800be89c0f22634c979b8708f1c4c67, type: 2}
 --- !u!1 &4917521755952263086
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,7 +477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantiateFloatValue: 1
-  baseValue: {fileID: 11400000, guid: 5dc603e7c70066a4eb5100f78f3b1f2d, type: 2}
+  baseValue: {fileID: 11400000, guid: ba76b38cfc0b9b343a6a0fe18fa373d9, type: 2}
 --- !u!1 &5609120994992798349
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,9 +489,9 @@ GameObject:
   - component: {fileID: 5404104272743974705}
   - component: {fileID: 6015097530929085078}
   - component: {fileID: 892037710}
-  - component: {fileID: 3776448592080218777}
+  - component: {fileID: 7825429799708889858}
   m_Layer: 6
-  m_Name: DVD Gun
+  m_Name: Boomerana Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -529,15 +528,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _metaContainer: {fileID: 3680705295881976758}
-  projectilePrefab: {fileID: 989252837391974315, guid: 9757bf578516de843bf860a3f6e63d74, type: 3}
+  projectilePrefab: {fileID: 989252837391974315, guid: 0fc02bb80da66184794ffee03c5e4cfe, type: 3}
   fireType: {fileID: 892037710}
-  controller: {fileID: 3776448592080218777}
+  controller: {fileID: 7825429799708889858}
   OnPrepareFire:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7269874546871306083}
-        m_TargetAssemblyTypeName: RandomiseDirection, Assembly-CSharp
-        m_MethodName: Randomise
+      - m_Target: {fileID: 1789859546}
+        m_TargetAssemblyTypeName: SetDirectionTowardMouse, Assembly-CSharp
+        m_MethodName: SetDirection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -586,9 +585,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03eb2e8d2be4f1242a407cc8a7ddace5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burstCount: 3
+  burstCount: 1
   timeBetweenBursts: 0.1
---- !u!114 &3776448592080218777
+--- !u!114 &7825429799708889858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -597,7 +596,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5609120994992798349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7504f7d0abc26484b8e41b79d5471f8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 20e5ecd9812d2164ca4b7e3e164eece2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7400873132517945963
@@ -649,8 +648,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valueWrapper: {fileID: 97843464731992728}
-  directionVariable: {fileID: 11400000, guid: eda5dad1b34598f458974da9765a2802, type: 2}
-  _objectMover: {fileID: 0}
+  directionVariable: {fileID: 11400000, guid: 020072c24c15a1a489735e03fd97e811, type: 2}
+  _objectMover: {fileID: 3348864002632595712}
   instantiateScriptableVariables: 1
 --- !u!114 &97843464731992728
 MonoBehaviour:
@@ -665,7 +664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantiateFloatValue: 1
-  baseValue: {fileID: 11400000, guid: 9ae9408782d44404fa4dc710c56d33d2, type: 2}
+  baseValue: {fileID: 11400000, guid: 029dc797a784cab4cae69edff2242986, type: 2}
 --- !u!114 &7269874546871306083
 MonoBehaviour:
   m_ObjectHideFlags: 0

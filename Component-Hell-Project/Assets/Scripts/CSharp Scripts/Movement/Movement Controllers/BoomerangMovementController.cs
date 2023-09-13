@@ -8,18 +8,15 @@ public class BoomerangMovementController : MovementControllerBase
     [SerializeField] private float timeBetweenTurns = 1f;
     private float timeOfLastTurn;
 
-    private DirectionComponent directionComponent;
-
     protected override void Start()
     {
         base.Start();
-        directionComponent = GetComponentInChildren<DirectionComponent>();
         timeOfLastTurn = Time.time;
     }
 
     protected override void HandleMovement()
     {
-        var direction = directionComponent.Value;
+        var direction = directionValue.value;
         
         if (Time.time > timeOfLastTurn + timeBetweenTurns)
         {

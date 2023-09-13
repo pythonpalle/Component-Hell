@@ -6,12 +6,9 @@ using UnityEngine;
 public class DirectionalMovementController : MovementControllerBase
 {
     
-    private Vector2Variable directionValue;
-
     protected override void Start()
     {
         base.Start();
-        directionValue = _metaContainer.MovementContainer.DirectionVariable;
     }
 
     protected override void HandleMovement()
