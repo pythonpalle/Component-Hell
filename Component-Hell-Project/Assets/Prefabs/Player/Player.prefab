@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c195e6c4ebd5de84a927e82c9fc0e1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueWrapper: {fileID: 0}
+  valueWrapper: {fileID: 7810738970404247850}
 --- !u!114 &7810738970404247850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,8 +414,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66d2e602d55bd2448b3ccf69eb02d55d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instantiateFloatValue: 1
-  baseValue: {fileID: 0}
+  instantiateFloatValue: 0
+  baseValue: {fileID: 11400000, guid: 097677310161c7347a068f0e14459774, type: 2}
 --- !u!1 &1760138475582874876
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49dfe25438c7b1478a69f40958e8640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueWrapper: {fileID: 0}
+  valueWrapper: {fileID: 6965847622868087207}
   directionVariable: {fileID: 0}
   instantiateScriptableVariables: 0
 --- !u!114 &6965847622868087207
@@ -532,8 +532,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66d2e602d55bd2448b3ccf69eb02d55d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instantiateFloatValue: 1
-  baseValue: {fileID: 0}
+  instantiateFloatValue: 0
+  baseValue: {fileID: 11400000, guid: a687a2ef1dbf57449b87b226f8a5c71f, type: 2}
 --- !u!1 &2253816857759692737
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +549,7 @@ GameObject:
   - component: {fileID: 8792511759583882424}
   - component: {fileID: 8831767451449166619}
   - component: {fileID: 1175622396831277964}
+  - component: {fileID: 6218078908628763745}
   m_Layer: 6
   m_Name: Player To Weapon Transfer
   m_TagString: Untagged
@@ -654,6 +655,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _metaContainer: {fileID: 2964631596920915038}
+--- !u!114 &6218078908628763745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2253816857759692737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99fb3938db641dc4e8dc88de0b85358b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _metaContainer: {fileID: 2964631596920915038}
 --- !u!1 &2357979701900451274
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,7 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714f7fca4dfc730459ebf763f2346b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueWrapper: {fileID: 0}
+  valueWrapper: {fileID: 1492907039148193476}
   _cooldown: {fileID: 8308409733751802800}
 --- !u!114 &8308409733751802800
 MonoBehaviour:
@@ -728,7 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantiateFloatValue: 1
-  baseValue: {fileID: 0}
+  baseValue: {fileID: 11400000, guid: 10d67979777f69f4092694b0308b987e, type: 2}
 --- !u!1 &3312074172596750800
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,8 +801,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66d2e602d55bd2448b3ccf69eb02d55d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instantiateFloatValue: 1
-  baseValue: {fileID: 0}
+  instantiateFloatValue: 0
+  baseValue: {fileID: 11400000, guid: 691a1c2414b5e564ab4b916d48ac7d8c, type: 2}
 --- !u!1 &6965748266435848433
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615b2b88282f30a46ace3956f2e2cb53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueWrapper: {fileID: 0}
+  valueWrapper: {fileID: 5527421437969568687}
   activeEffects: []
 --- !u!114 &5527421437969568687
 MonoBehaviour:
@@ -898,7 +912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantiateFloatValue: 1
-  baseValue: {fileID: 0}
+  baseValue: {fileID: 11400000, guid: f70f4386bf0320e4dacca6bee00bfbb0, type: 2}
 --- !u!1001 &21180838169887200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -957,7 +971,7 @@ PrefabInstance:
     - target: {fileID: 8354508447980119231, guid: 444be529d94c574479f58f5dfa297ec4, type: 3}
       propertyPath: _metaContainer
       value: 
-      objectReference: {fileID: 6628728128386169480}
+      objectReference: {fileID: 3701750171388410454}
     - target: {fileID: 9090014668168876038, guid: 444be529d94c574479f58f5dfa297ec4, type: 3}
       propertyPath: _transfers.Array.size
       value: 5

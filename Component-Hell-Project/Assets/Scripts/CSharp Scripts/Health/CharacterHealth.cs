@@ -4,30 +4,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CharacterHealth : MonoBehaviour
+public class CharacterHealth : GameComponent
 {
     public UnityEvent<float> OnHealthEnable;
     public UnityEvent<float> OnHealthChange;
     public UnityEvent OnDeath;
 
-    [SerializeField] private float maxHealth = 10;
-    public float MaxHealth => maxHealth;
-
-    public float CurrentHealth;
-    
+    private FloatVariable healthVariable;
 
     private void OnEnable()
     {
-        OnHealthEnable?.Invoke(maxHealth);
-        CurrentHealth = MaxHealth;
+        healthVariable = _metaContainer.HealthContainer.ValueWrapper.CurrentValue;
+        healthVariable.value = _metaContainer.HealthContainer.MaxHealthWrapper.CurrentValue.value;
+        
+        OnHealthEnable?.Invoke(_metaContainer.HealthContainer.MaxHealthWrapper.CurrentValue.value);
     }
 
     public void TakeDamage(float damage)
     {
-        CurrentHealth -= damage;
+        healthVariable.value -= damage;
         OnHealthChange?.Invoke(-damage);
 
-        if (CurrentHealth <= 0)
+        if (healthVariable.value <= 0)
         {
             OnDeath?.Invoke();
         }

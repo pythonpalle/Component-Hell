@@ -10,12 +10,15 @@ public class FloatValueWrapper : MonoBehaviour
     [SerializeField] private FloatVariable baseValue;
     
     private FloatVariable currentValue;
-    private List<FloatVariable> multipliers = new List<FloatVariable>();
+    public List<FloatVariable> multipliers = new List<FloatVariable>();
 
     public FloatVariable CurrentValue => currentValue;
 
     private void Awake()
     {
+        if (!baseValue)
+            return;
+        
         if (instantiateFloatValue)
         {
             baseValue = Instantiate(baseValue);
@@ -43,9 +46,10 @@ public class FloatValueWrapper : MonoBehaviour
     private void UpdateCurrentValue()
     {
         currentValue.value = baseValue.value;
-        foreach (var multiplier in multipliers)
+        
+        for (int i = multipliers.Count - 1; i >= 0; i--)
         {
-            currentValue.value *= multiplier.value;
+            currentValue.value *= multipliers[i].value;
         }
     }
 }

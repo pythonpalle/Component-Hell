@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class HealthContainer : Container
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private FloatValueWrapper maxHealthWrapper;
+    public FloatValueWrapper MaxHealthWrapper => maxHealthWrapper;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private CharacterHealth _characterHealth;
+    public CharacterHealth CharacterCharacterHealth => _characterHealth;
 }

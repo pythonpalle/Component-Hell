@@ -3,22 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetScaleFromSize : MonoBehaviour
+public class SetScaleFromSize : GameComponent
 {
-    private SizeComponent _sizeComponent;
-    
-    private void Awake()
-    {
-        _sizeComponent = GetComponent<SizeComponent>();
-    }
+    [SerializeField] private Transform toSizeTransform;
 
-    private void Update()
+    private void OnEnable()
     {
         SetScaleFromSizeComponent();
     }
 
-    public void SetScaleFromSizeComponent()
+    private void SetScaleFromSizeComponent()
     {
-        transform.parent.localScale = Vector3.one * _sizeComponent.currentValue;
+        toSizeTransform.localScale = Vector3.one * _metaContainer.SizeContainer.ValueWrapper.CurrentValue.value;
     }
 }
