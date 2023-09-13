@@ -11,7 +11,7 @@ public class Cooldown : GameComponent
 
     private void Start()
     {
-        cooldownTime = _metaContainer.CooldownContainer.CooldownVariable;
+        cooldownTime = _metaContainer.CooldownContainer.ValueWrapper.CurrentValue;
     }
 
     private void Update()

@@ -11,7 +11,7 @@ public class ColliderDamageHandler : GameComponent
     
     private void Start()
     {
-        damageValue = _metaContainer.DamageContainer.DamageVariable;
+        damageValue = _metaContainer.DamageContainer.ValueWrapper.CurrentValue;
     }
     
     public void CallTryInflictDamage(Collision2D other)

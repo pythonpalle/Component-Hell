@@ -17,7 +17,7 @@ public class EffectAdder : GameComponent
     {
         base.Setup(container);
         
-        EffectTime = _metaContainer.EffectContainer.EffectTimeVariable;
+        EffectTime = _metaContainer.EffectContainer.ValueWrapper.CurrentValue;
 
         broadcaster = _metaContainer.CollisionContainer.ColliderBroadcaster;
         broadcaster.OnTrigEnter.AddListener(AddEffect);

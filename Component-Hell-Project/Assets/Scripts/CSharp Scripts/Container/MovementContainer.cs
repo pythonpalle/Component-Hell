@@ -9,16 +9,13 @@ public class MovementContainer : Container
     [SerializeField] private Vector2Variable directionVariable;
     public Vector2Variable DirectionVariable => directionVariable;
 
-    [Header("Speed")]
-    [SerializeField] private FloatVariable movementSpeed;
-    public FloatVariable MovementSpeed => movementSpeed;
+    [SerializeField] private bool instantiateScriptableVariables;
 
     private void Awake()
     {
         if (instantiateScriptableVariables)
         {
             directionVariable = Instantiate(directionVariable);
-            movementSpeed = Instantiate(movementSpeed);
         }
     }
 }

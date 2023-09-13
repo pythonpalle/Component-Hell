@@ -112,6 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7749819887478456908}
   - component: {fileID: 7379426240331091976}
+  - component: {fileID: 3022437023205454368}
   - component: {fileID: 5497080999642453979}
   - component: {fileID: 2930231925156660834}
   - component: {fileID: 491957203726887352}
@@ -151,7 +152,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instantiateScriptableVariables: 0
   directionVariable: {fileID: 11400000, guid: eda5dad1b34598f458974da9765a2802, type: 2}
-  movementSpeed: {fileID: 11400000, guid: 9ae9408782d44404fa4dc710c56d33d2, type: 2}
+  speedWrapper: {fileID: 3022437023205454368}
+--- !u!114 &3022437023205454368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5629333019700568787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d2e602d55bd2448b3ccf69eb02d55d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instantiateFloatValue: 0
+  baseValue: {fileID: 0}
 --- !u!114 &5497080999642453979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374e8687df3bb004eacac9d760794c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _metaContainer: {fileID: 0}
 --- !u!114 &491957203726887352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +207,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _metaContainer: {fileID: 1999100836422511374}
   transformToMove: {fileID: 0}
-  useContainer: 0
 --- !u!1 &7824104482888613654
 GameObject:
   m_ObjectHideFlags: 0

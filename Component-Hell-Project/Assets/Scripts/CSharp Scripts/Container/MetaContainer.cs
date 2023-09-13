@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MetaContainer : Container
+public class MetaContainer : MonoBehaviour
 {
     [SerializeField] private MovementContainer _movementContainer;
     public MovementContainer MovementContainer => _movementContainer;
@@ -23,4 +23,8 @@ public class MetaContainer : Container
     [SerializeField] private DamageContainer _damageContainer;
 
     public DamageContainer DamageContainer => _damageContainer;
+    
+    [SerializeField] private SizeContainer sizeContainer;
+
+    public SizeContainer SizeContainer => sizeContainer;
 }
