@@ -12,7 +12,7 @@ public class CharacterHealth : GameComponent
 
     private FloatVariable healthVariable;
 
-    private void OnEnable()
+    private void Start()
     {
         healthVariable = _metaContainer.HealthContainer.ValueWrapper.CurrentValue;
         healthVariable.value = _metaContainer.HealthContainer.MaxHealthWrapper.CurrentValue.value;

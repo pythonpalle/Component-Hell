@@ -6,7 +6,7 @@ public abstract class MovementControllerBase : GameComponent
 {
     protected ObjectMover ObjectMover;
 
-    protected virtual void OnEnable()
+    protected virtual void Start()
     {
         ObjectMover = GetComponentInChildren<ObjectMover>();
     }
@@ -15,7 +15,10 @@ public abstract class MovementControllerBase : GameComponent
     void Update()
     {
         if (!ObjectMover)
+        {
+            Debug.Log($"Object moves is missing in {gameObject.name}");
             return;
+        }
         
         HandleMovement();
     }

@@ -9,9 +9,9 @@ public class MovementToPlayerDestination : MovementControllerBase
     
     private Transform playerTransform;
     
-    protected override void OnEnable()
+    protected override void Start()
     {
-        base.OnEnable();
+        base.Start();
 
         var playerObject = GameObject.FindWithTag("Player");
         if (playerObject)

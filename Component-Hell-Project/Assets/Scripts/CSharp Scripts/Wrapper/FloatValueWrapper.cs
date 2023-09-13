@@ -10,14 +10,17 @@ public class FloatValueWrapper : MonoBehaviour
     [SerializeField] private FloatVariable baseValue;
     
     private FloatVariable currentValue;
-    public List<FloatVariable> multipliers = new List<FloatVariable>();
+    private List<FloatVariable> multipliers = new List<FloatVariable>();
 
     public FloatVariable CurrentValue => currentValue;
-
+    
     private void Awake()
     {
         if (!baseValue)
+        {
+            Debug.Log($"Missing base value for {gameObject.name}");
             return;
+        }
         
         if (instantiateFloatValue)
         {
@@ -25,6 +28,11 @@ public class FloatValueWrapper : MonoBehaviour
         }
 
         currentValue = Instantiate(baseValue);
+
+        if (!currentValue)
+        {
+            Debug.Log($"Missing current value for {gameObject.name}");
+        }
     }
 
     public void AddMultiplier(FloatVariable floatVariable)

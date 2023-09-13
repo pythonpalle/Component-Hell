@@ -8,8 +8,9 @@ public class DirectionalMovementController : MovementControllerBase
     
     private Vector2Variable directionValue;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         directionValue = _metaContainer.MovementContainer.DirectionVariable;
     }
 

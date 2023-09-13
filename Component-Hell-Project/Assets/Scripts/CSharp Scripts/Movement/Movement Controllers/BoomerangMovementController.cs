@@ -10,9 +10,9 @@ public class BoomerangMovementController : MovementControllerBase
 
     private DirectionComponent directionComponent;
 
-    protected override void OnEnable()
+    protected override void Start()
     {
-        base.OnEnable();
+        base.Start();
         directionComponent = GetComponentInChildren<DirectionComponent>();
         timeOfLastTurn = Time.time;
     }

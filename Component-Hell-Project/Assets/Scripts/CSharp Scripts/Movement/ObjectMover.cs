@@ -11,7 +11,7 @@ public class ObjectMover : GameComponent
     private FloatVariable speedVar;
 
 
-    private void OnEnable()
+    private void Start()
     {
         if (!transformToMove)
             transformToMove = transform;
