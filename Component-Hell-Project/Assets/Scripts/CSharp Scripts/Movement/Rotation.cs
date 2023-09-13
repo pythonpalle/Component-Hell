@@ -3,12 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotation : MonoBehaviour
+public class Rotation : GameComponent
 {
-    private float speed = 40;
-    
+    [SerializeField] private float speed = 40;
+
+    private Transform transformToRotate;
+
+    private void Start()
+    {
+        transformToRotate = transform.root;
+    }
+
     private void Update()
     {
-        transform.root.Rotate(Vector3.forward, Time.deltaTime * speed); 
+        transformToRotate.Rotate(Vector3.forward, Time.deltaTime * speed); 
     }
 }
