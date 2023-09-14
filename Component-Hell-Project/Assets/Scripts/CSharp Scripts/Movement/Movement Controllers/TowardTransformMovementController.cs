@@ -13,12 +13,9 @@ public class TowardTransformMovementController : MovementControllerBase
         set => targetTransform = value;
     }
 
-    protected override void HandleMovement()
+    protected override Vector2 GetNextDirection()
     {
-        if (!targetTransform)
-            return;
-        
         var directionTowardPlayer = (targetTransform.position - transform.position);
-        ObjectMover.Move(directionTowardPlayer);
+        return (directionTowardPlayer);
     }
 }

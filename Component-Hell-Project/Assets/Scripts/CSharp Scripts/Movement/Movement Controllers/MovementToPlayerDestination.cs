@@ -18,14 +18,14 @@ public class MovementToPlayerDestination : MovementControllerBase
             playerTransform = playerObject.transform;
     }
 
-    protected override void HandleMovement()
+    protected override Vector2 GetNextDirection()
     {
         Vector2 playerDir = playerDirection.value;
 
         var playerTargetPos = playerTransform.transform.position + (Vector3)playerDir * unitsAheadOfPlayer;
-         var moveDir = (playerTargetPos - transform.position).normalized;
-        
-         ObjectMover.Move(moveDir);
+         var moveDir = (playerTargetPos - transform.position);
+
+         return moveDir;
     }
 
 }

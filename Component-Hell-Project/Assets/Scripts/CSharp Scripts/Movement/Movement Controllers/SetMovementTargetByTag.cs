@@ -13,13 +13,14 @@ public class SetMovementTargetByTag : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<TowardTransformMovementController>();
+        TryFindTarget();
     }
 
     
-    private void Update()
-    {
-        TryFindTarget(); 
-    }
+    // private void Update()
+    // {
+    //     TryFindTarget(); 
+    // }
 
     void TryFindTarget()
     {

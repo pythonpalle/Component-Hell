@@ -4,26 +4,21 @@ using UnityEngine;
 
 public abstract class MovementControllerBase : GameComponent
 {
-    protected ObjectMover ObjectMover;
-    protected Vector2Variable directionValue;
-
+    private ObjectMover objectMover;
+    protected MovementDataHolder dataHolder;
+    
     protected virtual void Start()
     {
-        ObjectMover = _metaContainer.MovementContainer.ObjectMover;
-        directionValue = _metaContainer.MovementContainer.DirectionVariable;
+        objectMover = GetComponent<ObjectMover>();
+        dataHolder = GetComponent<MovementContainer>().MovementDataHolder;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (!ObjectMover)
-        {
-            Debug.Log($"Object moves is missing in {gameObject.name}");
-            return;
-        }
-        
-        HandleMovement();
+        var direction = GetNextDirection().normalized;
+        dataHolder.moveDirection = direction;
+        objectMover.Move(direction, dataHolder.moveSpeed.Value);
     }
 
-    protected abstract void HandleMovement();
+    protected abstract Vector2 GetNextDirection();
 }

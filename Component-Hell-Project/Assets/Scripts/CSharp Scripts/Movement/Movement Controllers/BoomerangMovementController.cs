@@ -14,9 +14,9 @@ public class BoomerangMovementController : MovementControllerBase
         timeOfLastTurn = Time.time;
     }
 
-    protected override void HandleMovement()
+    protected override Vector2 GetNextDirection()
     {
-        var direction = directionValue.value;
+        var direction = dataHolder.moveDirection;
         
         if (Time.time > timeOfLastTurn + timeBetweenTurns)
         {
@@ -24,6 +24,6 @@ public class BoomerangMovementController : MovementControllerBase
             timeOfLastTurn = Time.time;
         }
         
-        ObjectMover.Move(direction);
+        return direction;
     }
 }

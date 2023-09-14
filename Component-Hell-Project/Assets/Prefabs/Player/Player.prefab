@@ -58,7 +58,6 @@ GameObject:
   - component: {fileID: 1282375001267824329}
   - component: {fileID: 21182814918829297}
   - component: {fileID: 6488258729363562629}
-  - component: {fileID: 6628728128386169480}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -183,25 +182,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6628728128386169480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382337021262599682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aa126dda7d013c4b835815b463bdb88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _movementContainer: {fileID: 3043709278377385508}
-  healthContainer: {fileID: 926563022872248054}
-  collisionContainer: {fileID: 0}
-  effectContainer: {fileID: 0}
-  _cooldownContainer: {fileID: 0}
-  _damageContainer: {fileID: 0}
-  sizeContainer: {fileID: 0}
 --- !u!1 &980571268552217625
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3356235161458554571
 Transform:
   m_ObjectHideFlags: 0
@@ -249,7 +229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5d4c24f5ac95e43bf68afd535cdec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueWrapper: {fileID: 3964821225722273042}
   maxHealthWrapper: {fileID: 578667376}
   _characterHealth: {fileID: 3864364946197037888}
 --- !u!114 &3964821225722273042
@@ -278,7 +257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a01e3d779f24a4cbd0d696f433278d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 6628728128386169480}
+  _metaContainer: {fileID: 0}
+  findMetaContainer: 1
   OnHealthEnable:
     m_PersistentCalls:
       m_Calls:
@@ -322,11 +302,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7770544659458060049}
   - component: {fileID: 3043709278377385508}
-  - component: {fileID: 3949626158207749368}
   - component: {fileID: 8596997971173794564}
   - component: {fileID: 1150494220303879649}
   m_Layer: 6
-  m_Name: Player Movement
+  m_Name: Movement Container
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -359,24 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49dfe25438c7b1478a69f40958e8640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueWrapper: {fileID: 3949626158207749368}
-  directionVariable: {fileID: 11400000, guid: 5076c3c79f1efd248901b4f0ea4c3dca, type: 2}
-  _objectMover: {fileID: 8596997971173794564}
-  instantiateScriptableVariables: 0
---- !u!114 &3949626158207749368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038614014563640135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66d2e602d55bd2448b3ccf69eb02d55d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instantiateFloatValue: 0
-  baseValue: {fileID: 11400000, guid: 7b5def0a1d7fffd4aa5a0aa5d5e0bfec, type: 2}
+  MovementDataHolder: {fileID: 11400000, guid: 497308c04329d184881e5126cc65b129, type: 2}
 --- !u!114 &8596997971173794564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,7 +351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df475954f020130479e8784eb4dc575e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 6628728128386169480}
+  _metaContainer: {fileID: 0}
+  findMetaContainer: 1
   transformToMove: {fileID: 3931818526344562772}
 --- !u!114 &1150494220303879649
 MonoBehaviour:
@@ -403,7 +366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8432f13feee10d34aa5fec55f2b67ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 6628728128386169480}
+  _metaContainer: {fileID: 0}
+  findMetaContainer: 1
   playerDirection: {fileID: 11400000, guid: 5076c3c79f1efd248901b4f0ea4c3dca, type: 2}
 --- !u!1 &1640390196519826938
 GameObject:
@@ -450,7 +414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c195e6c4ebd5de84a927e82c9fc0e1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueWrapper: {fileID: 7810738970404247850}
 --- !u!114 &7810738970404247850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,10 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49dfe25438c7b1478a69f40958e8640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueWrapper: {fileID: 6965847622868087207}
-  directionVariable: {fileID: 0}
-  _objectMover: {fileID: 0}
-  instantiateScriptableVariables: 0
+  MovementDataHolder: {fileID: 0}
 --- !u!114 &6965847622868087207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,6 +613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _metaContainer: {fileID: 2964631596920915038}
+  findMetaContainer: 1
 --- !u!114 &136727661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,7 +626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d1a62bc0435b340bcdd3ee73083502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 6628728128386169480}
+  _metaContainer: {fileID: 0}
+  findMetaContainer: 1
 --- !u!114 &8792511759583882424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,6 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _metaContainer: {fileID: 2964631596920915038}
+  findMetaContainer: 1
 --- !u!114 &8831767451449166619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,6 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _metaContainer: {fileID: 2964631596920915038}
+  findMetaContainer: 1
 --- !u!114 &1175622396831277964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,6 +669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _metaContainer: {fileID: 2964631596920915038}
+  findMetaContainer: 1
 --- !u!114 &6218078908628763745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,6 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _metaContainer: {fileID: 2964631596920915038}
+  findMetaContainer: 1
 --- !u!1 &2357979701900451274
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,7 +730,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714f7fca4dfc730459ebf763f2346b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueWrapper: {fileID: 1492907039148193476}
   _cooldown: {fileID: 8308409733751802800}
 --- !u!114 &8308409733751802800
 MonoBehaviour:
@@ -779,6 +744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _metaContainer: {fileID: 2964631596920915038}
+  findMetaContainer: 1
 --- !u!114 &1492907039148193476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,7 +804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4c5e44a94b40d4dbff6b7cd3492866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueWrapper: {fileID: 8214056568588069805}
 --- !u!114 &8214056568588069805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -869,7 +834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5833751149130548666
 Transform:
   m_ObjectHideFlags: 0
@@ -946,7 +911,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615b2b88282f30a46ace3956f2e2cb53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueWrapper: {fileID: 5527421437969568687}
   activeEffects: []
 --- !u!114 &5527421437969568687
 MonoBehaviour:

@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class GameComponent : MonoBehaviour
 {
-    [SerializeField] protected MetaContainer _metaContainer;
+    protected MetaContainer _metaContainer;
     public MetaContainer MetaContainer => _metaContainer;
-    [SerializeField] private bool findMetaContainer = true;
+    private bool findMetaContainer = true;
 
     public virtual void Setup(MetaContainer container)
     {

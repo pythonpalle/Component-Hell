@@ -5,23 +5,18 @@ using UnityEngine;
 
 public class MovementContainer : Container
 {
-   [Header("Direction")]
-    [SerializeField] private Vector2Variable directionVariable;
+    private Vector2Variable directionVariable;
     public Vector2Variable DirectionVariable => directionVariable;
-
-    [SerializeField] private ObjectMover _objectMover;
-
+    
+    private ObjectMover _objectMover;
+    
     public ObjectMover ObjectMover => _objectMover;
+    
+    private bool instantiateScriptableVariables;
+    
+    // tODO: ta bort allt ovan
 
-    [SerializeField] private bool instantiateScriptableVariables;
+    public MovementDataHolder MovementDataHolder;
 
-    private void Awake()
-    {
-        if (instantiateScriptableVariables)
-        {
-            directionVariable = Instantiate(directionVariable);
-        }
-
-        _objectMover = GetComponent<ObjectMover>();
-    }
+   
 }

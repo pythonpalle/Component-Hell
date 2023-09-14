@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class PlayerInputMovementController : MovementControllerBase
 {
-    public Vector2Variable playerDirection;
-
-    
-    protected override void HandleMovement()
+    protected override Vector2 GetNextDirection()
     {
-        Vector2 direction = new Vector3(Input.GetAxis("Horizontal"),  Input.GetAxis("Vertical"));
-
-        if (direction == Vector2.zero) return;
-        
-        ObjectMover.Move(direction);
-        playerDirection.value = direction;
+        Vector2 direction = new Vector2(Input.GetAxis("Horizontal"),  Input.GetAxis("Vertical"));
+        return direction;
     }
 }

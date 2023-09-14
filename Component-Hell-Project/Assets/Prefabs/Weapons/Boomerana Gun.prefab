@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 957123715, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: prefabsToAdd.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 957123715, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: prefabsToAdd.Array.data[0]
@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: prefabsToAdd.Array.data[2]
       value: 
       objectReference: {fileID: 4474146153065712839, guid: 603e23825a0efd947927518ae243f79b, type: 3}
+    - target: {fileID: 957123715, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: prefabsToAdd.Array.data[3]
+      value: 
+      objectReference: {fileID: 5436271162279470113, guid: 0f471042a613bbb409695eec2a695ed9, type: 3}
     - target: {fileID: 97843464731992728, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: baseValue
       value: 
