@@ -10,7 +10,7 @@ public abstract class MovementControllerBase : GameComponent
     protected virtual void Start()
     {
         objectMover = GetComponent<ObjectMover>();
-        dataHolder = GetComponent<MovementContainer>().DataHolder;
+        dataHolder = GetComponent<MovementManager>().DataHolder;
     }
 
     void Update()

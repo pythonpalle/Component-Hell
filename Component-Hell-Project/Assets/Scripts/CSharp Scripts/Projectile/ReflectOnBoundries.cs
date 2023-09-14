@@ -12,7 +12,7 @@ public class ReflectOnBoundries : MonoBehaviour
 
     private void Start ()
     {
-        _dataHolder = GetComponent<MovementContainer>().DataHolder;
+        _dataHolder = GetComponent<MovementManager>().DataHolder;
 
         //TOdo: optimera
         screenBounds = Camera.main.ScreenToWorldPoint

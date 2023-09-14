@@ -10,7 +10,12 @@ public class CharacterHealth : MonoBehaviour
     public UnityEvent<float> OnHealthChange;
     public UnityEvent OnDeath;
 
-    private FloatVariable healthVariable;
+    private HealthDataHolder _healthDataHolder;
+
+    private void Awake()
+    {
+        _healthDataHolder = GetComponent<HealthManager>().HealthDataHolder;
+    }
 
     private void Start()
     {
@@ -22,12 +27,12 @@ public class CharacterHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        healthVariable.value -= damage;
-        OnHealthChange?.Invoke(-damage);
-
-        if (healthVariable.value <= 0)
-        {
-            OnDeath?.Invoke();
-        }
+        //_healthDataHolder.health.Value -= damage;
+        // OnHealthChange?.Invoke(-damage);
+        //
+        // if (healthVariable.value <= 0)
+        // {
+        //     OnDeath?.Invoke();
+        // }
     }
 }

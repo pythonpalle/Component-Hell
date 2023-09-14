@@ -1,51 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &578667375
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 578667377}
-  - component: {fileID: 578667376}
-  m_Layer: 6
-  m_Name: Max Health Wraper
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &578667377
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578667375}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3356235161458554571}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &578667376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578667375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66d2e602d55bd2448b3ccf69eb02d55d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instantiateFloatValue: 0
-  baseValue: {fileID: 11400000, guid: 4851753a4f440f444954430db0066e80, type: 2}
 --- !u!1 &382337021262599682
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +12,7 @@ GameObject:
   - component: {fileID: 1282375001267824329}
   - component: {fileID: 21182814918829297}
   - component: {fileID: 6488258729363562629}
+  - component: {fileID: 4667312444992805379}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -182,6 +137,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4667312444992805379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382337021262599682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de264984a8d1a844990d919e1b87e425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDamageRecieved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &980571268552217625
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,10 +162,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3356235161458554571}
   - component: {fileID: 926563022872248054}
-  - component: {fileID: 3964821225722273042}
   - component: {fileID: 3864364946197037888}
   m_Layer: 6
-  m_Name: Player Health
+  m_Name: Health Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,8 +181,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 578667377}
+  m_Children: []
   m_Father: {fileID: 3931818526344562772}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -229,21 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5d4c24f5ac95e43bf68afd535cdec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthDataHolder: {fileID: 0}
---- !u!114 &3964821225722273042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980571268552217625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66d2e602d55bd2448b3ccf69eb02d55d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instantiateFloatValue: 0
-  baseValue: {fileID: 11400000, guid: edf037b8de45a244e8836b78721e1a19, type: 2}
+  _healthDataHolder: {fileID: 11400000, guid: e10e36fe27efe914386533fb59d767d2, type: 2}
+  instantiateScriptableObjects: 1
 --- !u!114 &3864364946197037888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,8 +425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa126dda7d013c4b835815b463bdb88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementContainer: {fileID: 1976450782205825391}
-  healthContainer: {fileID: 0}
+  movementManager: {fileID: 0}
+  healthManager: {fileID: 0}
   collisionContainer: {fileID: 0}
   effectContainer: {fileID: 5642269280615333546}
   _cooldownContainer: {fileID: 8901402195316864904}

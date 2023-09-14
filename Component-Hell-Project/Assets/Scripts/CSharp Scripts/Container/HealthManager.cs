@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthContainer : MonoBehaviour
+public class HealthManager : MonoBehaviour
 {
     [SerializeField] private HealthDataHolder _healthDataHolder;
     public HealthDataHolder HealthDataHolder => _healthDataHolder;
@@ -16,5 +16,12 @@ public class HealthContainer : MonoBehaviour
         {
             _healthDataHolder = Instantiate(_healthDataHolder);
         }
+
+        InitializeData();
+    }
+
+    private void InitializeData()
+    {
+        _healthDataHolder.health = _healthDataHolder.maxHealth;
     }
 }

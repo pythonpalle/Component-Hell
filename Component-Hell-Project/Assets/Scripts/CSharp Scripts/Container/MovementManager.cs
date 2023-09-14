@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementContainer : MonoBehaviour
+public class MovementManager : MonoBehaviour
 {
     [SerializeField] private MovementDataHolder _dataHolder;
     public MovementDataHolder DataHolder => _dataHolder;

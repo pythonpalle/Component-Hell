@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MetaContainer : MonoBehaviour
 {
-    [SerializeField] private MovementContainer _movementContainer;
-    public MovementContainer MovementContainer => _movementContainer;
+    [SerializeField] private MovementManager movementManager;
+    public MovementManager MovementManager => movementManager;
     
-    [SerializeField] private HealthContainer healthContainer;
-    public HealthContainer HealthContainer => healthContainer;
+    [SerializeField] private HealthManager healthManager;
+    public HealthManager HealthManager => healthManager;
     
     
     [SerializeField] private CollisionContainer collisionContainer;
