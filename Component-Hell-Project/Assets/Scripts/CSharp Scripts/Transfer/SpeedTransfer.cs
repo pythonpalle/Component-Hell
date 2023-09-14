@@ -6,9 +6,13 @@ public class SpeedTransfer : DataTransfer
 {
     public override void Transfer(GameComponent toComponent)
     {
-        var fromWrapper = _metaContainer.MovementContainer.ValueWrapper;
-        var toWrapper = toComponent.MetaContainer.MovementContainer.ValueWrapper;
+        // var fromWrapper = _metaContainer.MovementContainer.ValueWrapper;
+        // var toWrapper = toComponent.MetaContainer.MovementContainer.ValueWrapper;
+        //
+        // TransferFloatData(fromWrapper, toWrapper);
         
-        TransferFloatData(fromWrapper, toWrapper);
+        throw new System.NotImplementedException();
+
     }
+
 }

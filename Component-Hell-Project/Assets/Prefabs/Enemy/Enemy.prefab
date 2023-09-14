@@ -391,8 +391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49dfe25438c7b1478a69f40958e8640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DataHolder: {fileID: 11400000, guid: 1d63b45ff47c0eb44ac3abe57ad83b7e, type: 2}
-  instanitateMovementData: 1
+  _dataHolder: {fileID: 11400000, guid: 1d63b45ff47c0eb44ac3abe57ad83b7e, type: 2}
+  instantiateScriptableObjects: 1
 --- !u!114 &5842228505949120083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,8 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5d4c24f5ac95e43bf68afd535cdec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthWrapper: {fileID: 2525564404243643626}
-  _characterHealth: {fileID: 7305624595905115075}
+  _healthDataHolder: {fileID: 0}
 --- !u!114 &7305624595905115075
 MonoBehaviour:
   m_ObjectHideFlags: 0

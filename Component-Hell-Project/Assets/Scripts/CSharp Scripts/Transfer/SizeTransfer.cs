@@ -6,9 +6,7 @@ public class SizeTransfer : DataTransfer
 {
     public override void Transfer(GameComponent toComponent)
     {
-        var fromWrapper = _metaContainer.SizeContainer.ValueWrapper;
-        var toWrapper = toComponent.MetaContainer.SizeContainer.ValueWrapper;
-        
-        TransferFloatData(fromWrapper, toWrapper);
+        throw new System.NotImplementedException();
+
     }
 }

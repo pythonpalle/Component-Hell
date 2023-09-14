@@ -6,9 +6,7 @@ public class CooldownTransfer : DataTransfer
 {
     public override void Transfer(GameComponent toComponent)
     {
-        var fromWrapper = _metaContainer.CooldownContainer.ValueWrapper;
-        var toWrapper = toComponent.MetaContainer.CooldownContainer.ValueWrapper;
-        
-        TransferFloatData(fromWrapper, toWrapper);
+        throw new System.NotImplementedException();
+
     }
 }

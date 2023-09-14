@@ -3,11 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthContainer : Container
+public class HealthContainer : MonoBehaviour
 {
-    [SerializeField] private FloatValueWrapper maxHealthWrapper;
-    public FloatValueWrapper MaxHealthWrapper => maxHealthWrapper;
+    [SerializeField] private HealthDataHolder _healthDataHolder;
+    public HealthDataHolder HealthDataHolder => _healthDataHolder;
+    
+    [SerializeField] bool instantiateScriptableObjects = true;
 
-    [SerializeField] private CharacterHealth _characterHealth;
-    public CharacterHealth CharacterCharacterHealth => _characterHealth;
+    void Awake()
+    {
+        if (instantiateScriptableObjects)
+        {
+            _healthDataHolder = Instantiate(_healthDataHolder);
+        }
+    }
 }

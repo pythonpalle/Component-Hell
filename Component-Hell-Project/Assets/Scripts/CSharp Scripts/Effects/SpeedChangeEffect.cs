@@ -5,24 +5,23 @@ using UnityEngine;
 
 public class SpeedChangeEffect : EffectComponent
 {
-    [SerializeField] private FloatVariable speedChangeMultiplier;
-    private FloatValueWrapper speedWrapper;
+    [SerializeField] private DynamicFloat speedModifier;
     
-    public override void OnInstantiated(float effectValue)
-    {
-        base.OnInstantiated(effectValue);
-        
-        Debug.Log($"Im instantiated for {duration}!");
-
-        speedWrapper = _metaContainer.MovementContainer.ValueWrapper;
-        speedWrapper.AddMultiplier(speedChangeMultiplier);
-        
-        Destroy(gameObject, duration); 
-    }
-
-    protected override void OnDestroy()
-    {
-        base.OnDestroy();
-        speedWrapper.RemoveMultiplier(speedChangeMultiplier);
-    } 
+    // public override void OnInstantiated(float effectValue)
+    // {
+    //     base.OnInstantiated(effectValue);
+    //     
+    //     Debug.Log($"Im instantiated for {duration}!");
+    //
+    //     speedWrapper = _metaContainer.MovementContainer.ValueWrapper;
+    //     speedWrapper.AddMultiplier(speedChangeMultiplier);
+    //     
+    //     Destroy(gameObject, duration); 
+    // }
+    //
+    // protected override void OnDestroy()
+    // {
+    //     base.OnDestroy();
+    //     speedWrapper.RemoveMultiplier(speedChangeMultiplier);
+    // } 
 } 

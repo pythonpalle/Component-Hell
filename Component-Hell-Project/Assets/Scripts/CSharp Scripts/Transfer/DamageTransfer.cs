@@ -6,9 +6,7 @@ public class DamageTransfer : DataTransfer
 {
     public override void Transfer(GameComponent toComponent)
     {
-        var fromWrapper = _metaContainer.DamageContainer.ValueWrapper;
-        var toWrapper = toComponent.MetaContainer.DamageContainer.ValueWrapper;
-        
-        TransferFloatData(fromWrapper, toWrapper);
+        throw new System.NotImplementedException();
+
     }
 }

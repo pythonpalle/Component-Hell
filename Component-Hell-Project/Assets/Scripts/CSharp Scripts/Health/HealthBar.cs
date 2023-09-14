@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
-public class HealthBar : GameComponent
+public class HealthBar : MonoBehaviour
 {
     private Slider slider;
 
@@ -26,9 +26,9 @@ public class HealthBar : GameComponent
 
     private void ConnectToCharacterHealth()
     {
-        CharacterHealth health = _metaContainer.HealthContainer.CharacterCharacterHealth;
-        health.OnHealthEnable.AddListener(SetMaxHealth);
-        health.OnHealthChange.AddListener(OnHealthChange);
+        //CharacterHealth health = _metaContainer.HealthContainer.CharacterCharacterHealth;
+        // health.OnHealthEnable.AddListener(SetMaxHealth);
+        // health.OnHealthChange.AddListener(OnHealthChange);
     }
 
     /*

@@ -3,16 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementContainer : Container
+public class MovementContainer : MonoBehaviour
 {
-    public MovementDataHolder DataHolder;
-    [SerializeField] bool instanitateMovementData = true;
+    [SerializeField] private MovementDataHolder _dataHolder;
+    public MovementDataHolder DataHolder => _dataHolder;
+    
+    [SerializeField] bool instantiateScriptableObjects = true;
     
     void Awake()
     {
-        if (instanitateMovementData)
+        if (instantiateScriptableObjects)
         {
-            DataHolder = Instantiate(DataHolder);
+            _dataHolder = Instantiate(_dataHolder);
         }
     }   
 }
