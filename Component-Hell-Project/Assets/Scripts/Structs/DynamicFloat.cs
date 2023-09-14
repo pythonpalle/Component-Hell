@@ -41,4 +41,9 @@ public struct DynamicFloat
             value /= mult.value;
         }
     }
+
+    public void Add(float adder)
+    {
+        value += adder;
+    }
 }

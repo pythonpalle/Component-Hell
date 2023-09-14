@@ -3,16 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColliderDamageHandler : GameComponent
+public class ColliderDamageHandler : MonoBehaviour
 {
-    private FloatVariable damageValue;
-    
+    [SerializeField] private DynamicFloat damageValue;
     [SerializeField] private LayerMask layerMask;
     
-    private void Start()
-    {
-        damageValue = _metaContainer.DamageContainer.ValueWrapper.CurrentValue;
-    }
     
     public void CallTryInflictDamage(Collision2D other)
     {
@@ -31,16 +26,13 @@ public class ColliderDamageHandler : GameComponent
 
     public bool TryInflictDamage(Collider2D other)
     {
-        
-        Debug.Log("Try inflict damage");
         if ((layerMask.value & (1 << other.gameObject.layer)) > 0 == false)
             return false;
 
-        var health = other.GetComponentInChildren<CharacterHealth>();
-        if (health)
+        var damageReciever = other.GetComponentInChildren<DamageReciever>();
+        if (damageReciever)
         {
-            health.TakeDamage(damageValue.value);
-            Debug.Log("Take damage!");
+            damageReciever.RecieveDamage(damageValue.Value);
             return true;
         } 
 

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6467423513790312526}
   - component: {fileID: 4297907831861574232}
-  - component: {fileID: 6755853403379643178}
   m_Layer: 7
   m_Name: Enemy Effect
   m_TagString: Untagged
@@ -46,20 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeEffects: []
---- !u!114 &6755853403379643178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4152213988749270580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66d2e602d55bd2448b3ccf69eb02d55d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instantiateFloatValue: 1
-  baseValue: {fileID: 0}
 --- !u!1 &5215295089176568653
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,8 +54,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5071212554050839768}
-  - component: {fileID: 1760464057706775277}
-  - component: {fileID: 3143451262781816320}
   - component: {fileID: 5176605879181379288}
   - component: {fileID: 70269494413596839}
   m_Layer: 7
@@ -79,7 +62,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5071212554050839768
 Transform:
   m_ObjectHideFlags: 0
@@ -95,32 +78,6 @@ Transform:
   m_Father: {fileID: 5842228505393806549}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1760464057706775277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5215295089176568653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c195e6c4ebd5de84a927e82c9fc0e1d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3143451262781816320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5215295089176568653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66d2e602d55bd2448b3ccf69eb02d55d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instantiateFloatValue: 1
-  baseValue: {fileID: 11400000, guid: c20854f3a5f308245b7aff1aa629babe, type: 2}
 --- !u!114 &5176605879181379288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34134ae03ca7271428cff6d2a7b1799f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageValue:
+    value: 1
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -442,16 +401,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8889166343478289786}
   - component: {fileID: 2651436482151402610}
-  - component: {fileID: 7305624595905115075}
-  - component: {fileID: 5977050156810847496}
-  - component: {fileID: 2525564404243643626}
   m_Layer: 7
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8889166343478289786
 Transform:
   m_ObjectHideFlags: 0
@@ -480,20 +436,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5d4c24f5ac95e43bf68afd535cdec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthDataHolder: {fileID: 0}
---- !u!114 &7305624595905115075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7118357464377202739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a01e3d779f24a4cbd0d696f433278d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnHealthEnable:
+  _healthDataHolder: {fileID: 11400000, guid: f84adcca8e5352b49941028204bdee9b, type: 2}
+  instantiateScriptableObjects: 1
+  OnHealthStart:
     m_PersistentCalls:
       m_Calls: []
   OnHealthChange:
@@ -501,59 +446,7 @@ MonoBehaviour:
       m_Calls: []
   OnDeath:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7078157177388834464}
-        m_TargetAssemblyTypeName: DropItem, Assembly-CSharp
-        m_MethodName: InstantiateObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4358763170066272907}
-        m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
-        m_MethodName: SelfDestroy
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &5977050156810847496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7118357464377202739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66d2e602d55bd2448b3ccf69eb02d55d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instantiateFloatValue: 1
-  baseValue: {fileID: 11400000, guid: 06565c7fb805d3b4abee7d7bebbef0fa, type: 2}
---- !u!114 &2525564404243643626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7118357464377202739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66d2e602d55bd2448b3ccf69eb02d55d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instantiateFloatValue: 1
-  baseValue: {fileID: 11400000, guid: 20ed7f9423707cb469907762abd44431, type: 2}
+      m_Calls: []
 --- !u!1 &7377756399152388798
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,11 +505,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 509519832596674980, guid: bd19e020206424746bdc4cb916a3431e, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 509519832596674980, guid: bd19e020206424746bdc4cb916a3431e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 509519832596674981, guid: bd19e020206424746bdc4cb916a3431e, type: 3}
       propertyPath: m_Layer
@@ -624,20 +517,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 509519832704443393, guid: bd19e020206424746bdc4cb916a3431e, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 509519832704443393, guid: bd19e020206424746bdc4cb916a3431e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 509519832704443393, guid: bd19e020206424746bdc4cb916a3431e, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 509519832704443394, guid: bd19e020206424746bdc4cb916a3431e, type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 509519832929764356, guid: bd19e020206424746bdc4cb916a3431e, type: 3}
+      propertyPath: _healthManager
+      value: 
+      objectReference: {fileID: 2651436482151402610}
     - target: {fileID: 509519832929764358, guid: bd19e020206424746bdc4cb916a3431e, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -740,7 +637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 509519833144824697, guid: bd19e020206424746bdc4cb916a3431e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 509519833810988704, guid: bd19e020206424746bdc4cb916a3431e, type: 3}
       propertyPath: m_Layer
