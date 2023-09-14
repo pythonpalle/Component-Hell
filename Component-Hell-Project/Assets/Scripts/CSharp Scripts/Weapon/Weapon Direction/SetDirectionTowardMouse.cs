@@ -2,20 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetDirectionTowardMouse : GameComponent
+public class SetDirectionTowardMouse : MonoBehaviour
 {
-    private Vector2Variable directionVariable;
-
-    private void Start()
-    {
-        directionVariable = _metaContainer.MovementContainer.DirectionVariable;
-    }
-
-    public void SetDirection()
+    public void SetDirection(MovementDataHolder moveData) 
     {
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        var direction = (mousePos - transform.position).normalized;
+        var direction = (mousePos - transform.position).normalized; 
       
-        directionVariable.value = direction;
-    }
+        moveData.moveDirection = direction;
+    } 
 }

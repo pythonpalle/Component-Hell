@@ -3,25 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReflectOnBoundries : GameComponent
+public class ReflectOnBoundries : MonoBehaviour
 {
-    //private DirectionComponent direction;
-    private Vector2Variable direction;
     private Vector2 screenBounds;
-    private Transform objectTransform;
+    
+    [SerializeField] private Transform objectTransform;
+    private MovementDataHolder _dataHolder;
 
-    public override void Setup (MetaContainer container)
+    private void Start ()
     {
-        base.Setup(container);
-        
-        //direction = _metaContainer.MovementContainer.DirectionComponent;
-        direction = _metaContainer.MovementContainer.DirectionVariable;
-        
+        _dataHolder = GetComponent<MovementContainer>().DataHolder;
+
         //TOdo: optimera
         screenBounds = Camera.main.ScreenToWorldPoint
             (new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 
-        objectTransform = _metaContainer.transform;
     }
 
     void LateUpdate()
@@ -60,28 +56,30 @@ public class ReflectOnBoundries : GameComponent
         
         if (flipX)
         {
-            FlipX(direction.value);
+            FlipX();
         } 
         if (flipY)
         {
-            FlipY(direction.value);
-        }
+            FlipY();
 
-        if (flipX && flipY)
-        {
-            Debug.Log("WOW WE HIT THE CORNER");
+            if (flipX)
+            {
+                Debug.Log("WOW WE HIT THE CORNER");
+            }
         }
 
         objectTransform.position = newPos;
     }
 
-    private void FlipX(Vector2 currentDirection)
+    private void FlipX()
     {
-        direction.value = new Vector2(-currentDirection.x, currentDirection.y);
+        var moveDir = _dataHolder.moveDirection;
+        _dataHolder.moveDirection= new Vector2(-moveDir.x, moveDir.y);
     }
     
-    private void FlipY(Vector2 currentDirection)
+    private void FlipY()
     {
-        direction.value = new Vector2(currentDirection.x, -currentDirection.y);
+        var moveDir = _dataHolder.moveDirection;
+        _dataHolder.moveDirection= new Vector2(moveDir.x, -moveDir.y);
     }
 }

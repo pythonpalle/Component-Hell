@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724802972aab03e4284dcc8ab768ee48, type: 3}
   m_Name: Easy Enemy Move Data
   m_EditorClassIdentifier: 
-  moveDirection: {x: 0.99926823, y: 0.0382495}
+  moveDirection: {x: -0.99794185, y: 0.064125046}
   moveSpeed:
-    value: 3
+    value: 1.04

@@ -11,7 +11,7 @@ public struct DynamicFloat
     [SerializeField] private float value;
     public float Value => value;
     
-    private List<DynamicFloat> multipliers;
+    [NonSerialized] private List<DynamicFloat> multipliers;
 
 
     public void AddMultiplier(DynamicFloat mult)

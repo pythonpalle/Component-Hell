@@ -4,18 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
-public class RandomiseDirection : GameComponent
+public class RandomiseDirection : MonoBehaviour
 {
-    private Vector2Variable _directionComponent;
     private Random _random;
 
     private void OnEnable()
     {
-        _directionComponent = _metaContainer.MovementContainer.DirectionVariable;
         _random = new Random();
     }
 
-    public void Randomise()
+    public void Randomise(MovementDataHolder moveData)
     {
         var newDirection = new Vector2
         {
@@ -23,6 +21,6 @@ public class RandomiseDirection : GameComponent
             y = (float) _random.NextDouble()*2-1, 
         }.normalized;
 
-        _directionComponent.value = newDirection;
+        moveData.moveDirection = newDirection;
     }
 }
