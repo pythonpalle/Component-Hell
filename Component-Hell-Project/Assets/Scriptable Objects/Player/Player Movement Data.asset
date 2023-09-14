@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Player Movement Data
   m_EditorClassIdentifier: 
   moveDirection: {x: 0, y: 0}
-  moveSpeedStruct:
-    value: 3.8
+  moveSpeed:
+    value: 5

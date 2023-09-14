@@ -257,8 +257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a01e3d779f24a4cbd0d696f433278d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 0}
-  findMetaContainer: 1
   OnHealthEnable:
     m_PersistentCalls:
       m_Calls:
@@ -351,8 +349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df475954f020130479e8784eb4dc575e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 0}
-  findMetaContainer: 1
   transformToMove: {fileID: 3931818526344562772}
 --- !u!114 &1150494220303879649
 MonoBehaviour:
@@ -366,9 +362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8432f13feee10d34aa5fec55f2b67ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 0}
-  findMetaContainer: 1
-  playerDirection: {fileID: 11400000, guid: 5076c3c79f1efd248901b4f0ea4c3dca, type: 2}
 --- !u!1 &1640390196519826938
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,8 +605,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320b5f75fd89c874899ffdecbb1007e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 2964631596920915038}
-  findMetaContainer: 1
 --- !u!114 &136727661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,8 +617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d1a62bc0435b340bcdd3ee73083502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 0}
-  findMetaContainer: 1
 --- !u!114 &8792511759583882424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,8 +629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3282bb4c7c4680a4897470735e7c2689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 2964631596920915038}
-  findMetaContainer: 1
 --- !u!114 &8831767451449166619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,8 +641,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7f2737ab84d4f41a32aa906df1974e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 2964631596920915038}
-  findMetaContainer: 1
 --- !u!114 &1175622396831277964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,8 +653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274b687578f776d41ba3d076056f479b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 2964631596920915038}
-  findMetaContainer: 1
 --- !u!114 &6218078908628763745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,8 +665,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99fb3938db641dc4e8dc88de0b85358b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 2964631596920915038}
-  findMetaContainer: 1
 --- !u!1 &2357979701900451274
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,8 +724,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb42effbe04e2964badf7921f39a04eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 2964631596920915038}
-  findMetaContainer: 1
 --- !u!114 &1492907039148193476
 MonoBehaviour:
   m_ObjectHideFlags: 0
