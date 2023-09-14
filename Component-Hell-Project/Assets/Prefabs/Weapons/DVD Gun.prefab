@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 892037710, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: burstCount
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 957123715, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: prefabsToAdd.Array.size
       value: 1
