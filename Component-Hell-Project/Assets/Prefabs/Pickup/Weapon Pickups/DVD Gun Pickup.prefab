@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e00039a86aa49749a6d9d91101a9b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 6015097530929085078, guid: 444be529d94c574479f58f5dfa297ec4, type: 3}
+  weaponPrefab: {fileID: 8987620614001210496, guid: 444be529d94c574479f58f5dfa297ec4, type: 3}
   OnPickUp:
     m_PersistentCalls:
       m_Calls:

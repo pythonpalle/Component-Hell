@@ -208,8 +208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320b5f75fd89c874899ffdecbb1007e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 0}
-  findMetaContainer: 1
+  _metaContainer: {fileID: 6767329509368115655}
+  findMetaContainer: 0
 --- !u!114 &8354508447980119231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,8 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d1a62bc0435b340bcdd3ee73083502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 0}
-  findMetaContainer: 1
+  _metaContainer: {fileID: 6767329509368115655}
+  findMetaContainer: 0
 --- !u!114 &2188675082826350392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,8 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7f2737ab84d4f41a32aa906df1974e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 0}
-  findMetaContainer: 1
+  _metaContainer: {fileID: 6767329509368115655}
+  findMetaContainer: 0
 --- !u!114 &5204381098278380803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,8 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274b687578f776d41ba3d076056f479b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 0}
-  findMetaContainer: 1
+  _metaContainer: {fileID: 6767329509368115655}
+  findMetaContainer: 0
 --- !u!114 &6869646985967860132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,8 +264,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99fb3938db641dc4e8dc88de0b85358b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 0}
-  findMetaContainer: 1
+  _metaContainer: {fileID: 6767329509368115655}
+  findMetaContainer: 0
 --- !u!1 &2953478044364340665
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2681688216da4488989ccb1c32dd01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 0}
+  _metaContainer: {fileID: 6767329509368115655}
   findMetaContainer: 1
   projectilePrefab: {fileID: 0}
   fireType: {fileID: 892037710}

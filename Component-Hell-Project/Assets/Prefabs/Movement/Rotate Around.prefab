@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _metaContainer: {fileID: 0}
   findMetaContainer: 1
-  speed: 90
+  speed: 180
