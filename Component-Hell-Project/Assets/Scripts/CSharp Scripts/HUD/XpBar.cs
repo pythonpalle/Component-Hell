@@ -16,7 +16,7 @@ public class XpBar : MonoBehaviour
     private float prevLevelNeeded = 0;
     private float nextLevelNeeded = 0;
 
-    private void OnEnable()
+    private void Start()
     {
         UpdateNeededValues();
         UpdateSliderValue();
@@ -32,7 +32,7 @@ public class XpBar : MonoBehaviour
     {
         float current = playerXP.value - prevLevelNeeded;
         float max = nextLevelNeeded - prevLevelNeeded;
-
+        
         _slider.value = current/max;
     }
 }

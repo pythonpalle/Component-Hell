@@ -44,3 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38cc55e06df65bd4593ac0296dcd4af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _metaContainer: {fileID: 0}
+  findMetaContainer: 1
+  speed: 90

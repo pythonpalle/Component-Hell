@@ -18,7 +18,6 @@ public class FloatValueWrapper : MonoBehaviour
     {
         if (!baseValue)
         {
-            Debug.Log($"Missing base value for {gameObject.name}");
             return;
         }
         

@@ -44,10 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5129ccd83500f4ba535c7250a24721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabsToAdd:
-  - {fileID: 4474146153065712839, guid: 603e23825a0efd947927518ae243f79b, type: 3}
-  - {fileID: -4042524590383549861, guid: eed2c132404a68145b0051642f103b48, type: 3}
-  - {fileID: 699767132114228402, guid: f0da600df0d3b224d868b67ac0bb4102, type: 3}
+  prefabsToAdd: []
 --- !u!1 &1190930212643562292
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantiateFloatValue: 1
-  baseValue: {fileID: 11400000, guid: 90bfbe0eeb9bcdb42aa9d0513bab5295, type: 2}
+  baseValue: {fileID: 11400000, guid: 06565c7fb805d3b4abee7d7bebbef0fa, type: 2}
 --- !u!1 &1854563230168821275
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantiateFloatValue: 1
-  baseValue: {fileID: 11400000, guid: ba0acb74b92830a4cacf852d3bab9480, type: 2}
+  baseValue: {fileID: 11400000, guid: 06565c7fb805d3b4abee7d7bebbef0fa, type: 2}
 --- !u!1 &4900243349907162018
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantiateFloatValue: 1
-  baseValue: {fileID: 11400000, guid: 9800be89c0f22634c979b8708f1c4c67, type: 2}
+  baseValue: {fileID: 11400000, guid: 06565c7fb805d3b4abee7d7bebbef0fa, type: 2}
 --- !u!1 &4917521755952263086
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb42effbe04e2964badf7921f39a04eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 0}
+  _metaContainer: {fileID: 6767329509368115655}
   findMetaContainer: 1
 --- !u!114 &7928027796491295147
 MonoBehaviour:
@@ -465,7 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantiateFloatValue: 1
-  baseValue: {fileID: 11400000, guid: ba76b38cfc0b9b343a6a0fe18fa373d9, type: 2}
+  baseValue: {fileID: 11400000, guid: 06565c7fb805d3b4abee7d7bebbef0fa, type: 2}
 --- !u!1 &5609120994992798349
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,10 +474,9 @@ GameObject:
   - component: {fileID: 5404104272743974705}
   - component: {fileID: 6015097530929085078}
   - component: {fileID: 892037710}
-  - component: {fileID: 7825429799708889858}
-  - component: {fileID: 8930088006867202399}
+  - component: {fileID: 6767329509368115655}
   m_Layer: 6
-  m_Name: Boomerana Gun
+  m_Name: Weapon Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -518,24 +514,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _metaContainer: {fileID: 0}
   findMetaContainer: 1
-  projectilePrefab: {fileID: 989252837391974315, guid: 0fc02bb80da66184794ffee03c5e4cfe, type: 3}
+  projectilePrefab: {fileID: 0}
   fireType: {fileID: 892037710}
-  controller: {fileID: 7825429799708889858}
+  controller: {fileID: 0}
   OnPrepareFire:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1789859546}
-        m_TargetAssemblyTypeName: SetDirectionTowardMouse, Assembly-CSharp
-        m_MethodName: SetDirection
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnProjectileSpawned:
     m_PersistentCalls:
       m_Calls:
@@ -577,19 +561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burstCount: 1
   timeBetweenBursts: 0.1
---- !u!114 &7825429799708889858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5609120994992798349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20e5ecd9812d2164ca4b7e3e164eece2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8930088006867202399
+--- !u!114 &6767329509368115655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -619,9 +591,6 @@ GameObject:
   - component: {fileID: 4838733287306203892}
   - component: {fileID: 5675304604778512560}
   - component: {fileID: 97843464731992728}
-  - component: {fileID: 7269874546871306083}
-  - component: {fileID: 1789859546}
-  - component: {fileID: 3348864002632595712}
   m_Layer: 6
   m_Name: Movement
   m_TagString: Untagged
@@ -658,7 +627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueWrapper: {fileID: 97843464731992728}
   directionVariable: {fileID: 11400000, guid: 020072c24c15a1a489735e03fd97e811, type: 2}
-  _objectMover: {fileID: 3348864002632595712}
+  _objectMover: {fileID: 0}
   instantiateScriptableVariables: 1
 --- !u!114 &97843464731992728
 MonoBehaviour:
@@ -673,47 +642,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantiateFloatValue: 1
-  baseValue: {fileID: 11400000, guid: 029dc797a784cab4cae69edff2242986, type: 2}
---- !u!114 &7269874546871306083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7400873132517945963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aecf109e9703e6d4aadb48b8d17c5c91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 0}
-  findMetaContainer: 1
---- !u!114 &1789859546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7400873132517945963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 374e8687df3bb004eacac9d760794c2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 0}
-  findMetaContainer: 1
---- !u!114 &3348864002632595712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7400873132517945963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df475954f020130479e8784eb4dc575e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 0}
-  findMetaContainer: 1
-  transformToMove: {fileID: 5404104272743974705}
+  baseValue: {fileID: 11400000, guid: 06565c7fb805d3b4abee7d7bebbef0fa, type: 2}

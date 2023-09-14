@@ -56,7 +56,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5660627111589486079}
-  - component: {fileID: 3680705295881976758}
   m_Layer: 6
   m_Name: Weapon Container Holder
   m_TagString: Untagged
@@ -84,25 +83,6 @@ Transform:
   m_Father: {fileID: 5404104272743974705}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3680705295881976758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190930212643562292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aa126dda7d013c4b835815b463bdb88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _movementContainer: {fileID: 5675304604778512560}
-  healthContainer: {fileID: 0}
-  collisionContainer: {fileID: 0}
-  effectContainer: {fileID: 6237273006561246237}
-  _cooldownContainer: {fileID: 3360296945229706295}
-  _damageContainer: {fileID: 4155343900860030681}
-  sizeContainer: {fileID: 2080810555697436072}
 --- !u!1 &1715657652156872542
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320b5f75fd89c874899ffdecbb1007e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 3680705295881976758}
+  _metaContainer: {fileID: 0}
+  findMetaContainer: 1
 --- !u!114 &8354508447980119231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d1a62bc0435b340bcdd3ee73083502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 3680705295881976758}
+  _metaContainer: {fileID: 0}
+  findMetaContainer: 1
 --- !u!114 &2188675082826350392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,7 +238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7f2737ab84d4f41a32aa906df1974e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 3680705295881976758}
+  _metaContainer: {fileID: 0}
+  findMetaContainer: 1
 --- !u!114 &5204381098278380803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,7 +252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274b687578f776d41ba3d076056f479b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 3680705295881976758}
+  _metaContainer: {fileID: 0}
+  findMetaContainer: 1
 --- !u!114 &6869646985967860132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99fb3938db641dc4e8dc88de0b85358b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 3680705295881976758}
+  _metaContainer: {fileID: 0}
+  findMetaContainer: 1
 --- !u!1 &2953478044364340665
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +449,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb42effbe04e2964badf7921f39a04eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 3680705295881976758}
+  _metaContainer: {fileID: 6767329509368115655}
+  findMetaContainer: 1
 --- !u!114 &7928027796491295147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,6 +477,7 @@ GameObject:
   - component: {fileID: 6015097530929085078}
   - component: {fileID: 892037710}
   - component: {fileID: 3776448592080218777}
+  - component: {fileID: 6767329509368115655}
   m_Layer: 6
   m_Name: DVD Gun
   m_TagString: Untagged
@@ -528,7 +515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2681688216da4488989ccb1c32dd01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 3680705295881976758}
+  _metaContainer: {fileID: 0}
+  findMetaContainer: 1
   projectilePrefab: {fileID: 989252837391974315, guid: 9757bf578516de843bf860a3f6e63d74, type: 3}
   fireType: {fileID: 892037710}
   controller: {fileID: 3776448592080218777}
@@ -600,6 +588,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7504f7d0abc26484b8e41b79d5471f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6767329509368115655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5609120994992798349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa126dda7d013c4b835815b463bdb88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementContainer: {fileID: 5675304604778512560}
+  healthContainer: {fileID: 0}
+  collisionContainer: {fileID: 0}
+  effectContainer: {fileID: 6237273006561246237}
+  _cooldownContainer: {fileID: 3360296945229706295}
+  _damageContainer: {fileID: 4155343900860030681}
+  sizeContainer: {fileID: 2080810555697436072}
 --- !u!1 &7400873132517945963
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,7 +685,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aecf109e9703e6d4aadb48b8d17c5c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 3680705295881976758}
+  _metaContainer: {fileID: 6767329509368115655}
+  findMetaContainer: 1
 --- !u!114 &1789859546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,7 +699,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374e8687df3bb004eacac9d760794c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 3680705295881976758}
+  _metaContainer: {fileID: 6767329509368115655}
+  findMetaContainer: 1
 --- !u!114 &3348864002632595712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,5 +713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df475954f020130479e8784eb4dc575e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 3680705295881976758}
+  _metaContainer: {fileID: 6767329509368115655}
+  findMetaContainer: 1
   transformToMove: {fileID: 5404104272743974705}

@@ -22,8 +22,10 @@ public class Weapon : GameComponent
     public UnityEvent OnPrepareFire;
     public UnityEvent<Projectile> OnProjectileSpawned;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         if (!fireType) 
             fireType = GetComponent<WeaponFireType>();
 
