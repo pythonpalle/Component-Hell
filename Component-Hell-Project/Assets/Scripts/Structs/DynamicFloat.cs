@@ -127,14 +127,20 @@ public struct DynamicFloat
     {
         value = baseValue;
 
-        foreach (var adder in adders.Values)
+        if (adders != null)
         {
-            value += adder;
+            foreach (var adder in adders.Values)
+            {
+                value += adder;
+            }
         }
-        
-        foreach (var multiplier in multipliers.Values)
+
+        if (multipliers != null)
         {
-            value *= multiplier;
+            foreach (var multiplier in multipliers.Values)
+            {
+                value *= multiplier;
+            }
         }
     }
 }

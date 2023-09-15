@@ -11,7 +11,7 @@ public class MovementManager : MonoBehaviour
     
     [SerializeField] bool instantiateScriptableObjects = true;
 
-    [SerializeReference] private List<IMovementListener> _movementListeners;
+    [SerializeReference] private List<MovementListener> _movementListeners = new List<MovementListener>();
 
     void Awake()
     {

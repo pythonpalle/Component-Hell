@@ -76,12 +76,16 @@ PrefabInstance:
       value: DVD Gun
       objectReference: {fileID: 0}
     - target: {fileID: 6015097530929085078, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: weaponData
+      value: 
+      objectReference: {fileID: 11400000, guid: 6beba9dacac24ce449d4fdfb72d6544a, type: 2}
+    - target: {fileID: 6015097530929085078, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 989252837391974315, guid: 9757bf578516de843bf860a3f6e63d74, type: 3}
+      objectReference: {fileID: 3137408237105572142, guid: 9757bf578516de843bf860a3f6e63d74, type: 3}
     - target: {fileID: 6015097530929085078, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: OnPrepareFire.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6015097530929085078, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: OnPrepareFire.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -90,7 +94,7 @@ PrefabInstance:
     - target: {fileID: 6015097530929085078, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: OnPrepareFire.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5001729310249439764}
+      objectReference: {fileID: 0}
     - target: {fileID: 6015097530929085078, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: OnPrepareFire.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -115,39 +119,13 @@ PrefabInstance:
       propertyPath: baseValue
       value: 
       objectReference: {fileID: 11400000, guid: 5dc603e7c70066a4eb5100f78f3b1f2d, type: 2}
+    - target: {fileID: 7977065025271890154, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: fireType
+      value: 
+      objectReference: {fileID: 11400000, guid: fc802ab6c04c48240898823b7ac3c89d, type: 2}
     - target: {fileID: 8116524934973731854, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: baseValue
       value: 
       objectReference: {fileID: 11400000, guid: 61ddeba8bc1cd4644bb94231ab3a3844, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
---- !u!1 &5293617315020586109 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7400873132517945963, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
-  m_PrefabInstance: {fileID: 3441763872512298518}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5001729310249439764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5293617315020586109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aecf109e9703e6d4aadb48b8d17c5c91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 8226379237355552721}
-  findMetaContainer: 1
---- !u!114 &8226379237355552721 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6767329509368115655, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
-  m_PrefabInstance: {fileID: 3441763872512298518}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aa126dda7d013c4b835815b463bdb88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

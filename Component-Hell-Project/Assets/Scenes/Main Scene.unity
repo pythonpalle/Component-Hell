@@ -7976,18 +7976,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3043709278377385508, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: managedReferences[-2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3043709278377385508, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: _movementListeners.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3043709278377385508, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: _movementListeners.Array.data[0]
-      value: -2
-      objectReference: {fileID: 0}
     - target: {fileID: 3931818526344562772, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
       propertyPath: m_RootOrder
       value: 4

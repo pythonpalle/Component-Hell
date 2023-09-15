@@ -25,6 +25,14 @@ public class WeaponHandler : MonoBehaviour, IMovementListener
         weapons = GetComponentsInChildren<Weapon>().ToList();
     }
 
+    private void Start()
+    {
+        foreach (var weaponInstance in weapons)
+        {
+            HandleInitialDataUpdate(weaponInstance);
+        }
+    }
+
     private void Update()
     {
         TryAttackWithWeapons();
@@ -42,6 +50,13 @@ public class WeaponHandler : MonoBehaviour, IMovementListener
     {
         var weaponInstance = Instantiate(weaponPrefab, transform);
         weapons.Add(weaponInstance);
+
+        HandleInitialDataUpdate(weaponInstance);
+        
+    }
+
+    private void HandleInitialDataUpdate(Weapon weaponInstance)
+    {
         weaponInstance.UpdateData(weaponData);
         OnUpdateData.AddListener(weaponInstance.UpdateData);
     }

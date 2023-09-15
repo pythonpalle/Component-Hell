@@ -8,7 +8,7 @@ using Random = System.Random;
 
 public class FireHandler : MonoBehaviour
 {
-    public bool isFiring { get; private set; } = false;
+    [SerializeField] private bool isFiring = false;
     [SerializeField] FireType fireType;
     [SerializeField] private bool instantiateFireType;
 
@@ -27,6 +27,8 @@ public class FireHandler : MonoBehaviour
 
     private IEnumerator FireRoutine(Projectile projectilePrefab, Weapon owner)
     {
+        Debug.Log("Start fire routine!");
+        
         isFiring = true;
 
         var data = owner.Data;
@@ -39,17 +41,9 @@ public class FireHandler : MonoBehaviour
             fireType.Fire(data, owner, projectilePrefab, round);
             yield return new WaitForSeconds(shotCooldown);
         }
-        
-        
+
         yield return new WaitForSeconds(burstCooldown);
         isFiring = false;
-    }
-
-    protected Projectile SpawnProjectile(Projectile projectile, Weapon weapon)
-    {
-        var instance = Instantiate(projectile, transform.position, quaternion.identity);
-        weapon.OnProjectileSpawned?.Invoke(instance);
-        return instance;
     }
 }
 

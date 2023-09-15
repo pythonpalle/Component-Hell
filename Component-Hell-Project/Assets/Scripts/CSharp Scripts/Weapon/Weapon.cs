@@ -16,7 +16,6 @@ public class Weapon : MonoBehaviour
     
     [Header("Components")]
     [SerializeField] private FireHandler fireHandler;
-    [SerializeField] private WeaponController controller;
 
     private Cooldown _cooldown;
     
@@ -24,23 +23,14 @@ public class Weapon : MonoBehaviour
     public UnityEvent OnPrepareFire;
     public UnityEvent<Projectile> OnProjectileSpawned;
 
-    private Vector2 direction;
+    [SerializeField] private Vector2 direction;
     
 
     public void TryAttack()
     {
-        Attack();
-    }
-    
-    private bool CanAttack()
-    {
-        return true;
-    }
-
-    private void Attack()
-    {
         fireHandler.TryFire(projectilePrefab, this);
     }
+    
 
     public void UpdateData(WeaponDataHolder fromData)
     {
