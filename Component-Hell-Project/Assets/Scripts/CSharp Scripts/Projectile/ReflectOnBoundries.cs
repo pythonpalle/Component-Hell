@@ -18,6 +18,8 @@ public class ReflectOnBoundries : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint
             (new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 
+        if (!objectTransform) objectTransform = transform.root;
+
     }
 
     void LateUpdate()

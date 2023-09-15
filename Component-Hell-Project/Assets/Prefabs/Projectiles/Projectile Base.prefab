@@ -69,6 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 876670131001537342}
   - component: {fileID: 7182947846862501782}
+  - component: {fileID: 2858556343525050890}
   m_Layer: 6
   m_Name: Effect
   m_TagString: Untagged
@@ -103,7 +104,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615b2b88282f30a46ace3956f2e2cb53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectTime:
+    value: 1
   activeEffects: []
+--- !u!114 &2858556343525050890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2151901899397412402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8746cbf69c481f8ee61b4386c4333e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2858374030421664062
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +336,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2858556343525050890}
+        m_TargetAssemblyTypeName: ProjectileEffectTimeTransfer, Assembly-CSharp
+        m_MethodName: OnProjectileSpawn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6639164635164270141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,9 +400,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8504882469314287999}
   - component: {fileID: 8927102831763393339}
+  - component: {fileID: 200403830656927440}
   - component: {fileID: 1970401611550323339}
   - component: {fileID: 7728499801304071896}
-  - component: {fileID: 200403830656927440}
   m_Layer: 6
   m_Name: Movement
   m_TagString: Untagged
@@ -413,6 +440,18 @@ MonoBehaviour:
   _dataHolder: {fileID: 11400000, guid: a70488baf2918b04eaf856a833e0dc97, type: 2}
   instantiateScriptableObjects: 1
   _movementListeners: []
+--- !u!114 &200403830656927440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6022690550055221728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf0410e7ba4de64bbe7acded49ccb75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1970401611550323339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,18 +475,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa210e43115c30645860000edad10ff3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &200403830656927440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6022690550055221728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbf0410e7ba4de64bbe7acded49ccb75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7841962770100765122

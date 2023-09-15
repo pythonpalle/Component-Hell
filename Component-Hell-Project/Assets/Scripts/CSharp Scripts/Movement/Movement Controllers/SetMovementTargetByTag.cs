@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(TowardTransformMovementController))]
 public class SetMovementTargetByTag : MonoBehaviour
 {
-    public string tag = "Enemy";
+    [SerializeField] string targetTag = "Enemy";
 
     private TowardTransformMovementController controller;
 
@@ -16,17 +16,11 @@ public class SetMovementTargetByTag : MonoBehaviour
         TryFindTarget();
     }
 
-    
-    // private void Update()
-    // {
-    //     TryFindTarget(); 
-    // }
-
     void TryFindTarget()
     {
         if (controller.TargetTransform == null)
         {
-            controller.TargetTransform = GameObject.FindWithTag(tag).transform;
+            controller.TargetTransform = GameObject.FindWithTag(targetTag).transform;
         }
     }
 }

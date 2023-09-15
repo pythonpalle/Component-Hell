@@ -7,6 +7,8 @@ public class TowardTransformMovementController : MovementControllerBase
     [SerializeField]
     protected Transform targetTransform;
 
+    private Vector2 lastValidDirection = Vector2.right;
+
     public Transform TargetTransform
     {
         get => targetTransform;
@@ -15,7 +17,11 @@ public class TowardTransformMovementController : MovementControllerBase
 
     protected override Vector2 GetNextDirection()
     {
-        var directionTowardPlayer = (targetTransform.position - transform.position);
-        return (directionTowardPlayer);
+        if (targetTransform)
+        {
+            lastValidDirection = targetTransform.position - transform.position;
+        }
+        
+        return lastValidDirection;
     }
 }
