@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private WeaponDataHolder weaponData;
     
     [Header("Components")]
-    [SerializeField] private WeaponFireType fireType;
+    [SerializeField] private FireHandler fireHandler;
     [SerializeField] private WeaponController controller;
 
     private Cooldown _cooldown;
@@ -38,7 +38,7 @@ public class Weapon : MonoBehaviour
 
     private void Attack()
     {
-        fireType.Fire(projectilePrefab, this);
+        fireHandler.TryFire(projectilePrefab, weaponData);
     }
 
     public void UpdateData(WeaponDataHolder fromData)
