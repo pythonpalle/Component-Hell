@@ -8,7 +8,7 @@ using Random = System.Random;
 
 public class FireHandler : MonoBehaviour
 {
-    [SerializeField] private bool isFiring = false;
+    private bool isFiring = false;
     [SerializeField] FireType fireType;
     [SerializeField] private bool instantiateFireType;
 

@@ -24,7 +24,7 @@ public class Weapon : MonoBehaviour
     public UnityEvent OnPrepareFire;
     public UnityEvent<Projectile> OnProjectileSpawned;
 
-    [SerializeField] private Vector2 direction;
+    public Vector2 Direction { get; private set; }
 
 
     private void Awake()
@@ -58,6 +58,6 @@ public class Weapon : MonoBehaviour
 
     public void UpdateDirection(Vector2 direction)
     {
-        this.direction = direction;
+        this.Direction = direction;
     }
 }

@@ -123,9 +123,17 @@ PrefabInstance:
       propertyPath: fireType
       value: 
       objectReference: {fileID: 11400000, guid: fc802ab6c04c48240898823b7ac3c89d, type: 2}
+    - target: {fileID: 7977065025271890154, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: instantiateFireType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8116524934973731854, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: baseValue
       value: 
       objectReference: {fileID: 11400000, guid: 61ddeba8bc1cd4644bb94231ab3a3844, type: 2}
+    - target: {fileID: 8688629084789109863, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: prefabsToAdd.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
