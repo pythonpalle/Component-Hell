@@ -1,33 +1,42 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = System.Random;
 
 public class FireHandler : MonoBehaviour
 {
     public bool isFiring { get; private set; } = false;
-    public FireType fireType;
+    [SerializeField] FireType fireType;
+    [SerializeField] private bool instantiateFireType;
 
-    public void TryFire(Projectile projectilePrefab, WeaponDataHolder data)
+    private void Awake()
+    {
+        if (instantiateFireType) fireType = Instantiate(fireType);
+    }
+
+    public void TryFire(Projectile projectilePrefab, Weapon owner)
     {
         if (isFiring)
             return;
         
-        StartCoroutine(FireRoutine(projectilePrefab, data));
+        StartCoroutine(FireRoutine(projectilePrefab, owner));
     }
 
-    private IEnumerator FireRoutine(Projectile projectilePrefab, WeaponDataHolder data)
+    private IEnumerator FireRoutine(Projectile projectilePrefab, Weapon owner)
     {
         isFiring = true;
 
+        var data = owner.Data;
         int amount = (int) data.amount.Value;
         float burstCooldown = data.burstCooldown.Value;
         float shotCooldown = data.shotCooldown.Value;
         
         for (int round = 0; round < amount; round++)
         {
-            fireType.Fire(data, this, projectilePrefab, round);
+            fireType.Fire(data, owner, projectilePrefab, round);
             yield return new WaitForSeconds(shotCooldown);
         }
         
@@ -44,30 +53,6 @@ public class FireHandler : MonoBehaviour
     }
 }
 
-public abstract class FireType : ScriptableObject
-{
-    public void Fire(WeaponDataHolder data, FireHandler handler, Projectile prefab, int round)
-    {
-        Vector2 direction = GetDirection(handler, round);
-        Vector2 position = GetPosition(handler, round);
-        
-        Projectile instance = Instantiate(prefab, position, Quaternion.identity);
-        instance.OnCreated?.Invoke(data, direction);
-    }
 
-    protected abstract Vector2 GetPosition(FireHandler handler, int round);
-    protected abstract Vector2 GetDirection(FireHandler handler, int round);
-}
 
-public class DirectionalFire : FireType
-{
-    protected override Vector2 GetPosition(FireHandler handler, int round)
-    {
-        throw new System.NotImplementedException();
-    }
 
-    protected override Vector2 GetDirection(FireHandler handler, int round)
-    {
-        throw new System.NotImplementedException();
-    }
-}

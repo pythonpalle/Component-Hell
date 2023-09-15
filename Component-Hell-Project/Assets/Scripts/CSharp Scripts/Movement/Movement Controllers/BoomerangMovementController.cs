@@ -16,7 +16,7 @@ public class BoomerangMovementController : MovementControllerBase
 
     protected override Vector2 GetNextDirection()
     {
-        var direction = dataHolder.moveDirection;
+        var direction = _movementDataHolder.moveDirection;
         
         if (Time.time > timeOfLastTurn + timeBetweenTurns)
         {

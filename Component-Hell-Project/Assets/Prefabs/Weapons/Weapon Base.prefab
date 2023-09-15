@@ -59,10 +59,10 @@ MonoBehaviour:
       - m_Target: {fileID: 8688629084789109863}
         m_TargetAssemblyTypeName: AddGameObjectsToMonoBehaviour, Assembly-CSharp
         m_MethodName: Add
-        m_Mode: 0
+        m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: GameComponent, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireType: {fileID: 0}
+  instantiateFireType: 0
 --- !u!114 &8688629084789109863
 MonoBehaviour:
   m_ObjectHideFlags: 0

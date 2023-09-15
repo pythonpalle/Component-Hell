@@ -7,6 +7,6 @@ public class DirectionalMovementController : MovementControllerBase
 {
     protected override Vector2 GetNextDirection()
     {
-        return (dataHolder.moveDirection);
+        return (_movementDataHolder.moveDirection);
     }
 }

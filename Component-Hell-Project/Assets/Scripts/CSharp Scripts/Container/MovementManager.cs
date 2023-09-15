@@ -11,7 +11,7 @@ public class MovementManager : MonoBehaviour
     
     [SerializeField] bool instantiateScriptableObjects = true;
 
-    public UnityEvent<Vector2> OnUpdateMovement;
+    [SerializeReference] private List<IMovementListener> _movementListeners;
 
     void Awake()
     {
@@ -19,6 +19,25 @@ public class MovementManager : MonoBehaviour
         {
             _dataHolder = Instantiate(_dataHolder);
         }
-    }   
-    
+    }
+
+    public void UpdateMovement(Vector2 direction)
+    {
+        // no need to update movement if direction hasn't changed
+        if (direction == _dataHolder.moveDirection)
+            return;
+        
+        foreach (var listener in _movementListeners)
+        {
+            listener.OnMovementChange(direction);
+        }
+
+        _dataHolder.moveDirection = direction.normalized;
+    }
+}
+
+
+public interface IMovementListener
+{
+    public void OnMovementChange(Vector2 direction);
 }

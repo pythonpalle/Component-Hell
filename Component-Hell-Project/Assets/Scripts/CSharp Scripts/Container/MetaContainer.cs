@@ -20,11 +20,5 @@ public class MetaContainer : MonoBehaviour
     [SerializeField] private CooldownContainer _cooldownContainer;
     public CooldownContainer CooldownContainer => _cooldownContainer;
 
-    [SerializeField] private DamageContainer _damageContainer;
-
-    public DamageContainer DamageContainer => _damageContainer;
-    
-    [SerializeField] private SizeContainer sizeContainer;
-
-    public SizeContainer SizeContainer => sizeContainer;
+   
 }

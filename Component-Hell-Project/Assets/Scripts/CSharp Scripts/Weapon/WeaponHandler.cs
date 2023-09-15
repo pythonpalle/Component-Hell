@@ -7,7 +7,7 @@ using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 
-public class WeaponHandler : MonoBehaviour
+public class WeaponHandler : MonoBehaviour, IMovementListener
 {
     [Header("Weapons Owned")]
     [SerializeField] private List<Weapon> weapons;
@@ -17,6 +17,8 @@ public class WeaponHandler : MonoBehaviour
     
     [Header("Events")]
     public UnityEvent<WeaponDataHolder> OnUpdateData;
+
+    private Vector2 moveDirection;
 
     private void Awake()
     {
@@ -42,5 +44,14 @@ public class WeaponHandler : MonoBehaviour
         weapons.Add(weaponInstance);
         weaponInstance.UpdateData(weaponData);
         OnUpdateData.AddListener(weaponInstance.UpdateData);
+    }
+
+    public void OnMovementChange(Vector2 direction)
+    {
+        moveDirection = direction;
+        foreach (var weapon in weapons)
+        {
+            weapon.UpdateDirection(direction);
+        }
     }
 }

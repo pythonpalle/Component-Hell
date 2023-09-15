@@ -12,6 +12,7 @@ public class Weapon : MonoBehaviour
     
     [Header("Data")]
     [SerializeField] private WeaponDataHolder weaponData;
+    public WeaponDataHolder Data => weaponData;
     
     [Header("Components")]
     [SerializeField] private FireHandler fireHandler;
@@ -22,6 +23,8 @@ public class Weapon : MonoBehaviour
     [Header("Events")] 
     public UnityEvent OnPrepareFire;
     public UnityEvent<Projectile> OnProjectileSpawned;
+
+    private Vector2 direction;
     
 
     public void TryAttack()
@@ -36,7 +39,7 @@ public class Weapon : MonoBehaviour
 
     private void Attack()
     {
-        fireHandler.TryFire(projectilePrefab, weaponData);
+        fireHandler.TryFire(projectilePrefab, this);
     }
 
     public void UpdateData(WeaponDataHolder fromData)
@@ -55,5 +58,10 @@ public class Weapon : MonoBehaviour
         
         weaponData.amount.AddAdder(owner, fromData.amount.Value);
         weaponData.penetration.AddAdder(owner, fromData.penetration.Value);
+    }
+
+    public void UpdateDirection(Vector2 direction)
+    {
+        this.direction = direction;
     }
 }
