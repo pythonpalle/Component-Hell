@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class MovementControllerBase : GameComponent
+public abstract class MovementControllerBase : MonoBehaviour
 {
     private ObjectMover objectMover;
     private MovementManager MovementManager;

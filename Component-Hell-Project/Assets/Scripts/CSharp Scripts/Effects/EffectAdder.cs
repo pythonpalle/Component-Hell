@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EffectAdder : GameComponent
+public class EffectAdder : MonoBehaviour
 {
 
     [SerializeField] private LayerMask effectedLayers;
@@ -13,15 +13,15 @@ public class EffectAdder : GameComponent
     private ColliderBroadcaster broadcaster;
 
 
-    public override void Setup(MetaContainer container)
-    {
-        base.Setup(container);
-        
-        EffectTime = _metaContainer.EffectContainer.ValueWrapper.CurrentValue;
-
-        broadcaster = _metaContainer.CollisionContainer.ColliderBroadcaster;
-        broadcaster.OnTrigEnter.AddListener(AddEffect);
-    }
+    // public override void Setup(MetaContainer container)
+    // {
+    //     base.Setup(container);
+    //     
+    //     EffectTime = _metaContainer.EffectContainer.ValueWrapper.CurrentValue;
+    //
+    //     broadcaster = _metaContainer.CollisionContainer.ColliderBroadcaster;
+    //     broadcaster.OnTrigEnter.AddListener(AddEffect);
+    // }
 
     private void OnDisable()
     {
@@ -30,39 +30,39 @@ public class EffectAdder : GameComponent
 
     private void AddEffect(Collider2D other)
     {
-        Debug.Log("Trying to add effect to " + other.name);
-        
-        // Wrong layer
-        if ((effectedLayers.value & (1 << other.gameObject.layer)) > 0 == false)
-        {
-            Debug.Log("Wrong Layer");
-            return;
-        }
-
-        // kan optimeras genom att ett event skickas om en metacontainer träffas, så att alla
-        // effectAdders inte behöver göra denna check
-        var otherMetaContainer = other.GetComponent<MetaContainer>();
-        if (!otherMetaContainer)
-        {
-            Debug.Log("No meta container found");
-            return;
-        }
-
-        var effectContainer = otherMetaContainer.EffectContainer;
-        var effectList = effectContainer.activeEffects;
-
-        foreach (var effectComp in effectList)
-        {
-            if (effectComp.GetType() == effectPrefab.GetType())
-            {
-                Debug.Log($"{other.name} already has {effectPrefab}");
-                return;
-            }
-        }
-
-        var effect = Instantiate(effectPrefab, other.transform);
-
-        effect.Setup(otherMetaContainer);
-        effect.OnInstantiated(EffectTime.value);
+        // Debug.Log("Trying to add effect to " + other.name);
+        //
+        // // Wrong layer
+        // if ((effectedLayers.value & (1 << other.gameObject.layer)) > 0 == false)
+        // {
+        //     Debug.Log("Wrong Layer");
+        //     return;
+        // }
+        //
+        // // kan optimeras genom att ett event skickas om en metacontainer träffas, så att alla
+        // // effectAdders inte behöver göra denna check
+        // var otherMetaContainer = other.GetComponent<MetaContainer>();
+        // if (!otherMetaContainer)
+        // {
+        //     Debug.Log("No meta container found");
+        //     return;
+        // }
+        //
+        // var effectContainer = otherMetaContainer.EffectContainer;
+        // var effectList = effectContainer.activeEffects;
+        //
+        // foreach (var effectComp in effectList)
+        // {
+        //     if (effectComp.GetType() == effectPrefab.GetType())
+        //     {
+        //         Debug.Log($"{other.name} already has {effectPrefab}");
+        //         return;
+        //     }
+        // }
+        //
+        // var effect = Instantiate(effectPrefab, other.transform);
+        //
+        // effect.Setup(otherMetaContainer);
+        // effect.OnInstantiated(EffectTime.value);
     }
 }

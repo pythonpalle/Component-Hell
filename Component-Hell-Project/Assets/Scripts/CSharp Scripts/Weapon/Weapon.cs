@@ -17,8 +17,6 @@ public class Weapon : MonoBehaviour
     
     [Header("Components")]
     [SerializeField] private FireHandler fireHandler;
-
-    private Cooldown _cooldown;
     
     [Header("Events")] 
     public UnityEvent OnPrepareFire;

@@ -6,7 +6,7 @@ public class AddGameObjectsToMonoBehaviour : MonoBehaviour
 {
     public List<MonoBehaviour> prefabsToAdd;
 
-    public void Add(GameComponent monoBehaviour)
+    public void Add(GameObject monoBehaviour)
     {
         foreach (var prefab in prefabsToAdd)
         {

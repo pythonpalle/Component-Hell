@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotation : GameComponent
+public class Rotation : MonoBehaviour
 {
     [SerializeField] private float speed = 40;
 
