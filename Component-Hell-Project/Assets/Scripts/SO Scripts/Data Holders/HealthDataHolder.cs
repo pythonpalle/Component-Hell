@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/HealthDataHolder")]
 public class HealthDataHolder : ScriptableObject
 {
-    public DynamicFloat health;
+    public float health;
     public DynamicFloat maxHealth;
     public DynamicFloat armour;
     public DynamicFloat regeneration;

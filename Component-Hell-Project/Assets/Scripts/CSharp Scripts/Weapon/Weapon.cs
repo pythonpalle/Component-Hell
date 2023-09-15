@@ -5,48 +5,56 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class Weapon : GameComponent
+public class Weapon : MonoBehaviour
 {
     [Header("Prefabs")]
     [SerializeField] private Projectile projectilePrefab;
     
-    [Header("Weapon Components")]
-    [SerializeField] private WeaponFireType fireType;
+    [Header("Data")]
+    [SerializeField] private WeaponDataHolder weaponData;
     
+    [Header("Components")]
+    [SerializeField] private WeaponFireType fireType;
     [SerializeField] private WeaponController controller;
 
     private Cooldown _cooldown;
-
+    
+    
 
     [Header("Events")] 
     public UnityEvent OnPrepareFire;
     public UnityEvent<Projectile> OnProjectileSpawned;
+    
 
-    protected override void Awake()
+    public void TryAttack()
     {
-        base.Awake();
-        
-        if (!fireType) 
-            fireType = GetComponent<WeaponFireType>();
-
-        _cooldown = _metaContainer.CooldownContainer.Cooldown;
+        Attack();
+    }
+    
+    private bool CanAttack()
+    {
+        return true;
     }
 
-    public bool CanAttack()
+    private void Attack()
     {
-        bool wantsToShoot = !controller || controller.WantsToShoot();
-        if (!wantsToShoot) return false;
-
-        bool hasCooledDown = _cooldown.HasCooledDown();
-
-        return hasCooledDown;
-    }
-
-    public void Attack(WeaponHandler handler)
-    {
-        OnPrepareFire?.Invoke();
         fireType.Fire(projectilePrefab, this);
+    }
+
+    public void UpdateData(WeaponDataHolder fromData)
+    {
+        string owner = fromData.name;
         
-        _cooldown.Reset();
+        weaponData.attackDamage.AddMultiplier(owner, fromData.attackDamage.Value);
+        weaponData.attackSpeed.AddMultiplier(owner, fromData.attackSpeed.Value);
+        weaponData.attackSize.AddMultiplier(owner, fromData.attackSize.Value);
+        weaponData.effectDuration.AddMultiplier(owner, fromData.effectDuration.Value);
+        weaponData.lifeTime.AddMultiplier(owner, fromData.lifeTime.Value);
+        
+        weaponData.burstCooldown.AddMultiplier(owner, fromData.burstCooldown.Value);
+        weaponData.shotCooldown.AddMultiplier(owner, fromData.shotCooldown.Value);
+        
+        weaponData.amount.AddAdder(owner, fromData.amount.Value);
+        weaponData.penetration.AddAdder(owner, fromData.penetration.Value);
     }
 }

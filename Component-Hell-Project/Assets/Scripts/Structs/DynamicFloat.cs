@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -11,39 +12,129 @@ public struct DynamicFloat
     [SerializeField] private float value;
     public float Value => value;
     
-    [NonSerialized] private List<DynamicFloat> multipliers;
+    [NonSerialized] private Dictionary<string, float> multipliers;
+    [NonSerialized] private Dictionary<string, float> adders;
+
+    private float baseValue;
+    private bool hasAssignedBase;
 
 
-    public void AddMultiplier(DynamicFloat mult)
+    public void AddMultiplier(string key, float value)
     {
-        if (multipliers == null)
+        HandleMultipliersInstantiate();
+        
+        if (multipliers.ContainsKey(key))
         {
-            multipliers = new List<DynamicFloat>();
+            // the value of the key hasn't changed
+            if (KeyHasValue(multipliers, key, value))
+            {
+                return;
+            }
+            else
+            {
+                multipliers[key] = value;
+            }
         }
-
-        if (multipliers.Contains(mult))
+        else
         {
-            multipliers.Add(mult);
-            value *= mult.value;
+            multipliers.Add(key, value);
+        }
+        
+        RecalculateCurrentValue();
+    }
+    
+    public void RemoveMultiplier(string key, float value)
+    {
+        HandleMultipliersInstantiate();
+
+        if (multipliers.ContainsKey(key))
+        {
+            multipliers.Remove(key);
+            RecalculateCurrentValue();
         }
     }
     
-    public void RemoveMultiplier(DynamicFloat mult)
+    private void HandleMultipliersInstantiate()
     {
         if (multipliers == null)
         {
-            multipliers = new List<DynamicFloat>();
-        }
-
-        if (multipliers.Contains(mult))
-        {
-            multipliers.Remove(mult);
-            value /= mult.value;
+            multipliers = new Dictionary<string, float>();
+            TryAssignBase();
         }
     }
 
-    public void Add(float adder)
+    private static float epsilon = 0.0001f;
+    private bool KeyHasValue(Dictionary<string, float> dictionary, string key, float value)
     {
-        value += adder;
+        return Mathf.Abs(dictionary[key] - value) < epsilon;
+    }
+    
+    public void AddAdder(string key, float value)
+    {
+        HandleAddersInstantiate();
+
+        if (adders.ContainsKey(key))
+        {
+            // the value of the key hasn't changed
+            if (KeyHasValue(adders, key, value))
+            {
+                return;
+            }
+            else
+            {
+                adders[key] = value;
+            }
+        }
+        else
+        {
+            adders.Add(key, value);
+        }
+        
+        RecalculateCurrentValue();
+    }
+    
+    public void RemoveAdder(string key, float value)
+    {
+        HandleAddersInstantiate();
+
+        if (adders.ContainsKey(key))
+        {
+            adders.Remove(key);
+            RecalculateCurrentValue();
+        }
+    }
+
+    private void HandleAddersInstantiate()
+    {
+        if (adders == null)
+        {
+            adders = new Dictionary<string, float>();
+            TryAssignBase();
+        }
+    }
+
+
+    private void TryAssignBase()
+    {
+        if (!hasAssignedBase)
+        {
+            baseValue = value;
+            hasAssignedBase = true;
+        }
+    }
+    
+    private void RecalculateCurrentValue()
+    {
+        value = baseValue;
+
+        foreach (var adder in adders.Values)
+        {
+            value += adder;
+        }
+        
+        foreach (var multiplier in multipliers.Values)
+        {
+            value *= multiplier;
+        }
     }
 }

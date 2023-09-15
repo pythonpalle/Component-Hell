@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 
@@ -10,9 +11,12 @@ public class WeaponHandler : MonoBehaviour
 {
     [Header("Weapons Owned")]
     [SerializeField] private List<Weapon> weapons;
+
+    [Header("Data")] 
+    [SerializeField] private WeaponDataHolder weaponData;
     
-    [Header("Data transfer")]
-    [SerializeField] private DataTransferManager dataTransferManager;
+    [Header("Events")]
+    public UnityEvent<WeaponDataHolder> OnUpdateData;
 
     private void Awake()
     {
@@ -28,12 +32,7 @@ public class WeaponHandler : MonoBehaviour
     {
         foreach (var weapon in weapons)
         {
-            if (weapon.CanAttack())
-            {
-                // transfers attack data from player to weapon
-                dataTransferManager.TransferAll(weapon);
-                weapon.Attack(this);
-            }
+            weapon.TryAttack();
         }
     }
 
@@ -41,5 +40,7 @@ public class WeaponHandler : MonoBehaviour
     {
         var weaponInstance = Instantiate(weaponPrefab, transform);
         weapons.Add(weaponInstance);
+        weaponInstance.UpdateData(weaponData);
+        OnUpdateData.AddListener(weaponInstance.UpdateData);
     }
 }

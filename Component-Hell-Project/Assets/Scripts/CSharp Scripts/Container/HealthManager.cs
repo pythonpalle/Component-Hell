@@ -27,12 +27,12 @@ public class HealthManager : MonoBehaviour
 
     private void InitializeData()
     {
-        _healthDataHolder.health = _healthDataHolder.maxHealth;
+        _healthDataHolder.health = _healthDataHolder.maxHealth.Value;
     }
 
     private void Start()
     {
-        OnHealthStart?.Invoke(_healthDataHolder.health.Value);
+        OnHealthStart?.Invoke(_healthDataHolder.health);
     }
 
     public void TakeDamage(float damage)
@@ -41,10 +41,10 @@ public class HealthManager : MonoBehaviour
         if (damageAfterArmour <= 0)
             return;
         
-        _healthDataHolder.health.Add(-damageAfterArmour);
+         _healthDataHolder.health -= damageAfterArmour;
          OnHealthChange?.Invoke(-damageAfterArmour);
         
-         if (_healthDataHolder.health.Value <= 0)
+         if (_healthDataHolder.health <= 0)
          {
              OnDeath?.Invoke();
          }

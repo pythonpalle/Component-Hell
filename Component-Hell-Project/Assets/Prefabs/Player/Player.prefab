@@ -35,6 +35,7 @@ Transform:
   - {fileID: 7770544659458060049}
   - {fileID: 3356235161458554571}
   - {fileID: 5833751149130548666}
+  - {fileID: 8498903657350199025}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -728,6 +729,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instantiateFloatValue: 0
   baseValue: {fileID: 11400000, guid: 691a1c2414b5e564ab4b916d48ac7d8c, type: 2}
+--- !u!1 &6868314340774776466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8498903657350199025}
+  - component: {fileID: 5973226146907161653}
+  m_Layer: 6
+  m_Name: Weapon Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8498903657350199025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6868314340774776466}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3931818526344562772}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5973226146907161653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6868314340774776466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5386a2d604e2862478091258037eb64e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons: []
+  weaponData: {fileID: 11400000, guid: 68e638db3a2c6f44c804c2472ec25f33, type: 2}
 --- !u!1 &6965748266435848433
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,7 +822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons: []
-  dataTransferManager: {fileID: 2014726181380612480}
+  weaponData: {fileID: 0}
 --- !u!1 &9153951509873932521
 GameObject:
   m_ObjectHideFlags: 0
