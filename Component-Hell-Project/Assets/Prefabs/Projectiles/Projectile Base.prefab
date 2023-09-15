@@ -309,6 +309,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1107590169460234223}
+        m_TargetAssemblyTypeName: ProjectileDamageDataTransfer, Assembly-CSharp
+        m_MethodName: OnProjectileSpawn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6639164635164270141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,6 +515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7943005766911567097}
   - component: {fileID: 1222010747601205570}
+  - component: {fileID: 1107590169460234223}
   m_Layer: 6
   m_Name: Damage
   m_TagString: Untagged
@@ -538,7 +551,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageValue:
-    value: 0
+    value: 1
   layerMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &1107590169460234223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8151764500207208489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6936b92f86cf5c47a95331e030b605c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

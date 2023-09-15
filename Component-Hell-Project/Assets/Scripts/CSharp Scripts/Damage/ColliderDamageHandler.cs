@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class ColliderDamageHandler : MonoBehaviour
 {
-    [SerializeField] private DynamicFloat damageValue;
+    public DynamicFloat damageValue;
     [SerializeField] private LayerMask layerMask;
-    
     
     public void CallTryInflictDamage(Collision2D other)
     {
@@ -29,6 +28,8 @@ public class ColliderDamageHandler : MonoBehaviour
         if ((layerMask.value & (1 << other.gameObject.layer)) > 0 == false)
             return false;
 
+        Debug.Log("Try inflict damage");
+        
         var damageReciever = other.GetComponentInChildren<DamageReciever>();
         if (damageReciever)
         {

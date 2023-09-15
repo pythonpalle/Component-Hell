@@ -21,8 +21,8 @@ public class RandomDirectionFire : FireType
         {
             direction = new Vector2
             {
-                x = (float) _random.NextDouble(),
-                y = (float) _random.NextDouble()
+                x = (float) _random.NextDouble()*2 -1,
+                y = (float) _random.NextDouble()*2 -1
             };
         }
 

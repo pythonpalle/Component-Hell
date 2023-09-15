@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: DVD Gun Data
   m_EditorClassIdentifier: 
   attackDamage:
-    value: 6
+    value: 2
   attackSize:
     value: 1
   penetration:
-    value: 2
+    value: 1
   amount:
-    value: 4
+    value: 1
   lifeTime:
     value: 3
   attackSpeed:
@@ -30,4 +30,4 @@ MonoBehaviour:
   burstCooldown:
     value: 5
   shotCooldown:
-    value: 0.1
+    value: 0.5

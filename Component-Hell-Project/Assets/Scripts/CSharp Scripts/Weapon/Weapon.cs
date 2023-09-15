@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour
     [Header("Data")]
     [SerializeField] private WeaponDataHolder weaponData;
     public WeaponDataHolder Data => weaponData;
+    [SerializeField] private bool instantiateData = true;
     
     [Header("Components")]
     [SerializeField] private FireHandler fireHandler;
@@ -24,7 +25,12 @@ public class Weapon : MonoBehaviour
     public UnityEvent<Projectile> OnProjectileSpawned;
 
     [SerializeField] private Vector2 direction;
-    
+
+
+    private void Awake()
+    {
+        if (instantiateData) weaponData = Instantiate(weaponData);
+    }
 
     public void TryAttack()
     {
