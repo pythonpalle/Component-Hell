@@ -7,7 +7,6 @@ public class WeaponDataHolder : ScriptableObject
 {
     [Header("Attack")]
     public DynamicFloat attackDamage;
-    public DynamicFloat attackSpeed;
     public DynamicFloat attackSize;
     
     [Space]
@@ -15,6 +14,11 @@ public class WeaponDataHolder : ScriptableObject
     public DynamicFloat penetration;
     public DynamicFloat amount;
     public DynamicFloat lifeTime;
+    
+    [Header("Movement")]
+    public DynamicFloat attackSpeed;
+    public Vector2 direction;
+
     
     [Header("Effect")]
     public DynamicFloat effectDuration;

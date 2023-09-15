@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5404104272743974705}
   - component: {fileID: 6015097530929085078}
+  - component: {fileID: 7977065025271890154}
   - component: {fileID: 8688629084789109863}
   m_Layer: 6
   m_Name: Weapon Base
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 0}
   weaponData: {fileID: 0}
-  fireHandler: {fileID: 0}
+  fireHandler: {fileID: 7977065025271890154}
   controller: {fileID: 0}
   OnPrepareFire:
     m_PersistentCalls:
@@ -55,7 +56,7 @@ MonoBehaviour:
   OnProjectileSpawned:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8688629084789109863}
         m_TargetAssemblyTypeName: AddGameObjectsToMonoBehaviour, Assembly-CSharp
         m_MethodName: Add
         m_Mode: 0
@@ -67,6 +68,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7977065025271890154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5609120994992798349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d52cab9382242846b5f6bdfb6a676e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireType: {fileID: 0}
 --- !u!114 &8688629084789109863
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,8 +19,6 @@ public class Weapon : MonoBehaviour
 
     private Cooldown _cooldown;
     
-    
-
     [Header("Events")] 
     public UnityEvent OnPrepareFire;
     public UnityEvent<Projectile> OnProjectileSpawned;
@@ -46,11 +44,12 @@ public class Weapon : MonoBehaviour
         string owner = fromData.name;
         
         weaponData.attackDamage.AddMultiplier(owner, fromData.attackDamage.Value);
-        weaponData.attackSpeed.AddMultiplier(owner, fromData.attackSpeed.Value);
         weaponData.attackSize.AddMultiplier(owner, fromData.attackSize.Value);
         weaponData.effectDuration.AddMultiplier(owner, fromData.effectDuration.Value);
         weaponData.lifeTime.AddMultiplier(owner, fromData.lifeTime.Value);
         
+        weaponData.attackSpeed.AddMultiplier(owner, fromData.attackSpeed.Value);
+
         weaponData.burstCooldown.AddMultiplier(owner, fromData.burstCooldown.Value);
         weaponData.shotCooldown.AddMultiplier(owner, fromData.shotCooldown.Value);
         

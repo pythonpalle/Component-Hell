@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MovementManager : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class MovementManager : MonoBehaviour
     public MovementDataHolder DataHolder => _dataHolder;
     
     [SerializeField] bool instantiateScriptableObjects = true;
-    
+
+    public UnityEvent<Vector2> OnUpdateMovement;
+
     void Awake()
     {
         if (instantiateScriptableObjects)
@@ -17,4 +20,5 @@ public class MovementManager : MonoBehaviour
             _dataHolder = Instantiate(_dataHolder);
         }
     }   
+    
 }
