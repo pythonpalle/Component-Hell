@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 [CreateAssetMenu(menuName = "Upgrade/Types/ComponentAdd")]
 public class ComponentAddUpgrade : UpgradeObject

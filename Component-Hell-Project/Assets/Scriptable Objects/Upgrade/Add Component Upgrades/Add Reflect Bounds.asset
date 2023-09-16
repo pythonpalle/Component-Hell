@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e1c38c6ea9490e8fcb7c1f3fef9bb6, type: 3}
   m_Name: Add Reflect Bounds
   m_EditorClassIdentifier: 
+  description: Makes projectiles reflect on screen bounds.
   _componentAdder:
     script: {fileID: 11500000, guid: 2d4209fa82368dc42b3988eca33905cd, type: 3}
     childTarget: 0
