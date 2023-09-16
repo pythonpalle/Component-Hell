@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 5071212554050839768}
   - component: {fileID: 5176605879181379288}
   - component: {fileID: 70269494413596839}
+  - component: {fileID: 6482288714194138846}
   m_Layer: 7
   m_Name: Enemy Damage
   m_TagString: Untagged
@@ -110,6 +111,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenDamageTicks: 1
+--- !u!114 &6482288714194138846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5215295089176568653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c45227f506ab8a47a1cbccc80084b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textObjectPrefab: {fileID: 1791563398702722478, guid: c62dc5d1d28659a43933f9fc60e7c9e1, type: 3}
 --- !u!1 &5842228505393806546
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,6 +339,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2651436482151402610}
         m_TargetAssemblyTypeName: HealthManager, Assembly-CSharp
         m_MethodName: TakeDamage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6482288714194138846}
+        m_TargetAssemblyTypeName: DamageNumberDisplayer, Assembly-CSharp
+        m_MethodName: DisplayDamageNumber
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
