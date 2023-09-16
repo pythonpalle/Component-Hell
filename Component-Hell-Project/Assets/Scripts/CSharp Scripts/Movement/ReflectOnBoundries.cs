@@ -10,13 +10,12 @@ public class ReflectOnBoundries : MonoBehaviour
     [SerializeField] private Transform objectTransform;
     private MovementDataHolder _dataHolder;
 
+    private ScreenManager _screenManager;
+
     private void Start ()
     {
         _dataHolder = GetComponent<MovementManager>().DataHolder;
-
-        //TOdo: optimera
-        screenBounds = Camera.main.ScreenToWorldPoint
-            (new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        _screenManager = ScreenManager.Instance;
 
         if (!objectTransform) objectTransform = transform.root;
 
@@ -30,29 +29,30 @@ public class ReflectOnBoundries : MonoBehaviour
         bool flipX = false;
         bool flipY = false;
 
+
         // right of screen
-        if (transformPos.x > screenBounds.x)
+        if (transformPos.x > _screenManager.maxX)
         {
-            newPos.x = screenBounds.x;
+            newPos.x = _screenManager.maxX;
             flipX = true;
         }
         // left of screen
-        else if (transformPos.x < -screenBounds.x)
+        else if (transformPos.x < _screenManager.minX)
         {
-            newPos.x = -screenBounds.x;
+            newPos.x = _screenManager.minX;
             flipX = true;
         }
         
         // top of screen of screen
-        if (transformPos.y > screenBounds.y)
+        if (transformPos.y > _screenManager.maxY)
         {
-            newPos.y = screenBounds.y;
+            newPos.y = _screenManager.maxY;
             flipY = true;
         }
         // bottom of screen of screen
-        else if (transformPos.y < -screenBounds.y)
+        else if (transformPos.y < _screenManager.minY)
         {
-            newPos.y = -screenBounds.y;
+            newPos.y = _screenManager.minY;
             flipY = true;
         }
         

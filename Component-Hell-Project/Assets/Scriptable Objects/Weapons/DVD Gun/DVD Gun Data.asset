@@ -23,7 +23,7 @@ MonoBehaviour:
   lifeTime:
     value: 3
   attackSpeed:
-    value: 3
+    value: 7
   direction: {x: 0, y: 0}
   effectDuration:
     value: 1
