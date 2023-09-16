@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AddTest : MonoBehaviour
 {
-    [SerializeField] private Weapon _weapon;
+    [SerializeField] private UpgradeManager upgradeManager;
 
     [SerializeField] private ComponentAdder adder;
    
@@ -18,6 +18,13 @@ public class AddTest : MonoBehaviour
 
     private void AddUpgrade()
     {
-        _weapon.GetComponent<AddComponentsToMonoBehaviour>().AddNewComponent(adder);
+        if (upgradeManager.CanUpgrade())
+        {
+            upgradeManager.AddNextUpgrade();
+        }
+        else
+        {
+            Debug.Log("Out of upgrades!");
+        }
     }
 }
