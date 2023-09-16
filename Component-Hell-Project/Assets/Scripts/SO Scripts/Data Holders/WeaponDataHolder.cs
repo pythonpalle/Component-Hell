@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "ScriptableObjects/WeaponData")]
@@ -29,4 +30,20 @@ public class WeaponDataHolder : ScriptableObject
     
     [Tooltip("Cooldown time between shots within a burst")]
     public DynamicFloat shotCooldown;
+    
+    
+    
+}
+
+public enum WeaponDataType
+{
+    attackDamage,
+    attackSize,
+    penetration,
+    amount,
+    lifeTime,
+    attackSpeed,
+    effectDuration,
+    burstCooldown,
+    shotCooldown
 }

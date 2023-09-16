@@ -7,7 +7,7 @@ using UnityEditor;
 using UnityEngine;
 
 [Serializable]
-public struct DynamicFloat
+public class DynamicFloat
 {
     [SerializeField] private float value;
     public float Value => value;
