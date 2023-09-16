@@ -20,6 +20,7 @@ public class WeaponHandler : MonoBehaviour, IMovementListener
     
     [Header("Events")]
     public UnityEvent<WeaponDataHolder> OnUpdateData;
+    public UnityEvent<Weapon> OnWeaponAdded;
 
     private Vector2 moveDirection;
 
@@ -53,9 +54,9 @@ public class WeaponHandler : MonoBehaviour, IMovementListener
     {
         var weaponInstance = Instantiate(weaponPrefab, transform);
         weapons.Add(weaponInstance);
+        OnWeaponAdded?.Invoke(weaponInstance);
 
         HandleInitialDataUpdate(weaponInstance);
-        
     }
 
     private void HandleInitialDataUpdate(Weapon weaponInstance)
