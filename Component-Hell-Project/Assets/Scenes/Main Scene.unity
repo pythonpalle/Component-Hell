@@ -6655,9 +6655,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeManager: {fileID: 1852159284}
-  adder:
-    script: {fileID: 11500000, guid: 2d4209fa82368dc42b3988eca33905cd, type: 3}
-    childTarget: 0
 --- !u!4 &1683702849
 Transform:
   m_ObjectHideFlags: 0
@@ -8462,7 +8459,7 @@ PrefabInstance:
     - target: {fileID: 8414017597425112786, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
       propertyPath: componentsToAdd.Array.data[0].script
       value: 
-      objectReference: {fileID: 11500000, guid: 2d4209fa82368dc42b3988eca33905cd, type: 3}
+      objectReference: {fileID: 11500000, guid: bab37e93685a87a47aac11c569eb3b75, type: 3}
     - target: {fileID: 8414017597425112786, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
       propertyPath: componentsToAdd.Array.data[1].Script
       value: 

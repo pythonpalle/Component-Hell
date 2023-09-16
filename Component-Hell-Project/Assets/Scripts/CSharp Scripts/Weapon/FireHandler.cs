@@ -33,7 +33,7 @@ public class FireHandler : MonoBehaviour
         
         isFiring = true;
 
-        var data = owner.Data;
+        var data = owner.WeaponDataContainer.WeaponData;
         int amount = (int) data.amount.Value;
         float burstCooldown = data.burstCooldown.Value;
         float shotCooldown = data.shotCooldown.Value;

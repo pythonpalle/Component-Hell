@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5404104272743974705}
   - component: {fileID: 6015097530929085078}
+  - component: {fileID: 4771021219108413503}
   - component: {fileID: 7977065025271890154}
+  - component: {fileID: 7586456575328130401}
   - component: {fileID: 7500907647379181086}
   - component: {fileID: 5340752382283580874}
-  - component: {fileID: 7586456575328130401}
   m_Layer: 6
   m_Name: Weapon Base
   m_TagString: Untagged
@@ -49,9 +50,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 0}
-  weaponData: {fileID: 0}
-  instantiateData: 1
+  _weaponDataContainer: {fileID: 4771021219108413503}
   fireHandler: {fileID: 7977065025271890154}
+--- !u!114 &4771021219108413503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5609120994992798349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a2812c97d57de40be221e9cd770931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  instantiate: 0
 --- !u!114 &7977065025271890154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +107,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7586456575328130401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5609120994992798349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0112db46c6674a64856eb5284c7c53b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradePath: {fileID: 0}
 --- !u!114 &7500907647379181086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,19 +146,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabsToAdd: []
---- !u!114 &7586456575328130401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5609120994992798349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0112db46c6674a64856eb5284c7c53b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upgradePath: {fileID: 0}
-  OnUpgrade:
-    m_PersistentCalls:
-      m_Calls: []

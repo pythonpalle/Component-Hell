@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e1c38c6ea9490e8fcb7c1f3fef9bb6, type: 3}
+  m_Name: Add Target Enemy Upgrade
+  m_EditorClassIdentifier: 
+  description: Makes projectile target closest enemy.
+  _componentAdder:
+    script: {fileID: 11500000, guid: bab37e93685a87a47aac11c569eb3b75, type: 3}
+    childTarget: 0

@@ -23,6 +23,14 @@ PrefabInstance:
       propertyPath: baseValue
       value: 
       objectReference: {fileID: 11400000, guid: 9ae9408782d44404fa4dc710c56d33d2, type: 2}
+    - target: {fileID: 4771021219108413503, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: weaponData
+      value: 
+      objectReference: {fileID: 11400000, guid: 6beba9dacac24ce449d4fdfb72d6544a, type: 2}
+    - target: {fileID: 4771021219108413503, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: instantiate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5162589391372852137, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: baseValue
       value: 

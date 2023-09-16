@@ -12,8 +12,11 @@ public class WeaponHandler : MonoBehaviour, IMovementListener
     [Header("Weapons Owned")]
     [SerializeField] private List<Weapon> weapons;
 
-    [Header("Data")] 
-    [SerializeField] private WeaponDataHolder weaponData;
+    // [Header("Data")] 
+    // [SerializeField] private WeaponDataHolder weaponData;
+
+    [Header("Data Container")] 
+    [SerializeField] private WeaponDataContainer _weaponDataContainer;
     
     [Header("Events")]
     public UnityEvent<WeaponDataHolder> OnUpdateData;
@@ -57,8 +60,10 @@ public class WeaponHandler : MonoBehaviour, IMovementListener
 
     private void HandleInitialDataUpdate(Weapon weaponInstance)
     {
-        weaponInstance.UpdateData(weaponData);
-        OnUpdateData.AddListener(weaponInstance.UpdateData);
+        WeaponDataContainer.TransferData(_weaponDataContainer.WeaponData, weaponInstance.WeaponDataContainer.WeaponData);
+        
+        //weaponInstance.UpdateData(_weaponDataContainer.weaponData);
+        OnUpdateData.AddListener(weaponInstance.WeaponDataContainer.UpdateData);
     }
 
     public void OnMovementChange(Vector2 direction)

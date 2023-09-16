@@ -5,14 +5,12 @@ using UnityEngine;
 public class AddTest : MonoBehaviour
 {
     [SerializeField] private UpgradeManager upgradeManager;
-
-    [SerializeField] private ComponentAdder adder;
-   
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            AddUpgrade();
+            AddUpgrade(); 
         }
     }
 
