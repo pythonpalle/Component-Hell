@@ -13,9 +13,14 @@ public class UpgradeManager : MonoBehaviour
         return !upgradePathComplete;
     }
 
+    public UpgradeObject NextUpgrade()
+    {
+        return upgradePath.potentialUpgrades[counter];
+    }
+
     public void AddNextUpgrade()
     {
-        var nextUpgrade = upgradePath.potentialUpgrades[counter];
+        var nextUpgrade = NextUpgrade();
         nextUpgrade.Apply(transform);
         counter++;
 

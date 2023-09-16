@@ -27,8 +27,6 @@ public class ColliderDamageHandler : MonoBehaviour
     {
         if ((layerMask.value & (1 << other.gameObject.layer)) > 0 == false)
             return false;
-
-        Debug.Log("Try inflict damage");
         
         var damageReciever = other.GetComponentInChildren<DamageReciever>();
         if (damageReciever)

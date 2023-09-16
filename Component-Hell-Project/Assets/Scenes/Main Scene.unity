@@ -4211,8 +4211,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1009745408}
+  - component: {fileID: 1009745409}
   m_Layer: 0
-  m_Name: Level Up Awards
+  m_Name: Game Upgrade Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4233,6 +4234,28 @@ Transform:
   m_Father: {fileID: 1708537472}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1009745409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009745407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e84efa9a43db14b8bc852651fa1f87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingWeapons: []
+  activeWeapons: []
+  availableWeapons: {fileID: 0}
+  playerWeaponHandler: {fileID: 0}
+  maxUpgradeOptions: 3
+  _upgradeManagers:
+  - {fileID: 1852159284}
+  OnChosenOptions:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1021458930
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,8 +13,20 @@ public class LevelManager : MonoBehaviour
     [Header("Events")]
     public UnityEvent<int> OnLevelUp;
 
+    public static LevelManager Instance;
+
     private void Awake()
     {
+        if (!Instance || Instance == this)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(this);
+        }
+        
         currentLevel.value = 0;
     }
 

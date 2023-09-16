@@ -29,8 +29,6 @@ public class FireHandler : MonoBehaviour
 
     private IEnumerator FireRoutine(Projectile projectilePrefab, Weapon owner)
     {
-        Debug.Log("Start fire routine!");
-        
         isFiring = true;
 
         var data = owner.WeaponDataContainer.WeaponData;

@@ -12,6 +12,8 @@ public class SizeManager : MonoBehaviour, IProjectileSpawnListener
    {
        var multSize = data.attackSize;
        size.AddMultiplier(data.name, multSize.Value);
+
+       sizeTransform.localScale = Vector3.one * size.Value;
    }
 }
 
