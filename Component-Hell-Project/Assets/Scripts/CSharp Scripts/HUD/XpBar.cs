@@ -9,9 +9,7 @@ public class XpBar : MonoBehaviour
     
     [SerializeField] private Slider _slider;
 
-    [Header("Scriptable Variables")]
-    [SerializeField] private FloatVariable playerXP;
-    [SerializeField] private FloatVariable neededXpForNextLevel;
+    [SerializeField] private XpDataHolder xpData;
 
     private float prevLevelNeeded = 0;
     private float nextLevelNeeded = 0;
@@ -25,12 +23,12 @@ public class XpBar : MonoBehaviour
     public void UpdateNeededValues()
     {
         prevLevelNeeded = nextLevelNeeded;
-        nextLevelNeeded = neededXpForNextLevel.value;
+        nextLevelNeeded = xpData.xpNeededForNextLevel;
     }
 
     public void UpdateSliderValue()
     {
-        float current = playerXP.value - prevLevelNeeded;
+        float current = xpData.totalXP - prevLevelNeeded;
         float max = nextLevelNeeded - prevLevelNeeded;
         
         _slider.value = current/max;

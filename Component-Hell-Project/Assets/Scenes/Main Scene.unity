@@ -638,7 +638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &125348393
 RectTransform:
   m_ObjectHideFlags: 0
@@ -690,7 +690,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1708537472}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &127166196
 MonoBehaviour:
@@ -753,14 +753,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a586979998ce2234281654462538185a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevel: {fileID: 11400000, guid: 6d80d3f08f475fe4297ae3045421ba63, type: 2}
-  currentXP: {fileID: 11400000, guid: e98d6408092b9e441b1e3a360130d188, type: 2}
-  neededXpForNextLevel: {fileID: 11400000, guid: bd0463a2619b7a448a9baaea99e41f19, type: 2}
-  startValue: 5
-  baseValue: 1.3
+  currentLevel: {fileID: 11400000, guid: da2f14124146fb3409f9b36998ea9695, type: 2}
+  _xpData: {fileID: 11400000, guid: c822d349726fa5548896c6803f20c907, type: 2}
   OnLevelUp:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 297310518}
+        m_TargetAssemblyTypeName: XpManager, Assembly-CSharp
+        m_MethodName: OnLevelUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1898608969}
+        m_TargetAssemblyTypeName: SetTextField, Assembly-CSharp
+        m_MethodName: SetText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 780019127}
         m_TargetAssemblyTypeName: XpBar, Assembly-CSharp
         m_MethodName: UpdateNeededValues
@@ -773,9 +794,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1898608969}
-        m_TargetAssemblyTypeName: SetTextFromIntVariable, Assembly-CSharp
-        m_MethodName: SetText
+      - m_Target: {fileID: 780019127}
+        m_TargetAssemblyTypeName: XpBar, Assembly-CSharp
+        m_MethodName: UpdateSliderValue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1219,8 +1240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1794068e6b7627b4bb2a04e7ea673a23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerXP: {fileID: 11400000, guid: e98d6408092b9e441b1e3a360130d188, type: 2}
-  neededXpForNextLevel: {fileID: 11400000, guid: bd0463a2619b7a448a9baaea99e41f19, type: 2}
+  xpData: {fileID: 11400000, guid: c822d349726fa5548896c6803f20c907, type: 2}
+  startValue: 10
+  baseValue: 1.5
   OnAddXP:
     m_PersistentCalls:
       m_Calls:
@@ -1629,7 +1651,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3137,7 +3159,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3403,8 +3425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 780019126}
-  playerXP: {fileID: 11400000, guid: e98d6408092b9e441b1e3a360130d188, type: 2}
-  neededXpForNextLevel: {fileID: 11400000, guid: bd0463a2619b7a448a9baaea99e41f19, type: 2}
+  xpData: {fileID: 11400000, guid: c822d349726fa5548896c6803f20c907, type: 2}
 --- !u!1001 &787365599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4210,7 +4231,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1708537472}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1021458930
 PrefabInstance:
@@ -4508,7 +4529,7 @@ GameObject:
   - component: {fileID: 1059435385}
   - component: {fileID: 1059435386}
   m_Layer: 0
-  m_Name: ScreenManager
+  m_Name: Screen Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4527,7 +4548,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1708537472}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1059435386
 MonoBehaviour:
@@ -4613,67 +4634,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 642df229ec21eab4b96cf213d0f18430, type: 3}
---- !u!1 &1151351234
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1151351235}
-  - component: {fileID: 1151351237}
-  - component: {fileID: 1151351236}
-  m_Layer: 0
-  m_Name: Data Resetter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1151351235
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1151351234}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1708537472}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1151351236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1151351234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4bdd8c070a800b44abef7cca95bc668, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _intVariable:
-  - {fileID: 11400000, guid: 6d80d3f08f475fe4297ae3045421ba63, type: 2}
---- !u!114 &1151351237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1151351234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 260f796dc7d9e9841998cf656a444429, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floatVariables:
-  - {fileID: 11400000, guid: e98d6408092b9e441b1e3a360130d188, type: 2}
 --- !u!1001 &1153955587
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5174,7 +5134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1320953328
 Transform:
   m_ObjectHideFlags: 0
@@ -6819,7 +6779,6 @@ Transform:
   m_Children:
   - {fileID: 297310517}
   - {fileID: 139688203}
-  - {fileID: 1151351235}
   - {fileID: 1009745408}
   - {fileID: 127166195}
   - {fileID: 1059435385}
@@ -6900,7 +6859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1719628711
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7325,7 +7284,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 1898608967}
-  intVariable: {fileID: 11400000, guid: 6d80d3f08f475fe4297ae3045421ba63, type: 2}
 --- !u!4 &1909433760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2561437857087559956, guid: 642df229ec21eab4b96cf213d0f18430, type: 3}

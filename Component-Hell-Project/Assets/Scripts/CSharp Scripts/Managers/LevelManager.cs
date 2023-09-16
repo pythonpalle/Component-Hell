@@ -8,35 +8,22 @@ public class LevelManager : MonoBehaviour
 {
     [Header("Variable Objects")]
     [SerializeField] private IntVariable currentLevel;
-    [SerializeField] private FloatVariable currentXP;
-    [SerializeField] private FloatVariable neededXpForNextLevel;
-    
-    [Header("Settings")]
-    [SerializeField] private float startValue = 10f;
-    [SerializeField] private float baseValue = 1.5f;
+    [SerializeField] private XpDataHolder _xpData;
 
     [Header("Events")]
     public UnityEvent<int> OnLevelUp;
 
-    private void OnEnable()
+    private void Awake()
     {
-        UpdateNeededXPForNextLevel();
+        currentLevel.value = 0;
     }
 
     public void OnAddXP(float xp)
     {
-        if (currentXP.value >= neededXpForNextLevel.value)
+        if (_xpData.totalXP >= _xpData.xpNeededForNextLevel)
         {
             currentLevel.value++;
-            UpdateNeededXPForNextLevel();
             OnLevelUp?.Invoke(currentLevel.value);
         }
-    }
-
-    private void UpdateNeededXPForNextLevel()
-    {
-        neededXpForNextLevel.value = 
-            startValue * (currentLevel.value + 1) 
-            + Mathf.Pow(baseValue, currentLevel.value); 
     }
 }
