@@ -18,10 +18,6 @@ public class Weapon : MonoBehaviour
     [Header("Components")]
     [SerializeField] private FireHandler fireHandler;
     
-    [Header("Events")] 
-    public UnityEvent OnPrepareFire;
-    public UnityEvent<Projectile> OnProjectileSpawned;
-
     public Vector2 Direction { get; private set; }
 
 

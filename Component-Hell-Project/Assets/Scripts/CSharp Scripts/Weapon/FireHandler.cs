@@ -12,6 +12,8 @@ public class FireHandler : MonoBehaviour
     [SerializeField] FireType fireType;
     [SerializeField] private bool instantiateFireType;
 
+    public UnityEvent<MonoBehaviour> OnProjectileSpawned;
+
     private void Awake()
     {
         if (instantiateFireType) fireType = Instantiate(fireType);
@@ -38,7 +40,8 @@ public class FireHandler : MonoBehaviour
         
         for (int round = 0; round < amount; round++)
         {
-            fireType.Fire(data, owner, projectilePrefab, round);
+            var projectile = fireType.Fire(data, owner, projectilePrefab, round);
+            OnProjectileSpawned?.Invoke(projectile);
             yield return new WaitForSeconds(shotCooldown);
         }
 
