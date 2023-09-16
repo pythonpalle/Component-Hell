@@ -6,14 +6,6 @@ using UnityEngine.Events;
 
 public class GameUpgradeManager : MonoBehaviour
 {
-    [Header("Weapon Lists")]
-    [SerializeField] private List<Weapon> startingWeapons;
-    [SerializeField] private List<Weapon> activeWeapons;
-    [SerializeField] private WeaponListHolder availableWeapons;
-
-    [Header("Player")] 
-    [SerializeField] private WeaponHandler playerWeaponHandler;
-    
     [SerializeField] int maxUpgradeOptions = 3;
 
     [SerializeField] private List<UpgradeManager> _upgradeManagers;
