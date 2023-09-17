@@ -13,7 +13,7 @@ public class UpgradeBox : MonoBehaviour
     [SerializeField] private Button _button;
     public Button Button => _button;
 
-    private UpgradeManager _upgradeManager;
+    private IUpgradable upgradeOption;
 
     private void OnEnable()
     {
@@ -27,21 +27,33 @@ public class UpgradeBox : MonoBehaviour
 
     private void ApplyUpgrade()
     {
-        GameUpgradeManager.Instance.ApplyUpgrade(_upgradeManager);
+        GameUpgradeManager.Instance.ApplyUpgrade(upgradeOption);
         Time.timeScale = 1;
     }
 
-    public void SetContent(UpgradeManager upgradeOption)
+    public void SetContent(IUpgradable upgradeOption)
     {
-        _upgradeManager = upgradeOption;
+        this.upgradeOption = upgradeOption;
+        var manager = upgradeOption.GetUpgradeManager();
+        var data = manager.DataHolder;
+
+        upgradeNameText.text = data.ManagerName;
+        upgradeImage.sprite = data.Image;
+
         
-        var nextUpgrade = upgradeOption.NextUpgrade();
+        if (!manager.IsInstantiated)
+        {
+            levelText.text = "NEW!";
+            levelNumberText.text = "";
+            descriptionText.text = data.ManagerDescription;
+        }
+        else
+        {
+            var nextUpgrade = manager.NextUpgrade();
 
-        upgradeNameText.text = upgradeOption.ManagerName;
-        levelText.text = "Level: ";
-        levelNumberText.text = (upgradeOption.Counter + 1).ToString();
-        descriptionText.text = nextUpgrade.Description;
-
-        upgradeImage.sprite = upgradeOption.Sprite;
+            levelText.text = "Level: ";
+            levelNumberText.text = (manager.Counter + 1).ToString();
+            descriptionText.text = nextUpgrade.Description;
+        }
     }
 } 

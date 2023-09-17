@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 public class GamePlayerWeaponManager : MonoBehaviour
 {
+    public static GamePlayerWeaponManager Instance;
+    
     [Header("Player")]
     [SerializeField] private WeaponHandler playerWeaponHandler;
     
@@ -18,19 +20,37 @@ public class GamePlayerWeaponManager : MonoBehaviour
 
     public UnityEvent<Weapon> OnAddedWeapon;
 
+    private void Awake()
+    {
+        if (Instance && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
+    }
+
     void Start()
     {
         playerWeaponHandler.OnWeaponAdded.AddListener(OnWeaponAdded);
         
         foreach (var startingWeapon in startingWeaponPrefabs.Weapons)
         {
-            var startingWeaponInstance = playerWeaponHandler.AddWeapon(startingWeapon);
-            OnAddedWeapon?.Invoke(startingWeaponInstance);
+            AddWeapon(startingWeapon);
         }
     }
 
     private void OnWeaponAdded(Weapon addedWeapon)
     {
         startingWeaponInstances.Add(addedWeapon);
+    }
+
+    public void AddWeapon(Weapon prefab)
+    {
+        var startingWeaponInstance = playerWeaponHandler.AddWeapon(prefab);
+        OnAddedWeapon?.Invoke(startingWeaponInstance);
     }
 }

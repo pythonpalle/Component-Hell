@@ -155,6 +155,14 @@ PrefabInstance:
       propertyPath: upgradePath
       value: 
       objectReference: {fileID: 11400000, guid: 6bea8b0fe734b7d4d9b2df46b14a6670, type: 2}
+    - target: {fileID: 7586456575328130401, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: _upgradeDataHolder
+      value: 
+      objectReference: {fileID: 11400000, guid: df8aff118c7704143a10fa7d4623f663, type: 2}
+    - target: {fileID: 7586456575328130401, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: managerDescription
+      value: Destructive, Violent Disc
+      objectReference: {fileID: 0}
     - target: {fileID: 7928027796491295147, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: baseValue
       value: 

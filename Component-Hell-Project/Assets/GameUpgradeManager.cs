@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
 public class GameUpgradeManager : MonoBehaviour
 {
     [SerializeField] int maxUpgradeOptions = 3;
 
-    [SerializeField] private List<UpgradeManager> weaponUpgradeManagers = new List<UpgradeManager>();
-    
+    [SerializeField] private List<Weapon> weapons = new List<Weapon>();
 
-    public UnityEvent<List<UpgradeManager>> OnChosenOptions;
+    [SerializeField] private WeaponListData weaponPool;
+
+    public UnityEvent<List<IUpgradable>> OnChosenOptions;
 
     public static GameUpgradeManager Instance;
 
@@ -45,43 +47,59 @@ public class GameUpgradeManager : MonoBehaviour
 
     public void OnAddedWeapon(Weapon weapon)
     {
-        weaponUpgradeManagers.Add(weapon.GetComponent<UpgradeManager>());
+        weapons.Add(weapon);
     }
 
     private void GetUpgradeOptions()
     {
-        List<UpgradeManager> availiableUpgrades = new List<UpgradeManager>();
+        List<IUpgradable> availableUpgrades = new List<IUpgradable>();
 
-        foreach (var upgradeManager in weaponUpgradeManagers)
+        // finds upgrades for used weapons
+        foreach (var weapon in weapons)
         {
-            if (upgradeManager.CanUpgrade())
+            if (weapon.GetUpgradeManager().CanUpgrade())
             {
-                availiableUpgrades.Add(upgradeManager);
+                availableUpgrades.Add(weapon);
             }
         }
 
-        // might not work
-        availiableUpgrades.Sort();
+        // TODO: Limit to a set amount
+        // finds potential weapons
+        foreach (var poolWeapon in weaponPool.Weapons)
+        {
+            availableUpgrades.Add(poolWeapon);
+        }
 
-        List<UpgradeManager> chosenOptions = ChooseOptionsFrom(availiableUpgrades);
+        // might not work
+        availableUpgrades.Sort();
+
+        List<IUpgradable> chosenOptions = ChooseOptionsFrom(availableUpgrades);
         OnChosenOptions?.Invoke(chosenOptions);
     }
 
-    public void ApplyUpgrade(UpgradeManager manager)
+    public void ApplyUpgrade(IUpgradable upgrade)
     {
-        manager.ApplyNextUpgrade();
+        // if uninstantiated weapon
+        if (upgrade is Weapon w && !upgrade.GetUpgradeManager().IsInstantiated)
+        {
+            GamePlayerWeaponManager.Instance.AddWeapon(w);
+        }
+        else
+        {
+            upgrade.GetUpgradeManager().ApplyNextUpgrade();
+        }
     }
 
-    private List<UpgradeManager> ChooseOptionsFrom(List<UpgradeManager> availiableUpgrades)
+    private List<IUpgradable> ChooseOptionsFrom(List<IUpgradable> availiableUpgrades)
     {
-        var chosenOptions = new List<UpgradeManager>();
+        var chosenOptions = new List<IUpgradable>();
 
         int max = (availiableUpgrades.Count < maxUpgradeOptions) ? availiableUpgrades.Count : maxUpgradeOptions;
 
         for (int i = 0; i < max; i++)
         {
             chosenOptions.Add(availiableUpgrades[i]);
-            Debug.Log($"Chosen option: {availiableUpgrades[i].name}");
+            Debug.Log($"Chosen option: {availiableUpgrades[i]}");
         }
 
         return chosenOptions;

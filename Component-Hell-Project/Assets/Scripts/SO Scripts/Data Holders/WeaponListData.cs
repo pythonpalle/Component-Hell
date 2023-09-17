@@ -5,6 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/WeaponList")]
 public class WeaponListData : ScriptableObject
 {
-    [SerializeField] private List<Weapon> _weapons;
+    [SerializeField] private List<Weapon> _weapons = new List<Weapon>();
     public List<Weapon> Weapons => _weapons;
 }

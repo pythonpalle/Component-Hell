@@ -50,8 +50,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 0}
-  _weaponDataContainer: {fileID: 4771021219108413503}
   fireHandler: {fileID: 7977065025271890154}
+  _weaponDataContainer: {fileID: 4771021219108413503}
+  upgradeManager: {fileID: 7586456575328130401}
 --- !u!114 &4771021219108413503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +121,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradePath: {fileID: 0}
+  managerName: 
+  managerDescription: 
+  sprite: {fileID: 0}
+  _managerType: 0
 --- !u!114 &7500907647379181086
 MonoBehaviour:
   m_ObjectHideFlags: 0

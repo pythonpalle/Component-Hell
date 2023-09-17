@@ -1,23 +1,24 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
+
 
 public class UpgradeManager : MonoBehaviour
 {
-    [Header("Upgrade Path")]
-    [SerializeField] private UpgradeDataHolder upgradePath;
+    [SerializeField] private UpgradeDataHolder _upgradeDataHolder;
+    public UpgradeDataHolder DataHolder => _upgradeDataHolder;
+    
     private bool upgradePathComplete;
     private int counter = 0;
     public int Counter => counter;
+    
+    public bool IsInstantiated { get; private set; }
 
-    [Header("Description")]
-    [SerializeField] private string managerName;
-    public string ManagerName => managerName;
-    [SerializeField] private Sprite sprite;
-    public Sprite Sprite => sprite;
+    private void Awake()
+    {
+        IsInstantiated = true;
+    }
 
-    
-    
-    
     public bool CanUpgrade()
     {
         return !upgradePathComplete;
@@ -25,7 +26,10 @@ public class UpgradeManager : MonoBehaviour
 
     public UpgradeObject NextUpgrade()
     {
-        return upgradePath.potentialUpgrades[counter];
+        if (CanUpgrade())
+            return _upgradeDataHolder.UpgradePath.potentialUpgrades[counter];
+
+        return null;
     }
 
     public void ApplyNextUpgrade()
@@ -34,7 +38,7 @@ public class UpgradeManager : MonoBehaviour
         nextUpgrade.Apply(transform);
         counter++;
 
-        if (counter >= upgradePath.Count)
+        if (counter >= _upgradeDataHolder.UpgradePath.Count)
         {
             upgradePathComplete = true;
         }

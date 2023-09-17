@@ -18,12 +18,17 @@ public class UpgradeScreen : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        GameUpgradeManager.Instance.OnChosenOptions.AddListener(OnChosenOptions);
+    }
+
     private void OnClick()
     {
         popup.SetActive(false);
     }
 
-    public void OnChosenOptions(List<UpgradeManager> upgradeOptions)
+    public void OnChosenOptions(List<IUpgradable> upgradeOptions)
     {
         if (upgradeOptions.Count == 0)
             return;

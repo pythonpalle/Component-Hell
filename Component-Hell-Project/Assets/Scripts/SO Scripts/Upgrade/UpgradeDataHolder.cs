@@ -1,9 +1,18 @@
-﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-[CreateAssetMenu(menuName = "Upgrade/UpgradeDataHolder")]
+[CreateAssetMenu(menuName = "ScriptableObjects/DataHolder/UpgradeDataHolder")]
 public class UpgradeDataHolder : ScriptableObject
 {
-    public List<UpgradeObject> potentialUpgrades = new List<UpgradeObject>();
-    public int Count => potentialUpgrades.Count;
+    [Header("Upgrade Path")]
+    [SerializeField] private UpgradePath upgradePath;
+    public UpgradePath UpgradePath => upgradePath;
+
+    [Header("Description")]
+    [SerializeField] private string managerName;
+    public string ManagerName => managerName;
+    [SerializeField] private string managerDescription;
+    public string ManagerDescription => managerDescription;
+    [SerializeField] private Sprite image;
+    public Sprite Image => image;
 }
