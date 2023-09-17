@@ -154,7 +154,7 @@ PrefabInstance:
     - target: {fileID: 7977065025271890154, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: fireType
       value: 
-      objectReference: {fileID: 11400000, guid: bbf8889721407e142bc324156c08aafc, type: 2}
+      objectReference: {fileID: 11400000, guid: fc802ab6c04c48240898823b7ac3c89d, type: 2}
     - target: {fileID: 7977065025271890154, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: instantiateFireType
       value: 1

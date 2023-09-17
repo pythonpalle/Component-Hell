@@ -15,5 +15,5 @@ public abstract class FireType : ScriptableObject
     }
 
     protected abstract Vector2 GetDirection(Weapon owner, int round);
-    protected abstract Vector2 GetPosition(Weapon owner, int round);
+    protected virtual Vector2 GetPosition(Weapon owner, int round) => owner.transform.position;
 }

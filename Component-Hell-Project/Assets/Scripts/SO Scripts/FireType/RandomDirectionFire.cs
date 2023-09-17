@@ -9,12 +9,7 @@ public class RandomDirectionFire : FireType
     [SerializeField] private bool randomiseEachRound;
     private Vector2 direction;
     private System.Random _random = new Random();
-
-    protected override Vector2 GetPosition(Weapon owner, int round)
-    {
-        return owner.transform.position;
-    }
-
+    
     protected override Vector2 GetDirection(Weapon owner, int round)
     {
         if (randomiseEachRound || round == 0)

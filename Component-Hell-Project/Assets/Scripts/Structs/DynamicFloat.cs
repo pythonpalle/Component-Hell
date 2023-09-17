@@ -19,20 +19,27 @@ public class DynamicFloat
     private bool hasAssignedBase;
 
 
-    public void AddMultiplier(string key, float value)
+    public void AddMultiplier(string key, float value, bool increaseIfHasValue = false)
     {
         HandleMultipliersInstantiate();
         
         if (multipliers.ContainsKey(key))
         {
-            // the value of the key hasn't changed
-            if (KeyHasValue(multipliers, key, value))
+            if (increaseIfHasValue)
             {
-                return;
+                multipliers[key] *= value;
             }
             else
             {
-                multipliers[key] = value;
+                // the value of the key hasn't changed
+                if (KeyHasValue(multipliers, key, value))
+                {
+                    return;
+                }
+                else
+                {
+                    multipliers[key] = value;
+                }
             }
         }
         else
@@ -43,7 +50,7 @@ public class DynamicFloat
         RecalculateCurrentValue();
     }
     
-    public void RemoveMultiplier(string key, float value)
+    public void RemoveMultiplier(string key)
     {
         HandleMultipliersInstantiate();
 
@@ -69,20 +76,27 @@ public class DynamicFloat
         return Mathf.Abs(dictionary[key] - value) < epsilon;
     }
     
-    public void AddAdder(string key, float value)
+    public void AddAdder(string key, float value, bool increaseIfHasKey = false)
     {
         HandleAddersInstantiate();
 
         if (adders.ContainsKey(key))
         {
-            // the value of the key hasn't changed
-            if (KeyHasValue(adders, key, value))
+            if (increaseIfHasKey)
             {
-                return;
+                adders[key] += value;
             }
             else
             {
-                adders[key] = value;
+                // the value of the key hasn't changed
+                if (KeyHasValue(adders, key, value))
+                {
+                    return;
+                }
+                else
+                {
+                    adders[key] = value;
+                }
             }
         }
         else
@@ -92,8 +106,8 @@ public class DynamicFloat
         
         RecalculateCurrentValue();
     }
-    
-    public void RemoveAdder(string key, float value)
+
+    public void RemoveAdder(string key)
     {
         HandleAddersInstantiate();
 

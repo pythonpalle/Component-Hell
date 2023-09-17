@@ -17,9 +17,4 @@ public class HandlerDirectionFireType : FireType
         
         return lastNonZeroDirection;
     }
-
-    protected override Vector2 GetPosition(Weapon owner, int round)
-    {
-        return owner.transform.position;
-    }
 }

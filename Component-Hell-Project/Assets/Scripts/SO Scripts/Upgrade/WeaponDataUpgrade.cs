@@ -41,11 +41,11 @@ public class WeaponDataUpgrade : UpgradeObject
                 switch (modifyType)
                 {
                     case ModifyType.Add:
-                        dynamicFloat.AddAdder(this.name, amount);
+                        dynamicFloat.AddAdder(this.name, amount, true);
                         break;
                     
                     case ModifyType.Multiply:
-                        dynamicFloat.AddMultiplier(this.name, amount);
+                        dynamicFloat.AddMultiplier(this.name, amount, true);
                         break;
                 }
                 

@@ -23,10 +23,5 @@ public class ToEnemyFireType : FireType
         
         return direction;
     }
-
-    protected override Vector2 GetPosition(Weapon owner, int round)
-    {
-        return owner.transform.position;
-    }
 }
 

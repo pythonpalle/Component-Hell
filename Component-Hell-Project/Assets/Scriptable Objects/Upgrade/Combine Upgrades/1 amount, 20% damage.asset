@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9298c55fc7ee416895a809a76fb727f4, type: 3}
-  m_Name: 1 amount, Rotation
+  m_Name: 1 amount, 20% damage
   m_EditorClassIdentifier: 
   description: Applies upgrade to a game object
   upgrades:
   - {fileID: 11400000, guid: 2386f5573a1f9244cbc75d872e0555c8, type: 2}
-  - {fileID: 11400000, guid: f59750d20b3419d438803cb283b1565e, type: 2}
+  - {fileID: 11400000, guid: a5fe9cbc3584feb488ec4e0c1393b6c9, type: 2}

@@ -7,54 +7,21 @@ using UnityEngine.Serialization;
 
 public class Weapon : MonoBehaviour
 {
-    [Header("Prefabs")]
+    [Header("Projectile Prefab")]
     [SerializeField] private Projectile projectilePrefab;
-
-    [Header("Data")]
-    // [SerializeField] private WeaponDataHolder weaponData;
-    // public WeaponDataHolder Data => weaponData;
-    [SerializeField]
-    private WeaponDataContainer _weaponDataContainer;
-
-    public WeaponDataContainer WeaponDataContainer => _weaponDataContainer;
-    
-    
-    //[SerializeField] private bool instantiateData = true;
     
     [Header("Components")]
     [SerializeField] private FireHandler fireHandler;
+    [SerializeField] private WeaponDataContainer _weaponDataContainer;
     
+    public WeaponDataContainer WeaponDataContainer => _weaponDataContainer;
+
     public Vector2 Direction { get; private set; }
-
-
-    // private void Awake()
-    // {
-    //     if (instantiateData) weaponData = Instantiate(weaponData);
-    // }
-
+    
     public void TryAttack()
     {
         fireHandler.TryFire(projectilePrefab, this);
     }
-    
-
-    // public void UpdateData(WeaponDataHolder fromData)
-    // {
-    //     string owner = fromData.name;
-    //     
-    //     weaponData.attackDamage.AddMultiplier(owner, fromData.attackDamage.Value);
-    //     weaponData.attackSize.AddMultiplier(owner, fromData.attackSize.Value);
-    //     weaponData.effectDuration.AddMultiplier(owner, fromData.effectDuration.Value);
-    //     weaponData.lifeTime.AddMultiplier(owner, fromData.lifeTime.Value);
-    //     
-    //     weaponData.attackSpeed.AddMultiplier(owner, fromData.attackSpeed.Value);
-    //
-    //     weaponData.burstCooldown.AddMultiplier(owner, fromData.burstCooldown.Value);
-    //     weaponData.shotCooldown.AddMultiplier(owner, fromData.shotCooldown.Value);
-    //     
-    //     weaponData.amount.AddAdder(owner, fromData.amount.Value);
-    //     weaponData.penetration.AddAdder(owner, fromData.penetration.Value);
-    // }
 
     public void UpdateDirection(Vector2 direction)
     {

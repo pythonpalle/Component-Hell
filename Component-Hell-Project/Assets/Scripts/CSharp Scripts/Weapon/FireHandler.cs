@@ -46,6 +46,11 @@ public class FireHandler : MonoBehaviour
         yield return new WaitForSeconds(burstCooldown);
         isFiring = false;
     }
+
+    public void ChangeFireType(FireType newType)
+    {
+        fireType = newType;
+    }
 }
 
 
