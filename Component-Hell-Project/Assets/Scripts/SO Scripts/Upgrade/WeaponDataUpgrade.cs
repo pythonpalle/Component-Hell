@@ -20,8 +20,8 @@ public class WeaponDataUpgrade : UpgradeObject
 
     public override void Apply(Transform owner)
     {
-        WeaponDataContainer weapon = owner.GetComponent<WeaponDataContainer>();
-        var weaponData = weapon.WeaponData;
+        WeaponDataContainer weaponDataContainer = owner.GetComponent<WeaponDataContainer>();
+        var weaponData = weaponDataContainer.WeaponData;
 
         UpdateVariable(weaponData);
     }

@@ -1,20 +1,13 @@
-using System;
-using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
-
 
 public class WeaponHandler : MonoBehaviour, IMovementListener
 {
     [Header("Weapons Owned")]
     [SerializeField] private List<Weapon> weapons;
-
-    // [Header("Data")] 
-    // [SerializeField] private WeaponDataHolder weaponData;
-
+    
     [Header("Data Container")] 
     [SerializeField] private WeaponDataContainer _weaponDataContainer;
     
@@ -63,7 +56,6 @@ public class WeaponHandler : MonoBehaviour, IMovementListener
     {
         WeaponDataContainer.TransferData(_weaponDataContainer.WeaponData, weaponInstance.WeaponDataContainer.WeaponData);
         
-        //weaponInstance.UpdateData(_weaponDataContainer.weaponData);
         OnUpdateData.AddListener(weaponInstance.WeaponDataContainer.UpdateData);
     }
 
