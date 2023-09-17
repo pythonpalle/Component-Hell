@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc1d954a54db42eabbcd15969b9d0b3b, type: 3}
   m_Name: Size + 50%
   m_EditorClassIdentifier: 
-  description: Applies upgrade to a game object
+  description: Increases size with 50%.
   weaponDataType: 1
   modifyType: 0
   amount: 1.5

@@ -18,7 +18,7 @@ public class AddTest : MonoBehaviour
     {
         if (upgradeManager.CanUpgrade())
         {
-            upgradeManager.AddNextUpgrade();
+            upgradeManager.ApplyNextUpgrade();
         }
         else
         {

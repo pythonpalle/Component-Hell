@@ -43,13 +43,14 @@ public class WeaponHandler : MonoBehaviour, IMovementListener
         }
     }
 
-    public void AddWeapon(Weapon weaponPrefab)
+    public Weapon AddWeapon(Weapon weaponPrefab)
     {
         var weaponInstance = Instantiate(weaponPrefab, transform);
         weapons.Add(weaponInstance);
         OnWeaponAdded?.Invoke(weaponInstance);
 
         HandleInitialDataUpdate(weaponInstance);
+        return weaponInstance;
     }
 
     private void HandleInitialDataUpdate(Weapon weaponInstance)

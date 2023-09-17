@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc1d954a54db42eabbcd15969b9d0b3b, type: 3}
   m_Name: Add 1 Amount
   m_EditorClassIdentifier: 
+  description: Adds 1 to amount.
   weaponDataType: 3
   modifyType: 1
   amount: 1

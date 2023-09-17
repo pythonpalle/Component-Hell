@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1264c687c1f42c4385d012e0b2dc8f0, type: 3}
   m_Name: Upgrade Firetype to Enemy
   m_EditorClassIdentifier: 
-  description: Applies upgrade to a game object
+  description: Makes weapon shoot at nearest enemy.
   fireType: {fileID: 11400000, guid: bbf8889721407e142bc324156c08aafc, type: 2}

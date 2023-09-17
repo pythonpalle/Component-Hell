@@ -1,52 +1,36 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GamePlayerWeaponManager : MonoBehaviour
 {
+    [Header("Player")]
     [SerializeField] private WeaponHandler playerWeaponHandler;
     
-    [SerializeField] private List<Weapon> startingWeaponPrefabs;
-    [SerializeField] private List<Weapon> startingWeaponInstances = new List<Weapon>();
+    [Header("Weapon Lists")]
+    [SerializeField] private WeaponListData startingWeaponPrefabs;
+    [SerializeField] private WeaponListData weaponPool;
     
-    // Start is called before the first frame update
+    
+    private List<Weapon> startingWeaponInstances = new List<Weapon>();
+
+    public UnityEvent<Weapon> OnAddedWeapon;
+
     void Start()
     {
         playerWeaponHandler.OnWeaponAdded.AddListener(OnWeaponAdded);
         
-        foreach (var startingWeapon in startingWeaponPrefabs)
+        foreach (var startingWeapon in startingWeaponPrefabs.Weapons)
         {
-            playerWeaponHandler.AddWeapon(startingWeapon);
-        }
-        
-        
-    }
-
-    private void OnWeaponAdded(Weapon arg0)
-    {
-        startingWeaponInstances.Add(arg0);
-        upgradeManager = arg0.GetComponent<UpgradeManager>();
-    }
-
-    private UpgradeManager upgradeManager;
-    
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AddUpgrade(); 
+            var startingWeaponInstance = playerWeaponHandler.AddWeapon(startingWeapon);
+            OnAddedWeapon?.Invoke(startingWeaponInstance);
         }
     }
 
-    private void AddUpgrade()
+    private void OnWeaponAdded(Weapon addedWeapon)
     {
-        if (upgradeManager.CanUpgrade())
-        {
-            upgradeManager.AddNextUpgrade();
-        }
-        else
-        {
-            Debug.Log("Out of upgrades!");
-        }
-    } 
+        startingWeaponInstances.Add(addedWeapon);
+    }
 }

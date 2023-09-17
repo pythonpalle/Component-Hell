@@ -8,11 +8,26 @@ public class GameUpgradeManager : MonoBehaviour
 {
     [SerializeField] int maxUpgradeOptions = 3;
 
-    [SerializeField] private List<UpgradeManager> _upgradeManagers;
+    [SerializeField] private List<UpgradeManager> weaponUpgradeManagers = new List<UpgradeManager>();
+    
 
-    public UnityEvent<List<UpgradeObject>> OnChosenOptions;
+    public UnityEvent<List<UpgradeManager>> OnChosenOptions;
 
-    // Start is called before the first frame update
+    public static GameUpgradeManager Instance;
+
+    private void Awake()
+    {
+        if (Instance && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
+    }
+
     private void Start()
     {
         LevelManager.Instance.OnLevelUp.AddListener(OnLevelUp);
@@ -28,31 +43,40 @@ public class GameUpgradeManager : MonoBehaviour
         GetUpgradeOptions();
     }
 
+    public void OnAddedWeapon(Weapon weapon)
+    {
+        weaponUpgradeManagers.Add(weapon.GetComponent<UpgradeManager>());
+    }
+
     private void GetUpgradeOptions()
     {
-        List<UpgradeObject> availiableUpgrades = new List<UpgradeObject>();
+        List<UpgradeManager> availiableUpgrades = new List<UpgradeManager>();
 
-        foreach (var upgradeManager in _upgradeManagers)
+        foreach (var upgradeManager in weaponUpgradeManagers)
         {
             if (upgradeManager.CanUpgrade())
             {
-                availiableUpgrades.Add(upgradeManager.NextUpgrade());
+                availiableUpgrades.Add(upgradeManager);
             }
         }
 
         // might not work
         availiableUpgrades.Sort();
 
-        List<UpgradeObject> chosenOptions = ChooseOptionsFrom(availiableUpgrades);
+        List<UpgradeManager> chosenOptions = ChooseOptionsFrom(availiableUpgrades);
         OnChosenOptions?.Invoke(chosenOptions);
     }
 
-    private List<UpgradeObject> ChooseOptionsFrom(List<UpgradeObject> availiableUpgrades)
+    public void ApplyUpgrade(UpgradeManager manager)
     {
-        var chosenOptions = new List<UpgradeObject>();
+        manager.ApplyNextUpgrade();
+    }
+
+    private List<UpgradeManager> ChooseOptionsFrom(List<UpgradeManager> availiableUpgrades)
+    {
+        var chosenOptions = new List<UpgradeManager>();
 
         int max = (availiableUpgrades.Count < maxUpgradeOptions) ? availiableUpgrades.Count : maxUpgradeOptions;
-        Debug.Log("Max: " + max);
 
         for (int i = 0; i < max; i++)
         {
@@ -61,11 +85,5 @@ public class GameUpgradeManager : MonoBehaviour
         }
 
         return chosenOptions;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
