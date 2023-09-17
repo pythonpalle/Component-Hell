@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3482fa9d7ccefa242b27130d25b6368d, type: 3}
   m_Name: Starting Weapon Prefabs
   m_EditorClassIdentifier: 
-  _weapons: []
+  _weapons:
+  - {fileID: 6177846372694440877, guid: 0cfc4a06735e3a64ca99ddab2b979633, type: 3}

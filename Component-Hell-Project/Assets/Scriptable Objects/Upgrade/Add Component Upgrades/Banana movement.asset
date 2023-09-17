@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3482fa9d7ccefa242b27130d25b6368d, type: 3}
-  m_Name: Weapon Pool
+  m_Script: {fileID: 11500000, guid: 56e1c38c6ea9490e8fcb7c1f3fef9bb6, type: 3}
+  m_Name: Banana movement
   m_EditorClassIdentifier: 
-  _weapons:
-  - {fileID: 8987620614001210496, guid: 444be529d94c574479f58f5dfa297ec4, type: 3}
-  - {fileID: 6177846372694440877, guid: 0cfc4a06735e3a64ca99ddab2b979633, type: 3}
+  description: Applies upgrade to a game object
+  _componentAdder:
+    script: {fileID: 11500000, guid: 10351e5d828790b43ac883e58cc344a8, type: 3}
+    childTarget: 0

@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class Rotation : MonoBehaviour
 {
-    [SerializeField] private float speed = 40;
+    [SerializeField] private float speed = 180;
+    [SerializeField] private bool rotateRoot;
 
     private Transform transformToRotate;
 
     private void Start()
     {
-        transformToRotate = transform.root;
+        transformToRotate = rotateRoot ?transform.root : transform;
     }
 
     private void Update()

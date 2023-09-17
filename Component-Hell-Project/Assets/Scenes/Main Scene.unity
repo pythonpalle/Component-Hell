@@ -4656,8 +4656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7e84efa9a43db14b8bc852651fa1f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxUpgradeOptions: 3
-  weaponUpgradeManagers: []
   OnChosenOptions:
     m_PersistentCalls:
       m_Calls:

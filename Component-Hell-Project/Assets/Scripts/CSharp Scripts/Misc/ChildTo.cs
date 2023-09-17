@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ChildTo : MonoBehaviour
 {
-    [SerializeField] private string tagName;
+    [SerializeField] private string tagName = "Player";
     
-    void Start()
+    void OnEnable()
     {
         var toChildObject = GameObject.FindWithTag(tagName);
+        transform.parent = toChildObject.transform;
     }
 } 

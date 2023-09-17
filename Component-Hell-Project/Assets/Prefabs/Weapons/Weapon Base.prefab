@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 0}
-  instantiate: 0
+  instantiate: 1
 --- !u!114 &7977065025271890154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,11 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0112db46c6674a64856eb5284c7c53b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradePath: {fileID: 0}
-  managerName: 
-  managerDescription: 
-  sprite: {fileID: 0}
-  _managerType: 0
+  _upgradeDataHolder: {fileID: 0}
 --- !u!114 &7500907647379181086
 MonoBehaviour:
   m_ObjectHideFlags: 0

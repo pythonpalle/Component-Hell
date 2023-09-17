@@ -16,7 +16,8 @@ public class GamePlayerWeaponManager : MonoBehaviour
     [SerializeField] private WeaponListData weaponPool;
     
     
-    private List<Weapon> startingWeaponInstances = new List<Weapon>();
+    public List<Weapon> OwnedWeapons { get; private set; }= new List<Weapon>();
+    public List<Weapon> PotentialWeaponPrefabs { get; private set; }= new List<Weapon>();
 
     public UnityEvent<Weapon> OnAddedWeapon;
 
@@ -35,6 +36,8 @@ public class GamePlayerWeaponManager : MonoBehaviour
 
     void Start()
     {
+        InitialisePotentialWeapons();
+        
         playerWeaponHandler.OnWeaponAdded.AddListener(OnWeaponAdded);
         
         foreach (var startingWeapon in startingWeaponPrefabs.Weapons)
@@ -43,13 +46,22 @@ public class GamePlayerWeaponManager : MonoBehaviour
         }
     }
 
+    private void InitialisePotentialWeapons()
+    {
+        foreach (var weapon in weaponPool.Weapons)
+        {
+            PotentialWeaponPrefabs.Add(weapon);
+        }
+    }
+
     private void OnWeaponAdded(Weapon addedWeapon)
     {
-        startingWeaponInstances.Add(addedWeapon);
+        OwnedWeapons.Add(addedWeapon);
     }
 
     public void AddWeapon(Weapon prefab)
     {
+        PotentialWeaponPrefabs.Remove(prefab);
         var startingWeaponInstance = playerWeaponHandler.AddWeapon(prefab);
         OnAddedWeapon?.Invoke(startingWeaponInstance);
     }

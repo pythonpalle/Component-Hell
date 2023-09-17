@@ -3,19 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = System.Random;
 
 
 public class GameUpgradeManager : MonoBehaviour
 {
-    [SerializeField] int maxUpgradeOptions = 3;
-
-    [SerializeField] private List<Weapon> weapons = new List<Weapon>();
-
-    [SerializeField] private WeaponListData weaponPool;
+    private static int MAX_UPGRADE_OPTIONS = 3;
 
     public UnityEvent<List<IUpgradable>> OnChosenOptions;
 
     public static GameUpgradeManager Instance;
+    private GamePlayerWeaponManager _playerWeaponManager; 
 
     private void Awake()
     {
@@ -33,6 +31,7 @@ public class GameUpgradeManager : MonoBehaviour
     private void Start()
     {
         LevelManager.Instance.OnLevelUp.AddListener(OnLevelUp);
+        _playerWeaponManager = GamePlayerWeaponManager.Instance;
     }
 
     private void OnDestroy()
@@ -45,17 +44,12 @@ public class GameUpgradeManager : MonoBehaviour
         GetUpgradeOptions();
     }
 
-    public void OnAddedWeapon(Weapon weapon)
-    {
-        weapons.Add(weapon);
-    }
-
     private void GetUpgradeOptions()
     {
         List<IUpgradable> availableUpgrades = new List<IUpgradable>();
 
         // finds upgrades for used weapons
-        foreach (var weapon in weapons)
+        foreach (var weapon in _playerWeaponManager.OwnedWeapons)
         {
             if (weapon.GetUpgradeManager().CanUpgrade())
             {
@@ -65,18 +59,31 @@ public class GameUpgradeManager : MonoBehaviour
 
         // TODO: Limit to a set amount
         // finds potential weapons
-        foreach (var poolWeapon in weaponPool.Weapons)
+        foreach (var poolWeapon in _playerWeaponManager.PotentialWeaponPrefabs)
         {
             availableUpgrades.Add(poolWeapon);
         }
 
         // might not work
-        availableUpgrades.Sort();
+        Shuffle(availableUpgrades);
 
         List<IUpgradable> chosenOptions = ChooseOptionsFrom(availableUpgrades);
         OnChosenOptions?.Invoke(chosenOptions);
     }
 
+    private static Random rng = new Random();  
+
+    static void Shuffle<T>(IList<T> list)  
+    {  
+       // Fisher–Yates shuffle, from https://stackoverflow.com/questions/273313/randomize-a-listt
+        
+        int count = list.Count;  
+        while (count > 1) {  
+            count--;  
+            int k = rng.Next(count + 1);  
+            (list[k], list[count]) = (list[count], list[k]);
+        }  
+    }
     public void ApplyUpgrade(IUpgradable upgrade)
     {
         // if uninstantiated weapon
@@ -94,7 +101,7 @@ public class GameUpgradeManager : MonoBehaviour
     {
         var chosenOptions = new List<IUpgradable>();
 
-        int max = (availiableUpgrades.Count < maxUpgradeOptions) ? availiableUpgrades.Count : maxUpgradeOptions;
+        int max = (availiableUpgrades.Count < MAX_UPGRADE_OPTIONS) ? availiableUpgrades.Count : MAX_UPGRADE_OPTIONS;
 
         for (int i = 0; i < max; i++)
         {

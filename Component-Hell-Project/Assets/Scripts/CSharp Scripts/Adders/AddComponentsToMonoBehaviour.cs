@@ -23,7 +23,8 @@ public enum ChildTarget
     Effect,
     Damage,
     Misc,
-    Size
+    Size,
+    Root
 }
 
 public class AddComponentsToMonoBehaviour : MonoBehaviour
@@ -39,7 +40,13 @@ public class AddComponentsToMonoBehaviour : MonoBehaviour
     {
         foreach (var adder in componentsToAdd)
         {
-            var childObject = toAddObject.transform.GetChild((int)adder.childTarget);
+            Transform childObject;
+
+            if (adder.childTarget == ChildTarget.Root)
+                childObject = toAddObject.transform;
+            else
+                childObject = toAddObject.transform.GetChild((int)adder.childTarget);
+            
             childObject.gameObject.AddComponent(adder.script.GetClass());
         }
     }

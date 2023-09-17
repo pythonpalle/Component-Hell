@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d29ade2dd282fd4cb48223641b2acb4, type: 3}
-  m_Name: DVD Data Holder
+  m_Name: Boomerana Upgrade Data Holder
   m_EditorClassIdentifier: 
-  upgradePath: {fileID: 11400000, guid: 6bea8b0fe734b7d4d9b2df46b14a6670, type: 2}
-  managerName: DVD Gun
-  managerDescription: Desctructive, Violent Device
-  image: {fileID: 21300000, guid: 0718273d7676c2f47a07213695dcaf03, type: 3}
+  upgradePath: {fileID: 11400000, guid: 2a96e1b0b32177b4cbd6fbbaff2a0109, type: 2}
+  managerName: Boomarana
+  managerDescription: Fiercely firing fruit-fueled fury.
+  image: {fileID: 21300000, guid: 384da43293e82da46b42cb83e4eef2a7, type: 3}
