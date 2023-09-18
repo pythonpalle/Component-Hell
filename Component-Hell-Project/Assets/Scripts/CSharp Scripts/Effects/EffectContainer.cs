@@ -8,7 +8,7 @@ public class EffectContainer : MonoBehaviour
     [SerializeField] private DynamicFloat effectTime;
     public DynamicFloat EffectTime => effectTime;
 
-    public List<EffectComponent> activeEffects = new List<EffectComponent>();
+    private List<EffectComponent> activeEffects = new List<EffectComponent>();
 
     public void AddMultiplier(string name, float value)
     {
@@ -18,7 +18,6 @@ public class EffectContainer : MonoBehaviour
     public void AddEffect(EffectComponent newEffect)
     {
         activeEffects.Add(newEffect);
-        Debug.Log($"{name} recieved the effect {newEffect.name}!");
     }
 
     public void RemoveEffect(EffectComponent effectComponent)
