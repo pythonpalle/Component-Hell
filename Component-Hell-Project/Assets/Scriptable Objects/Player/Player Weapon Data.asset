@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01f051a78cbb094e8be679f90d5a900, type: 3}
   m_Name: Player Weapon Data
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   attackDamage:
-    value: 3
+    value: 1
   attackSize:
     value: 1
   penetration:

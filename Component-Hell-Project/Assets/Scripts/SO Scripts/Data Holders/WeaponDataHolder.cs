@@ -6,6 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/WeaponData")]
 public class WeaponDataHolder : ScriptableObject
 {
+    [Header("Sprite")] 
+    public Sprite sprite;
+    
     [Header("Attack")]
     public DynamicFloat attackDamage;
     public DynamicFloat attackSize;

@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b14943fb4165a4b48b54d075d2a603fc, type: 3}
   m_Name: Easy Enemy Health
   m_EditorClassIdentifier: 
-  health:
-    value: 0
+  health: 0
   maxHealth:
-    value: 10
+    value: 5
   armour:
     value: 0
   regeneration:
