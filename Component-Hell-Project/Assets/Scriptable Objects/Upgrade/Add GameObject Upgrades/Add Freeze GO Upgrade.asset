@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b14943fb4165a4b48b54d075d2a603fc, type: 3}
-  m_Name: Easy Enemy Health
+  m_Script: {fileID: 11500000, guid: 26ca94ee45934359857296cce5d77afa, type: 3}
+  m_Name: Add Freeze GO Upgrade
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth:
-    value: 10
-  armour:
-    value: 0
-  regeneration:
-    value: 0
+  description: Adds a freeze on impact
+  prefabToAdd: {fileID: 5436271162279470113, guid: b0d1a19b84c6f3246bf98cda581b196f, type: 3}

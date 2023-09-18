@@ -48,3 +48,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   effectPrefab: {fileID: 2977281299873044507, guid: a4cd9f1a07fb22f4bb6a18df65251fb7, type: 3}
+  childIndex: 0
+  EffectTime:
+    value: 1

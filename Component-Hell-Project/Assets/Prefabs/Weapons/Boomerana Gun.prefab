@@ -43,6 +43,14 @@ PrefabInstance:
       propertyPath: baseValue
       value: 
       objectReference: {fileID: 11400000, guid: ba0acb74b92830a4cacf852d3bab9480, type: 2}
+    - target: {fileID: 5340752382283580874, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: prefabsToAdd.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340752382283580874, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: prefabsToAdd.Array.data[0]
+      value: 
+      objectReference: {fileID: 5436271162279470113, guid: b0d1a19b84c6f3246bf98cda581b196f, type: 3}
     - target: {fileID: 5404104272743974705, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: m_RootOrder
       value: 0

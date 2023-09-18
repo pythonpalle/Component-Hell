@@ -3,18 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EffectComponent : MonoBehaviour
+[RequireComponent(typeof(DestroyAfterSeconds))]
+public abstract class EffectComponent : MonoBehaviour
 {
-    public float duration = 1;
+    private EffectContainer effectContainer;
+    public DynamicFloat effectDuration;
 
-    // public virtual void OnInstantiated(float effectTimeValue)
-    // {
-    //     duration *= effectTimeValue;
-    //     _metaContainer.EffectContainer.activeEffects.Add(this);
-    // }
-    //
-    // protected virtual void OnDestroy()
-    // {
-    //     _metaContainer.EffectContainer.activeEffects.Remove(this);
-    // }
+    public void OnInstantiated(EffectContainer effectContainer, DynamicFloat effectTimeValue)
+    {
+        this.effectContainer = effectContainer;
+        effectDuration.AddMultiplier("Instantiator", effectTimeValue.Value);
+        
+        this.effectContainer.AddEffect(this);
+        Activate();
+        GetComponent<DestroyAfterSeconds>().SetLifeTime(effectDuration.Value);
+    }
+
+    private void OnDestroy()
+    {
+        Deactivate();
+        this.effectContainer.RemoveEffect(this);
+    }
+    
+    protected abstract void Activate();
+
+    protected abstract void Deactivate();
 }

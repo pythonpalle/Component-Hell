@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Boomarana Upgrade Path
   m_EditorClassIdentifier: 
   potentialUpgrades:
+  - {fileID: 11400000, guid: 9be56db8f767edd45b040a32abeea692, type: 2}
   - {fileID: 11400000, guid: a54b36017986d5a40a40e63978205c60, type: 2}
   - {fileID: 11400000, guid: 31b1ba1d9a4a24f4ba7dbbd200c53e73, type: 2}
   - {fileID: 11400000, guid: 55c7a8fed4ade614eb5829f21bc20f9f, type: 2}

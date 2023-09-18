@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1586842587356501710}
   - component: {fileID: 2977281299873044507}
+  - component: {fileID: 8898623929315486184}
+  - component: {fileID: 4355993119607006105}
   m_Layer: 0
   m_Name: Freeze Effect
   m_TagString: Untagged
@@ -44,6 +46,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4f393411065574c84bfaad017b2c83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metaContainer: {fileID: 0}
-  duration: 1
-  speedChangeMultiplier: {fileID: 11400000, guid: ac2e942934fd1d34b8bbc91a783a1b74, type: 2}
+  effectDuration:
+    value: 5
+  speedModifier:
+    value: 0
+--- !u!114 &8898623929315486184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7730632276712080800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead2bbf549f8d5a4d9c57690597af920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyRoot: 0
+--- !u!114 &4355993119607006105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7730632276712080800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabd883b17b9ec644ba262cba9446ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTilDespawn: 1

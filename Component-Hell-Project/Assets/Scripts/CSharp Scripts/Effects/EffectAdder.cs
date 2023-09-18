@@ -1,27 +1,27 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EffectAdder : MonoBehaviour
 {
-
     [SerializeField] private LayerMask effectedLayers;
     [SerializeField] private EffectComponent effectPrefab;
+    [SerializeField] private int childIndex;
     
-    private FloatVariable EffectTime;
     private ColliderBroadcaster broadcaster;
 
+    private EffectContainer thisEffectContainer;
 
-    // public override void Setup(MetaContainer container)
-    // {
-    //     base.Setup(container);
-    //     
-    //     EffectTime = _metaContainer.EffectContainer.ValueWrapper.CurrentValue;
-    //
-    //     broadcaster = _metaContainer.CollisionContainer.ColliderBroadcaster;
-    //     broadcaster.OnTrigEnter.AddListener(AddEffect);
-    // }
+    private void Start()
+    {
+        broadcaster = GetComponentInParent<ColliderBroadcaster>();
+        broadcaster.OnTrigEnter.AddListener(AddEffect);
+
+        // hatar detta
+        thisEffectContainer = transform.parent.GetComponentInChildren<EffectContainer>(); 
+    }
 
     private void OnDisable()
     {
@@ -30,6 +30,25 @@ public class EffectAdder : MonoBehaviour
 
     private void AddEffect(Collider2D other)
     {
+        Debug.Log("Add effect called");
+        
+        var otherEffectContainer = other.GetComponentInChildren<EffectContainer>();
+        if (!otherEffectContainer)
+        {
+            Debug.Log($"{other.name} has no effect container");
+            return;
+        }
+
+        if (otherEffectContainer.HasEffect(effectPrefab))
+        {
+            Debug.Log($"{other.name} already has effect {effectPrefab.name}");
+            return;
+        }
+        var effectInstance = Instantiate(effectPrefab, other.transform);
+        effectInstance.OnInstantiated(otherEffectContainer, thisEffectContainer.EffectTime);
+        // effectContainer.AddEffect(effectInstance);
+
+
         // Debug.Log("Trying to add effect to " + other.name);
         //
         // // Wrong layer

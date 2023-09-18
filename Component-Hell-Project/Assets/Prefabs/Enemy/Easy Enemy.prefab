@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectTime:
-    value: 0
+    value: 1
   activeEffects: []
 --- !u!1 &5215295089176568653
 GameObject:

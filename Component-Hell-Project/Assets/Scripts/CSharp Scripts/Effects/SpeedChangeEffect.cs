@@ -7,21 +7,13 @@ public class SpeedChangeEffect : EffectComponent
 {
     [SerializeField] private DynamicFloat speedModifier;
     
-    // public override void OnInstantiated(float effectValue)
-    // {
-    //     base.OnInstantiated(effectValue);
-    //     
-    //     Debug.Log($"Im instantiated for {duration}!");
-    //
-    //     speedWrapper = _metaContainer.MovementContainer.ValueWrapper;
-    //     speedWrapper.AddMultiplier(speedChangeMultiplier);
-    //     
-    //     Destroy(gameObject, duration); 
-    // }
-    //
-    // protected override void OnDestroy()
-    // {
-    //     base.OnDestroy();
-    //     speedWrapper.RemoveMultiplier(speedChangeMultiplier);
-    // } 
+    protected override void Activate()
+    {
+        transform.parent.GetComponentInChildren<MovementManager>().DataHolder.moveSpeed.AddMultiplier(name,speedModifier.Value);
+    }
+
+    protected override void Deactivate()
+    {
+        transform.parent.GetComponentInChildren<MovementManager>().DataHolder.moveSpeed.RemoveMultiplier(name);
+    }
 } 
