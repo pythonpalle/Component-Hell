@@ -2,15 +2,15 @@
 
 public class ProjectileEffectTimeTransfer : MonoBehaviour, IProjectileSpawnListener
 {
-    private EffectContainer _effectContainer;
+    private EffectManager _effectManager;
 
     private void Awake()
     {
-        _effectContainer = GetComponent<EffectContainer>();
+        _effectManager = GetComponent<EffectManager>();
     }
 
     public void OnProjectileSpawn(WeaponDataHolder data, Vector2 _)
     {
-        _effectContainer.AddMultiplier(data.name, data.effectDuration.Value);
+        _effectManager.AddMultiplier(data.name, data.effectDuration.Value);
     } 
 }

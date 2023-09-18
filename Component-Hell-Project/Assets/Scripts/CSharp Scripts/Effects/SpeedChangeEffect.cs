@@ -9,11 +9,11 @@ public class SpeedChangeEffect : EffectComponent
     
     protected override void Activate()
     {
-        transform.parent.GetComponentInChildren<MovementManager>().DataHolder.moveSpeed.AddMultiplier(name,speedModifier.Value);
+        transform.parent.parent.GetComponentInChildren<MovementManager>().DataHolder.moveSpeed.AddMultiplier(name,speedModifier.Value);
     }
 
     protected override void Deactivate()
     {
-        transform.parent.GetComponentInChildren<MovementManager>().DataHolder.moveSpeed.RemoveMultiplier(name);
+        transform.parent.parent.GetComponentInChildren<MovementManager>().DataHolder.moveSpeed.RemoveMultiplier(name);
     }
 } 

@@ -48,6 +48,7 @@ MonoBehaviour:
   effectTime:
     value: 1
   activeEffects: []
+  effectAdders: []
 --- !u!114 &2858556343525050890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +125,7 @@ GameObject:
   - component: {fileID: 739169961462967529}
   - component: {fileID: 958309439902393213}
   - component: {fileID: 5338366507640834925}
+  - component: {fileID: 4790651962979667659}
   m_Layer: 10
   m_Name: Projectile Base
   m_TagString: Untagged
@@ -364,6 +366,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7182947846862501782}
+        m_TargetAssemblyTypeName: EffectManager, Assembly-CSharp
+        m_MethodName: TryApplyEffects
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4929195680335739229}
         m_TargetAssemblyTypeName: DamageReciever, Assembly-CSharp
         m_MethodName: RecieveDamage
@@ -433,6 +447,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 8964118390119370075}
+--- !u!114 &4790651962979667659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3410898942414323645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6afe11adf49104982d5bf0b3ff546b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6022690550055221728
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class ColliderBroadcaster : MonoBehaviour
     public UnityEvent<Collider2D> OnTrigEnter;
     [HideInInspector] public UnityEvent<Collider2D> OnTrigExit;
     [HideInInspector] public UnityEvent<Collider2D> OnTrigStay;
+    
 
     // Collsion
     public void OnCollisionEnter2D(Collision2D other)

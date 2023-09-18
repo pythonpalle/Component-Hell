@@ -6,15 +6,15 @@ using UnityEngine;
 [RequireComponent(typeof(DestroyAfterSeconds))]
 public abstract class EffectComponent : MonoBehaviour
 {
-    private EffectContainer effectContainer;
+    private EffectManager _effectManager;
     public DynamicFloat effectDuration;
 
-    public void OnInstantiated(EffectContainer effectContainer, DynamicFloat effectTimeValue)
+    public void OnInstantiated(EffectManager effectManager, DynamicFloat effectTimeValue)
     {
-        this.effectContainer = effectContainer;
+        this._effectManager = effectManager;
         effectDuration.AddMultiplier("Instantiator", effectTimeValue.Value);
         
-        this.effectContainer.AddEffect(this);
+        this._effectManager.AddEffect(this);
         Activate();
         GetComponent<DestroyAfterSeconds>().SetLifeTime(effectDuration.Value);
     }
@@ -22,7 +22,7 @@ public abstract class EffectComponent : MonoBehaviour
     private void OnDestroy()
     {
         Deactivate();
-        this.effectContainer.RemoveEffect(this);
+        this._effectManager.RemoveEffect(this);
     }
     
     protected abstract void Activate();
