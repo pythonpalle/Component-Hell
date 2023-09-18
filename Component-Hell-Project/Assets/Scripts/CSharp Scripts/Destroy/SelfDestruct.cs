@@ -8,7 +8,20 @@ public class SelfDestruct : MonoBehaviour
     
     public void SelfDestroy(float timeTilDestruct = 0)
     {
+        Invoke("DestroyMe", timeTilDestruct);
+        
+        // var objectToDestroy = destroyRoot ? transform.root.gameObject : gameObject;
+        // Destroy(objectToDestroy, timeTilDestruct);
+    }
+
+    public void CancelDestroy()
+    {
+        CancelInvoke("DestroyMe");
+    }
+
+    void DestroyMe()
+    {
         var objectToDestroy = destroyRoot ? transform.root.gameObject : gameObject;
-        Destroy(objectToDestroy, timeTilDestruct);
+        Destroy(objectToDestroy);
     }
 }

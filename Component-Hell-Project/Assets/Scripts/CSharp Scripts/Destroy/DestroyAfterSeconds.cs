@@ -6,10 +6,24 @@ using UnityEngine;
 [RequireComponent(typeof(SelfDestruct))]
 public class DestroyAfterSeconds : MonoBehaviour
 {
-    [SerializeField] private float timeTilDespawn = 5f;
+    private SelfDestruct _selfDestruct;
     
+    [SerializeField] private float timeTilDespawn = 1f;
+
+    private void Awake()
+    {
+        _selfDestruct = GetComponent<SelfDestruct>();
+    }
+
     private void OnEnable()
     {
-        GetComponent<SelfDestruct>().SelfDestroy(timeTilDespawn);
+        _selfDestruct.SelfDestroy(timeTilDespawn);
+    }
+
+    public void SetLifeTime(float lifeTime)
+    {
+        _selfDestruct.CancelDestroy();
+        timeTilDespawn *= lifeTime;
+        _selfDestruct.SelfDestroy(timeTilDespawn);
     }
 }

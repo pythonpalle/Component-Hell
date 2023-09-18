@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class HealthManager : MonoBehaviour
 {
     [SerializeField] private HealthDataHolder _healthDataHolder;
-    
+
     [SerializeField] bool instantiateScriptableObjects = true;
     
     [Header("Events")]
@@ -48,5 +48,11 @@ public class HealthManager : MonoBehaviour
          {
              OnDeath?.Invoke();
          }
+    }
+
+    public void IncreaseMaxHealth(string fromName, float multiplier, bool resetCurrent)
+    {
+        _healthDataHolder.maxHealth.AddMultiplier(fromName, multiplier);
+        if (resetCurrent) InitializeData();
     }
 }

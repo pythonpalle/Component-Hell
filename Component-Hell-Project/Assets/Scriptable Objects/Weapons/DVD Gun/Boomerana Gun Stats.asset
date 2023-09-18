@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: Boomerana Gun Stats
   m_EditorClassIdentifier: 
   attackDamage:
-    value: 9
+    value: 3
   attackSize:
     value: 1
   penetration:
-    value: 2
+    value: 3
   amount:
     value: 2
   lifeTime:
-    value: 3
+    value: 1
   attackSpeed:
     value: 5
   direction: {x: 0, y: 0}
   effectDuration:
     value: 1
   burstCooldown:
-    value: 3
+    value: 5
   shotCooldown:
     value: 0.2
