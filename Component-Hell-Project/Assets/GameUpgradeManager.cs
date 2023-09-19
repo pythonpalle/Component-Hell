@@ -10,7 +10,7 @@ public class GameUpgradeManager : MonoBehaviour
 {
     private static int MAX_UPGRADE_OPTIONS = 3;
 
-    public UnityEvent<List<IUpgradable>> OnChosenOptions;
+    public UnityEvent<List<UpgradeManager>> OnChosenOptions;
 
     public static GameUpgradeManager Instance;
     private GamePlayerWeaponManager _playerWeaponManager; 
@@ -46,16 +46,16 @@ public class GameUpgradeManager : MonoBehaviour
 
     private void GetUpgradeOptions()
     {
-        List<IUpgradable> availableUpgrades = new List<IUpgradable>();
+        List<UpgradeManager> availableUpgrades = new List<UpgradeManager>();
 
         // finds upgrades for used weapons
         foreach (var weapon  in _playerWeaponManager.OwnedWeapons)
         {
-            //var weaponUpgradeManger = weapon.GetComponent<>()
+            var weaponUpgradeManger = weapon.GetComponent<UpgradeManager>();
             
-            if (weapon.GetUpgradeManager().CanUpgrade())
+            if (weaponUpgradeManger.CanUpgrade())
             {
-                availableUpgrades.Add(weapon);
+                availableUpgrades.Add(weaponUpgradeManger);
             }
         }
 
@@ -63,13 +63,24 @@ public class GameUpgradeManager : MonoBehaviour
         // finds potential weapons
         foreach (var poolWeapon in _playerWeaponManager.PotentialWeaponPrefabs)
         {
-            availableUpgrades.Add(poolWeapon);
+            availableUpgrades.Add(poolWeapon.GetComponent<UpgradeManager>());
+        }
+        
+        foreach (var upgrade  in GamePlayerAbilityManager.Instance.OwnedUpgradeManagers)
+        {
+            if (upgrade.CanUpgrade())
+                availableUpgrades.Add(upgrade);
+        }
+        
+        foreach (var upgradeManager in GamePlayerAbilityManager.Instance.PotentialUpgradeAbilities)
+        {
+            availableUpgrades.Add(upgradeManager);
         }
 
         // might not work
         Shuffle(availableUpgrades);
 
-        List<IUpgradable> chosenOptions = ChooseOptionsFrom(availableUpgrades);
+        List<UpgradeManager> chosenOptions = ChooseOptionsFrom(availableUpgrades);
         OnChosenOptions?.Invoke(chosenOptions);
     }
 
@@ -86,22 +97,31 @@ public class GameUpgradeManager : MonoBehaviour
             (list[k], list[count]) = (list[count], list[k]);
         }  
     }
-    public void ApplyUpgrade(IUpgradable upgrade)
+    public void ApplyUpgrade(UpgradeManager upgrade)
     {
-        // if uninstantiated weapon
-        if (upgrade is Weapon w && !upgrade.GetUpgradeManager().IsInstantiated)
+        if (!upgrade.IsInstantiated)
         {
-            GamePlayerWeaponManager.Instance.AddWeapon(w);
+            switch (upgrade.ManagerType)
+            {
+                case UpgradeMangerType.Weapon:
+                    GamePlayerWeaponManager.Instance.AddWeapon(upgrade.GetComponent<Weapon>());
+                    break;
+                
+                case UpgradeMangerType.Health:
+                    GamePlayerAbilityManager.Instance.AddHealth(upgrade);
+                    break;
+                
+            }
         }
-        else
+        else 
         {
-            upgrade.GetUpgradeManager().ApplyNextUpgrade();
+            upgrade.ApplyNextUpgrade(); 
         }
     }
 
-    private List<IUpgradable> ChooseOptionsFrom(List<IUpgradable> availiableUpgrades)
+    private List<UpgradeManager> ChooseOptionsFrom(List<UpgradeManager> availiableUpgrades)
     {
-        var chosenOptions = new List<IUpgradable>();
+        var chosenOptions = new List<UpgradeManager>();
 
         int max = (availiableUpgrades.Count < MAX_UPGRADE_OPTIONS) ? availiableUpgrades.Count : MAX_UPGRADE_OPTIONS;
 

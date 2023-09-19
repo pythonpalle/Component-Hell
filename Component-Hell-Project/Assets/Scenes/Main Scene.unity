@@ -728,7 +728,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127166194}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 655c10fd91a52f14983dfb971179c7d2, type: 3}
   m_Name: 
@@ -4296,6 +4296,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3931818526344562772, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
   m_PrefabInstance: {fileID: 7825429799708889835}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &872618271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 872618272}
+  - component: {fileID: 872618273}
+  m_Layer: 0
+  m_Name: Game Player Ability Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &872618272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872618271}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1708537472}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &872618273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872618271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f709136816535ec4792419cdbad6d15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerWeaponUpgradeManagers: {fileID: 11400000, guid: abe2a5ef00e8ff74ba54e5b0862413de, type: 2}
+  playerTransform: {fileID: 869407406}
+  OnAddedManager:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &875401021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2561437857087559956, guid: 642df229ec21eab4b96cf213d0f18430, type: 3}
@@ -7553,6 +7602,7 @@ Transform:
   - {fileID: 127166195}
   - {fileID: 1059435385}
   - {fileID: 449682860}
+  - {fileID: 872618272}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

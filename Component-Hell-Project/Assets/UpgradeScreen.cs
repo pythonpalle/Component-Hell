@@ -28,7 +28,7 @@ public class UpgradeScreen : MonoBehaviour
         popup.SetActive(false);
     }
 
-    public void OnChosenOptions(List<IUpgradable> upgradeOptions)
+    public void OnChosenOptions(List<UpgradeManager> upgradeOptions)
     {
         if (upgradeOptions.Count == 0)
             return;

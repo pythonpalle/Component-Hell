@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,20 +8,13 @@ public class GamePlayerAbilityManager : MonoBehaviour
 {
     public static GamePlayerAbilityManager Instance;
     
-    [Header("Weapon")]
-    [SerializeField] private WeaponHandler playerWeaponHandler;
-    [SerializeField] private UpgradeDataList playerWeaponUpgradeDatas;
-    
-    [Header("Movement")]
-    [SerializeField] private MovementManager playerMovementManager;
-    [SerializeField] private UpgradeDataList playerMovementUpgradeDatas;
+    [SerializeField] private UpgradeManagerList playerWeaponUpgradeManagers;
+    [SerializeField] private Transform playerTransform;
 
-    [Header("Health")]
-    [SerializeField] private HealthManager playerHealthManager;
-    [SerializeField] private UpgradeDataList playerHealthUpgradeDatas;
+    public List<UpgradeManager> OwnedUpgradeManagers { get; private set; } = new List<UpgradeManager>();
+    public List<UpgradeManager> PotentialUpgradeAbilities { get; private set; } = new List<UpgradeManager>();
 
-    public List<UpgradeDataHolder> OwnedUpgradeAbilities { get; private set; } = new List<UpgradeDataHolder>();
-    public List<UpgradeDataHolder> PotentialUpgradeAbilities { get; private set; } = new List<UpgradeDataHolder>();
+    public UnityEvent<UpgradeManager> OnAddedManager;
 
     private void Awake()
     {
@@ -37,6 +31,25 @@ public class GamePlayerAbilityManager : MonoBehaviour
 
     void Start()
     {
+        InitialisePotentialUpgrades();
+    }
+
+    private void InitialisePotentialUpgrades()
+    {
+        foreach (var upgradeManager in playerWeaponUpgradeManagers.UpgradeDataHolders)
+        {
+            PotentialUpgradeAbilities.Add(upgradeManager);
+        }
+    }
+
+    public void AddHealth(UpgradeManager upgradePrefab)
+    {
+        HealthManager playerHealth = playerTransform.GetComponentInChildren<HealthManager>();
+        var upgradeInstance = playerHealth.AddComponent<UpgradeManager>();
+        upgradeInstance.SetData(upgradePrefab.DataHolder);
         
+        PotentialUpgradeAbilities.Remove(upgradePrefab);
+        OwnedUpgradeManagers.Add(upgradeInstance);
+        OnAddedManager?.Invoke(upgradeInstance);
     }
 }

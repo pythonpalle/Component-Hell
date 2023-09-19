@@ -2,11 +2,20 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+public enum UpgradeMangerType
+{
+    Weapon,
+    WeaponHolder,
+    Movement,
+    Health
+}
 
 public class UpgradeManager : MonoBehaviour
 {
     [SerializeField] private UpgradeDataHolder _upgradeDataHolder;
     public UpgradeDataHolder DataHolder => _upgradeDataHolder;
+
+    public UpgradeMangerType ManagerType;
     
     private bool upgradePathComplete;
     private int counter = 0;
@@ -42,5 +51,10 @@ public class UpgradeManager : MonoBehaviour
         {
             upgradePathComplete = true;
         }
+    }
+
+    public void SetData(UpgradeDataHolder upgradePrefabDataHolder)
+    {
+        _upgradeDataHolder = upgradePrefabDataHolder;
     }
 }
