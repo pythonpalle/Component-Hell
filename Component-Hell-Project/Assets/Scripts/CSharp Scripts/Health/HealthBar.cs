@@ -25,36 +25,13 @@ public class HealthBar : MonoBehaviour
 
     private void ConnectToCharacterHealth()
     {
-        _healthManager.OnHealthStart.AddListener(SetMaxHealth);
+        _healthManager.OnSetMaxHealth.AddListener(SetMaxHealth);
         _healthManager.OnHealthChange.AddListener(OnHealthChange);
     }
-
-    // /*
-    //  * Looks for a component T on the existing gameobject by searching upwards to the parent node
-    //  */
-    // private bool TryFindCharacterHealthComponent(Transform transformToCheck, out CharacterHealth characterHealth)
-    // {
-    //
-    //     characterHealth = transformToCheck.GetComponentInChildren<CharacterHealth>();
-    //     if (characterHealth)
-    //     {
-    //         return true;
-    //     }
-    //
-    //     var parentTransform = transformToCheck.parent;
-    //     if (parentTransform == null)
-    //     {
-    //         characterHealth = null;
-    //         return false;
-    //     }
-    //
-    //     return TryFindCharacterHealthComponent(parentTransform, out characterHealth);
-    // }
 
     public void SetMaxHealth(float maxHealth)
     {
         this.maxHealth = maxHealth;
-        currentHealth = maxHealth;
     }
 
     public void OnHealthChange(float deltaHealth)

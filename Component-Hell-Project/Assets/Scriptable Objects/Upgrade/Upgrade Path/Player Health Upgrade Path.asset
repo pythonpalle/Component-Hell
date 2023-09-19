@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Player Health Upgrade Path
   m_EditorClassIdentifier: 
   potentialUpgrades:
-  - {fileID: 11400000, guid: 9be56db8f767edd45b040a32abeea692, type: 2}
+  - {fileID: 11400000, guid: 9822423527da3d74baca982e04d43eaf, type: 2}
+  - {fileID: 11400000, guid: 9822423527da3d74baca982e04d43eaf, type: 2}
+  - {fileID: 11400000, guid: 9822423527da3d74baca982e04d43eaf, type: 2}
+  - {fileID: 11400000, guid: 9822423527da3d74baca982e04d43eaf, type: 2}
+  - {fileID: 11400000, guid: 9822423527da3d74baca982e04d43eaf, type: 2}

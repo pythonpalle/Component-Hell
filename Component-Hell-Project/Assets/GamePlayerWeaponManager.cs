@@ -42,7 +42,8 @@ public class GamePlayerWeaponManager : MonoBehaviour
         
         foreach (var startingWeapon in startingWeaponPrefabs.Weapons)
         {
-            AddWeapon(startingWeapon);
+            var instance = AddWeapon(startingWeapon);
+            instance.GetUpgradeManager().ApplyNextUpgrade();
         }
     }
 
@@ -59,10 +60,12 @@ public class GamePlayerWeaponManager : MonoBehaviour
         OwnedWeapons.Add(addedWeapon);
     }
 
-    public void AddWeapon(Weapon prefab)
+    public Weapon AddWeapon(Weapon prefab)
     {
         PotentialWeaponPrefabs.Remove(prefab);
         var startingWeaponInstance = playerWeaponHandler.AddWeapon(prefab);
         OnAddedWeapon?.Invoke(startingWeaponInstance);
+
+        return startingWeaponInstance;
     }
 }

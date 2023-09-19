@@ -48,6 +48,47 @@ public class GameUpgradeManager : MonoBehaviour
     {
         List<UpgradeManager> availableUpgrades = new List<UpgradeManager>();
 
+        AddOwnedWeapons(availableUpgrades);
+        AddPotentialWeapons(availableUpgrades);
+        AddOwnedAbilities(availableUpgrades);
+        AddPotentialAbilities(availableUpgrades);
+
+        // might not work
+        Shuffle(availableUpgrades);
+
+        List<UpgradeManager> chosenOptions = ChooseOptionsFrom(availableUpgrades);
+        OnChosenOptions?.Invoke(chosenOptions);
+    }
+
+    private void AddPotentialAbilities(List<UpgradeManager> availableUpgrades)
+    {
+        foreach (var upgradeManager in GamePlayerAbilityManager.Instance.PotentialUpgradeAbilities)
+        {
+            availableUpgrades.Add(upgradeManager);
+        }
+    }
+
+    private void AddOwnedAbilities(List<UpgradeManager> availableUpgrades)
+    {
+        foreach (var upgrade  in GamePlayerAbilityManager.Instance.OwnedUpgradeManagers)
+        {
+            if (upgrade.CanUpgrade())
+                availableUpgrades.Add(upgrade);
+        }
+    }
+
+    private void AddPotentialWeapons(List<UpgradeManager> availableUpgrades)
+    {
+        // TODO: Limit to a set amount
+        // finds potential weapons
+        foreach (var poolWeapon in _playerWeaponManager.PotentialWeaponPrefabs)
+        {
+            availableUpgrades.Add(poolWeapon.GetComponent<UpgradeManager>());
+        }
+    }
+
+    private void AddOwnedWeapons(List<UpgradeManager> availableUpgrades)
+    {
         // finds upgrades for used weapons
         foreach (var weapon  in _playerWeaponManager.OwnedWeapons)
         {
@@ -58,30 +99,6 @@ public class GameUpgradeManager : MonoBehaviour
                 availableUpgrades.Add(weaponUpgradeManger);
             }
         }
-
-        // TODO: Limit to a set amount
-        // finds potential weapons
-        foreach (var poolWeapon in _playerWeaponManager.PotentialWeaponPrefabs)
-        {
-            availableUpgrades.Add(poolWeapon.GetComponent<UpgradeManager>());
-        }
-        
-        foreach (var upgrade  in GamePlayerAbilityManager.Instance.OwnedUpgradeManagers)
-        {
-            if (upgrade.CanUpgrade())
-                availableUpgrades.Add(upgrade);
-        }
-        
-        foreach (var upgradeManager in GamePlayerAbilityManager.Instance.PotentialUpgradeAbilities)
-        {
-            availableUpgrades.Add(upgradeManager);
-        }
-
-        // might not work
-        Shuffle(availableUpgrades);
-
-        List<UpgradeManager> chosenOptions = ChooseOptionsFrom(availableUpgrades);
-        OnChosenOptions?.Invoke(chosenOptions);
     }
 
     private static Random rng = new Random();  
@@ -104,19 +121,20 @@ public class GameUpgradeManager : MonoBehaviour
             switch (upgrade.ManagerType)
             {
                 case UpgradeMangerType.Weapon:
-                    GamePlayerWeaponManager.Instance.AddWeapon(upgrade.GetComponent<Weapon>());
+                    var weapon = GamePlayerWeaponManager.Instance.AddWeapon(upgrade.GetComponent<Weapon>());
+                    upgrade = weapon.GetComponent<UpgradeManager>();
                     break;
                 
                 case UpgradeMangerType.Health:
-                    GamePlayerAbilityManager.Instance.AddHealth(upgrade);
+                    upgrade = GamePlayerAbilityManager.Instance.AddHealth(upgrade);
                     break;
                 
             }
+            
         }
-        else 
-        {
-            upgrade.ApplyNextUpgrade(); 
-        }
+        
+        upgrade.ApplyNextUpgrade(); 
+        
     }
 
     private List<UpgradeManager> ChooseOptionsFrom(List<UpgradeManager> availiableUpgrades)

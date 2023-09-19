@@ -42,7 +42,7 @@ public class GamePlayerAbilityManager : MonoBehaviour
         }
     }
 
-    public void AddHealth(UpgradeManager upgradePrefab)
+    public UpgradeManager AddHealth(UpgradeManager upgradePrefab)
     {
         HealthManager playerHealth = playerTransform.GetComponentInChildren<HealthManager>();
         
@@ -53,5 +53,7 @@ public class GamePlayerAbilityManager : MonoBehaviour
         PotentialUpgradeAbilities.Remove(upgradePrefab);
         OwnedUpgradeManagers.Add(upgradeInstance);
         OnAddedManager?.Invoke(upgradeInstance);
+
+        return upgradeInstance;
     }
 }

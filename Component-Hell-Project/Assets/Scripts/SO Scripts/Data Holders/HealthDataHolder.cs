@@ -8,5 +8,6 @@ public class HealthDataHolder : ScriptableObject
     public float health;
     public DynamicFloat maxHealth;
     public DynamicFloat armour;
-    public DynamicFloat regeneration;
+    public DynamicFloat regenerationSpeed;
+    public DynamicFloat regenerationAmount;
 }
