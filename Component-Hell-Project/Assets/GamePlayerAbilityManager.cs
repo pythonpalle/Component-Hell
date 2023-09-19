@@ -47,33 +47,18 @@ public class GamePlayerAbilityManager : MonoBehaviour
     {
         HealthManager playerHealth = playerTransform.GetComponentInChildren<HealthManager>();
         return AddUpgrade(upgradePrefab, playerHealth);
-
-        // var upgradeInstance = playerHealth.AddComponent<UpgradeManager>();
-        // upgradeInstance.SetData(upgradePrefab.DataHolder);
-        // upgradeInstance.ManagerType = upgradePrefab.ManagerType;
-        //
-        // PotentialUpgradeAbilities.Remove(upgradePrefab);
-        // OwnedUpgradeManagers.Add(upgradeInstance);
-        // OnAddedManager?.Invoke(upgradeInstance);
-        //
-        // return upgradeInstance;
     }
     
     public UpgradeManager AddMovement(UpgradeManager upgradePrefab)
     {
         MovementManager playerMovement = playerTransform.GetComponentInChildren<MovementManager>();
         return AddUpgrade(upgradePrefab, playerMovement);
-
-        
-        // var upgradeInstance = playerMovement.AddComponent<UpgradeManager>();
-        // upgradeInstance.SetData(upgradePrefab.DataHolder);
-        // upgradeInstance.ManagerType = upgradePrefab.ManagerType;
-        //
-        // PotentialUpgradeAbilities.Remove(upgradePrefab);
-        // OwnedUpgradeManagers.Add(upgradeInstance);
-        // OnAddedManager?.Invoke(upgradeInstance);
-        //
-        // return upgradeInstance;
+    }
+    
+    public UpgradeManager AddWeaponStat(UpgradeManager upgradePrefab)
+    {
+        WeaponHandler weaponController = playerTransform.GetComponentInChildren<WeaponHandler>();
+        return AddUpgrade(upgradePrefab, weaponController);
     }
 
     private UpgradeManager AddUpgrade(UpgradeManager upgradePrefab, MonoBehaviour toAddComponentBehaviour)
@@ -88,4 +73,6 @@ public class GamePlayerAbilityManager : MonoBehaviour
 
         return upgradeInstance;
     }
+
+    
 }

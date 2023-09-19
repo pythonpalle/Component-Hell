@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,9 +15,7 @@ public class WeaponHandler : MonoBehaviour, IMovementListener
     [Header("Events")]
     public UnityEvent<WeaponDataHolder> OnUpdateData;
     public UnityEvent<Weapon> OnWeaponAdded;
-
-    private Vector2 moveDirection;
-
+    
     private void Awake()
     {
         weapons = GetComponentsInChildren<Weapon>().ToList();
@@ -28,6 +27,13 @@ public class WeaponHandler : MonoBehaviour, IMovementListener
         {
             HandleInitialDataUpdate(weaponInstance);
         }
+        
+        GameUpgradeManager.Instance.OnUpgrade.AddListener(OnUpgrade);
+    }
+
+    private void OnDestroy()
+    {
+        GameUpgradeManager.Instance.OnUpgrade.RemoveListener(OnUpgrade);
     }
 
     private void Update()
@@ -53,16 +59,31 @@ public class WeaponHandler : MonoBehaviour, IMovementListener
         return weaponInstance;
     }
 
+    public void OnUpgrade(UpgradeManager manager)
+    {
+        if (manager.ManagerType == UpgradeMangerType.WeaponHolder)
+        {
+            foreach (var weapon in weapons)
+            {
+                TransferData(weapon);
+            }
+        }
+    }
+
     private void HandleInitialDataUpdate(Weapon weaponInstance)
     {
-        WeaponDataContainer.TransferData(_weaponDataContainer.WeaponData, weaponInstance.WeaponDataContainer.WeaponData);
         
+        TransferData(weaponInstance);
         OnUpdateData.AddListener(weaponInstance.WeaponDataContainer.UpdateData);
+    }
+
+    void TransferData(Weapon weapon)
+    {
+        WeaponDataContainer.TransferData(_weaponDataContainer.WeaponData, weapon.WeaponDataContainer.WeaponData);
     }
 
     public void OnMovementChange(Vector2 direction)
     {
-        moveDirection = direction;
         foreach (var weapon in weapons)
         {
             weapon.UpdateDirection(direction);

@@ -29,14 +29,20 @@ public class HealthBar : MonoBehaviour
         _healthManager.OnHealthChange.AddListener(OnHealthChange);
     }
 
-    public void SetMaxHealth(float maxHealth)
+    private void SetMaxHealth(float maxHealth)
     {
         this.maxHealth = maxHealth;
+        UpdateSliderValue();
     }
 
-    public void OnHealthChange(float deltaHealth)
+    private void UpdateSliderValue()
+    {
+        slider.value = ratio;
+    }
+
+    private void OnHealthChange(float deltaHealth)
     {
         currentHealth += deltaHealth;
-        slider.value = ratio;
+        UpdateSliderValue();
     }
 }

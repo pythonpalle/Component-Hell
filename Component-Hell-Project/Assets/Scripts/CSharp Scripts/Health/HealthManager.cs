@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -31,6 +32,27 @@ public class HealthManager : MonoBehaviour
         
         InitializeData();
     }
+    
+    private void Start()
+    {
+        GameUpgradeManager.Instance.OnUpgrade.AddListener(OnUpgrade);
+        
+        OnSetMaxHealth?.Invoke(_healthDataHolder.maxHealth.Value);
+        OnHealthChange?.Invoke(_healthDataHolder.health);
+    }
+
+    private void OnDestroy()
+    {
+        GameUpgradeManager.Instance.OnUpgrade.RemoveListener(OnUpgrade);
+    }
+
+    public void OnUpgrade(UpgradeManager manager)
+    {
+        if (manager.ManagerType == UpgradeMangerType.Health)
+        {
+            DetectMaxhHealthChange();
+        }
+    }
 
     
     private void InitializeData()
@@ -39,11 +61,7 @@ public class HealthManager : MonoBehaviour
         prevMaxHealth = _healthDataHolder.maxHealth.Value;
     }
 
-    private void Start()
-    {
-        OnSetMaxHealth?.Invoke(_healthDataHolder.maxHealth.Value);
-        OnHealthChange?.Invoke(_healthDataHolder.health);
-    }
+    
 
     public void Regenerate(float deltaHealth)
     {
@@ -91,15 +109,10 @@ public class HealthManager : MonoBehaviour
         _healthDataHolder.maxHealth.AddMultiplier(fromName, multiplier);
         if (resetCurrent) InitializeData();
     }
-
-    private void Update()
-    {
-        DetectMaxhHealthChange();
-    }
+    
 
     private void DetectMaxhHealthChange()
     {
-        // TODO: Avoid checking every frame by using events
         if (Mathf.Abs(_healthDataHolder.maxHealth.Value - prevMaxHealth) > 0.0001f)
         {
             OnSetMaxHealth?.Invoke(_healthDataHolder.maxHealth.Value);

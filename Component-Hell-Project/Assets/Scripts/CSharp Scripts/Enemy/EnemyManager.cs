@@ -8,6 +8,7 @@ public class EnemyManager : MonoBehaviour
     public static EnemyManager Instance;
 
     private List<Enemy> Enemies { get;  set; } = new List<Enemy>();
+    public int Count;
 
     private void Awake()
     {
@@ -30,6 +31,11 @@ public class EnemyManager : MonoBehaviour
     public void RemoveEnemy(Enemy enemy)
     {
         Enemies.Remove(enemy);
+    }
+
+    private void Update()
+    {
+        Count = Enemies.Count;
     }
 
     public Enemy FindClosestEnemy(Vector2 fromPos)

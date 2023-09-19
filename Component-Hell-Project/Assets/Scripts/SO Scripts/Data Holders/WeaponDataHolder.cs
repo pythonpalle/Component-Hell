@@ -21,7 +21,6 @@ public class WeaponDataHolder : ScriptableObject
     
     [Header("Movement")]
     public DynamicFloat attackSpeed;
-    public Vector2 direction;
 
     
     [Header("Effect")]

@@ -11,6 +11,7 @@ public class GameUpgradeManager : MonoBehaviour
     private static int MAX_UPGRADE_OPTIONS = 3;
 
     public UnityEvent<List<UpgradeManager>> OnChosenOptions;
+    public UnityEvent<UpgradeManager> OnUpgrade;
 
     public static GameUpgradeManager Instance;
     private GamePlayerWeaponManager _playerWeaponManager; 
@@ -133,12 +134,16 @@ public class GameUpgradeManager : MonoBehaviour
                     upgrade = GamePlayerAbilityManager.Instance.AddMovement(upgrade);
                     break;
                 
+                case UpgradeMangerType.WeaponHolder:
+                    upgrade = GamePlayerAbilityManager.Instance.AddWeaponStat(upgrade);
+                    break;
+                
             }
             
         }
         
         upgrade.ApplyNextUpgrade(); 
-        
+        OnUpgrade?.Invoke(upgrade);
     }
 
     private List<UpgradeManager> ChooseOptionsFrom(List<UpgradeManager> availiableUpgrades)
