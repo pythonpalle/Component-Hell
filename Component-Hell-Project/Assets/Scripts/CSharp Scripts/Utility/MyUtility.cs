@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public static class MyUtility
 {
     public static T TryFindComponentUpwards<T>(Transform trans)
     {
-        T comp = trans.GetComponent<T>();
+        T comp = trans.GetComponentInChildren<T>();
         
         if (comp != null)
         {

@@ -6,14 +6,22 @@ using UnityEngine;
 public class SpeedChangeEffect : EffectComponent
 {
     [SerializeField] private DynamicFloat speedModifier;
+    private MovementManager _movementManager;
     
     protected override void Activate()
     {
-        transform.parent.parent.GetComponentInChildren<MovementManager>().DataHolder.moveSpeed.AddMultiplier(name,speedModifier.Value);
+        _movementManager = MyUtility.TryFindComponentUpwards<MovementManager>(transform);
+        if (_movementManager != default)
+        {
+            _movementManager.DataHolder.moveSpeed.AddMultiplier(name,speedModifier.Value);
+        }
     }
 
     protected override void Deactivate()
     {
-        transform.parent.parent.GetComponentInChildren<MovementManager>().DataHolder.moveSpeed.RemoveMultiplier(name);
+        if (_movementManager != default)
+        {
+            _movementManager.DataHolder.moveSpeed.RemoveMultiplier(name);
+        }
     }
 } 
