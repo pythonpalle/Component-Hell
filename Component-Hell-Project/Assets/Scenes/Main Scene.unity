@@ -290,7 +290,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1263276534141962470, guid: 6bda46874105151468c81bba758cbcd4, type: 3}
   timeBetweenSpawns: 10
   spawnBurst: 5
-  spawnOffset: 1
+  spawnOffset: 1.5
   spawnedEnemies: 0
 --- !u!114 &127166198
 MonoBehaviour:

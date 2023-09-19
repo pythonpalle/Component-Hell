@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player Upgrade Pool
   m_EditorClassIdentifier: 
   upgradeDataHolders:
-  - {fileID: 2847362584780644228, guid: b3a7ec9ed8434504183deff31e4fbe3e, type: 3}
   - {fileID: 2847362584780644228, guid: 54df15910c0a75a4991747df435f8dac, type: 3}
   - {fileID: 2847362584780644228, guid: 2675e9f697106374b8d3266b285178a9, type: 3}
   - {fileID: 2847362584780644228, guid: f338969d956a7eb44996473e7a2b8947, type: 3}
+  - {fileID: 2847362584780644228, guid: 989fa33de516fdf4cbf7794481dca9da, type: 3}

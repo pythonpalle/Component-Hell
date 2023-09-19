@@ -98,7 +98,9 @@ public class EnemySpawner : MonoBehaviour
     private Vector2 GetRandomSpawnPos()
     {
         float maxX = ScreenManager.Instance.maxX + spawnOffset;
+        float minX = ScreenManager.Instance.minX - spawnOffset;
         float maxY = ScreenManager.Instance.maxY + spawnOffset;
+        float minY = ScreenManager.Instance.minY - spawnOffset;
 
         bool outOfScreenX = Random.value > 0.5f;
         bool negative = Random.value > 0.5f;
@@ -107,13 +109,13 @@ public class EnemySpawner : MonoBehaviour
 
         if (outOfScreenX)
         {
-            xPos = negative ? -maxX : maxX;
-            yPos = Random.Range(-maxY, maxY);
+            xPos = negative ? -maxX : minX;
+            yPos = Random.Range(minY, maxY);
         }
         else
         {
-            yPos = negative ? -maxY : maxY;
-            xPos = Random.Range(-maxX, maxX);
+            yPos = negative ? minY : maxY;
+            xPos = Random.Range(minX, maxX);
         }
 
         return new Vector2(xPos, yPos);

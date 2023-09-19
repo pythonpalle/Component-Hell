@@ -18,7 +18,7 @@ MonoBehaviour:
   attackSize:
     value: 0.15
   penetration:
-    value: 3
+    value: 5
   amount:
     value: 2
   lifeTime:
