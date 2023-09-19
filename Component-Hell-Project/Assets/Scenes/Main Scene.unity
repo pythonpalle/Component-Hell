@@ -287,9 +287,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1263276534141962470, guid: 6bda46874105151468c81bba758cbcd4, type: 3}
-  timeBetweenSpawns: 3
-  spawnBurst: 20
-  spawnOffset: 2
+  timeBetweenSpawns: 10
+  spawnBurst: 5
+  spawnOffset: 1
   spawnedEnemies: 0
 --- !u!1 &139688202
 GameObject:

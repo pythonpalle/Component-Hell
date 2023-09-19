@@ -31,6 +31,8 @@ public class ScreenManager : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        if (!screenCamera) return;
+        
         Gizmos.DrawLine(screenCamera.transform.position, screenCamera.transform.position + (Vector3) ScreenBounds);
         Gizmos.DrawLine(screenCamera.transform.position, screenCamera.transform.position - (Vector3) ScreenBounds);
     }

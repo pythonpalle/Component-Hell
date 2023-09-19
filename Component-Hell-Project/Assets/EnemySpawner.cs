@@ -1,8 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO.Compression;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 using Random = UnityEngine.Random;
@@ -28,6 +24,18 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         Invoke("SpawnEnemies",0.1f);
+        LevelManager.Instance.OnLevelUp.AddListener(OnLevelUp);
+    }
+
+    private void OnDestroy()
+    {
+        LevelManager.Instance.OnLevelUp.RemoveListener(OnLevelUp);
+    }
+
+    private void OnLevelUp(int levelNumber)
+    {
+        spawnBurst += 3 * levelNumber;
+        timeBetweenSpawns *= 0.97f;
     }
 
 

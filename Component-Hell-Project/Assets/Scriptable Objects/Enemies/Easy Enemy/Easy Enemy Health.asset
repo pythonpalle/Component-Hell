@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth:
-    value: 10
+    value: 5
   armour:
     value: 0
-  regeneration:
+  regenerationSpeed:
+    value: 0
+  regenerationAmount:
     value: 0

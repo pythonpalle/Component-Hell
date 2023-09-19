@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(DestroyAfterSeconds))]
 public abstract class EffectComponent : MonoBehaviour
 {
     private EffectManager _effectManager;
@@ -16,13 +15,27 @@ public abstract class EffectComponent : MonoBehaviour
         
         this._effectManager.AddEffect(this);
         Activate();
-        GetComponent<DestroyAfterSeconds>().SetLifeTime(effectDuration.Value);
+        //GetComponent<DestroyAfterSeconds>().SetLifeTime(effectDuration.Value);
+        Invoke(nameof(HandleDeactivation), effectDuration.Value);
     }
 
-    private void OnDestroy()
+    public void Reactivate()
+    {
+        Activate();
+        //GetComponent<DestroyAfterSeconds>().SetLifeTime(effectDuration.Value);
+        Invoke(nameof(HandleDeactivation), effectDuration.Value);
+    }
+
+    // private void OnDestroy()
+    // {
+    //     Deactivate();
+    //     this._effectManager.RemoveEffect(this);
+    // }
+
+    public void HandleDeactivation()
     {
         Deactivate();
-        this._effectManager.RemoveEffect(this);
+        gameObject.SetActive(false);
     }
     
     protected abstract void Activate();

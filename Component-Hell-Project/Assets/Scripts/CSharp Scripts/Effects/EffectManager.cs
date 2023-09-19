@@ -27,12 +27,15 @@ public class EffectManager : MonoBehaviour
             activeEffects.Remove(effectComponent);
     }
 
-    public bool HasEffect(EffectComponent effectPrefab)
+    public bool HasEffect(EffectComponent effectPrefab, out EffectComponent effectComponent)
     {
+        effectComponent = null;
+        
         for (int i = activeEffects.Count - 1; i >= 0; i--)
         {
             if (activeEffects[i].GetType() == effectPrefab.GetType())
             {
+                effectComponent = activeEffects[i];
                 return true;
             }
         }
@@ -59,8 +62,15 @@ public class EffectManager : MonoBehaviour
 
         foreach (var adder in effectAdders)
         {
-            if (otherEffectContainer.HasEffect(adder.EffectToAdd))
+            if (otherEffectContainer.HasEffect(adder.EffectToAdd, out var effectComponent))
+            {
+                if (!effectComponent.gameObject.activeSelf)
+                {
+                    effectComponent.gameObject.SetActive(true);
+                    effectComponent.Reactivate();
+                }
                 continue;
+            }
             
             adder.AddEffect(otherEffectContainer, effectTime);
         }
@@ -68,9 +78,9 @@ public class EffectManager : MonoBehaviour
 
     public void RemoveAllEffects()
     {
-        foreach (var effect in activeEffects)
+        for (int i = activeEffects.Count-1; i >= 0; i--)
         {
-            activeEffects.Remove(effect);
+            activeEffects[i].HandleDeactivation();
         }
     }
 }
