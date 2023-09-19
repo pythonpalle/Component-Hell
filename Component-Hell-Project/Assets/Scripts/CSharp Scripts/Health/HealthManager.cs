@@ -17,13 +17,10 @@ public class HealthManager : MonoBehaviour
     public UnityEvent<float> OnHealthChange;
     public UnityEvent OnDeath;
 
-    [Header("Regenerate")]
-    private float timeSinceLastRegenerate;
-    private DynamicFloat regenerationAmount;
-    private DynamicFloat regenerationSpeed;
-    [SerializeField] private float timeBetweenRegenates = 3f;
-
     private float prevMaxHealth;
+    public bool IsAtMaxHealth => _healthDataHolder.health >= _healthDataHolder.maxHealth.Value;
+    public float MaxHealth => _healthDataHolder.maxHealth.Value;
+    public float CurrentHealth => _healthDataHolder.health;
 
     void Awake()
     {
@@ -35,7 +32,6 @@ public class HealthManager : MonoBehaviour
         InitializeData();
     }
 
-    private bool isAtMaxHealth => _healthDataHolder.health >= _healthDataHolder.maxHealth.Value;
     
     private void InitializeData()
     {
@@ -47,9 +43,23 @@ public class HealthManager : MonoBehaviour
     {
         OnSetMaxHealth?.Invoke(_healthDataHolder.maxHealth.Value);
         OnHealthChange?.Invoke(_healthDataHolder.health);
+    }
+
+    public void Regenerate(float deltaHealth)
+    {
+        float toRegen = LimitRegenerationAtMax(deltaHealth);
+        if (toRegen <= 0)
+            return; 
         
-        regenerationSpeed = _healthDataHolder.regenerationSpeed;
-        regenerationAmount = _healthDataHolder.regenerationAmount;
+        ChangeHealth(toRegen);
+    }
+    
+    private float LimitRegenerationAtMax(float deltaHealth)
+    {
+        float differenceToMax = MaxHealth - CurrentHealth;
+
+        float toRegenerate = differenceToMax < deltaHealth ? differenceToMax : deltaHealth;
+        return toRegenerate;
     }
 
     public void TakeDamage(float damage)
@@ -58,8 +68,7 @@ public class HealthManager : MonoBehaviour
         if (damageAfterArmour <= 0)
             return;
         
-        ChangeHealth(-damageAfterArmour); 
-         
+        ChangeHealth(-damageAfterArmour);
     }
 
     private void ChangeHealth(float deltaHealth)
@@ -71,7 +80,7 @@ public class HealthManager : MonoBehaviour
         {
             OnDeath?.Invoke();
         }
-        else if (isAtMaxHealth)
+        else if (IsAtMaxHealth)
         {
             _healthDataHolder.health = _healthDataHolder.maxHealth.Value;
         }
@@ -86,33 +95,15 @@ public class HealthManager : MonoBehaviour
     private void Update()
     {
         DetectMaxhHealthChange();
-        HandleHealthGenerate();
     }
 
     private void DetectMaxhHealthChange()
     {
+        // TODO: Avoid checking every frame by using events
         if (Mathf.Abs(_healthDataHolder.maxHealth.Value - prevMaxHealth) > 0.0001f)
         {
             OnSetMaxHealth?.Invoke(_healthDataHolder.maxHealth.Value);
             prevMaxHealth = _healthDataHolder.maxHealth.Value;
-        }
-    }
-
-    private void HandleHealthGenerate()
-    {
-        if (regenerationAmount.Value <= 0)
-            return;
-
-        if (isAtMaxHealth)
-        {
-            _healthDataHolder.health = _healthDataHolder.maxHealth.Value;
-            return;
-        }
-
-        if (Time.time > regenerationSpeed.Value + timeSinceLastRegenerate)
-        {
-            ChangeHealth(regenerationAmount.Value);
-            timeSinceLastRegenerate = Time.time;
         }
     }
 }
