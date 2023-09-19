@@ -129,6 +129,10 @@ public class GameUpgradeManager : MonoBehaviour
                     upgrade = GamePlayerAbilityManager.Instance.AddHealth(upgrade);
                     break;
                 
+                case UpgradeMangerType.Movement:
+                    upgrade = GamePlayerAbilityManager.Instance.AddMovement(upgrade);
+                    break;
+                
             }
             
         }

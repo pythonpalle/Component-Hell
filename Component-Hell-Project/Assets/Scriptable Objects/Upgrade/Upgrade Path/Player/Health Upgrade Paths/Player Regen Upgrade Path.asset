@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 558b279bbe1a439eb986166f882bd05e, type: 3}
-  m_Name: Player Health Upgrade Path
+  m_Name: Player Regen Upgrade Path
   m_EditorClassIdentifier: 
   potentialUpgrades:
-  - {fileID: 11400000, guid: 9822423527da3d74baca982e04d43eaf, type: 2}
-  - {fileID: 11400000, guid: 9822423527da3d74baca982e04d43eaf, type: 2}
-  - {fileID: 11400000, guid: 9822423527da3d74baca982e04d43eaf, type: 2}
-  - {fileID: 11400000, guid: 9822423527da3d74baca982e04d43eaf, type: 2}
-  - {fileID: 11400000, guid: 9822423527da3d74baca982e04d43eaf, type: 2}
+  - {fileID: 11400000, guid: c22c6c1364c54c542bf3e2b9fb8400b3, type: 2}
+  - {fileID: 11400000, guid: 3342f35937a17d64381d6fafa37b6ce6, type: 2}
+  - {fileID: 11400000, guid: 3342f35937a17d64381d6fafa37b6ce6, type: 2}
+  - {fileID: 11400000, guid: c22c6c1364c54c542bf3e2b9fb8400b3, type: 2}
+  - {fileID: 11400000, guid: 3342f35937a17d64381d6fafa37b6ce6, type: 2}

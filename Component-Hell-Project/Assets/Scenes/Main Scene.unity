@@ -4340,7 +4340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f709136816535ec4792419cdbad6d15e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerWeaponUpgradeManagers: {fileID: 11400000, guid: abe2a5ef00e8ff74ba54e5b0862413de, type: 2}
+  playerUpgradePool: {fileID: 11400000, guid: abe2a5ef00e8ff74ba54e5b0862413de, type: 2}
   playerTransform: {fileID: 869407406}
   OnAddedManager:
     m_PersistentCalls:

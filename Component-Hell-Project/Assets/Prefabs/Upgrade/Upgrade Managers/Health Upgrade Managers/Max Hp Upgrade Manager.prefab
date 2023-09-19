@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2847362584780644231}
   - component: {fileID: 2847362584780644228}
   m_Layer: 0
-  m_Name: Max Hp Upgrade Manger
+  m_Name: Max Hp Upgrade Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

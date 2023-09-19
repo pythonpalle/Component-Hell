@@ -5,7 +5,8 @@ public enum HealthDataType
 {
     maxHealth,
     armour,
-    regeneration
+    regenerationSpeed,
+    regenerationAmount
 }
 
 [CreateAssetMenu(menuName = "Upgrade/Types/HealthData")]
@@ -21,3 +22,4 @@ public class HealthDataUpgrade : DataUpgradeObject
         UpdateVariable(weaponData, healthDataType.ToString());
     }
 }
+
