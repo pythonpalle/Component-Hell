@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Pool;
 using Random = UnityEngine.Random;
 
+
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private Enemy enemyPrefab;
@@ -10,10 +11,11 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float timeBetweenSpawns = 5f;
     [SerializeField] private int spawnBurst = 10;
     [SerializeField] private float spawnOffset = 2f;
+    [SerializeField] private int maxSpawned = 200;
+
     private float timeOfLastSpawn;
 
     private ObjectPool<Enemy> enemyPool;
-    private static int maxSpawned = 200;
 
     public int spawnedEnemies;
 

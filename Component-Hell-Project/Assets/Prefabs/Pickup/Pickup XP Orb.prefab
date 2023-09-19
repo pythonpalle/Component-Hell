@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xpToAdd: 2
+  lifeTime: 1
 --- !u!212 &8742121901350639822
 SpriteRenderer:
   m_ObjectHideFlags: 0
