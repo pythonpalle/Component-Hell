@@ -49,8 +49,10 @@ public class GameUpgradeManager : MonoBehaviour
         List<IUpgradable> availableUpgrades = new List<IUpgradable>();
 
         // finds upgrades for used weapons
-        foreach (var weapon in _playerWeaponManager.OwnedWeapons)
+        foreach (var weapon  in _playerWeaponManager.OwnedWeapons)
         {
+            //var weaponUpgradeManger = weapon.GetComponent<>()
+            
             if (weapon.GetUpgradeManager().CanUpgrade())
             {
                 availableUpgrades.Add(weapon);

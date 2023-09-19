@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
   attackDamage:
-    value: 0
+    value: 1
   attackSize:
     value: 1
   penetration:
