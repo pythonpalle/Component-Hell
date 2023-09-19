@@ -23,7 +23,8 @@ public class EffectManager : MonoBehaviour
 
     public void RemoveEffect(EffectComponent effectComponent)
     {
-        activeEffects.Remove(effectComponent);
+        if (activeEffects.Contains(effectComponent))
+            activeEffects.Remove(effectComponent);
     }
 
     public bool HasEffect(EffectComponent effectPrefab)
@@ -62,6 +63,14 @@ public class EffectManager : MonoBehaviour
                 continue;
             
             adder.AddEffect(otherEffectContainer, effectTime);
+        }
+    }
+
+    public void RemoveAllEffects()
+    {
+        foreach (var effect in activeEffects)
+        {
+            activeEffects.Remove(effect);
         }
     }
 }

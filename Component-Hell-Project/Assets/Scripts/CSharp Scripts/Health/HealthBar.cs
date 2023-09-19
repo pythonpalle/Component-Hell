@@ -29,9 +29,10 @@ public class HealthBar : MonoBehaviour
         _healthManager.OnHealthChange.AddListener(OnHealthChange);
     }
 
-    private void SetMaxHealth(float maxHealth)
+    private void SetMaxHealth(float maxHealth, bool setCurrent)
     {
         this.maxHealth = maxHealth;
+        if (setCurrent) currentHealth = maxHealth;
         UpdateSliderValue();
     }
 

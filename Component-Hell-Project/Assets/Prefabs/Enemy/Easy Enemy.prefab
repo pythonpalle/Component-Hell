@@ -47,6 +47,7 @@ MonoBehaviour:
   effectTime:
     value: 1
   activeEffects: []
+  effectAdders: []
 --- !u!1 &5215295089176568653
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +139,6 @@ GameObject:
   - component: {fileID: 5237160329902824928}
   - component: {fileID: 9061496292188465232}
   - component: {fileID: 4899356758407600590}
-  - component: {fileID: 4358763170066272907}
   - component: {fileID: 9189879113252727347}
   m_Layer: 7
   m_Name: Easy Enemy
@@ -320,19 +320,6 @@ MonoBehaviour:
   OnTrigStay:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4358763170066272907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5842228505393806546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ead2bbf549f8d5a4d9c57690597af920, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyRoot: 0
 --- !u!114 &9189879113252727347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,7 +495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthDataHolder: {fileID: 11400000, guid: f84adcca8e5352b49941028204bdee9b, type: 2}
   instantiateScriptableObjects: 1
-  OnHealthStart:
+  OnSetMaxHealth:
     m_PersistentCalls:
       m_Calls: []
   OnHealthChange:
@@ -529,10 +516,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4358763170066272907}
-        m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
-        m_MethodName: SelfDestroy
-        m_Mode: 4
+      - m_Target: {fileID: 4297907831861574232}
+        m_TargetAssemblyTypeName: EffectManager, Assembly-CSharp
+        m_MethodName: RemoveAllEffects
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2651436482151402610}
+        m_TargetAssemblyTypeName: HealthManager, Assembly-CSharp
+        m_MethodName: ResetHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1263276534141962470}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: ReleaseFromPool
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

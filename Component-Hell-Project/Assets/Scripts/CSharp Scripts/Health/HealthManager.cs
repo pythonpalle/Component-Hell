@@ -14,7 +14,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField] bool instantiateScriptableObjects = true;
     
     [Header("Events")]
-    public UnityEvent<float> OnSetMaxHealth;
+    public UnityEvent<float, bool> OnSetMaxHealth;
     public UnityEvent<float> OnHealthChange;
     public UnityEvent OnDeath;
 
@@ -37,8 +37,7 @@ public class HealthManager : MonoBehaviour
     {
         GameUpgradeManager.Instance.OnUpgrade.AddListener(OnUpgrade);
         
-        OnSetMaxHealth?.Invoke(_healthDataHolder.maxHealth.Value);
-        OnHealthChange?.Invoke(_healthDataHolder.health);
+        OnSetMaxHealth?.Invoke(_healthDataHolder.maxHealth.Value, true);
     }
 
     private void OnDestroy()
@@ -115,8 +114,14 @@ public class HealthManager : MonoBehaviour
     {
         if (Mathf.Abs(_healthDataHolder.maxHealth.Value - prevMaxHealth) > 0.0001f)
         {
-            OnSetMaxHealth?.Invoke(_healthDataHolder.maxHealth.Value);
+            OnSetMaxHealth?.Invoke(_healthDataHolder.maxHealth.Value, false);
             prevMaxHealth = _healthDataHolder.maxHealth.Value;
         }
+    }
+
+    public void ResetHealth()
+    {
+        InitializeData();
+        OnSetMaxHealth?.Invoke(MaxHealth, true);
     }
 }
