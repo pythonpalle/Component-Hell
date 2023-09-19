@@ -45,8 +45,10 @@ public class GamePlayerAbilityManager : MonoBehaviour
     public void AddHealth(UpgradeManager upgradePrefab)
     {
         HealthManager playerHealth = playerTransform.GetComponentInChildren<HealthManager>();
+        
         var upgradeInstance = playerHealth.AddComponent<UpgradeManager>();
         upgradeInstance.SetData(upgradePrefab.DataHolder);
+        upgradeInstance.ManagerType = upgradePrefab.ManagerType;
         
         PotentialUpgradeAbilities.Remove(upgradePrefab);
         OwnedUpgradeManagers.Add(upgradeInstance);

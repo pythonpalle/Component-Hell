@@ -9299,30 +9299,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3117206943862012942, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: componentsToAdd.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3117206943862012942, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: componentsToAdd.Array.data[0].Script
-      value: 
-      objectReference: {fileID: 11500000, guid: 38cc55e06df65bd4593ac0296dcd4af3, type: 3}
-    - target: {fileID: 3309620782040920826, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: OnProjectileSpawned.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3309620782040920826, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: OnProjectileSpawned.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3309620782040920826, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: OnProjectileSpawned.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3309620782040920826, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: OnProjectileSpawned.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3931818526344562772, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -9367,22 +9343,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8414017597425112786, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: componentsToAdd.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8414017597425112786, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: componentsToAdd.Array.data[0].script
-      value: 
-      objectReference: {fileID: 11500000, guid: bab37e93685a87a47aac11c569eb3b75, type: 3}
-    - target: {fileID: 8414017597425112786, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: componentsToAdd.Array.data[1].Script
-      value: 
-      objectReference: {fileID: 11500000, guid: 2d4209fa82368dc42b3988eca33905cd, type: 3}
-    - target: {fileID: 8414017597425112786, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: componentsToAdd.Array.data[1].script
-      value: 
-      objectReference: {fileID: 11500000, guid: 2d4209fa82368dc42b3988eca33905cd, type: 3}
-    m_RemovedComponents:
-    - {fileID: 4249153335404075970, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
