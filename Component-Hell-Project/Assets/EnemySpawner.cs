@@ -13,12 +13,13 @@ public class EnemySpawner : MonoBehaviour
     private float timeOfLastSpawn;
 
     private ObjectPool<Enemy> enemyPool;
+    private static int maxSpawned = 200;
 
     public int spawnedEnemies;
 
     private void Awake()
     {
-        enemyPool = new ObjectPool<Enemy>(CreateEnemy, OnTakeEnemyFromPool, OnReleaseEnemyFromPool);
+        enemyPool = new ObjectPool<Enemy>(CreateEnemy, OnTakeEnemyFromPool, OnReleaseEnemyFromPool, null, true, 50, maxSpawned);
     }
 
     private void Start()
@@ -34,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnLevelUp(int levelNumber)
     {
-        spawnBurst += 3 * levelNumber;
+        spawnBurst += 3;
         timeBetweenSpawns *= 0.97f;
     }
 
@@ -49,6 +50,7 @@ public class EnemySpawner : MonoBehaviour
     private void OnTakeEnemyFromPool(Enemy enemy)
     {
         enemy.gameObject.SetActive(true);
+        enemy.transform.position = GetRandomSpawnPos();
         spawnedEnemies++;
     }
     
@@ -66,6 +68,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void HandleSpawning()
     {
+        if (spawnedEnemies > maxSpawned)
+            return;
+        
         if (Time.time > timeOfLastSpawn + timeBetweenSpawns)
         {
             SpawnEnemies();

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8742121901350639822}
   - component: {fileID: 262709123173612923}
   - component: {fileID: 2284504414594510761}
-  - component: {fileID: 2346651887355679283}
   m_Layer: 8
   m_Name: Pickup XP Orb
   m_TagString: Untagged
@@ -144,10 +143,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2346651887355679283}
-        m_TargetAssemblyTypeName: SelfDestruct, Assembly-CSharp
-        m_MethodName: SelfDestroy
-        m_Mode: 4
+      - m_Target: {fileID: 3691062421679509037}
+        m_TargetAssemblyTypeName: AddXp, Assembly-CSharp
+        m_MethodName: ReleaseFromPool
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -171,16 +170,3 @@ MonoBehaviour:
   OnTrigStay:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2346651887355679283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5488782955888651468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ead2bbf549f8d5a4d9c57690597af920, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyRoot: 0

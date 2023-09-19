@@ -504,7 +504,7 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7078157177388834464}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InstantiateGameObject, Assembly-CSharp
         m_MethodName: InstantiateObject
         m_Mode: 1
@@ -552,6 +552,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7156490035414312279}
+        m_TargetAssemblyTypeName: XpOrbDropper, Assembly-CSharp
+        m_MethodName: Drop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7377756399152388798
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1996491702370922084}
-  - component: {fileID: 7078157177388834464}
+  - component: {fileID: 7156490035414312279}
   m_Layer: 7
   m_Name: Drop
   m_TagString: Untagged
@@ -584,7 +596,7 @@ Transform:
   m_Father: {fileID: 5842228505393806549}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7078157177388834464
+--- !u!114 &7156490035414312279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -593,10 +605,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7377756399152388798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 683b7ed27973a014586876e4cacb49e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a389991804fc4f4a935e91484134ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToInstantiate: {fileID: 5488782955888651468, guid: 642df229ec21eab4b96cf213d0f18430, type: 3}
 --- !u!1001 &5842228506226162394
 PrefabInstance:
   m_ObjectHideFlags: 0
