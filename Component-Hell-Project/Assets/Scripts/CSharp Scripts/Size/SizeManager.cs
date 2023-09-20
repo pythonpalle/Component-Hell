@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SizeManager : MonoBehaviour, IProjectileSpawnListener
+public class SizeManager : MonoBehaviour, WeaponDataUpdateListener
 {
    [SerializeField] private Transform sizeTransform;
    [SerializeField] private DynamicFloat size;
    
-   public void OnProjectileSpawn(WeaponDataHolder data, Vector2 _)
+   public void OnWeaponDataUpdate(WeaponDataHolder data)
    {
        var multSize = data.attackSize;
        size.AddMultiplier(data.name, multSize.Value);
@@ -17,7 +17,7 @@ public class SizeManager : MonoBehaviour, IProjectileSpawnListener
    }
 }
 
-public interface IProjectileSpawnListener
+public interface WeaponDataUpdateListener
 {
-    public void OnProjectileSpawn(WeaponDataHolder data, Vector2 direction);
+    public void OnWeaponDataUpdate(WeaponDataHolder data);
 }

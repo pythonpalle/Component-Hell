@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class Weapon : MonoBehaviour, IUpgradable
+public class Weapon : MonoBehaviour
 {
     [Header("Projectile Prefab")]
     [SerializeField] private Projectile projectilePrefab;
@@ -33,9 +33,4 @@ public class Weapon : MonoBehaviour, IUpgradable
     {
         return upgradeManager;
     }
-}
-
-public interface IUpgradable
-{
-    public UpgradeManager GetUpgradeManager();
 }

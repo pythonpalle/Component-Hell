@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileDamageDataTransfer : MonoBehaviour, IProjectileSpawnListener
+public class WeaponDamageDataTransfer : MonoBehaviour, WeaponDataUpdateListener
 {
     private ColliderDamageHandler _damageHandler;
     
@@ -12,7 +12,7 @@ public class ProjectileDamageDataTransfer : MonoBehaviour, IProjectileSpawnListe
         _damageHandler = GetComponent<ColliderDamageHandler>();
     }
 
-    public void OnProjectileSpawn(WeaponDataHolder data, Vector2 _)
+    public void OnWeaponDataUpdate(WeaponDataHolder data)
     {
         _damageHandler.damageValue.AddMultiplier(data.name, data.attackDamage.Value);
     }

@@ -431,7 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655c10fd91a52f14983dfb971179c7d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1263276534141962470, guid: 6bda46874105151468c81bba758cbcd4, type: 3}
+  enemyPrefab: {fileID: 1291221531011117789, guid: cabe8c4f7ecff39418edac9f799f9795, type: 3}
   timeBetweenSpawns: 10
   spawnBurst: 5
   spawnOffset: 1.5
@@ -580,37 +580,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   addXpPrefab: {fileID: 3691062421679509037, guid: 642df229ec21eab4b96cf213d0f18430, type: 3}
---- !u!1 &325286258
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 325286259}
-  m_Layer: 0
-  m_Name: test
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &325286259
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 325286258}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &335402155 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5973226146907161653, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
@@ -1794,7 +1763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655c10fd91a52f14983dfb971179c7d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1263276534141962470, guid: a4dd7bcd84af9fd40b57d442d6ed521c, type: 3}
+  enemyPrefab: {fileID: 2495509400395447778, guid: a4dd7bcd84af9fd40b57d442d6ed521c, type: 3}
   timeBetweenSpawns: 10
   spawnBurst: 1
   spawnOffset: 2

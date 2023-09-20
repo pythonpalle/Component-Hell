@@ -72,7 +72,6 @@ public class WeaponHandler : MonoBehaviour, IMovementListener
 
     private void HandleInitialDataUpdate(Weapon weaponInstance)
     {
-        
         TransferData(weaponInstance);
         OnUpdateData.AddListener(weaponInstance.WeaponDataContainer.UpdateData);
     }

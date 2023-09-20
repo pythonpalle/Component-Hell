@@ -142,7 +142,7 @@ Transform:
   m_GameObject: {fileID: 3410898942414323645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8504882469314287999}
@@ -243,72 +243,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc34e933767e5647a5cb4a600bfacd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnCreated:
+  OnWeaponDataUpdate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 200403830656927440}
-        m_TargetAssemblyTypeName: ProjectileMoveDataTransfer, Assembly-CSharp
-        m_MethodName: OnProjectileSpawn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5799801243979997953}
-        m_TargetAssemblyTypeName: ProjectileHealthDataTransfer, Assembly-CSharp
-        m_MethodName: OnProjectileSpawn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7271160156669070327}
-        m_TargetAssemblyTypeName: SizeManager, Assembly-CSharp
-        m_MethodName: OnProjectileSpawn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1107590169460234223}
-        m_TargetAssemblyTypeName: ProjectileDamageDataTransfer, Assembly-CSharp
-        m_MethodName: OnProjectileSpawn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2858556343525050890}
-        m_TargetAssemblyTypeName: ProjectileEffectTimeTransfer, Assembly-CSharp
-        m_MethodName: OnProjectileSpawn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 958309439902393213}
-        m_TargetAssemblyTypeName: ProejctileLifeTimeDataTransfer, Assembly-CSharp
-        m_MethodName: OnProjectileSpawn
+        m_TargetAssemblyTypeName: WeaponLifeTimeDataTransfer, Assembly-CSharp
+        m_MethodName: OnWeaponDataUpdate
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -320,7 +260,82 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5338366507640834925}
         m_TargetAssemblyTypeName: SpriteSetter, Assembly-CSharp
-        m_MethodName: OnProjectileSpawn
+        m_MethodName: OnWeaponDataUpdate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 200403830656927440}
+        m_TargetAssemblyTypeName: ProjectileMoveDataTransfer, Assembly-CSharp
+        m_MethodName: OnWeaponDataUpdate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5799801243979997953}
+        m_TargetAssemblyTypeName: WeaponHealthDataTransfer, Assembly-CSharp
+        m_MethodName: OnWeaponDataUpdate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2858556343525050890}
+        m_TargetAssemblyTypeName: EffectTimeTransfer, Assembly-CSharp
+        m_MethodName: OnWeaponDataUpdate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1107590169460234223}
+        m_TargetAssemblyTypeName: WeaponDamageDataTransfer, Assembly-CSharp
+        m_MethodName: OnWeaponDataUpdate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7271160156669070327}
+        m_TargetAssemblyTypeName: SizeManager, Assembly-CSharp
+        m_MethodName: OnWeaponDataUpdate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnMovementDataUpdate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 200403830656927440}
+        m_TargetAssemblyTypeName: ProjectileMoveDataTransfer, Assembly-CSharp
+        m_MethodName: OnMovementChange
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -459,6 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6afe11adf49104982d5bf0b3ff546b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  methodToInvoke: TransformChildrenChanged
 --- !u!1 &6022690550055221728
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthDataHolder: {fileID: 11400000, guid: ede4935b52a114d48b1436cec78f910b, type: 2}
   instantiateScriptableObjects: 1
-  OnHealthStart:
+  OnSetMaxHealth:
     m_PersistentCalls:
       m_Calls: []
   OnHealthChange:

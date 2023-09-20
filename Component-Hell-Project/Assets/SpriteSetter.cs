@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpriteSetter : MonoBehaviour, IProjectileSpawnListener
+public class SpriteSetter : MonoBehaviour, WeaponDataUpdateListener
 {
     [SerializeField] private SpriteRenderer _spriteRenderer;
     
@@ -12,7 +12,7 @@ public class SpriteSetter : MonoBehaviour, IProjectileSpawnListener
         _spriteRenderer.sprite = _sprite;
     }
 
-    public void OnProjectileSpawn(WeaponDataHolder data, Vector2 direction)
+    public void OnWeaponDataUpdate(WeaponDataHolder data)
     {
         SetSprite(data.sprite);
     }

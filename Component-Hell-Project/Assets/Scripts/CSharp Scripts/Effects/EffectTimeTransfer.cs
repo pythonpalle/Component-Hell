@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ProjectileEffectTimeTransfer : MonoBehaviour, IProjectileSpawnListener
+public class EffectTimeTransfer : MonoBehaviour, WeaponDataUpdateListener
 {
     private EffectManager _effectManager;
 
@@ -9,7 +9,7 @@ public class ProjectileEffectTimeTransfer : MonoBehaviour, IProjectileSpawnListe
         _effectManager = GetComponent<EffectManager>();
     }
 
-    public void OnProjectileSpawn(WeaponDataHolder data, Vector2 _)
+    public void OnWeaponDataUpdate(WeaponDataHolder data)
     {
         _effectManager.AddMultiplier(data.name, data.effectDuration.Value);
     } 

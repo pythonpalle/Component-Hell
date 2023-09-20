@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(DestroyAfterSeconds))]
-public class ProejctileLifeTimeDataTransfer : MonoBehaviour, IProjectileSpawnListener
+public class WeaponLifeTimeDataTransfer : MonoBehaviour, WeaponDataUpdateListener
 {
-    public void OnProjectileSpawn(WeaponDataHolder data, Vector2 direction)
+    public void OnWeaponDataUpdate(WeaponDataHolder data)
     {
         GetComponent<DestroyAfterSeconds>().SetLifeTime(data.lifeTime.Value);
     }

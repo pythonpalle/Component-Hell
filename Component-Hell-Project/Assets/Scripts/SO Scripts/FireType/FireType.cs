@@ -10,7 +10,7 @@ public abstract class FireType : ScriptableObject
         Vector2 position = GetPosition(owner, round);
         
         Projectile instance = Instantiate(prefab, position, Quaternion.identity);
-        instance.OnCreated?.Invoke(data, direction);
+        instance.Create(data, direction);
         return instance;
     }
 
