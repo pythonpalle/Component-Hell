@@ -2,16 +2,26 @@
 
 public class ChildToProjectile : MonoBehaviour
 {
-    [SerializeField] private LayerMask layerMask;
     
-    void OnEnable()
+    private void Start()
     {
-        int oldMask = layerMask;
-        layerMask = 0;
-        var toChildObject = Physics2D.OverlapCircle(transform.position, 2f, LayerMask.NameToLayer("Player Proejctile"));
-        layerMask = oldMask;
+        // Assuming this script is attached to a projectile object
+        // Use Physics2D.OverlapCircle to find the nearest object with the specified layer
+        gameObject.layer = 0;
         
-        Debug.Log("To Child Object: " + toChildObject.name);
-        transform.parent = toChildObject.transform;
+        int playerProjectileLayer = LayerMask.GetMask("Player Projectile");
+
+        Collider2D toChildCollider = Physics2D.OverlapCircle(transform.position, 2f, playerProjectileLayer);
+
+        if (toChildCollider != null)
+        {
+            // Set the parent of the current object (projectile) to the found object
+            transform.parent = toChildCollider.transform;
+            Debug.Log("Childed to: " + toChildCollider.name);
+        }
+        else
+        {
+            Debug.Log("No suitable object found to child to.");
+        }
     }
 }
