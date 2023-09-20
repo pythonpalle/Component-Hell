@@ -26,8 +26,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        Invoke("SpawnEnemies",0.1f);
         LevelManager.Instance.OnLevelUp.AddListener(OnLevelUp);
+        Invoke("SpawnEnemies",0.1f);
     }
 
     private void OnDestroy()

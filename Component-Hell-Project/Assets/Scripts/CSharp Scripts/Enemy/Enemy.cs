@@ -8,16 +8,24 @@ public class Enemy : MonoBehaviour, IHasEnemyPool
 {
     private IObjectPool<Enemy> enemyPool;
 
+    private void OnEnable()
+    {
+        EnemyManager.Instance.AddEnemy(this);
+    }
+    
+    private void OnDisable()
+    {
+        EnemyManager.Instance.RemoveEnemy(this);
+    }
+
     public void SetPool(ObjectPool<Enemy> enemyPool)
     {
         this.enemyPool = enemyPool;
-        EnemyManager.Instance.AddEnemy(this);
     }
 
     public void ReleaseFromPool()
     {
         enemyPool.Release(this);
-        EnemyManager.Instance.RemoveEnemy(this);
     }
 }
 

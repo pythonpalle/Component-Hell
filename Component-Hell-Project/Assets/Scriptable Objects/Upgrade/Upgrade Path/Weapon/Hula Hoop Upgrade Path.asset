@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558b279bbe1a439eb986166f882bd05e, type: 3}
+  m_Name: Hula Hoop Upgrade Path
+  m_EditorClassIdentifier: 
+  potentialUpgrades:
+  - {fileID: 11400000, guid: a025ee9b451db8648803f0f888199ea9, type: 2}
+  - {fileID: 11400000, guid: 91e3360cb6037e543a5c6c9d21827086, type: 2}
+  - {fileID: 11400000, guid: f66fce5b0fbe1c949947fb45b8d8a9db, type: 2}
+  - {fileID: 11400000, guid: 4b1da45b6ec19a045a3407e9e7bc6077, type: 2}
+  - {fileID: 11400000, guid: 86af9dd6f71d7af4f88de8ecdbd8a84b, type: 2}
+  - {fileID: 11400000, guid: 19ac2373a3cfda74fa14e95c5d0e72b0, type: 2}

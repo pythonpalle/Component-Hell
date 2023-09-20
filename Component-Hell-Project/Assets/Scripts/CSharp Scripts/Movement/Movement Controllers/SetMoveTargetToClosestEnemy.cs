@@ -19,7 +19,7 @@ public class SetMoveTargetToClosestEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!closest)
+        if (!closest || !closest.gameObject.activeSelf)
         {
             SetClosestEnemyTarget();
         }

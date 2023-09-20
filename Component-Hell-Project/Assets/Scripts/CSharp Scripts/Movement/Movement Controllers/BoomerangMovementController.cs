@@ -11,7 +11,7 @@ public class BoomerangMovementController : MovementControllerBase
     protected override void Start()
     {
         base.Start();
-        timeOfLastTurn = Time.time;
+        timeOfLastTurn = Time.time - timeBetweenTurns*0.5f;
     }
 
     protected override Vector2 GetNextDirection()

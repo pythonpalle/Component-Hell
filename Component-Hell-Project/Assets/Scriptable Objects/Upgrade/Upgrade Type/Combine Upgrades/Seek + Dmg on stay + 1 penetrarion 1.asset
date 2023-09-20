@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9298c55fc7ee416895a809a76fb727f4, type: 3}
-  m_Name: 10+ pierce, 20%+ dmg
+  m_Name: Seek + Dmg on stay + 1 penetrarion 1
   m_EditorClassIdentifier: 
-  description: Doubles damage, 10+ pierce.
+  description: Seeks out nearest enemy, deals daamge over time.
   upgrades:
-  - {fileID: 11400000, guid: f0b02a42345dbc3409316445b7554756, type: 2}
-  - {fileID: 11400000, guid: 19ac2373a3cfda74fa14e95c5d0e72b0, type: 2}
+  - {fileID: 11400000, guid: cdad0a6b31c232d4cb9fbf25ab503858, type: 2}
+  - {fileID: 11400000, guid: fe4314ed4adcc134fad4183ce75ae2cb, type: 2}
+  - {fileID: 11400000, guid: 7f4df9a596797264e8adafea53cef8e6, type: 2}

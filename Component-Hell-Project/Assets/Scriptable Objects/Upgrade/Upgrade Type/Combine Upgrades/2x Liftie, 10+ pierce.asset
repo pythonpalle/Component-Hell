@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9298c55fc7ee416895a809a76fb727f4, type: 3}
-  m_Name: 10+ pierce, 20%+ dmg
+  m_Name: 2x Liftie, 10+ pierce
   m_EditorClassIdentifier: 
-  description: Doubles damage, 10+ pierce.
+  description: Doubles lifetime, 10+ penetration.
   upgrades:
+  - {fileID: 11400000, guid: 52ba65266ca8db24cb2aacf725bd7c27, type: 2}
   - {fileID: 11400000, guid: f0b02a42345dbc3409316445b7554756, type: 2}
-  - {fileID: 11400000, guid: 19ac2373a3cfda74fa14e95c5d0e72b0, type: 2}

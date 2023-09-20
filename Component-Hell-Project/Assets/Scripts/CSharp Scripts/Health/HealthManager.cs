@@ -23,6 +23,8 @@ public class HealthManager : MonoBehaviour
     public float MaxHealth => _healthDataHolder.maxHealth.Value;
     public float CurrentHealth => _healthDataHolder.health;
 
+    private bool isAlive;
+
     void Awake()
     {
         if (instantiateScriptableObjects)
@@ -32,7 +34,12 @@ public class HealthManager : MonoBehaviour
         
         InitializeData();
     }
-    
+
+    private void OnEnable()
+    {
+        isAlive = true;
+    }
+
     private void Start()
     {
         GameUpgradeManager.Instance.OnUpgrade.AddListener(OnUpgrade);
@@ -90,12 +97,15 @@ public class HealthManager : MonoBehaviour
 
     private void ChangeHealth(float deltaHealth)
     {
+        if (!isAlive) return;
+        
         _healthDataHolder.health += deltaHealth;
         OnHealthChange?.Invoke(deltaHealth);
         
         if (_healthDataHolder.health <= 0)
         {
             OnDeath?.Invoke();
+            isAlive = false;
         }
         else if (IsAtMaxHealth)
         {
@@ -123,5 +133,6 @@ public class HealthManager : MonoBehaviour
     {
         InitializeData();
         OnSetMaxHealth?.Invoke(MaxHealth, true);
+        isAlive = true;
     }
 }
