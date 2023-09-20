@@ -10,28 +10,20 @@ public abstract class EffectComponent : MonoBehaviour
 
     public void OnInstantiated(EffectManager effectManager, DynamicFloat effectTimeValue)
     {
-        this._effectManager = effectManager;
+        _effectManager = effectManager;
         effectDuration.AddMultiplier("Instantiator", effectTimeValue.Value);
         
-        this._effectManager.AddEffect(this);
+        _effectManager.AddEffect(this);
         Activate();
-        //GetComponent<DestroyAfterSeconds>().SetLifeTime(effectDuration.Value);
         Invoke(nameof(HandleDeactivation), effectDuration.Value);
     }
 
     public void Reactivate()
     {
         Activate();
-        //GetComponent<DestroyAfterSeconds>().SetLifeTime(effectDuration.Value);
         Invoke(nameof(HandleDeactivation), effectDuration.Value);
     }
-
-    // private void OnDestroy()
-    // {
-    //     Deactivate();
-    //     this._effectManager.RemoveEffect(this);
-    // }
-
+    
     public void HandleDeactivation()
     {
         Deactivate();
