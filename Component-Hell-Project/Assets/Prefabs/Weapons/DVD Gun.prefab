@@ -41,12 +41,16 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 0134519b428e7a14a85b52a98d35b182, type: 2}
     - target: {fileID: 5340752382283580874, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: prefabsToAdd.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5340752382283580874, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: prefabsToAdd.Array.data[0]
       value: 
-      objectReference: {fileID: -4042524590383549861, guid: eed2c132404a68145b0051642f103b48, type: 3}
+      objectReference: {fileID: 189428670149763860, guid: 75cb8147455a2b4428fae75f8c76784c, type: 3}
+    - target: {fileID: 5340752382283580874, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: prefabsToAdd.Array.data[1]
+      value: 
+      objectReference: {fileID: 189428670149763860, guid: 75cb8147455a2b4428fae75f8c76784c, type: 3}
     - target: {fileID: 5404104272743974705, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -137,15 +141,23 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: f5de580b076777a469d2823e6fdda35e, type: 2}
     - target: {fileID: 7500907647379181086, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: componentsToAdd.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7500907647379181086, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: componentsToAdd.Array.data[0].Script
       value: 
       objectReference: {fileID: 11500000, guid: 2d4209fa82368dc42b3988eca33905cd, type: 3}
     - target: {fileID: 7500907647379181086, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: componentsToAdd.Array.data[0].script
+      value: 
+      objectReference: {fileID: 11500000, guid: 38cc55e06df65bd4593ac0296dcd4af3, type: 3}
+    - target: {fileID: 7500907647379181086, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: componentsToAdd.Array.data[0].childIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500907647379181086, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: componentsToAdd.Array.data[0].childTarget
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7586456575328130401, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: sprite

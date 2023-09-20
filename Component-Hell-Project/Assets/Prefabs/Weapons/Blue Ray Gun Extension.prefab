@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3966748699512489066
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4771021219108413503, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: weaponData
+      value: 
+      objectReference: {fileID: 11400000, guid: 95840b441f0754e499a5b55d97488a4c, type: 2}
+    - target: {fileID: 5340752382283580874, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: prefabsToAdd.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340752382283580874, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: prefabsToAdd.Array.data[0]
+      value: 
+      objectReference: {fileID: 699767132114228402, guid: f0da600df0d3b224d868b67ac0bb4102, type: 3}
+    - target: {fileID: 5404104272743974705, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404104272743974705, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404104272743974705, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404104272743974705, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404104272743974705, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404104272743974705, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404104272743974705, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404104272743974705, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404104272743974705, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404104272743974705, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404104272743974705, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609120994992798349, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: m_Name
+      value: Blue Ray Gun Extension
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500907647379181086, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: componentsToAdd.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500907647379181086, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: componentsToAdd.Array.data[0].script
+      value: 
+      objectReference: {fileID: 11500000, guid: e946c4348c1640649f873e456f37c185, type: 3}
+    - target: {fileID: 7500907647379181086, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: componentsToAdd.Array.data[0].childTarget
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977065025271890154, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: fireType
+      value: 
+      objectReference: {fileID: 11400000, guid: 962c0cbd4f753cc43af5bb36ec6d86e2, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}

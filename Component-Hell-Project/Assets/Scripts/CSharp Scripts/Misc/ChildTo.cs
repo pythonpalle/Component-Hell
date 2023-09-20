@@ -11,4 +11,4 @@ public class ChildTo : MonoBehaviour
         var toChildObject = GameObject.FindWithTag(tagName);
         transform.parent = toChildObject.transform;
     }
-} 
+}
