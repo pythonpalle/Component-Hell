@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 189428670149763860}
   - component: {fileID: 738885055060947447}
   - component: {fileID: 8144734861388280195}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Blue Ray Weapon Handler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a2812c97d57de40be221e9cd770931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 68e638db3a2c6f44c804c2472ec25f33, type: 2}
+  weaponData: {fileID: 11400000, guid: 95840b441f0754e499a5b55d97488a4c, type: 2}
   instantiate: 1
 --- !u!1001 &7641103484134277703
 PrefabInstance:
@@ -89,9 +89,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6781520618218087398}
     m_Modifications:
+    - target: {fileID: 6465060805685101696, guid: 1656634c9d395584fbe7265966485d91, type: 3}
+      propertyPath: instantiateFireType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7238784030906531580, guid: 1656634c9d395584fbe7265966485d91, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 7644031055962934875, guid: 84acad1589012cc4b901bc9b7f455c29, type: 3}
     - target: {fileID: 8852706048924221159, guid: 1656634c9d395584fbe7265966485d91, type: 3}
       propertyPath: m_Name
       value: Blue Ray Gun Extension
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852706048924221159, guid: 1656634c9d395584fbe7265966485d91, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9075743740982461275, guid: 1656634c9d395584fbe7265966485d91, type: 3}
       propertyPath: m_RootOrder

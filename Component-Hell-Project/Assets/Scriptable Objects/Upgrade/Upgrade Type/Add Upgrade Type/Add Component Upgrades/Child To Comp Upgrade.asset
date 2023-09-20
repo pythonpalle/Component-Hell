@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e1c38c6ea9490e8fcb7c1f3fef9bb6, type: 3}
   m_Name: Child To Comp Upgrade
   m_EditorClassIdentifier: 
-  description: Applies upgrade to a game object
+  description: Childs component
   _componentAdder:
     script: {fileID: 11500000, guid: b18dbe5566e36cb498f2c11240343ebb, type: 3}
     childTarget: 6

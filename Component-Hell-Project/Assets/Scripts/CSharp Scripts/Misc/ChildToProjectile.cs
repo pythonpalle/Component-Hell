@@ -7,11 +7,18 @@ public class ChildToProjectile : MonoBehaviour
     {
         // Assuming this script is attached to a projectile object
         // Use Physics2D.OverlapCircle to find the nearest object with the specified layer
-        gameObject.layer = 0;
-        
+        // Store the original layer of this gameObject
+        int originalLayer = gameObject.layer;
+
+        // Temporarily change the gameObject's layer to a layer that won't be detected
+        gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+
         int playerProjectileLayer = LayerMask.GetMask("Player Projectile");
 
-        Collider2D toChildCollider = Physics2D.OverlapCircle(transform.position, 2f, playerProjectileLayer);
+        Collider2D toChildCollider = Physics2D.OverlapCircle(transform.position, 0.001f, playerProjectileLayer);
+        
+        gameObject.layer = originalLayer;
+
 
         if (toChildCollider != null)
         {

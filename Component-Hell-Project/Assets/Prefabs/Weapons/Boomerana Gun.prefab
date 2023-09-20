@@ -102,7 +102,7 @@ PrefabInstance:
     - target: {fileID: 6015097530929085078, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 989252837391974315, guid: a0e988ed8967fe0499c71e927352800b, type: 3}
+      objectReference: {fileID: 8711130368369152962, guid: 8f44d7643fe18474984eaa1cd6245224, type: 3}
     - target: {fileID: 6015097530929085078, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: OnPrepareFire.m_PersistentCalls.m_Calls.Array.size
       value: 1

@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a2ece250094c04ca0db729d434fd5f, type: 3}
   m_Name: Random Direction Round
   m_EditorClassIdentifier: 
-  randomiseEachRound: 1
+  forEachRound: 1
+  forEachShotInRound: 0
+  shotsPerRound: 1

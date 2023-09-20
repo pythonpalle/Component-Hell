@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e1c38c6ea9490e8fcb7c1f3fef9bb6, type: 3}
-  m_Name: Rotation Comp Add Upgrade 1
+  m_Script: {fileID: 11500000, guid: 8f2dbf656a8e4a28b7d26970572eb846, type: 3}
+  m_Name: Diagonal Firetype
   m_EditorClassIdentifier: 
-  description: Childs Object To Player
-  _componentAdder:
-    script: {fileID: 11500000, guid: b18dbe5566e36cb498f2c11240343ebb, type: 3}
-    childTarget: 6
+  forEachRound: 0
+  forEachShotInRound: 0
+  shotsPerRound: 4
+  startAtDiagonal: 1

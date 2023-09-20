@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26ca94ee45934359857296cce5d77afa, type: 3}
-  m_Name: Add Rotation Upgrade
+  m_Name: Add Blue Ray
   m_EditorClassIdentifier: 
-  prefabToAdd: {fileID: -4042524590383549861, guid: eed2c132404a68145b0051642f103b48, type: 3}
+  description: Makes weapon shoot out Blue Rays.
+  prefabToAdd: {fileID: 189428670149763860, guid: 75cb8147455a2b4428fae75f8c76784c, type: 3}

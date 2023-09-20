@@ -6,13 +6,12 @@ using Random = System.Random;
 [CreateAssetMenu(menuName = "ScriptableObjects/FireTypes/RandomDirection")]
 public class RandomDirectionFire : FireType
 {
-    [SerializeField] private bool randomiseEachRound;
     private Vector2 direction;
     private System.Random _random = new Random();
     
-    protected override Vector2 GetDirection(Weapon owner, int round)
+    protected override Vector2 GetDirection(Weapon owner, int round, int _)
     {
-        if (randomiseEachRound || round == 0)
+        if (forEachRound || round == 0)
         {
             direction = new Vector2
             {

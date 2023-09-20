@@ -13,12 +13,12 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 95840b441f0754e499a5b55d97488a4c, type: 2}
     - target: {fileID: 5340752382283580874, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: prefabsToAdd.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5340752382283580874, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: prefabsToAdd.Array.data[0]
       value: 
-      objectReference: {fileID: 699767132114228402, guid: f0da600df0d3b224d868b67ac0bb4102, type: 3}
+      objectReference: {fileID: 5436271162279470113, guid: b0d1a19b84c6f3246bf98cda581b196f, type: 3}
     - target: {fileID: 5404104272743974705, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -82,6 +82,6 @@ PrefabInstance:
     - target: {fileID: 7977065025271890154, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: fireType
       value: 
-      objectReference: {fileID: 11400000, guid: 962c0cbd4f753cc43af5bb36ec6d86e2, type: 2}
+      objectReference: {fileID: 11400000, guid: d8867ba1ae596524cba3631bc55a908f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}

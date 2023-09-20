@@ -4,16 +4,26 @@ using UnityEngine;
 
 public abstract class FireType : ScriptableObject
 {
-    public Projectile Fire(WeaponDataHolder data, Weapon owner, Projectile prefab, int round)
+    [SerializeField] protected bool forEachRound;
+    [SerializeField] protected bool forEachShotInRound;
+    [SerializeField] protected int shotsPerRound = 1;
+
+    public List<Projectile> Fire(WeaponDataHolder data, Weapon owner, Projectile prefab, int round)
     {
-        Vector2 direction = GetDirection(owner, round);
-        Vector2 position = GetPosition(owner, round);
+        var projectiles = new List<Projectile>();
+
+        for (int i = 0; i < shotsPerRound; i++)
+        {
+            Vector2 direction = GetDirection(owner, round, i);
+            Vector2 position = GetPosition(owner, round, i);
+            Projectile instance = Instantiate(prefab, position, Quaternion.identity);
+            instance.Create(data, direction);
+            projectiles.Add(instance);
+        }
         
-        Projectile instance = Instantiate(prefab, position, Quaternion.identity);
-        instance.Create(data, direction);
-        return instance;
+        return projectiles;
     }
 
-    protected abstract Vector2 GetDirection(Weapon owner, int round);
-    protected virtual Vector2 GetPosition(Weapon owner, int round) => owner.transform.position;
+    protected abstract Vector2 GetDirection(Weapon owner, int round, int shotInRound);
+    protected virtual Vector2 GetPosition(Weapon owner, int round, int shotInRound) => owner.transform.position;
 }

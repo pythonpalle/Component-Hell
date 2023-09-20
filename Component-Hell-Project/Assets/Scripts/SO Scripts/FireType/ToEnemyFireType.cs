@@ -3,13 +3,11 @@
 [CreateAssetMenu(menuName = "ScriptableObjects/FireTypes/ToEnemy")]
 public class ToEnemyFireType : FireType
 {
-    [SerializeField] private bool findClosestEachRound;
     private Vector2 direction;
 
-
-    protected override Vector2 GetDirection(Weapon owner, int round)
+    protected override Vector2 GetDirection(Weapon owner, int round, int _)
     {
-        if (findClosestEachRound || round == 0)
+        if (forEachRound || round == 0)
         {
             Vector2 thisPos = owner.transform.position;
             var enemy = EnemyManager.Instance.FindClosestEnemy(thisPos);

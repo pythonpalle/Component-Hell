@@ -41,7 +41,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 0134519b428e7a14a85b52a98d35b182, type: 2}
     - target: {fileID: 5340752382283580874, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: prefabsToAdd.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5340752382283580874, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: prefabsToAdd.Array.data[0]
@@ -106,7 +106,7 @@ PrefabInstance:
     - target: {fileID: 6015097530929085078, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 989252837391974315, guid: a0e988ed8967fe0499c71e927352800b, type: 3}
+      objectReference: {fileID: 6701884327365574800, guid: f3533f484ee476d45b7d70bb23d8178a, type: 3}
     - target: {fileID: 6015097530929085078, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: OnPrepareFire.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: f5de580b076777a469d2823e6fdda35e, type: 2}
     - target: {fileID: 7500907647379181086, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: componentsToAdd.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7500907647379181086, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: componentsToAdd.Array.data[0].Script

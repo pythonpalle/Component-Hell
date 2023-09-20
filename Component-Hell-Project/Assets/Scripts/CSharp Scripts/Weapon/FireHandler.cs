@@ -38,8 +38,13 @@ public class FireHandler : MonoBehaviour
         
         for (int round = 0; round < amount; round++)
         {
-            var projectile = fireType.Fire(data, owner, projectilePrefab, round);
-            OnProjectileSpawned?.Invoke(projectile);
+            var projectiles = fireType.Fire(data, owner, projectilePrefab, round);
+
+            foreach (var projectile in projectiles)
+            {
+                OnProjectileSpawned?.Invoke(projectile);
+            }
+            
             yield return new WaitForSeconds(shotCooldown);
         }
 

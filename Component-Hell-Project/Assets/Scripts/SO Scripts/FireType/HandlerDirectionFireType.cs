@@ -7,7 +7,7 @@ public class HandlerDirectionFireType : FireType
 {
     private Vector2 lastNonZeroDirection = Vector2.right;
     
-    protected override Vector2 GetDirection(Weapon owner, int round)
+    protected override Vector2 GetDirection(Weapon owner, int round, int shotInRound)
     {
         var ownerDir = owner.Direction;
         if (ownerDir != Vector2.zero)
