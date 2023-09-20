@@ -2911,6 +2911,22 @@ PrefabInstance:
       propertyPath: instantiateScriptableObjects
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1282375001267824329, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282375001267824329, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282375001267824329, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282375001267824329, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3931818526344562772, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
       propertyPath: m_RootOrder
       value: 4

@@ -2,31 +2,43 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class EffectComponent : MonoBehaviour
 {
+    public UnityEvent OnActivasion;
+    public UnityEvent OnDeacivation;
+    
     private EffectManager _effectManager;
     public DynamicFloat effectDuration;
+
+    
 
     public void OnInstantiated(EffectManager effectManager, DynamicFloat effectTimeValue)
     {
         _effectManager = effectManager;
         effectDuration.AddMultiplier("Instantiator", effectTimeValue.Value);
-        
         _effectManager.AddEffect(this);
+
+        HandleActivation();
+    }
+
+    private void HandleActivation()
+    {
         Activate();
+        OnActivasion?.Invoke();
         Invoke(nameof(HandleDeactivation), effectDuration.Value);
     }
 
     public void Reactivate()
     {
-        Activate();
-        Invoke(nameof(HandleDeactivation), effectDuration.Value);
+        HandleActivation();
     }
     
     public void HandleDeactivation()
     {
         Deactivate();
+        OnDeacivation?.Invoke();
         gameObject.SetActive(false);
     }
     
