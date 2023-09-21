@@ -7,6 +7,7 @@ public class ChangeSpriteColor : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private bool findSpriteRenderer;
+    [SerializeField] private bool setChangeColorOnEnable;
     private Color baseColor;
 
     [SerializeField] private Color changeColor;
@@ -16,6 +17,11 @@ public class ChangeSpriteColor : MonoBehaviour
     {
         if (findSpriteRenderer && !spriteRenderer) 
             FindSpriteRenderer();
+
+        if (spriteRenderer && setChangeColorOnEnable)
+        {
+            spriteRenderer.color = changeColor; 
+        }
     }
 
     private void FindSpriteRenderer()
@@ -32,7 +38,6 @@ public class ChangeSpriteColor : MonoBehaviour
         if (spriteRenderer)
         {
             spriteRenderer.color = changeColor;
-            Debug.Log("Setting new sprite color!");
         }
     }
 

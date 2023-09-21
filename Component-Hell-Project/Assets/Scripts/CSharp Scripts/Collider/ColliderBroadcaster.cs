@@ -30,12 +30,15 @@ public class ColliderBroadcaster : MonoBehaviour
             return;
         
         OnColEnter?.Invoke(other);
+        
         AddToTriggerList(other.collider);
 
     }
 
     private void AddToTriggerList(Collider2D other)
     {
+        if (!limitColliderEnterDurations) return;
+        
         collidersThatHaveTriggered.Add(other);
         collidersDurations.Add(0);
     }

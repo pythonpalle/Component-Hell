@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8742121901350639822}
   - component: {fileID: 262709123173612923}
   - component: {fileID: 2284504414594510761}
+  - component: {fileID: 2475569742474871757}
   m_Layer: 8
   m_Name: Pickup XP Orb
   m_TagString: Untagged
@@ -182,6 +183,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2475569742474871757}
+        m_TargetAssemblyTypeName: TriggerDebugger, Assembly-CSharp
+        m_MethodName: OnTrig
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTrigExit:
     m_PersistentCalls:
       m_Calls: []
@@ -192,3 +205,15 @@ MonoBehaviour:
   limitColliderEnterDurations: 0
   collidersThatHaveTriggered: []
   collidersDurations: []
+--- !u!114 &2475569742474871757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5488782955888651468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd58690cb795684e88ecbe09537b243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

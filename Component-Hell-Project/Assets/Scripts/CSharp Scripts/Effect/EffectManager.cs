@@ -72,8 +72,11 @@ public class EffectManager : MonoBehaviour
                 }
                 continue;
             }
-            
-            adder.AddEffect(otherEffectContainer, effectTime);
+
+            if (adder)
+            {
+                adder.AddEffect(otherEffectContainer, effectTime);
+            }
         }
     }
 
