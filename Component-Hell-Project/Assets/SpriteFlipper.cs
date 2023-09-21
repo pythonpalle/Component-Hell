@@ -15,6 +15,9 @@ public class SpriteFlipper : MovementListener
 
     public override void OnMovementChange(Vector2 direction)
     {
+        if (direction.x == 0)
+            return;
+        
         spriteRenderer.flipX = compareFunction(direction.x, 0); 
     }
 
