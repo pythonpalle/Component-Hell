@@ -1042,6 +1042,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd63210941e4358b74db08ef3e0caed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &529369964 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1038614014563640135, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+  m_PrefabInstance: {fileID: 7825429799708889835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &580474909
 GameObject:
   m_ObjectHideFlags: 0
@@ -3637,6 +3642,18 @@ PrefabInstance:
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1061434644}
+    - target: {fileID: 1282375001267824329, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1038463501, guid: 8fa2e83411239fd489073490279bb531, type: 3}
+    - target: {fileID: 3043709278377385508, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: _movementListeners.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043709278377385508, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+      propertyPath: _movementListeners.Array.data[1]
+      value: 
+      objectReference: {fileID: 7825429799708889845}
     - target: {fileID: 3931818526344562772, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3693,7 +3710,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7825429799708889837, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
   m_PrefabInstance: {fileID: 7825429799708889835}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 529369964}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77aad5cdf7639b54db0c7c1d0f8a9d7d, type: 3}
@@ -3715,3 +3732,38 @@ MonoBehaviour:
   parameterString: Death
   parameterType: 0
   check: 0
+--- !u!114 &7825429799708889844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529369964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbd6eb2d040979e4e8c423433fbef95d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7825429799708889846}
+  sprite0: {fileID: -1090831342, guid: 8fa2e83411239fd489073490279bb531, type: 3}
+  sprite1: {fileID: 1038463501, guid: 8fa2e83411239fd489073490279bb531, type: 3}
+  timeBetweenShifts: 0.2
+--- !u!114 &7825429799708889845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529369964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d5d17801ec48e8a0e29ebb9b74c5f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7825429799708889846}
+  conditionToFlipLeftAndRight: 1
+--- !u!212 &7825429799708889846 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1282375001267824329, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+  m_PrefabInstance: {fileID: 7825429799708889835}
+  m_PrefabAsset: {fileID: 0}
