@@ -3,29 +3,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ParameterType
+{
+    Trigger,
+    Boolean,
+}
+
 public class PlayAnimation : MonoBehaviour
 {
+    [Header("Animation")]
     [SerializeField] private Animator animator;
-    [SerializeField] private AnimationClip clip;
-
-    private void Start()
-    {
-        Play();
-    }
+    
+    [Header("Parameter")]
+    [SerializeField] private string parameterString;
+    
+    // TODO: Gör parameter till scriptable object eller liknande
+    [SerializeField] private ParameterType parameterType;
+    [SerializeField] private bool check;
 
     public void Play()
     {
         // Check if the animator and clip are assigned
-        if (animator != null && clip != null)
+        if (animator != null)
         {
-            // Get the name of the clip and play it
-            string clipName = clip.name;
-            animator.Play(clipName);
-            Debug.Log("Play anim");
+            switch (parameterType)
+            {
+                case ParameterType.Trigger:
+                    animator.SetTrigger(parameterString);
+                    break;
+                case ParameterType.Boolean:
+                    animator.SetBool(parameterString, check);
+                    break;
+            }
         }
         else
         {
-            Debug.LogWarning("Animator or AnimationClip not assigned.");
+            Debug.LogWarning("Animator not assigned.");
         }
     }
 }
