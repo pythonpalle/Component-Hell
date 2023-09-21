@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 21182814918829297}
   - component: {fileID: 6488258729363562629}
   - component: {fileID: 4667312444992805379}
+  - component: {fileID: 6421947401092605544}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -164,6 +165,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &6421947401092605544
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382337021262599682}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2c21f0adf9dfdb940beab4e47983ce83, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &980571268552217625
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3356235161458554571}
   - component: {fileID: 926563022872248054}
+  - component: {fileID: 1623781934}
   m_Layer: 6
   m_Name: Health Container
   m_TagString: Untagged
@@ -210,7 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthDataHolder: {fileID: 11400000, guid: e10e36fe27efe914386533fb59d767d2, type: 2}
   instantiateScriptableObjects: 1
-  OnHealthStart:
+  OnSetMaxHealth:
     m_PersistentCalls:
       m_Calls: []
   OnHealthChange:
@@ -218,7 +241,31 @@ MonoBehaviour:
       m_Calls: []
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameOverManager, Assembly-CSharp
+        m_MethodName: OnPlayerDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1623781934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980571268552217625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4939e95dcee9fc840bdf7f81022f0043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1038614014563640135
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +278,7 @@ GameObject:
   - component: {fileID: 3043709278377385508}
   - component: {fileID: 8596997971173794564}
   - component: {fileID: 1150494220303879649}
+  - component: {fileID: 7825429799708889837}
   m_Layer: 6
   m_Name: Movement Container
   m_TagString: Player
@@ -294,6 +342,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8432f13feee10d34aa5fec55f2b67ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7825429799708889837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038614014563640135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77aad5cdf7639b54db0c7c1d0f8a9d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6868314340774776466
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +366,7 @@ GameObject:
   - component: {fileID: 5973226146907161653}
   - component: {fileID: 2644456310602226461}
   - component: {fileID: 7198650632701703282}
+  - component: {fileID: 1268520761}
   m_Layer: 6
   m_Name: Weapon Handler
   m_TagString: Untagged
@@ -374,3 +435,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 68e638db3a2c6f44c804c2472ec25f33, type: 2}
   instantiate: 1
+--- !u!114 &1268520761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6868314340774776466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15f66d5a12dab5c48b47642c7ba97ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

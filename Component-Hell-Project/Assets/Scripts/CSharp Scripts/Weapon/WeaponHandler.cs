@@ -15,6 +15,8 @@ public class WeaponHandler : MonoBehaviour, IMovementListener
     [Header("Events")]
     public UnityEvent<WeaponDataHolder> OnUpdateData;
     public UnityEvent<Weapon> OnWeaponAdded;
+
+    private bool canAttack = true;
     
     private void Awake()
     {
@@ -43,6 +45,8 @@ public class WeaponHandler : MonoBehaviour, IMovementListener
 
     void TryAttackWithWeapons()
     {
+        if (!canAttack) return;
+        
         foreach (var weapon in weapons)
         {
             weapon.TryAttack();
@@ -87,5 +91,10 @@ public class WeaponHandler : MonoBehaviour, IMovementListener
         {
             weapon.UpdateDirection(direction);
         }
+    }
+
+    public void CancelAttacks()
+    {
+        canAttack = false;
     }
 }
