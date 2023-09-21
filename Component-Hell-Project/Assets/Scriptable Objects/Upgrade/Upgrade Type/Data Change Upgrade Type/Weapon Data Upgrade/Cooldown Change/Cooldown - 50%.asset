@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3482fa9d7ccefa242b27130d25b6368d, type: 3}
-  m_Name: Starting Weapon Prefabs
+  m_Script: {fileID: 11500000, guid: dc1d954a54db42eabbcd15969b9d0b3b, type: 3}
+  m_Name: Cooldown - 50%
   m_EditorClassIdentifier: 
-  _weapons:
-  - {fileID: 2765004592449653398, guid: 431288f60b1cb984587b56fd076954c3, type: 3}
+  description: Cuts the cooldown in half.
+  modifyType: 0
+  amount: 0.5
+  weaponDataType: 7

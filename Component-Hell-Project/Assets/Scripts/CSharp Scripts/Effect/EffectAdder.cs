@@ -9,6 +9,6 @@ public class EffectAdder : MonoBehaviour
     public void AddEffect(EffectManager otherEffectManager, DynamicFloat effectTime)
     {
         var effectInstance = Instantiate(effectPrefab, otherEffectManager.transform);
-        effectInstance.OnInstantiated(otherEffectManager, effectTime);
+        effectInstance.OnInstantiated(otherEffectManager, effectTime, transform);
     }
 }

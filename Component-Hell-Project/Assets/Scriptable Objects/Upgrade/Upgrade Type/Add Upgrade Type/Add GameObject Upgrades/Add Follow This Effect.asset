@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3482fa9d7ccefa242b27130d25b6368d, type: 3}
-  m_Name: Starting Weapon Prefabs
+  m_Script: {fileID: 11500000, guid: 26ca94ee45934359857296cce5d77afa, type: 3}
+  m_Name: Add Follow This Effect
   m_EditorClassIdentifier: 
-  _weapons:
-  - {fileID: 2765004592449653398, guid: 431288f60b1cb984587b56fd076954c3, type: 3}
+  description: Makes enemies follow it on impact.
+  prefabToAdd: {fileID: 5436271162279470113, guid: 60777646d1fb1fc4db0130a993685456, type: 3}

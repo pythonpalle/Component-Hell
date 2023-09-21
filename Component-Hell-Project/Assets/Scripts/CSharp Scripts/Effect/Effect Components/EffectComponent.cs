@@ -11,11 +11,13 @@ public abstract class EffectComponent : MonoBehaviour
     
     private EffectManager _effectManager;
     public DynamicFloat effectDuration;
+    protected Transform Adder { get; set; }
 
-    
 
-    public void OnInstantiated(EffectManager effectManager, DynamicFloat effectTimeValue)
+    public void OnInstantiated(EffectManager effectManager, DynamicFloat effectTimeValue, Transform adder)
     {
+        Adder = adder;
+        
         _effectManager = effectManager;
         effectDuration.AddMultiplier("Instantiator", effectTimeValue.Value);
         _effectManager.AddEffect(this);
@@ -45,4 +47,9 @@ public abstract class EffectComponent : MonoBehaviour
     protected abstract void Activate();
 
     protected abstract void Deactivate();
+
+    public void SetAdder(EffectAdder adder)
+    {
+        if (adder) Adder = adder.transform;
+    }
 }

@@ -67,6 +67,7 @@ public class EffectManager : MonoBehaviour
                 if (!effectComponent.gameObject.activeSelf)
                 {
                     effectComponent.gameObject.SetActive(true);
+                    effectComponent.SetAdder(adder);
                     effectComponent.Reactivate();
                 }
                 continue;

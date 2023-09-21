@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9298c55fc7ee416895a809a76fb727f4, type: 3}
   m_Name: Seek + Dmg on stay + 1 penetrarion 1
   m_EditorClassIdentifier: 
-  description: Seeks out nearest enemy, deals daamge over time.
+  description: Seeks out nearest enemy, deals damge over time.
   upgrades:
   - {fileID: 11400000, guid: cdad0a6b31c232d4cb9fbf25ab503858, type: 2}
   - {fileID: 11400000, guid: fe4314ed4adcc134fad4183ce75ae2cb, type: 2}
