@@ -8,13 +8,9 @@ using UnityEngine.Pool;
 public class AddXp : MonoBehaviour
 {
     [SerializeField] private float xpToAdd = 1f;
-    [SerializeField] private float lifeTime = 10f;
-    public float timeOfLastInvisible;
     private IObjectPool<AddXp> xpPool;
 
-    public bool visible = true;
-
-    Camera mainCamera;
+    [SerializeField] private InvisibilityChecker invisibilityChecker;
 
     public void Add()
     {
@@ -23,49 +19,13 @@ public class AddXp : MonoBehaviour
 
     private void OnEnable()
     {
-        timeOfLastInvisible = Time.time;
-        mainCamera = Camera.main;
+        invisibilityChecker.OnInvisibleTooLong.AddListener(ReleaseFromPool);
     }
 
-    private void Update()
+    private void OnDisable()
     {
-        UpdateVisibilityCheck();
-        
-        
-
-        if (!visible && Time.time > timeOfLastInvisible + lifeTime)
-        {
-            ReleaseFromPool();
-        }
+        invisibilityChecker.OnInvisibleTooLong.RemoveListener(ReleaseFromPool);
     }
-
-    private void UpdateVisibilityCheck()
-    {
-        Vector3 viewportPoint = mainCamera.WorldToViewportPoint(gameObject.transform.position);
-
-        if (!visible && viewportPoint.x >= 0 && viewportPoint.x <= 1 && viewportPoint.y >= 0 && viewportPoint.y <= 1 && viewportPoint.z >= 0)
-        {
-            visible = true;
-            timeOfLastInvisible = Time.time;
-        }
-        else
-        {
-            visible = false;
-        }
-    }
-
-    // private void OnBecameVisible()
-    // {
-    //     visible = true;
-    // }
-    //
-    // private void OnBecameInvisible()
-    // {
-    //     Debug.Log("Invisible");
-    //     
-    //     visible = false;
-    //     timeOfLastInvisible = Time.time;
-    // }
 
     public void SetPool(IObjectPool<AddXp> xpPool)
     {

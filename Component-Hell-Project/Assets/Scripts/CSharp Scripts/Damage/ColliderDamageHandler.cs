@@ -7,7 +7,7 @@ public class ColliderDamageHandler : MonoBehaviour
 {
     public DynamicFloat damageValue;
     [SerializeField] private LayerMask layerMask;
-    
+
     public void CallTryInflictDamage(Collision2D other)
     {
         TryInflictDamage(other);
@@ -29,6 +29,8 @@ public class ColliderDamageHandler : MonoBehaviour
             return false;
         
         var damageReciever = other.GetComponentInChildren<DamageReciever>();
+        
+        
         if (damageReciever)
         {
             damageReciever.RecieveDamage(damageValue.Value);
@@ -37,4 +39,6 @@ public class ColliderDamageHandler : MonoBehaviour
 
         return false;
     }
+
+    
 }

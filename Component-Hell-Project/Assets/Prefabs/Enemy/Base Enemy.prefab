@@ -135,6 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5842228505393806549}
   - component: {fileID: 1263276534141962470}
+  - component: {fileID: 3253390119582925004}
   - component: {fileID: 5842228505393806548}
   - component: {fileID: 5237160329902824928}
   - component: {fileID: 9061496292188465232}
@@ -179,6 +180,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7412210974f102849aab805b9200147c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invisibilityChecker: {fileID: 3253390119582925004}
+--- !u!114 &3253390119582925004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5842228505393806546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec3af40a3124ef39b8d2ca67e8a9eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 10
+  timeOfLastInvisible: 0
+  visible: 1
+  OnInvisibleTooLong:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &5842228505393806548
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -320,6 +340,7 @@ MonoBehaviour:
   OnTrigStay:
     m_PersistentCalls:
       m_Calls: []
+  timeBetweenEnterChecks: 2
 --- !u!114 &9189879113252727347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,6 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5842228505393806548}
+  conditionToFlipLeftAndRight: 0
 --- !u!1 &7118357464377202739
 GameObject:
   m_ObjectHideFlags: 0

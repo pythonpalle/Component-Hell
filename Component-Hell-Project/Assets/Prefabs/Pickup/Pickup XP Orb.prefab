@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2561437857087559956}
   - component: {fileID: 3691062421679509037}
+  - component: {fileID: 888106251940984510}
   - component: {fileID: 8742121901350639822}
   - component: {fileID: 262709123173612923}
   - component: {fileID: 2284504414594510761}
@@ -48,7 +49,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xpToAdd: 2
-  lifeTime: 1
+  invisibilityChecker: {fileID: 888106251940984510}
+--- !u!114 &888106251940984510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5488782955888651468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec3af40a3124ef39b8d2ca67e8a9eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 10
+  OnInvisibleTooLong:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &8742121901350639822
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -171,3 +188,4 @@ MonoBehaviour:
   OnTrigStay:
     m_PersistentCalls:
       m_Calls: []
+  timeBetweenEnterChecks: 2
