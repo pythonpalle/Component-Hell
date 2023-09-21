@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1586842587356501710}
   - component: {fileID: 7392123925362709660}
+  - component: {fileID: 6419050481222575663}
   m_Layer: 0
   m_Name: Follow this effect
   m_TagString: Untagged
@@ -46,10 +47,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnActivasion:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6419050481222575663}
+        m_TargetAssemblyTypeName: ChangeSpriteColor, Assembly-CSharp
+        m_MethodName: SetNewColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeacivation:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6419050481222575663}
+        m_TargetAssemblyTypeName: ChangeSpriteColor, Assembly-CSharp
+        m_MethodName: ResetColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   effectDuration:
     value: 1
   deactivationTargetName: Player
+--- !u!114 &6419050481222575663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7730632276712080800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5baf960c69b820040a341d0849cbedad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  findSpriteRenderer: 1
+  changeColor: {r: 0.9339623, g: 0, b: 0.41550338, a: 1}

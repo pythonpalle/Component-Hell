@@ -189,3 +189,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   timeBetweenEnterChecks: 2
+  limitColliderEnterDurations: 0
+  collidersThatHaveTriggered: []
+  collidersDurations: []

@@ -17,22 +17,26 @@ public class ColliderBroadcaster : MonoBehaviour
     [HideInInspector] public UnityEvent<Collider2D> OnTrigStay;
     
     [SerializeField] private float timeBetweenEnterChecks = 2;
-
-    // private Dictionary <Collider2D, float> triggerEnterers = new Dictionary <Collider2D, float>();
-    // private List <Collider2D> triggerEnterersToRemove = new List <Collider2D>();
-
-    private List<Collider2D> collidersThatHaveTriggered = new List<Collider2D>();
-    private List<float> collidersDurations = new List<float>();
+    
+    [SerializeField] private bool limitColliderEnterDurations = true;
+    [SerializeField] private List<Collider2D> collidersThatHaveTriggered = new List<Collider2D>();
+    [SerializeField] private List<float> collidersDurations = new List<float>();
     
 
     // Collsion
     public void OnCollisionEnter2D(Collision2D other)
     {
-        if (collidersThatHaveTriggered.Contains(other.collider))
+        if (limitColliderEnterDurations && collidersThatHaveTriggered.Contains(other.collider))
             return;
         
         OnColEnter?.Invoke(other);
-        collidersThatHaveTriggered.Add(other.collider);
+        AddToTriggerList(other.collider);
+
+    }
+
+    private void AddToTriggerList(Collider2D other)
+    {
+        collidersThatHaveTriggered.Add(other);
         collidersDurations.Add(0);
     }
 
@@ -50,12 +54,11 @@ public class ColliderBroadcaster : MonoBehaviour
     // Trigger
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (collidersThatHaveTriggered.Contains(other))
+        if (collidersThatHaveTriggered.Contains(other) && limitColliderEnterDurations)
             return;
         
         OnTrigEnter?.Invoke(other);
-        collidersThatHaveTriggered.Add(other);
-        collidersDurations.Add(0);
+        AddToTriggerList(other);
     }
 
     public void OnTriggerExit2D(Collider2D other)
@@ -77,6 +80,7 @@ public class ColliderBroadcaster : MonoBehaviour
     {
         for (int i = collidersThatHaveTriggered.Count - 1; i >= 0; i--)
         {
+            var collider = collidersThatHaveTriggered[i];
             if (collidersDurations[i] >= timeBetweenEnterChecks)
             {
                 collidersThatHaveTriggered.RemoveAt(i);

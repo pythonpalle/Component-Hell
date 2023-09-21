@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Ray Gun Extension
       objectReference: {fileID: 0}
+    - target: {fileID: 5609120994992798349, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7500907647379181086, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: componentsToAdd.Array.size
       value: 1
