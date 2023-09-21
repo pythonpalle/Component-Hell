@@ -20,7 +20,6 @@ public class Enemy : MonoBehaviour, IHasEnemyPool
         EnemyManager.Instance.RemoveEnemy(this);
         invisibilityChecker.OnInvisibleTooLong.RemoveListener(ReleaseFromPool);
     }
-    
 
     public void SetPool(ObjectPool<Enemy> enemyPool)
     {

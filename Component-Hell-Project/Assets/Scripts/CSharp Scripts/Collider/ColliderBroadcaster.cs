@@ -31,9 +31,6 @@ public class ColliderBroadcaster : MonoBehaviour
         if (collidersThatHaveTriggered.Contains(other.collider))
             return;
         
-        // if (triggerEnterers.ContainsKey(other.collider))
-        //     return;
-        //
         OnColEnter?.Invoke(other);
         collidersThatHaveTriggered.Add(other.collider);
         collidersDurations.Add(0);
@@ -85,32 +82,10 @@ public class ColliderBroadcaster : MonoBehaviour
                 collidersThatHaveTriggered.RemoveAt(i);
                 collidersDurations.RemoveAt(i);
             }
+            else
+            {
+                collidersDurations[i] += Time.deltaTime;
+            }
         }
-        
-        // foreach (var collider in triggerEnterers)
-        // {
-        //     if (collider.Value >= timeBetweenEnterChecks)
-        //     {
-        //         triggerEnterersToRemove.Add(collider.Key);
-        //     }
-        //     else
-        //     {
-        //         triggerEnterers[collider.Key] += Time.deltaTime;
-        //     }
-        // }
-        //
-        // foreach (var toRemove in triggerEnterersToRemove)
-        // {
-        //     triggerEnterers.Remove(toRemove);
-        // }
-        //
-        // triggerEnterersToRemove.Clear();
-
-        // for (int i = triggerEnterersToRemove.Count - 1; i >= 0; i--)
-        // {
-        //     triggerEnterers.Remove(triggerEnterersToRemove[i]);
-        //     triggerEnterersToRemove.RemoveAt(i);
-        // }
-        
     }
 }

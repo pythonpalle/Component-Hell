@@ -111,7 +111,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (outOfScreenX)
         {
-            xPos = negative ? -maxX : minX;
+            xPos = negative ? minX : maxX;
             yPos = Random.Range(minY, maxY);
         }
         else

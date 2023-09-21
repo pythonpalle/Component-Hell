@@ -155,7 +155,6 @@ public class GameUpgradeManager : MonoBehaviour
         for (int i = 0; i < max; i++)
         {
             chosenOptions.Add(availiableUpgrades[i]);
-            Debug.Log($"Chosen option: {availiableUpgrades[i]}");
         }
 
         return chosenOptions;

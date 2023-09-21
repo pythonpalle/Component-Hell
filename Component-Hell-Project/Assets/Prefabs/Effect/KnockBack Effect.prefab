@@ -51,5 +51,5 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   effectDuration:
-    value: 0.1
+    value: 3
   knockBackForce: 20

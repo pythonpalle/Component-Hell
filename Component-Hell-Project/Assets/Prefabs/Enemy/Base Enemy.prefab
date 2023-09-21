@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 9061496292188465232}
   - component: {fileID: 4899356758407600590}
   - component: {fileID: 9189879113252727347}
+  - component: {fileID: 5876559822937091505}
   m_Layer: 7
   m_Name: Base Enemy
   m_TagString: Enemy
@@ -194,8 +195,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 10
-  timeOfLastInvisible: 0
-  visible: 1
   OnInvisibleTooLong:
     m_PersistentCalls:
       m_Calls: []
@@ -380,6 +379,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5876559822937091505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5842228505393806546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace7d204b8f61e14ea9939e7dd90ab37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5842228505949120094
 GameObject:
   m_ObjectHideFlags: 0
