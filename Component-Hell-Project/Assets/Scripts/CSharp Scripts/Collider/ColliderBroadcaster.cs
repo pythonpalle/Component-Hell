@@ -18,18 +18,25 @@ public class ColliderBroadcaster : MonoBehaviour
     
     [SerializeField] private float timeBetweenEnterChecks = 2;
 
-    private Dictionary <Collider2D, float> triggerEnterers = new Dictionary <Collider2D, float>();
-    private List <Collider2D> triggerEnterersToRemove = new List <Collider2D>();
+    // private Dictionary <Collider2D, float> triggerEnterers = new Dictionary <Collider2D, float>();
+    // private List <Collider2D> triggerEnterersToRemove = new List <Collider2D>();
+
+    private List<Collider2D> collidersThatHaveTriggered = new List<Collider2D>();
+    private List<float> collidersDurations = new List<float>();
     
 
     // Collsion
     public void OnCollisionEnter2D(Collision2D other)
     {
-        if (triggerEnterers.ContainsKey(other.collider))
+        if (collidersThatHaveTriggered.Contains(other.collider))
             return;
         
+        // if (triggerEnterers.ContainsKey(other.collider))
+        //     return;
+        //
         OnColEnter?.Invoke(other);
-        triggerEnterers.Add(other.collider, 0);
+        collidersThatHaveTriggered.Add(other.collider);
+        collidersDurations.Add(0);
     }
 
     public void OnCollisionExit2D(Collision2D other)
@@ -46,11 +53,12 @@ public class ColliderBroadcaster : MonoBehaviour
     // Trigger
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (triggerEnterers.ContainsKey(other))
+        if (collidersThatHaveTriggered.Contains(other))
             return;
         
         OnTrigEnter?.Invoke(other);
-        triggerEnterers.Add(other, 0);
+        collidersThatHaveTriggered.Add(other);
+        collidersDurations.Add(0);
     }
 
     public void OnTriggerExit2D(Collider2D other)
@@ -70,23 +78,39 @@ public class ColliderBroadcaster : MonoBehaviour
 
     private void HandleTriggerEnterers()
     {
-        foreach (var collider in triggerEnterers)
+        for (int i = collidersThatHaveTriggered.Count - 1; i >= 0; i--)
         {
-            if (collider.Value >= timeBetweenEnterChecks)
+            if (collidersDurations[i] >= timeBetweenEnterChecks)
             {
-                triggerEnterersToRemove.Add(collider.Key);
-            }
-            else
-            {
-                triggerEnterers[collider.Key] += Time.deltaTime;
+                collidersThatHaveTriggered.RemoveAt(i);
+                collidersDurations.RemoveAt(i);
             }
         }
+        
+        // foreach (var collider in triggerEnterers)
+        // {
+        //     if (collider.Value >= timeBetweenEnterChecks)
+        //     {
+        //         triggerEnterersToRemove.Add(collider.Key);
+        //     }
+        //     else
+        //     {
+        //         triggerEnterers[collider.Key] += Time.deltaTime;
+        //     }
+        // }
+        //
+        // foreach (var toRemove in triggerEnterersToRemove)
+        // {
+        //     triggerEnterers.Remove(toRemove);
+        // }
+        //
+        // triggerEnterersToRemove.Clear();
 
-        for (int i = triggerEnterersToRemove.Count - 1; i >= 0; i--)
-        {
-            triggerEnterers.Remove(triggerEnterersToRemove[i]);
-            triggerEnterersToRemove.RemoveAt(i);
-        }
+        // for (int i = triggerEnterersToRemove.Count - 1; i >= 0; i--)
+        // {
+        //     triggerEnterers.Remove(triggerEnterersToRemove[i]);
+        //     triggerEnterersToRemove.RemoveAt(i);
+        // }
         
     }
 }
