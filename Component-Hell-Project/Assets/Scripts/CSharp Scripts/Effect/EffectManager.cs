@@ -9,7 +9,9 @@ public class EffectManager : MonoBehaviour
 
     [SerializeField] private List<EffectComponent> activeEffects = new List<EffectComponent>();
     [SerializeField] private List<EffectAdder> effectAdders = new List<EffectAdder>();
-    
+
+    [SerializeField] private List<EffectListener> _effectListeners;
+
 
     public void AddMultiplier(string name, float value)
     {

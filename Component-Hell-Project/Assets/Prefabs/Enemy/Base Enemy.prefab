@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6467423513790312526}
   - component: {fileID: 4297907831861574232}
+  - component: {fileID: 4643657627278174629}
   m_Layer: 7
   m_Name: Enemy Effect
   m_TagString: Untagged
@@ -28,7 +29,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 839653429761306605}
   m_Father: {fileID: 5842228505393806549}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,6 +50,21 @@ MonoBehaviour:
     value: 1
   activeEffects: []
   effectAdders: []
+  _effectListeners: []
+--- !u!114 &4643657627278174629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4152213988749270580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b50e62ae7c86f248ab1bfbeb750d254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effectListeners:
+  - {fileID: 8759407116524924429}
 --- !u!1 &5215295089176568653
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +537,79 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5842228505393806548}
   conditionToFlipLeftAndRight: 0
+--- !u!1 &6623589736878853381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 839653429761306605}
+  - component: {fileID: 8759407116524924429}
+  - component: {fileID: 4902512851974231325}
+  m_Layer: 7
+  m_Name: Freeze Listener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &839653429761306605
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6623589736878853381}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6467423513790312526}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8759407116524924429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6623589736878853381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f225c8b04f9d47544bfc2b40e6871ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effectType: 0
+  OnApplied:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4902512851974231325}
+        m_TargetAssemblyTypeName: EnemyFreeze, Assembly-CSharp
+        m_MethodName: Apply
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4902512851974231325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6623589736878853381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825df3a62076b994b9a08fb98b2f4a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7118357464377202739
 GameObject:
   m_ObjectHideFlags: 0

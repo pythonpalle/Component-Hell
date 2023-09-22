@@ -27,6 +27,7 @@ MonoBehaviour:
     value: 1
   effectDuration:
     value: 1
+  EffectAppliers: []
   burstCooldown:
     value: 1
   shotCooldown:
