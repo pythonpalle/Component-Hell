@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EffectTimeTransfer : MonoBehaviour, WeaponDataUpdateListener
+public class EffectTimeTransfer : MonoBehaviour, IWeaponDataUpdateListener
 {
     private EffectManager _effectManager;
 

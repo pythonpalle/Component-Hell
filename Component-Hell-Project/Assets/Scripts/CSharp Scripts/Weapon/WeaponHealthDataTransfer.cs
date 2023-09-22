@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponHealthDataTransfer : MonoBehaviour, WeaponDataUpdateListener
+public class WeaponHealthDataTransfer : MonoBehaviour, IWeaponDataUpdateListener
 {
     private HealthManager _healthManager;
     

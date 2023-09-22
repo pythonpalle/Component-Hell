@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SizeManager : MonoBehaviour, WeaponDataUpdateListener
+public class SizeManager : MonoBehaviour, IWeaponDataUpdateListener
 {
    [SerializeField] private Transform sizeTransform;
    [SerializeField] private DynamicFloat size;
@@ -17,7 +17,7 @@ public class SizeManager : MonoBehaviour, WeaponDataUpdateListener
    }
 }
 
-public interface WeaponDataUpdateListener
+public interface IWeaponDataUpdateListener
 {
     public void OnWeaponDataUpdate(WeaponDataHolder data);
 }

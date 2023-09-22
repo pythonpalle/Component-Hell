@@ -31,7 +31,13 @@ public class WeaponDataContainer : MonoBehaviour
         to.amount.AddAdder(owner, from.amount.Value);
         to.penetration.AddAdder(owner, from.penetration.Value);
 
-        to.EffectAppliers = from.EffectAppliers;
+        foreach (var effectType in from.EffectAppliers)
+        {
+            if (!to.EffectAppliers.Contains(effectType))
+            {
+                to.EffectAppliers.Add(effectType);
+            }
+        }
     }
 
     public void UpdateData(WeaponDataHolder fromData)

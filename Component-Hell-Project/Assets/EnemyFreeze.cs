@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyFreeze : MonoBehaviour
 {
-    public void Apply()
+    public void Freeze()
     {
         Debug.Log("Freeze me!");
     }

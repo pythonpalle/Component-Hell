@@ -6,9 +6,11 @@ public class EffectAddUpgrade : UpgradeObject
     [SerializeField] private EffectType effectType;
     public override void Apply(Transform owner)
     {
+        Debug.Log("Owner: " + owner.transform.name);
+        
         WeaponDataContainer weaponDataContainer = owner.GetComponent<WeaponDataContainer>();
         var weaponData = weaponDataContainer.WeaponData;
         
-        weaponData.EffectAppliers.Add(new EffectTypeWrapper(effectType));
+        weaponData.EffectAppliers.Add(effectType);
     } 
 }

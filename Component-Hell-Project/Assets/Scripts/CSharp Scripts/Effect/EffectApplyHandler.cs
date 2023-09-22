@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EffectApplyHandler : MonoBehaviour, WeaponDataUpdateListener
+public class EffectApplyHandler : MonoBehaviour, IWeaponDataUpdateListener
 {
-    public List<EffectTypeWrapper> EffectAppliers;
-    private DynamicFloat effectDuration;
+    public List<EffectType> EffectAppliers;
+    private float effectDuration = 1;
 
     public void OnWeaponDataUpdate(WeaponDataHolder data)
     {
         EffectAppliers = data.EffectAppliers;
-        effectDuration = data.effectDuration;
+        effectDuration = data.effectDuration.Value;
     }
 
     public void TryApplyEffects(Collider2D other)
@@ -22,6 +22,6 @@ public class EffectApplyHandler : MonoBehaviour, WeaponDataUpdateListener
             return;
         }
 
-        effectListenerManager.ApplyEffects(EffectAppliers);
+        effectListenerManager.ApplyEffects(EffectAppliers, effectDuration);
     }
 }

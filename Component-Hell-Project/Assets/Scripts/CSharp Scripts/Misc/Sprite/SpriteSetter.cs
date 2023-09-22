@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpriteSetter : MonoBehaviour, WeaponDataUpdateListener
+public class SpriteSetter : MonoBehaviour, IWeaponDataUpdateListener
 {
     [SerializeField] private SpriteRenderer _spriteRenderer;
     

@@ -25,7 +25,7 @@ public class WeaponDataHolder : ScriptableObject
     
     [Header("Effect")]
     public DynamicFloat effectDuration;
-    public List<EffectTypeWrapper> EffectAppliers = new List<EffectTypeWrapper>();
+    public List<EffectType> EffectAppliers = new List<EffectType>();
 
     [Header("Cooldown")]
     [Tooltip("Cooldown time between bursts of shots")]

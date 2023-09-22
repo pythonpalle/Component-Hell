@@ -186,7 +186,7 @@ PrefabInstance:
     - target: {fileID: 7977065025271890154, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: fireType
       value: 
-      objectReference: {fileID: 11400000, guid: fc802ab6c04c48240898823b7ac3c89d, type: 2}
+      objectReference: {fileID: 11400000, guid: caab38807f9b2c4479657f153425aa9b, type: 2}
     - target: {fileID: 7977065025271890154, guid: 8ca15a64a3f7ca34485397f065ad4569, type: 3}
       propertyPath: instantiateFireType
       value: 1

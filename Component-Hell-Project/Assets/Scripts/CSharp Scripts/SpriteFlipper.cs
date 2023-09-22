@@ -12,10 +12,11 @@ public class SpriteFlipper : MovementListener
     {
         SetCompareFunction();
     }
+    
 
     public override void OnMovementChange(Vector2 direction)
     {
-        if (direction.x == 0)
+        if ( direction.x == 0)
             return;
         
         spriteRenderer.flipX = compareFunction(direction.x, 0); 

@@ -6,37 +6,15 @@ using UnityEngine.Serialization;
 public class ChangeSpriteColor : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private bool findSpriteRenderer;
-    [SerializeField] private bool setChangeColorOnEnable;
-    private Color baseColor;
 
+    [SerializeField] private Color baseColor;
     [SerializeField] private Color changeColor;
     
-    // Start is called before the first frame update
-    void OnEnable()
-    {
-        if (findSpriteRenderer && !spriteRenderer) 
-            FindSpriteRenderer();
-
-        if (spriteRenderer && setChangeColorOnEnable)
-        {
-            spriteRenderer.color = changeColor; 
-        }
-    }
-
-    private void FindSpriteRenderer()
-    {
-        spriteRenderer = MyUtility.TryFindComponentUpwards<SpriteRenderer>(transform);
-        if (spriteRenderer)
-        {
-            baseColor = spriteRenderer.color;
-        }
-    }
-
     public void SetNewColor()
     {
         if (spriteRenderer)
         {
+            Debug.Log("Change color");
             spriteRenderer.color = changeColor;
         }
     }

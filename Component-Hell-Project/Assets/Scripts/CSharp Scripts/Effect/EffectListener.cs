@@ -6,5 +6,16 @@ using UnityEngine.Events;
 public class EffectListener : MonoBehaviour
 {
     public EffectType _effectType;
-    public UnityEvent OnApplied;
+    public UnityEvent OnActivate;
+    public UnityEvent OnDeactivate;
+
+    public void Activate()
+    {
+        OnActivate?.Invoke();
+    }
+
+    public void Deactivate()
+    {
+        OnDeactivate?.Invoke();
+    }
 }

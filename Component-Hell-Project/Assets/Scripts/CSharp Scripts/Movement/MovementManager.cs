@@ -29,7 +29,8 @@ public class MovementManager : MonoBehaviour
         
         foreach (var listener in _movementListeners)
         {
-            listener.OnMovementChange(direction);
+            if (listener.enabled)
+                listener.OnMovementChange(direction);
         }
 
         _dataHolder.moveDirection = direction.normalized;

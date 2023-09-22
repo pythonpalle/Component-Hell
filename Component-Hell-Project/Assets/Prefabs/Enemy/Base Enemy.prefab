@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6467423513790312526}
-  - component: {fileID: 4297907831861574232}
   - component: {fileID: 4643657627278174629}
   m_Layer: 7
   m_Name: Enemy Effect
@@ -34,23 +33,6 @@ Transform:
   m_Father: {fileID: 5842228505393806549}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4297907831861574232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4152213988749270580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 615b2b88282f30a46ace3956f2e2cb53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectTime:
-    value: 1
-  activeEffects: []
-  effectAdders: []
-  _effectListeners: []
 --- !u!114 &4643657627278174629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +140,6 @@ GameObject:
   - component: {fileID: 9061496292188465232}
   - component: {fileID: 4899356758407600590}
   - component: {fileID: 9189879113252727347}
-  - component: {fileID: 6220644745745081223}
   m_Layer: 7
   m_Name: Base Enemy
   m_TagString: Enemy
@@ -399,22 +380,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6220644745745081223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5842228505393806546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5baf960c69b820040a341d0849cbedad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 5842228505393806548}
-  findSpriteRenderer: 0
-  setChangeColorOnEnable: 1
-  changeColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &5842228505949120094
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +512,8 @@ GameObject:
   m_Component:
   - component: {fileID: 839653429761306605}
   - component: {fileID: 8759407116524924429}
-  - component: {fileID: 4902512851974231325}
+  - component: {fileID: 4938817821364968296}
+  - component: {fileID: 258523155385318372}
   m_Layer: 7
   m_Name: Freeze Listener
   m_TagString: Untagged
@@ -583,12 +549,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _effectType: 0
-  OnApplied:
+  OnActivate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4902512851974231325}
-        m_TargetAssemblyTypeName: EnemyFreeze, Assembly-CSharp
-        m_MethodName: Apply
+      - m_Target: {fileID: 4938817821364968296}
+        m_TargetAssemblyTypeName: ChangeSpriteColor, Assembly-CSharp
+        m_MethodName: SetNewColor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -598,7 +564,94 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4902512851974231325
+      - m_Target: {fileID: 258523155385318372}
+        m_TargetAssemblyTypeName: ChangeSpeed, Assembly-CSharp
+        m_MethodName: SetNewSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 487623394171996275}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 747023148179750769}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeactivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4938817821364968296}
+        m_TargetAssemblyTypeName: ChangeSpriteColor, Assembly-CSharp
+        m_MethodName: ResetColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 258523155385318372}
+        m_TargetAssemblyTypeName: ChangeSpeed, Assembly-CSharp
+        m_MethodName: ResetSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 487623394171996275}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 747023148179750769}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &4938817821364968296
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -607,9 +660,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 6623589736878853381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 825df3a62076b994b9a08fb98b2f4a93, type: 3}
+  m_Script: {fileID: 11500000, guid: 5baf960c69b820040a341d0849cbedad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 5842228505393806548}
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  changeColor: {r: 0, g: 0.9529412, b: 1, a: 1}
+--- !u!114 &258523155385318372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6623589736878853381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d85ffec2180db14e8f223650b4fe8dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMultiplier: 0
+  _movementManager: {fileID: 1071655746247319616}
 --- !u!1 &7118357464377202739
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,18 +735,6 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4297907831861574232}
-        m_TargetAssemblyTypeName: EffectManager, Assembly-CSharp
-        m_MethodName: RemoveAllEffects
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2651436482151402610}
         m_TargetAssemblyTypeName: HealthManager, Assembly-CSharp
         m_MethodName: ResetHealth

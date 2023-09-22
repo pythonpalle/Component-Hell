@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponDamageDataTransfer : MonoBehaviour, WeaponDataUpdateListener
+public class WeaponDamageDataTransfer : MonoBehaviour, IWeaponDataUpdateListener
 {
     private ColliderDamageHandler _damageHandler;
     

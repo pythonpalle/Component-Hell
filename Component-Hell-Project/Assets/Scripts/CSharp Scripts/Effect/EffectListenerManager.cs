@@ -9,6 +9,10 @@ public class EffectListenerManager : MonoBehaviour
     [SerializeField] private List<EffectListener> _effectListeners = new List<EffectListener>();
     private Dictionary<EffectType, List<EffectListener>> listenerDictionary = new Dictionary<EffectType, List<EffectListener>>();
 
+    private float effectDuration = 1;
+    private float timeOfLastActivation;
+    private bool isActivated;
+    
     private void Start()
     {
         InitializeListenerDictionary();
@@ -29,24 +33,56 @@ public class EffectListenerManager : MonoBehaviour
         }
     }
 
-    public void ApplyEffects(List<EffectTypeWrapper> effectAppliers)
+    public void ApplyEffects(List<EffectType> effectAppliers, float duration)
     {
+        if (isActivated)
+            return;
+
+        effectDuration = duration;
+        
         foreach (var applier in effectAppliers)
         {
             ApplyAllOfType(applier);
-        } 
+        }
+
+        isActivated = true;
+        timeOfLastActivation = Time.time;
     }
+    
 
-    private void ApplyAllOfType(EffectTypeWrapper typeWrapper)
+    private void ApplyAllOfType(EffectType type)
     {
-        var type = typeWrapper.Type;
-
         if (!listenerDictionary.ContainsKey(type))
             return;
 
         foreach (var listener in listenerDictionary[type])
         {
-            listener.OnApplied?.Invoke();
+            listener.Activate();
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (!isActivated) return;
+        
+        UpdateDeactivation();
+    }
+
+    private void UpdateDeactivation()
+    {
+        if (Time.time >= timeOfLastActivation + effectDuration)
+        {
+            isActivated = false;
+            HandleDeactivations();
+            Debug.Log("Deactivate all stuffs");
+        }
+    }
+
+    private void HandleDeactivations()
+    {
+        foreach (var listener in _effectListeners)
+        {
+            listener.Deactivate(); 
         }
     }
 }

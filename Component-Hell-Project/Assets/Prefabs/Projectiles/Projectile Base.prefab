@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 876670131001537342}
-  - component: {fileID: 7182947846862501782}
-  - component: {fileID: 2858556343525050890}
   - component: {fileID: 1123767039484111905}
   m_Layer: 10
   m_Name: Effect
@@ -34,35 +32,6 @@ Transform:
   m_Father: {fileID: 7450179803786484431}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7182947846862501782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2151901899397412402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 615b2b88282f30a46ace3956f2e2cb53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectTime:
-    value: 1
-  activeEffects: []
-  effectAdders: []
-  _effectListeners: []
---- !u!114 &2858556343525050890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2151901899397412402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e8746cbf69c481f8ee61b4386c4333e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1123767039484111905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,18 +278,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2858556343525050890}
-        m_TargetAssemblyTypeName: EffectTimeTransfer, Assembly-CSharp
-        m_MethodName: OnWeaponDataUpdate
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1107590169460234223}
         m_TargetAssemblyTypeName: WeaponDamageDataTransfer, Assembly-CSharp
         m_MethodName: OnWeaponDataUpdate
@@ -408,7 +365,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7182947846862501782}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EffectManager, Assembly-CSharp
         m_MethodName: TryApplyEffects
         m_Mode: 0

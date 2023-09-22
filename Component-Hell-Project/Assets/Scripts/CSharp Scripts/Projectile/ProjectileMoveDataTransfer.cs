@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileMoveDataTransfer : MonoBehaviour, WeaponDataUpdateListener, IMovementListener
+public class ProjectileMoveDataTransfer : MonoBehaviour, IWeaponDataUpdateListener, IMovementListener
 {
     private MovementManager _movementManager;
     private WeaponDataHolder _dataHolder;
