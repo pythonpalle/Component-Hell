@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Player Copy Gun Upgrade Path
   m_EditorClassIdentifier: 
   potentialUpgrades:
+  - {fileID: 11400000, guid: 6fd0f5ceb5ae2f44482768237fc263d9, type: 2}
+  - {fileID: 11400000, guid: 223938cc193a6824d809826e53568d13, type: 2}
   - {fileID: 11400000, guid: c196957ebed02e441b40462781d9f7c3, type: 2}
   - {fileID: 11400000, guid: b0c1311719052b14bb76048116bced17, type: 2}
   - {fileID: 11400000, guid: 19ac2373a3cfda74fa14e95c5d0e72b0, type: 2}

@@ -43,6 +43,7 @@ public class UpgradeBox : MonoBehaviour
         if (!upgradeOption.IsInstantiated)
         {
             levelText.text = "NEW!";
+            levelText.color = Color.yellow;
             levelNumberText.text = "";
             descriptionText.text = data.ManagerDescription;
         }
@@ -51,6 +52,7 @@ public class UpgradeBox : MonoBehaviour
             var nextUpgrade = upgradeOption.NextUpgrade();
 
             levelText.text = "Level: ";
+            levelText.color = Color.black;
             levelNumberText.text = (upgradeOption.Counter + 1).ToString();
             descriptionText.text = nextUpgrade.Description;
         }

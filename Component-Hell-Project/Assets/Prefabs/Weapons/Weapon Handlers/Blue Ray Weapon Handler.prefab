@@ -97,12 +97,20 @@ PrefabInstance:
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 7644031055962934875, guid: 84acad1589012cc4b901bc9b7f455c29, type: 3}
+    - target: {fileID: 8447251422245921877, guid: 1656634c9d395584fbe7265966485d91, type: 3}
+      propertyPath: weaponData
+      value: 
+      objectReference: {fileID: 11400000, guid: 61aed20ab3c50844493b086fa9d079f7, type: 2}
     - target: {fileID: 8852706048924221159, guid: 1656634c9d395584fbe7265966485d91, type: 3}
       propertyPath: m_Name
       value: Blue Ray Gun Extension
       objectReference: {fileID: 0}
     - target: {fileID: 8852706048924221159, guid: 1656634c9d395584fbe7265966485d91, type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012425311504744864, guid: 1656634c9d395584fbe7265966485d91, type: 3}
+      propertyPath: prefabsToAdd.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9075743740982461275, guid: 1656634c9d395584fbe7265966485d91, type: 3}

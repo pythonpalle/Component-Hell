@@ -21,8 +21,7 @@ public class EffectApplyHandler : MonoBehaviour, IWeaponDataUpdateListener
             Debug.Log($"{other.name} doesn't have an effect listener manager");
             return;
         }
-
         
-        effectListenerManager.ApplyEffects(EffectAppliers, effectDuration);
+        effectListenerManager.ApplyEffects(this, EffectAppliers, effectDuration);
     }
 }

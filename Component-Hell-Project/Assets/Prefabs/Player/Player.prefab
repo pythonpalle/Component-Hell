@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 7825429799708889837}
   - component: {fileID: 7825429799708889844}
   - component: {fileID: 7825429799708889845}
+  - component: {fileID: 7825429799708889854}
   m_Layer: 6
   m_Name: Movement Container
   m_TagString: Player
@@ -404,6 +405,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1282375001267824329}
   conditionToFlipLeftAndRight: 1
+--- !u!114 &7825429799708889854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038614014563640135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb60a167af9e7574d982538b99d72c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Direction: {x: 0, y: 0}
+  Position: {x: 0, y: 0}
 --- !u!1 &6868314340774776466
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,11 +8,7 @@ public class EffectListenerManager : MonoBehaviour
 {
     [SerializeField] private List<EffectListener> _effectListeners = new List<EffectListener>();
     private Dictionary<EffectType, List<EffectListener>> listenerDictionary = new Dictionary<EffectType, List<EffectListener>>();
-
-    // private float effectDuration = 1;
-    // private float timeOfLastActivation;
-    // private bool isActivated;
-    //
+    
     private void Start()
     {
         InitializeListenerDictionary();
@@ -32,18 +28,16 @@ public class EffectListenerManager : MonoBehaviour
             }
         }
     }
-    
 
-    public void ApplyEffects(List<EffectType> effectAppliers, float duration)
+    public void ApplyEffects(EffectApplyHandler applier, List<EffectType> effectTypes, float duration)
     {
-        foreach (var applier in effectAppliers)
+        foreach (var type in effectTypes)
         {
-            ApplyAllOfType(applier, duration);
+            ApplyAllOfType(applier, type, duration);
         }
     }
-    
 
-    private void ApplyAllOfType(EffectType type, float duration)
+    private void ApplyAllOfType(EffectApplyHandler applier, EffectType type, float duration)
     {
         if (!listenerDictionary.ContainsKey(type))
             return;
@@ -52,34 +46,9 @@ public class EffectListenerManager : MonoBehaviour
         {
             if (!listener.IsActive)
             {
-                listener.Activate(duration);
+                listener.Activate(duration, applier);
             }
             
         }
     }
-
-    // private void LateUpdate()
-    // {
-    //     if (!isActivated) return;
-    //     
-    //     UpdateDeactivation();
-    // }
-
-    // private void UpdateDeactivation()
-    // {
-    //     if (Time.time >= timeOfLastActivation + effectDuration)
-    //     {
-    //         isActivated = false;
-    //         HandleDeactivations();
-    //         Debug.Log("Deactivate all stuffs");
-    //     }
-    // }
-    //
-    // private void HandleDeactivations()
-    // {
-    //     foreach (var listener in _effectListeners)
-    //     {
-    //         listener.Deactivate(); 
-    //     }
-    // }
 }

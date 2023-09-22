@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradePath: {fileID: 11400000, guid: 6324721c606523a478a85dade31d2fe1, type: 2}
   managerName: Copy Cat
-  managerDescription: Tricks enemies to follow it.
+  managerDescription: Tricks enemies.
   image: {fileID: 1717839059, guid: 8fa2e83411239fd489073490279bb531, type: 3}
