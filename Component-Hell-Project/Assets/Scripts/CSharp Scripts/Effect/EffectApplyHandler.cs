@@ -22,6 +22,7 @@ public class EffectApplyHandler : MonoBehaviour, IWeaponDataUpdateListener
             return;
         }
 
+        
         effectListenerManager.ApplyEffects(EffectAppliers, effectDuration);
     }
 }

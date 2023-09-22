@@ -14,7 +14,6 @@ public class ChangeSpriteColor : MonoBehaviour
     {
         if (spriteRenderer)
         {
-            Debug.Log("Change color");
             spriteRenderer.color = changeColor;
         }
     }

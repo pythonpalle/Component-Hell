@@ -16,11 +16,14 @@ public class SetMovementTargetByTag : MonoBehaviour
         TryFindTarget();
     }
 
-    void TryFindTarget()
+    private void TryFindTarget()
     {
-        if (controller.TargetTransform == null)
-        {
-            controller.TargetTransform = GameObject.FindWithTag(targetTag).transform;
-        }
+        controller.TargetTransform = GameObject.FindWithTag(targetTag).transform;
+    }
+
+    public void UpdateTag(string tagName)
+    {
+        targetTag = tagName;
+        TryFindTarget();
     }
 }
