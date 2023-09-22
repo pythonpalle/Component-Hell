@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlayerMovementSingleton : MovementListener
 {
     public static PlayerMovementSingleton Instance { get; private set; }
-    public Vector2 Direction;
-    public Vector2 Position;
+    public Vector2 Direction { get; private set; }
+    public Vector2 Position { get; private set; }
 
     private void Awake()
     {

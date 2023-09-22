@@ -1,14 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class EffectListenerManager : MonoBehaviour
 {
-    [SerializeField] private List<EffectListener> _effectListeners = new List<EffectListener>();
+    private List<EffectListener> _effectListeners = new List<EffectListener>();
     private Dictionary<EffectType, List<EffectListener>> listenerDictionary = new Dictionary<EffectType, List<EffectListener>>();
-    
+
+    private void Awake()
+    {
+        _effectListeners = GetComponentsInChildren<EffectListener>().ToList();
+    }
+
     private void Start()
     {
         InitializeListenerDictionary();

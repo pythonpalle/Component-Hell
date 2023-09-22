@@ -129,6 +129,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 5842228505393806548}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
   changeColor: {r: 0.8301887, g: 0, b: 0.4894932, a: 1}
+  changeBack: 0
 --- !u!1 &4152213988749270580
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,6 +162,7 @@ Transform:
   - {fileID: 839653429761306605}
   - {fileID: 2004005790592882182}
   - {fileID: 6193961805905434596}
+  - {fileID: 264932608975792526}
   m_Father: {fileID: 5842228505393806549}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -176,10 +178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b50e62ae7c86f248ab1bfbeb750d254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _effectListeners:
-  - {fileID: 8759407116524924429}
-  - {fileID: 6263517295466088215}
-  - {fileID: 6052404606265879541}
 --- !u!1 &4922941660696160616
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,6 +887,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 5842228505393806548}
   baseColor: {r: 1, g: 1, b: 1, a: 1}
   changeColor: {r: 0, g: 0.9529412, b: 1, a: 1}
+  changeBack: 0
 --- !u!114 &258523155385318372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1038,3 +1037,134 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a389991804fc4f4a935e91484134ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7467870915215838180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 264932608975792526}
+  - component: {fileID: 2422501646082485717}
+  - component: {fileID: 7501470976995600271}
+  - component: {fileID: 4491983621517499479}
+  m_Layer: 7
+  m_Name: Slow Listener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &264932608975792526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467870915215838180}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6467423513790312526}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2422501646082485717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467870915215838180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f225c8b04f9d47544bfc2b40e6871ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effectType: 1
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7501470976995600271}
+        m_TargetAssemblyTypeName: ChangeSpriteColor, Assembly-CSharp
+        m_MethodName: SetNewColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4491983621517499479}
+        m_TargetAssemblyTypeName: ChangeSpeed, Assembly-CSharp
+        m_MethodName: SetNewSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeactivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7501470976995600271}
+        m_TargetAssemblyTypeName: ChangeSpriteColor, Assembly-CSharp
+        m_MethodName: ResetColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4491983621517499479}
+        m_TargetAssemblyTypeName: ChangeSpeed, Assembly-CSharp
+        m_MethodName: ResetSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7501470976995600271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467870915215838180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5baf960c69b820040a341d0849cbedad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 5842228505393806548}
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  changeColor: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
+  changeBack: 0
+--- !u!114 &4491983621517499479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467870915215838180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d85ffec2180db14e8f223650b4fe8dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMultiplier: 0.5
+  _movementManager: {fileID: 1071655746247319616}

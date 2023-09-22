@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EffectApplyHandler : MonoBehaviour, IWeaponDataUpdateListener
 {
-    public List<EffectType> EffectAppliers;
-    private float effectDuration = 1;
+    [SerializeField] private List<EffectType> EffectAppliers;
+    [SerializeField] private float effectDuration = 1;
 
     public void OnWeaponDataUpdate(WeaponDataHolder data)
     {
