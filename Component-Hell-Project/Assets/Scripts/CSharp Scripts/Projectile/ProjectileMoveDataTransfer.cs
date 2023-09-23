@@ -21,5 +21,6 @@ public class ProjectileMoveDataTransfer : MonoBehaviour, IWeaponDataUpdateListen
     public void OnWeaponDataUpdate(WeaponDataHolder data)
     {
         _dataHolder = data;
+        _movementManager.SetMoveController(data.moveController);
     }
 }

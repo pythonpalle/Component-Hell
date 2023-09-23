@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Shoots projectile in a boomerang motion.
   upgrades:
-  - {fileID: 11400000, guid: 01fef713e00198240bd0774b6a0be001, type: 2}
   - {fileID: 11400000, guid: a025ee9b451db8648803f0f888199ea9, type: 2}
   - {fileID: 11400000, guid: 9901e066826961746982449e7a513213, type: 2}
+  - {fileID: 11400000, guid: 17f0d3764c87db54fb1e3f0f95d6aa0f, type: 2}

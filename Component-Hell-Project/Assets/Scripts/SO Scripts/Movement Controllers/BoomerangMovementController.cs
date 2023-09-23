@@ -3,20 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "MovementController/Boomerang")]
 public class BoomerangMovementController : MovementControllerBase
 {
     [SerializeField] private float timeBetweenTurns = 1f;
-    private float timeOfLastTurn;
-
-    protected override void Start()
+    private float timeOfLastTurn = 0.5f;
+    
+    public override Vector2 GetNextDirection(MovementManager movementManager)
     {
-        base.Start();
-        timeOfLastTurn = Time.time - timeBetweenTurns*0.5f;
-    }
-
-    protected override Vector2 GetNextDirection()
-    {
-        var direction = _movementDataHolder.moveDirection;
+        var direction = movementManager.GetDirection();
         
         if (Time.time > timeOfLastTurn + timeBetweenTurns)
         {
@@ -25,5 +20,10 @@ public class BoomerangMovementController : MovementControllerBase
         }
         
         return direction;
+    }
+
+    private void OnEnable()
+    {
+        timeOfLastTurn = Time.time - timeBetweenTurns * 0.5f;
     }
 }

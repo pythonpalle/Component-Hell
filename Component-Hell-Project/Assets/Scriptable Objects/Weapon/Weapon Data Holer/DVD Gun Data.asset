@@ -25,6 +25,7 @@ MonoBehaviour:
     value: 5
   attackSpeed:
     value: 7
+  moveController: {fileID: 11400000, guid: cdce56b7fdeb9b9458f92b7dea6dbe9b, type: 2}
   effectDuration:
     value: 5
   EffectAppliers: 

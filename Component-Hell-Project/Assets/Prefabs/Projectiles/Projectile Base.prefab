@@ -474,7 +474,6 @@ GameObject:
   - component: {fileID: 8927102831763393339}
   - component: {fileID: 200403830656927440}
   - component: {fileID: 1970401611550323339}
-  - component: {fileID: 7728499801304071896}
   m_Layer: 10
   m_Name: Movement
   m_TagString: Untagged
@@ -510,8 +509,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataHolder: {fileID: 11400000, guid: a70488baf2918b04eaf856a833e0dc97, type: 2}
+  moveController: {fileID: 11400000, guid: cdce56b7fdeb9b9458f92b7dea6dbe9b, type: 2}
   instantiateScriptableObjects: 1
-  _movementListeners: []
+  targetTransform: {fileID: 0}
+  objectMover: {fileID: 1970401611550323339}
+  directionListeners: []
 --- !u!114 &200403830656927440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,18 +539,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformToMove: {fileID: 7450179803786484431}
---- !u!114 &7728499801304071896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6022690550055221728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa210e43115c30645860000edad10ff3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7841962770100765122
 GameObject:
   m_ObjectHideFlags: 0

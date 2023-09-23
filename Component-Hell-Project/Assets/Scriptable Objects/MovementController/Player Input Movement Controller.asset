@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e1c38c6ea9490e8fcb7c1f3fef9bb6, type: 3}
-  m_Name: Add Target Enemy Upgrade
+  m_Script: {fileID: 11500000, guid: 8432f13feee10d34aa5fec55f2b67ab6, type: 3}
+  m_Name: Player Input Movement Controller
   m_EditorClassIdentifier: 
-  description: Makes projectile target closest enemy.
-  _componentAdder:
-    script: {fileID: 11500000, guid: bab37e93685a87a47aac11c569eb3b75, type: 3}
-    childTarget: 0

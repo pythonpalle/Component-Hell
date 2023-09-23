@@ -18,7 +18,6 @@ public class EffectApplyHandler : MonoBehaviour, IWeaponDataUpdateListener
         var effectListenerManager = other.GetComponentInChildren<EffectListenerManager>();
         if (!effectListenerManager)
         {
-            Debug.Log($"{other.name} doesn't have an effect listener manager");
             return;
         }
         

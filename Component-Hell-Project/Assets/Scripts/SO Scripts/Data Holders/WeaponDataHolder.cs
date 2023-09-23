@@ -21,7 +21,8 @@ public class WeaponDataHolder : ScriptableObject
     
     [Header("Movement")]
     public DynamicFloat attackSpeed;
-
+    public MovementControllerBase moveController;
+    
     
     [Header("Effect")]
     public DynamicFloat effectDuration;

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Seeks out nearest enemy, deals damge over time.
   upgrades:
-  - {fileID: 11400000, guid: cdad0a6b31c232d4cb9fbf25ab503858, type: 2}
   - {fileID: 11400000, guid: fe4314ed4adcc134fad4183ce75ae2cb, type: 2}
   - {fileID: 11400000, guid: 7f4df9a596797264e8adafea53cef8e6, type: 2}
+  - {fileID: 11400000, guid: 7d13b3fd873b7e946a251b22b02613f8, type: 2}

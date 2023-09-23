@@ -323,7 +323,6 @@ GameObject:
   - component: {fileID: 7770544659458060049}
   - component: {fileID: 3043709278377385508}
   - component: {fileID: 8596997971173794564}
-  - component: {fileID: 1150494220303879649}
   - component: {fileID: 4082693584268949365}
   - component: {fileID: 7825429799708889845}
   - component: {fileID: 7825429799708889854}
@@ -364,7 +363,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataHolder: {fileID: 11400000, guid: 497308c04329d184881e5126cc65b129, type: 2}
+  moveController: {fileID: 11400000, guid: abfd5369a4159c046b2f6109f37e9caa, type: 2}
   instantiateScriptableObjects: 1
+  targetTransform: {fileID: 0}
+  objectMover: {fileID: 8596997971173794564}
   directionListeners:
   - {fileID: 7825429799708889845}
   - {fileID: 7825429799708889854}
@@ -382,18 +384,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformToMove: {fileID: 3931818526344562772}
---- !u!114 &1150494220303879649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038614014563640135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8432f13feee10d34aa5fec55f2b67ab6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4082693584268949365
 MonoBehaviour:
   m_ObjectHideFlags: 0

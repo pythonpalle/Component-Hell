@@ -25,8 +25,10 @@ MonoBehaviour:
     value: 2
   attackSpeed:
     value: 5
+  moveController: {fileID: 11400000, guid: cdce56b7fdeb9b9458f92b7dea6dbe9b, type: 2}
   effectDuration:
     value: 1
+  EffectAppliers: 
   burstCooldown:
     value: 5
   shotCooldown:

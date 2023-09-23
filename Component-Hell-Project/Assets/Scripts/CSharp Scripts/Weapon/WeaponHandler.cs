@@ -82,7 +82,7 @@ public class WeaponHandler : MonoBehaviour, IVector2ChangeListener
 
     void TransferData(Weapon weapon)
     {
-        WeaponDataContainer.TransferData(_weaponDataContainer.WeaponData, weapon.WeaponDataContainer.WeaponData);
+        WeaponDataContainer.TransferData(_weaponDataContainer.WeaponData, weapon.WeaponDataContainer.WeaponData, false);
     }
 
     public void OnVector2Change(Vector2 direction)

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6052404606265879541}
   - component: {fileID: 1816646791490309361}
   - component: {fileID: 670175113700326110}
+  - component: {fileID: 409202848062639330}
   m_Layer: 7
   m_Name: Chase Adder Listener
   m_TagString: Untagged
@@ -74,6 +75,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 409202848062639330}
+        m_TargetAssemblyTypeName: SetNewMovementManager, Assembly-CSharp
+        m_MethodName: StoreLastController
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 409202848062639330}
+        m_TargetAssemblyTypeName: SetNewMovementManager, Assembly-CSharp
+        m_MethodName: SetNewController
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeactivate:
     m_PersistentCalls:
       m_Calls:
@@ -101,6 +126,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 409202848062639330}
+        m_TargetAssemblyTypeName: SetNewMovementManager, Assembly-CSharp
+        m_MethodName: RestoreLastController
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1816646791490309361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e0445973178bc4ab03fcf0c92480a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towardTransformMovementController: {fileID: 1734481583}
+  _movementManager: {fileID: 1071655746247319616}
 --- !u!114 &670175113700326110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +167,20 @@ MonoBehaviour:
   baseColor: {r: 1, g: 1, b: 1, a: 1}
   changeColor: {r: 0.8301887, g: 0, b: 0.4894932, a: 1}
   changeBack: 0
+--- !u!114 &409202848062639330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596978181400842900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d7c9c18cefc2045a7e22f66286382a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementManager: {fileID: 1071655746247319616}
+  newController: {fileID: 11400000, guid: 9bccb8c7f2a3f0546afebe1ac4160b94, type: 2}
 --- !u!1 &4152213988749270580
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,8 +663,6 @@ GameObject:
   - component: {fileID: 5842228505949120081}
   - component: {fileID: 1071655746247319616}
   - component: {fileID: 5842228505949120083}
-  - component: {fileID: 1734481583}
-  - component: {fileID: 1734481582}
   - component: {fileID: 747023148179750769}
   - component: {fileID: 487623394171996275}
   m_Layer: 7
@@ -651,7 +700,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataHolder: {fileID: 11400000, guid: a70488baf2918b04eaf856a833e0dc97, type: 2}
+  moveController: {fileID: 11400000, guid: dcaed5d3d36b73d4f81d151c1f549d59, type: 2}
   instantiateScriptableObjects: 1
+  targetTransform: {fileID: 0}
+  objectMover: {fileID: 5842228505949120083}
   directionListeners:
   - {fileID: 487623394171996275}
 --- !u!114 &5842228505949120083
@@ -667,32 +719,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformToMove: {fileID: 5842228505393806549}
---- !u!114 &1734481583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5842228505949120094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be5b75026f91be04e81a0872fa07ac3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetTransform: {fileID: 0}
---- !u!114 &1734481582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5842228505949120094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f97d4a1430ed3545bab293240a92297, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetTag: Player
 --- !u!114 &747023148179750769
 MonoBehaviour:
   m_ObjectHideFlags: 0

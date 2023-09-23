@@ -14,7 +14,7 @@ public class WeaponDataContainer : MonoBehaviour
         if (instantiate) weaponData = Instantiate(weaponData);
     }
 
-    public static void TransferData(WeaponDataHolder from, WeaponDataHolder to)
+    public static void TransferData(WeaponDataHolder @from, WeaponDataHolder to, bool includeMoveController)
     {
         string owner = from.name;
         
@@ -38,10 +38,13 @@ public class WeaponDataContainer : MonoBehaviour
                 to.EffectAppliers.Add(effectType);
             }
         }
+
+        if (includeMoveController)
+            to.moveController = from.moveController;
     }
 
     public void UpdateData(WeaponDataHolder fromData)
     {
-        TransferData(fromData, weaponData);
+        TransferData(fromData, weaponData, false);
     }
 }

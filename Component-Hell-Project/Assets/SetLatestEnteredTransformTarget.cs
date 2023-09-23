@@ -5,23 +5,22 @@ using UnityEngine;
 
 public class SetLatestEnteredTransformTarget : MonoBehaviour
 {
-    [SerializeField] private TowardTransformMovementController _towardTransformMovementController;
+    [SerializeField] private MovementManager _movementManager;
     
     private Transform baseTransform;
 
     public void Start()
     {
-        baseTransform = _towardTransformMovementController.TargetTransform;
+        baseTransform = _movementManager.GetTarget();
     }
 
     public void ResetTargetTransform()
     {
-        _towardTransformMovementController.TargetTransform = baseTransform;
+        _movementManager.SetTargetTransform(baseTransform);
     }
 
     public void SetTargetByApplier(EffectApplyHandler applier)
     {
-        _towardTransformMovementController.TargetTransform = applier.transform;
-
+        _movementManager.SetTargetTransform(applier.transform);
     }
 }
