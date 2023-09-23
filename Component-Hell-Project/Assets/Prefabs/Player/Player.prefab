@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4667312444992805379}
   - component: {fileID: 6421947401092605544}
   - component: {fileID: 7825429799708889838}
+  - component: {fileID: 7825429799708889844}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -166,6 +167,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7825429799708889844}
+        m_TargetAssemblyTypeName: ChangeSpriteColor, Assembly-CSharp
+        m_MethodName: SetNewColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &6421947401092605544
 Animator:
   serializedVersion: 5
@@ -203,6 +216,22 @@ MonoBehaviour:
   parameterString: Death
   parameterType: 0
   check: 0
+--- !u!114 &7825429799708889844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382337021262599682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5baf960c69b820040a341d0849cbedad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1282375001267824329}
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  changeColor: {r: 1, g: 0, b: 0, a: 1}
+  changeBack: 1
 --- !u!1 &980571268552217625
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,10 +324,10 @@ GameObject:
   - component: {fileID: 3043709278377385508}
   - component: {fileID: 8596997971173794564}
   - component: {fileID: 1150494220303879649}
-  - component: {fileID: 7825429799708889837}
-  - component: {fileID: 7825429799708889844}
+  - component: {fileID: 4082693584268949365}
   - component: {fileID: 7825429799708889845}
   - component: {fileID: 7825429799708889854}
+  - component: {fileID: 412321649157293171}
   m_Layer: 6
   m_Name: Movement Container
   m_TagString: Player
@@ -363,19 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8432f13feee10d34aa5fec55f2b67ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7825429799708889837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038614014563640135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77aad5cdf7639b54db0c7c1d0f8a9d7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7825429799708889844
+--- !u!114 &4082693584268949365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -417,8 +434,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb60a167af9e7574d982538b99d72c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: {x: 0, y: 0}
-  Position: {x: 0, y: 0}
+--- !u!114 &412321649157293171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038614014563640135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d85ffec2180db14e8f223650b4fe8dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMultiplier: 0
+  _movementManager: {fileID: 3043709278377385508}
 --- !u!1 &6868314340774776466
 GameObject:
   m_ObjectHideFlags: 0

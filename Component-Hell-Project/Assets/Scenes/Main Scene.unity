@@ -1377,11 +1377,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750829025}
   m_CullTransparentMesh: 1
---- !u!1 &759495717 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 382337021262599682, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-  m_PrefabInstance: {fileID: 7825429799708889835}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &780019123
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,9 +2097,9 @@ MonoBehaviour:
   OnGameOver:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7825429799708889837}
-        m_TargetAssemblyTypeName: StopMovement, Assembly-CSharp
-        m_MethodName: StopMove
+      - m_Target: {fileID: 7825429799708889836}
+        m_TargetAssemblyTypeName: ChangeSpeed, Assembly-CSharp
+        m_MethodName: SetNewSpeed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3813,45 +3808,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4667312444992805379, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: OnDamageRecieved.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667312444992805379, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: OnDamageRecieved.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667312444992805379, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: OnDamageRecieved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 7825429799708889844}
-    - target: {fileID: 4667312444992805379, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: OnDamageRecieved.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667312444992805379, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: OnDamageRecieved.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetNewColor
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667312444992805379, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: OnDamageRecieved.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ChangeSpriteColor, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667312444992805379, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-      propertyPath: OnDamageRecieved.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
---- !u!114 &7825429799708889837 stripped
+--- !u!114 &7825429799708889836 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7825429799708889837, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
+  m_CorrespondingSourceObject: {fileID: 412321649157293171, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
   m_PrefabInstance: {fileID: 7825429799708889835}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77aad5cdf7639b54db0c7c1d0f8a9d7d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d85ffec2180db14e8f223650b4fe8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7825429799708889838 stripped
@@ -3859,30 +3826,9 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7825429799708889838, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
   m_PrefabInstance: {fileID: 7825429799708889835}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759495717}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 286b0274cae0a37418181ca11f4fe339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!212 &7825429799708889843 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1282375001267824329, guid: 0dc81485fe66d7a4e93fa42d963c16a1, type: 3}
-  m_PrefabInstance: {fileID: 7825429799708889835}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7825429799708889844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759495717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5baf960c69b820040a341d0849cbedad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 7825429799708889843}
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  changeColor: {r: 1, g: 0, b: 0, a: 1}
-  changeBack: 1
