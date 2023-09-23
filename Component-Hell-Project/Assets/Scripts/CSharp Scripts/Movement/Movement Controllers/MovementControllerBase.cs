@@ -19,7 +19,7 @@ public abstract class MovementControllerBase : MonoBehaviour
     {
         var direction = GetNextDirection().normalized;
         objectMover.Move(direction, _movementDataHolder.moveSpeed.Value);
-        MovementManager.UpdateMovement(direction);
+        MovementManager.UpdateDirection(direction);
     }
 
     protected abstract Vector2 GetNextDirection();

@@ -11,7 +11,7 @@ public class AddForceToRigidbody : MonoBehaviour
     {
         if (_rigidbody2D)
         {
-            Vector2 awayFromPlayer = ((Vector2)transform.position - PlayerMovementSingleton.Instance.Position).normalized;
+            Vector2 awayFromPlayer = ((Vector2)transform.position - PlayerPositionSingleton.Instance.Position).normalized;
             _rigidbody2D.AddForce(awayFromPlayer * force, ForceMode2D.Impulse);
         }
     }

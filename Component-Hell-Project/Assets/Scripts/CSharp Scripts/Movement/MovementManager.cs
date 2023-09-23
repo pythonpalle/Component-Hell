@@ -11,7 +11,8 @@ public class MovementManager : MonoBehaviour
     
     [SerializeField] bool instantiateScriptableObjects = true;
 
-    [SerializeReference] private List<MovementListener> _movementListeners = new List<MovementListener>();
+    [SerializeField] private List<Vector2Listener> _movementListeners = new List<Vector2Listener>();
+    
 
     void Awake()
     {
@@ -21,7 +22,7 @@ public class MovementManager : MonoBehaviour
         }
     }
 
-    public void UpdateMovement(Vector2 direction)
+    public void UpdateDirection(Vector2 direction)
     {
         // no need to update movement if direction hasn't changed
         if (direction == _dataHolder.moveDirection)
@@ -30,15 +31,9 @@ public class MovementManager : MonoBehaviour
         foreach (var listener in _movementListeners)
         {
             if (listener.enabled)
-                listener.OnMovementChange(direction);
+                listener.OnVector2Change(direction);
         }
 
         _dataHolder.moveDirection = direction.normalized;
     }
-}
-
-
-public interface IMovementListener
-{
-    public void OnMovementChange(Vector2 direction);
 }

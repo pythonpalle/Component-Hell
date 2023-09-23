@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileMoveDataTransfer : MonoBehaviour, IWeaponDataUpdateListener, IMovementListener
+public class ProjectileMoveDataTransfer : MonoBehaviour, IWeaponDataUpdateListener, IVector2ChangeListener
 {
     private MovementManager _movementManager;
     private WeaponDataHolder _dataHolder;
@@ -12,7 +12,7 @@ public class ProjectileMoveDataTransfer : MonoBehaviour, IWeaponDataUpdateListen
         _movementManager = GetComponent<MovementManager>();
     }
 
-    public void OnMovementChange(Vector2 direction)
+    public void OnVector2Change(Vector2 direction)
     {
         _movementManager.DataHolder.moveSpeed.AddMultiplier(_dataHolder.name, _dataHolder.attackSpeed.Value);
         _movementManager.DataHolder.moveDirection = direction;

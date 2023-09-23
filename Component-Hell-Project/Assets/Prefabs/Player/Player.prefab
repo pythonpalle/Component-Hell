@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 7825429799708889845}
   - component: {fileID: 7825429799708889854}
   - component: {fileID: 412321649157293171}
+  - component: {fileID: 4501120943371546876}
   m_Layer: 6
   m_Name: Movement Container
   m_TagString: Player
@@ -367,6 +368,7 @@ MonoBehaviour:
   _movementListeners:
   - {fileID: 2644456310602226461}
   - {fileID: 7825429799708889845}
+  - {fileID: 7825429799708889854}
 --- !u!114 &8596997971173794564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,6 +450,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMultiplier: 0
   _movementManager: {fileID: 3043709278377385508}
+--- !u!114 &4501120943371546876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038614014563640135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc61d6f606f946e59182cec6cf74b6cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6868314340774776466
 GameObject:
   m_ObjectHideFlags: 0

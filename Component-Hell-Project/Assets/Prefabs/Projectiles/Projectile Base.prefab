@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EffectAppliers: 
+  effectDuration: 1
 --- !u!1 &2858374030421664062
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,12 +314,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnMovementDataUpdate:
+  OnDirectionDataUpdate:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 200403830656927440}
         m_TargetAssemblyTypeName: ProjectileMoveDataTransfer, Assembly-CSharp
-        m_MethodName: OnMovementChange
+        m_MethodName: OnVector2Change
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

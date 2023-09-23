@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class SpriteFlipper : MovementListener
+public class SpriteFlipper : Vector2Listener
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private bool conditionToFlipLeftAndRight;
@@ -14,7 +14,7 @@ public class SpriteFlipper : MovementListener
     }
     
 
-    public override void OnMovementChange(Vector2 direction)
+    public override void OnVector2Change(Vector2 direction)
     {
         if ( direction.x == 0)
             return;

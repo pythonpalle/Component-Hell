@@ -8,9 +8,9 @@ public class Projectile : MonoBehaviour
     public void Create(WeaponDataHolder weaponData, Vector2 weaponDirection)
     {
         OnWeaponDataUpdate?.Invoke(weaponData);
-        OnMovementDataUpdate?.Invoke(weaponDirection);
+        OnDirectionDataUpdate?.Invoke(weaponDirection);
     } 
     
     public UnityEvent<WeaponDataHolder> OnWeaponDataUpdate;
-    public UnityEvent<Vector2> OnMovementDataUpdate;
+    public UnityEvent<Vector2> OnDirectionDataUpdate;
 }

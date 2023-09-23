@@ -24,7 +24,7 @@ public class KnockBackEffect : EffectComponent
 
         if (rigidbody2D && movementDataHolder)
         {
-            Vector2 awayFromPlayer = ((Vector2)transform.position - PlayerMovementSingleton.Instance.Position).normalized;
+            Vector2 awayFromPlayer = ((Vector2)transform.position - PlayerPositionSingleton.Instance.Position).normalized;
             rigidbody2D.AddForce(awayFromPlayer * knockBackForce, ForceMode2D.Impulse);
         }
 

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class WeaponHandlerMovementListener : MovementListener
+public class WeaponHandlerVector2Listener : Vector2Listener
 {
     private WeaponHandler _weaponHandler;
     
@@ -9,8 +9,8 @@ public class WeaponHandlerMovementListener : MovementListener
         _weaponHandler = GetComponent<WeaponHandler>();
     }
 
-    public override void OnMovementChange(Vector2 direction)
+    public override void OnVector2Change(Vector2 direction)
     {
-        _weaponHandler.OnMovementChange(direction);
+        _weaponHandler.OnVector2Change(direction);
     }
 }

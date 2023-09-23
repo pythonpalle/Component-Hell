@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class WeaponHandler : MonoBehaviour, IMovementListener
+public class WeaponHandler : MonoBehaviour, IVector2ChangeListener
 {
     [Header("Weapons Owned")]
     [SerializeField] private List<Weapon> weapons;
@@ -85,7 +85,7 @@ public class WeaponHandler : MonoBehaviour, IMovementListener
         WeaponDataContainer.TransferData(_weaponDataContainer.WeaponData, weapon.WeaponDataContainer.WeaponData);
     }
 
-    public void OnMovementChange(Vector2 direction)
+    public void OnVector2Change(Vector2 direction)
     {
         foreach (var weapon in weapons)
         {
