@@ -11,7 +11,7 @@ public class MovementManager : MonoBehaviour
     
     [SerializeField] bool instantiateScriptableObjects = true;
 
-    [SerializeField] private List<Vector2Listener> _movementListeners = new List<Vector2Listener>();
+    [SerializeField] private List<Vector2Listener> directionListeners = new List<Vector2Listener>();
     
 
     void Awake()
@@ -28,7 +28,7 @@ public class MovementManager : MonoBehaviour
         if (direction == _dataHolder.moveDirection)
             return;
         
-        foreach (var listener in _movementListeners)
+        foreach (var listener in directionListeners)
         {
             if (listener.enabled)
                 listener.OnVector2Change(direction);

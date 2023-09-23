@@ -365,10 +365,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dataHolder: {fileID: 11400000, guid: 497308c04329d184881e5126cc65b129, type: 2}
   instantiateScriptableObjects: 1
-  _movementListeners:
-  - {fileID: 2644456310602226461}
+  directionListeners:
   - {fileID: 7825429799708889845}
   - {fileID: 7825429799708889854}
+  - {fileID: 2644456310602226461}
 --- !u!114 &8596997971173794564
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -652,7 +652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dataHolder: {fileID: 11400000, guid: a70488baf2918b04eaf856a833e0dc97, type: 2}
   instantiateScriptableObjects: 1
-  _movementListeners:
+  directionListeners:
   - {fileID: 487623394171996275}
 --- !u!114 &5842228505949120083
 MonoBehaviour:
