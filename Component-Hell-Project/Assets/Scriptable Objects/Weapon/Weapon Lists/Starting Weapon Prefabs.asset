@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Starting Weapon Prefabs
   m_EditorClassIdentifier: 
   _weapons:
-  - {fileID: 6177846372694440877, guid: 0cfc4a06735e3a64ca99ddab2b979633, type: 3}
+  - {fileID: 8987620614001210496, guid: 444be529d94c574479f58f5dfa297ec4, type: 3}

@@ -16,7 +16,12 @@ public class FireHandler : MonoBehaviour
 
     private void Awake()
     {
-        if (instantiateFireType) fireType = Instantiate(fireType);
+        SetFireType(fireType);
+    }
+
+    private void SetFireType(FireType newType)
+    {
+        fireType = instantiateFireType ? Instantiate(newType) : newType;
     }
 
     public void TryFire(Projectile projectilePrefab, Weapon owner)
@@ -54,7 +59,7 @@ public class FireHandler : MonoBehaviour
 
     public void ChangeFireType(FireType newType)
     {
-        fireType = newType;
+        SetFireType(newType);
     }
 }
 

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class WeaponHandlerVector2Listener : Vector2Listener
+public class DirectionToWeaponHandlerTransfer : Vector2Listener
 {
     private WeaponHandler _weaponHandler;
     
