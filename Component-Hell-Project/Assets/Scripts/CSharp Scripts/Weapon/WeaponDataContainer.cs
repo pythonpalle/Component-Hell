@@ -14,7 +14,7 @@ public class WeaponDataContainer : MonoBehaviour
         if (instantiate) weaponData = Instantiate(weaponData);
     }
 
-    public static void TransferData(WeaponDataHolder @from, WeaponDataHolder to, bool includeMoveController)
+    public static void TransferData(WeaponDataHolder @from, WeaponDataHolder to)
     {
         string owner = from.name;
         
@@ -39,12 +39,10 @@ public class WeaponDataContainer : MonoBehaviour
             }
         }
 
-        if (includeMoveController)
-            to.moveController = from.moveController;
     }
 
     public void UpdateData(WeaponDataHolder fromData)
     {
-        TransferData(fromData, weaponData, false);
+        TransferData(fromData, weaponData);
     }
 }
