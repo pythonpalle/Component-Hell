@@ -45,6 +45,11 @@ public class MovementManager : MonoBehaviour
 
     private void Update()
     {
+        HandleUpdateMovement();
+    }
+
+    private void HandleUpdateMovement()
+    {
         if (moveController)
         {
             var newDirection = moveController.GetNextDirection(this);
@@ -53,7 +58,7 @@ public class MovementManager : MonoBehaviour
         objectMover.Move(_dataHolder.moveDirection, moveSpeed.Value);
     }
 
-    public void UpdateDirection(Vector2 direction)
+    private void UpdateDirection(Vector2 direction)
     {
         // no need to update movement if direction hasn't changed
         if (direction == _dataHolder.moveDirection)

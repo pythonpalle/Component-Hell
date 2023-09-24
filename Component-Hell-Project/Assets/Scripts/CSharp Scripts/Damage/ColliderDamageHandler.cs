@@ -12,12 +12,10 @@ public class ColliderDamageHandler : MonoBehaviour
     {
         TryInflictDamage(other);
     }
-    
     public void CallTryInflictDamage(Collider2D other)
     {
         TryInflictDamage(other);
     }
-    
     public bool TryInflictDamage(Collision2D other)
     {
          return TryInflictDamage(other.collider);
@@ -29,8 +27,6 @@ public class ColliderDamageHandler : MonoBehaviour
             return false;
         
         var damageReciever = other.GetComponentInChildren<DamageReciever>();
-        
-        
         if (damageReciever)
         {
             damageReciever.RecieveDamage(damageValue.Value);
@@ -39,6 +35,4 @@ public class ColliderDamageHandler : MonoBehaviour
 
         return false;
     }
-
-    
 }
