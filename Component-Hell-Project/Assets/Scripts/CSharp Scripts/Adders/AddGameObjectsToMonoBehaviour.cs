@@ -15,7 +15,7 @@ public class AddGameObjectsToMonoBehaviour : MonoBehaviour
     {
         foreach (var prefab in prefabsToAdd)
         {
-            var instance = Instantiate(prefab, monoBehaviour.transform);
+            Instantiate(prefab, monoBehaviour.transform);
         }
     }
 
